@@ -90,7 +90,7 @@
 저장 이름: `assets/covers/ch10.webp`
 
 ```
-16-bit pixel art, bright white lab at sunrise, X1 X2 X3 silhouettes tearing up a giant red receipt showing a minus number, the whole team (박사, 조수 하루, interns 시아 and 모아, abacus robot 주판봇, tiny fruit-fly researcher) standing behind a five-layer shield, celebratory confetti in pixel squares, SNES RPG style.
+16-bit pixel art, bright white lab at sunrise, X1 X2 X3 silhouettes tearing up a giant red receipt showing a minus number, the team standing behind a four-layer shield labeled "규칙 · 인센티브 · 디스인센티브 · 집행", 박사 holding a gavel and an abacus, confetti in pixel squares, SNES RPG style.
 ```
 
 ## index · 시리즈 표지

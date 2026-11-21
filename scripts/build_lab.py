@@ -3,6 +3,7 @@
 import os, re, glob, html, json
 import markdown
 from lab_data import CH, TOOLS
+from steps_data import STEPS, REVIEW, INST, RL
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 SITE_URL = "https://adminmrobo.github.io/ai_crime_lab/"
@@ -100,6 +101,10 @@ def parse(path):
 
 
 def quiz(q, opts, a, ex):
+    import hashlib
+    rot = int(hashlib.md5(q.encode()).hexdigest(), 16) % len(opts)
+    opts = opts[rot:] + opts[:rot]
+    a = (a - rot) % len(opts)
     bs = "".join(f"<button type=\"button\">{chr(9312 + k)} {html.escape(o)}</button>" for k, o in enumerate(opts))
     return f'<div class="quiz" data-a="{a}"><div class="q">확인 퀴즈 · {html.escape(q)}</div>{bs}<div class="ex" hidden><b></b>{html.escape(ex)}</div></div>'
 
@@ -145,21 +150,78 @@ def tool_step(slug, d, n):
 {codebox}{quiz(*q)}</section>"""
 
 
+XLINE = {"X1": "규칙이 있어도 아무도 안 잡으면 나는 계속한다.", "X2": "처벌 조항만 무거우면 오히려 마음이 편하다. 어차피 안 잡히니까.", "X3": "현금화 창구에 감시가 없으면 규칙은 종이일 뿐이다."}
+
+
+def inst_step(slug, n):
+    I = INST[slug]; r = RL[slug]
+    xs = r["who"] if r["who"].startswith("X") else "X1"
+    rows = "".join(f"<tr><td><b>{a}</b></td><td>{html.escape(b)}</td><td>{c}</td></tr>" for a, b, c in [
+        ("규칙", I["rule"], "무엇이 금지·의무인지 정한다"), ("인센티브", I["carrot"], "지키는 쪽을 이익으로 만든다"),
+        ("디스인센티브", I["stick"], "어기는 쪽을 손해로 만든다"), ("강제력(집행)", I["enforce"], "실제로 찾아내고 적용한다")])
+    opts = [I["enforce"], I["carrot"], I["rule"]]
+    return (f'<section class="step" id="inst"><div class="lab">단계 {n} · 제도 설계</div><h2>도덕적 원칙이 아니라 제도로 — 이 장의 네 가지 손잡이</h2><span class="tag">방법: 규칙 · 인센티브 · 디스인센티브 · 강제력</span>'
+            + bubble("박사", "현장 질문 하나로 시작할게요. '이러면 안 됩니다'라는 원칙을 모두에게 알리면, 이 장의 범죄는 줄어들까요?", "E07")
+            + f'<table><tr><th>요소</th><th>이 장의 제도</th><th>하는 일</th></tr>{rows}</table>'
+            + '<h3>단계 대화</h3>' + bubble("주판봇", "법만 만들면 다 지켜요! 규칙이 제일 중요해요.", "E16") + bubble(xs, XLINE[xs], "E16")
+            + bubble("초파리", "규칙·처벌·집행·인센티브를 하나씩 켜고 끄면서 확인해 보자. 다음 단계 강화학습 실험에서 눌러 봐.", "E09")
+            + bubble("모아", "네 가지가 서로를 받쳐요. 규칙이 없으면 잡아도 처벌 근거가 없고, 집행이 없으면 규칙은 종이에만 있어요.", "E07")
+            + bubble("박사", "해석: 원칙은 출발점이에요. 의도한 효과는 이 네 가지가 함께 있을 때 나옵니다.", "E10")
+            + quiz("이 장의 제도 가운데 '강제력(집행)'에 해당하는 것은?", opts, 0, "실제로 찾아내고 적용하는 장치가 강제력이다.") + "</section>")
+
+
+def rl_step(slug, n):
+    r = RL[slug]; I = INST[slug]
+    cfg = dict(kind=r["kind"], agentName=r["agentName"], actions=r["actions"], inst=I)
+    crime = r["kind"] == "crime"
+    tr = ("α는 '그 행동을 해 본 횟수 분의 1'이다. 첫 시도에 성공해 +980(=1,000−20)을 받으면 α=1이라 Q = 0 + 1 × (980 − 0) = 980. "
+          "두 번째에 실패하고 잡혀 −1,520(=−20−1,500)을 받으면 α=1/2이라 Q = 980 + ½ × (−1,520 − 980) = −270. 두 보상의 평균 (980 − 1,520) ÷ 2와 같다.") if crime else (
+          "α는 '그 행동을 해 본 횟수 분의 1'이다. 첫 생략에서 사고 없이 0을 받으면 Q = 0. 두 번째에 감사에 걸려 −100을 받으면 α=1/2이라 Q = 0 + ½ × (−100 − 0) = −50. 두 보상의 평균과 같다.")
+    who = r["who"]
+    return f"""<section class="step" id="rl"><div class="lab">단계 {n} · 강화학습 시뮬레이션 (모든 장 공통 마지막 단계)</div><h2>{html.escape(r['agentName'])}는 무엇을 배울까 — 제도를 바꾸며 3,000번 학습</h2><span class="tag">방법: 강화학습(Q-러닝, 엡실론-탐욕)</span>
+{bubble('박사', '현장 질문 하나로 시작할게요. ' + r['agentName'] + '에게 도덕을 가르치지 않고, 보상만 바꾸면 행동이 바뀔까요?', 'E07')}
+<div class="duo"><div class="whybox"><h4>왜 이 방법을 쓰나</h4><dl><dt>문제 상황</dt><dd>앞 단계의 계산은 '한 번의 선택'이었다. 실제 행위자는 해 보고, 결과를 보고, 다음 선택을 고친다.</dd>
+<dt>앞 방법의 한계</dt><dd>기댓값 계산은 행위자가 모든 확률을 안다고 가정한다. 현실의 행위자는 경험으로 배운다.</dd>
+<dt>해법</dt><dd>강화학습 에이전트를 두고, 제도가 만든 보상만 주어 스스로 배우게 한다. 무엇을 배우는지 보면 제도의 효과가 보인다.</dd>
+<dt>쉽게 말하면</dt><dd>강아지 훈련처럼, 잘하면 간식(인센티브)·잘못하면 간식 없음(디스인센티브)을 '매번 확실하게' 줄 때 행동이 바뀐다.</dd></dl></div>
+<div class="mathbox"><h4>수식을 어려워하는 조수가 대신 물어봅니다</h4><div class="mini">{img('하루','E04')}<div><b>하루</b> Q는 뭐고, 화살표(←)는 왜 있어요?</div></div>
+<dl><dt>학교 수학으로 보면</dt><dd>점화식(앞 값으로 다음 값을 만드는 식), 평균</dd></dl>
+<table class="parts"><tr><th>식 조각</th><th>읽는 법</th><th>뜻</th></tr><tr><td><b>Q(행동)</b></td><td>큐</td><td>그 행동이 평균적으로 얼마를 주는지에 대한 지금까지의 짐작</td></tr>
+<tr><td><b>r</b></td><td>알</td><td>이번에 실제로 받은 보상</td></tr><tr><td><b>α</b></td><td>알파</td><td>새 경험을 얼마나 반영할지(여기서는 해 본 횟수 분의 1 → Q는 평균이 된다)</td></tr>
+<tr><td><b>Q ← Q + α × (r − Q)</b></td><td></td><td>짐작을 '실제 − 짐작'의 일부만큼 고친다</td></tr><tr><td><b>ε</b></td><td>엡실론</td><td>가끔 일부러 다른 행동을 해 보는 비율(처음 30% → 끝 2%)</td></tr></table>
+<dl><dt>숫자로 한 번 해 보기</dt><dd>{html.escape(tr)}</dd></dl><div class="mini">{img('하루','E01')}<div><b>하루</b> 화살표는 '이렇게 고쳐 쓴다'는 뜻이군요. 보상이 확실히 나쁘면 Q가 금방 내려가고, 그 행동을 덜 고르게 돼요.</div></div></div></div>
+<div class="pair"><div><b>일상으로 치면</b>벌금 고지서가 '가끔' 오면 습관이 안 바뀌고, '매번 확실히' 오면 바뀐다.</div><div><b>현장에서는</b>정책 실험(시범 사업)에서 제도를 바꾼 뒤 행동 변화를 재는 방식과 같다. 여기서는 그것을 가상 에이전트로 미리 해 본다.</div></div>
+<h3>단계 대화 · AI 판단 코너</h3>{bubble('박사', '처벌을 아주 무겁게만 하면 ' + r['agentName'] + '의 행동이 바뀔까요?', 'E07')}{bubble('주판봇', '당연하죠! 처벌이 무거우면 아무도 안 해요.', 'E16')}{bubble('초파리', '집행이 없으면 처벌을 받을 일이 드물어. 아래에서 「규칙 + 처벌(집행 없음)」과 「규칙 + 집행」을 비교 실험으로 눌러 봐.', 'E09')}{bubble(who, ('처벌이 무거워도 잡을 사람이 없으면 내 계산은 그대로다.' if crime else '확인하라는 규정만 있고 아무도 안 보면, 나는 그냥 바로 처리한다.'), 'E09' if not who.startswith('X') else 'E16')}
+<div class="panel"><h4>실험: 제도를 켜고 끄며 학습시키기</h4><p class="mute">{'세 행동: ' + ' · '.join(r['actions'])}. 보상 단위는 만 원, 모든 숫자는 교육용 예시다.</p><div data-rl='{html.escape(json.dumps(cfg, ensure_ascii=False))}'></div></div>
+{bubble('박사', '풀이: 에이전트는 도덕을 모릅니다. 규칙이 있어야 처벌할 근거가 생기고, 집행이 있어야 처벌이 실제 보상에 들어가며, 인센티브가 있어야 지키는 쪽이 이익이 됩니다. 이 네 가지가 함께 있을 때 학습된 행동이 바뀝니다. 해석: 이 숫자는 정책에서 «선언보다 집행 예산과 확인 절차의 비용이 더 중요하다»는 뜻입니다.', 'E10')}
+<aside class="box warn" style="background:#fff8e6;border-color:#b7791f"><div class="bt" style="color:#b7791f">이 단계의 한계 — 여기서는 단순하게 봤어요</div><p>에이전트는 한 명이고 확률은 고정이며, 평판·양심·처벌 공포의 과대평가 같은 사람의 특성은 빠져 있다. 도덕이 쓸모없다는 뜻이 아니다. 도덕만으로는 의도한 효과를 보장할 수 없다는 뜻이다. 실제 정책 효과는 현장 데이터로 다시 재야 한다.</p></aside>
+<details><summary>교안의 파이썬 코드로 보면 (몰라도 됩니다)</summary><p><code>n[a] += 1; Q[a] += (r - Q[a]) / n[a]</code><br>받은 보상과 짐작의 차이를 해 본 횟수로 나눠 고친다. 결과적으로 평균 보상이 된다.</p></details>
+{quiz('강화학습 실험에서 범죄(또는 생략) 선택이 가장 확실히 줄어드는 조합은?', ['규칙만', '처벌만 무겁게(집행 없음)', '규칙 + 집행 + 처벌 또는 인센티브'], 2, '규칙·집행·처벌(또는 인센티브)이 함께 있어야 보상 구조가 바뀐다.')}</section>"""
+
+
 def chapter_page(slug, meta, body, idx, chapters):
     d = CH[slug]
     # 단계로 나누기
     secs = re.split(r"\n(?=## )", "\n" + body)
     intro, steps = secs[0], secs[1:]
     html_steps = []
+    sd = STEPS[slug]
+    assert len(sd) == len(steps), (slug, len(sd), len(steps))
     for k, s in enumerate(steps, 1):
         title, rest = s.strip().split("\n", 1)
         title = title[3:].strip()
         t_clean = re.sub(r"^\d+\.\s*", "", title)
-        html_steps.append(f'<section class="step" id="s{k}"><div class="lab">단계 {k}</div><h2>{html.escape(t_clean)}</h2>{convert(rest, slug)}</section>')
+        st = sd[k - 1]
+        talk = "".join(bubble(w, txt.replace("*", "\\*"), e) for w, e, txt in st["talk"])
+        html_steps.append(
+            f'<section class="step" id="s{k}"><div class="lab">단계 {k}</div><h2>{html.escape(t_clean)}</h2><span class="tag">{html.escape(st["tag"])}</span>'
+            + bubble("박사", "현장 질문 하나로 시작할게요. " + st["sit"], "E07") + convert(rest, slug)
+            + f'<div class="pair"><div><b>일상으로 치면</b>{html.escape(st["daily"])}</div><div><b>현장에서는</b>{html.escape(st["field"])}</div></div>'
+            + '<h3>단계 대화</h3>' + talk + bubble("박사", "해석: " + st["interp"], "E10") + quiz(*st["quiz"]) + "</section>")
     n_tool = len(steps) + 1
     toc = (f"<b>{html.escape(meta['no'])}</b><a href='#three'>처음 오신 분께</a><a href='#why'>왜 · 큰 그림</a>"
            + "".join(f'<a href="#s{k}">단계 {k}</a>' for k in range(1, len(steps) + 1))
-           + f"<a href='#tool'>단계 {n_tool} · 분석 도구</a><a href='#duel'>대결</a><a href='#wrap'>정리 퀴즈</a><a href='#outro'>아웃트로</a><a href='#kg'>지식 색인</a><a href='#export'>꾸러미</a>")
+           + f"<a href='#tool'>단계 {n_tool} · 분석 도구</a><a href='#inst'>단계 {n_tool+1} · 제도 설계</a><a href='#rl'>단계 {n_tool+2} · 강화학습</a><a href='#duel'>대결</a><a href='#wrap'>정리 퀴즈</a><a href='#outro'>아웃트로</a><a href='#kg'>지식 색인</a><a href='#export'>꾸러미</a>")
     abbr = "".join(f"<li><b>{html.escape(a)}</b> — {html.escape(b)}</li>" for a, b in d["abbr"])
     three = (f'<section class="three" id="three"><h2>처음 오신 분께 — 이 페이지를 3줄로</h2><ol><li><b>무엇을</b>: {html.escape(d["three"][0])}</li>'
              f'<li><b>왜 중요한가</b>: {html.escape(d["three"][1])}</li><li><b>생활·업무에서는</b>: {html.escape(d["three"][2])}</li></ol>'
@@ -170,7 +232,8 @@ def chapter_page(slug, meta, body, idx, chapters):
     why = (f'<section class="why" id="why"><h2>왜 이 장이 필요한가</h2>{bubble("박사", d["why"], "E09")}</section>'
            f'<section class="big"><h3>큰 그림 — 지금 어디쯤인가</h3><div class="bigrow"><div><small>앞에서</small>{html.escape(p)}</div>'
            f'<div class="now"><small>이 장</small>{html.escape(c)}</div><div><small>다음에</small>{html.escape(nx)}</div></div>'
-           f'<p class="mute">이 장의 분석 도구: {TOOLS[d["tool"]["kind"]]}. 여기서 한 번 멈춰도 괜찮아요. 처음엔 다들 계산서 기호에서 오래 봅니다.</p></section>')
+           f'<p class="mute">이 장의 분석 도구: {TOOLS[d["tool"]["kind"]]} · 마지막 단계는 모든 장 공통의 강화학습 시뮬레이션입니다. 여기서 한 번 멈춰도 괜찮아요. 처음엔 다들 계산서 기호에서 오래 봅니다.</p>'
+           f'<aside class="box note" style="background:#f6f8fb;border-color:#1f3a6b"><div class="bt" style="color:#1f3a6b">30초 복습 · {html.escape(REVIEW[slug][0])}</div><p>{html.escape(REVIEW[slug][1])}</p></aside></section>')
     du = d["duel"]
     wtxt = {"team": "추적 팀 승", "x": "범죄자 대역 승", "draw": "무승부"}[du["winner"]]
     duel = (f'<section class="step" id="duel"><div class="lab">대결</div><h2>{du["x"]} vs 추적 팀 — 계산서 공방</h2><div class="duel"><div class="vs">'
@@ -199,9 +262,9 @@ def chapter_page(slug, meta, body, idx, chapters):
             f'<img class="cover" src="assets/lineup.webp" alt="연구실 식구 단체 사진 — 박사, 조수 하루, 인턴 시아·모아, 주판봇, 초파리 연구원" width="1200" height="678"></section>')
     intro_html = convert(intro, slug)
     inner = (hero + three + "<h2 style='margin-top:30px'>등장인물</h2>" + cast + why + intro_html + "".join(html_steps)
-             + tool_step(slug, d, n_tool) + duel + wrapq + outro + kg + export + f'<div class="pn">{prev_}{next_}</div>' + foot())
+             + tool_step(slug, d, n_tool) + inst_step(slug, n_tool + 1) + rl_step(slug, n_tool + 2) + duel + wrapq + outro + kg + export + f'<div class="pn">{prev_}{next_}</div>' + foot())
     page = (head(meta["title"], meta["subtitle"], "", jsonld, slug + ".html") + f'<div class="wrap"><nav class="toc">{toc}</nav><main>{inner}</main></div>'
-            + '<script src="assets/lab.js"></script></body></html>')
+            + '<script src="assets/lab.js"></script><script src="assets/rl.js"></script></body></html>')
     open(os.path.join(ROOT, slug + ".html"), "w", encoding="utf-8").write(page)
 
 
