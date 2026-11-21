@@ -1,0 +1,442 @@
+{
+  "series_ko": "AI 범죄 연구실 · 『AI 범죄와 자기 방어』 보충본",
+  "title_ko": "AI 범죄 연구실 — 범죄자의 계산서를 뒤집어라",
+  "site_title": "AI 범죄 연구실 — 범죄자의 계산서를 뒤집어라",
+  "site_url": "https://adminmrobo.github.io/ai_crime_lab/",
+  "ontology": {
+    "pages": [
+      {
+        "path": "ch00.html",
+        "kg": true,
+        "export": true
+      },
+      {
+        "path": "ch01.html",
+        "kg": true,
+        "export": true
+      },
+      {
+        "path": "ch02.html",
+        "kg": true,
+        "export": true
+      },
+      {
+        "path": "ch03.html",
+        "kg": true,
+        "export": true
+      },
+      {
+        "path": "ch04.html",
+        "kg": true,
+        "export": true
+      },
+      {
+        "path": "ch05.html",
+        "kg": true,
+        "export": true
+      },
+      {
+        "path": "ch06.html",
+        "kg": true,
+        "export": true
+      },
+      {
+        "path": "ch07.html",
+        "kg": true,
+        "export": true
+      },
+      {
+        "path": "ch08.html",
+        "kg": true,
+        "export": true
+      },
+      {
+        "path": "ch09.html",
+        "kg": true,
+        "export": true
+      },
+      {
+        "path": "ch10.html",
+        "kg": true,
+        "export": true
+      }
+    ],
+    "files": []
+  },
+  "i18n": {
+    "langs": [
+      "ko"
+    ],
+    "pages": {
+      "ko": 13
+    },
+    "readme_langs": [
+      "ko"
+    ]
+  },
+  "languages": [
+    "ko"
+  ],
+  "items": [
+    {
+      "id": "index",
+      "role": "cover",
+      "path": "assets/covers/index.webp",
+      "size": [
+        1600,
+        900
+      ],
+      "characters": [
+        "doc",
+        "asst",
+        "sia",
+        "moa",
+        "fly",
+        "jupanbot",
+        "x1",
+        "x2",
+        "x3"
+      ],
+      "robot": "jupanbot-v2",
+      "prompt_en": "Wide 16:9 scene of a bright white research lab. Center: the professor points at a giant abacus-shaped scoreboard showing three bars \"COST\", \"RISK\", \"PROFIT\". Right side: three black silhouettes X1 (ponytail with pink bow), X2 (beret, round glasses), X3 (cat ears) each holding a long paper receipt with a plus sign. Left side: pink-haired assistant Haru with a clipboard, black-haired maid intern Sia with a magnifying glass, beige-haired maid intern Moa holding a small shield. Foreground: box robot with an abacus chest and a tiny fruit-fly researcher at a data terminal.",
+      "source_of": null,
+      "status": "ok"
+    },
+    {
+      "id": "index_alt",
+      "role": "alt_cover",
+      "path": "assets/covers/index_alt.webp",
+      "size": [
+        1600,
+        900
+      ],
+      "characters": [
+        "doc",
+        "asst",
+        "sia",
+        "moa",
+        "fly",
+        "jupanbot",
+        "x1",
+        "x2",
+        "x3"
+      ],
+      "robot": "jupanbot-v2",
+      "prompt_en": "Same lab, overhead view of a long table like a board game: on the left side the criminals' receipts turn from green \"+\" to red \"−\" as four blocks are placed in a row (rule, carrot, stick, gavel icons). The team watches; the professor holds a gavel and an abacus.",
+      "source_of": null,
+      "status": "ok"
+    },
+    {
+      "id": "ch00",
+      "role": "scene",
+      "path": "assets/covers/ch00.webp",
+      "size": [
+        1200,
+        800
+      ],
+      "characters": [
+        "doc",
+        "asst",
+        "sia",
+        "moa",
+        "fly",
+        "jupanbot",
+        "x1",
+        "x2",
+        "x3"
+      ],
+      "robot": "jupanbot-v2",
+      "prompt_en": "Two-panel scene. Left: an office worker frowning at a smartphone chat bubble with a suspicious link icon, a question mark above their head. Right: the same worker holding a phone that shows a waveform and a heart icon (a familiar voice). Behind both panels, the X1 silhouette holds a receipt with \"COST ↓  PROFIT ↑\".",
+      "source_of": null,
+      "status": "ok"
+    },
+    {
+      "id": "ch01",
+      "role": "scene",
+      "path": "assets/covers/ch01.webp",
+      "size": [
+        1200,
+        800
+      ],
+      "characters": [
+        "doc",
+        "asst",
+        "sia",
+        "moa",
+        "fly",
+        "jupanbot",
+        "x1",
+        "x2",
+        "x3"
+      ],
+      "robot": "jupanbot-v2",
+      "prompt_en": "Left: one small scammer silhouette at a desk with a single phone. Right: a tall server rack shooting out hundreds of chat bubbles like a fountain, the X1 silhouette leaning on it with a smile. Bottom: intern Sia with a magnifying glass reading a funnel chart that narrows from wide to thin.",
+      "source_of": null,
+      "status": "ok"
+    },
+    {
+      "id": "ch02",
+      "role": "scene",
+      "path": "assets/covers/ch02.webp",
+      "size": [
+        1200,
+        800
+      ],
+      "characters": [
+        "doc",
+        "asst",
+        "sia",
+        "moa",
+        "fly",
+        "jupanbot",
+        "x1",
+        "x2",
+        "x3"
+      ],
+      "robot": "jupanbot-v2",
+      "prompt_en": "Classroom-style lab. The professor at a whiteboard writing \"E(U) = p·U(Y−f) + (1−p)·U(Y+g)\". The abacus robot slides three beads labeled p, f, g. The three silhouettes X1, X2, X3 sit at student desks raising hands. Assistant Haru holds a balance scale: a coin bag on one side, a small jail-bar icon on the other.",
+      "source_of": null,
+      "status": "ok"
+    },
+    {
+      "id": "ch03",
+      "role": "scene",
+      "path": "assets/covers/ch03.webp",
+      "size": [
+        1200,
+        800
+      ],
+      "characters": [
+        "doc",
+        "asst",
+        "sia",
+        "moa",
+        "fly",
+        "jupanbot",
+        "x1",
+        "x2",
+        "x3"
+      ],
+      "robot": "jupanbot-v2",
+      "prompt_en": "Meeting room with a big video-call screen showing five faces; three faces glitch into pixel noise at the edges. A finance worker hesitates with a cursor over a \"SEND\" button. Assistant Haru stands beside holding a card with a phone icon and a return arrow (call back). Small X1 silhouette visible only as a reflection on the screen.",
+      "source_of": null,
+      "status": "ok"
+    },
+    {
+      "id": "ch04",
+      "role": "scene",
+      "path": "assets/covers/ch04.webp",
+      "size": [
+        1200,
+        800
+      ],
+      "characters": [
+        "doc",
+        "asst",
+        "sia",
+        "moa",
+        "fly",
+        "jupanbot",
+        "x1",
+        "x2",
+        "x3"
+      ],
+      "robot": "jupanbot-v2",
+      "prompt_en": "Open office floor, envelope icons popping above every desk; some envelopes glow red with a fishing hook. Intern Moa runs a short training at a whiteboard with three icons in a row: magnifying glass → stop hand → bell. The X1 silhouette fishes from a ceiling hatch with a long rod. One employee holds the phone and dials back, green check above.",
+      "source_of": null,
+      "status": "ok"
+    },
+    {
+      "id": "ch05",
+      "role": "scene",
+      "path": "assets/covers/ch05.webp",
+      "size": [
+        1200,
+        800
+      ],
+      "characters": [
+        "doc",
+        "asst",
+        "sia",
+        "moa",
+        "fly",
+        "jupanbot",
+        "x1",
+        "x2",
+        "x3"
+      ],
+      "robot": "jupanbot-v2",
+      "prompt_en": "White server room. The X2 silhouette controls a shape-shifting slime that changes color in three frames. A wall of old rule signs crumbles. Assistant Haru and the fruit-fly researcher watch a monitor with a behavior graph showing one red spike at 3:00. The abacus robot prints a short alert ticket.",
+      "source_of": null,
+      "status": "ok"
+    },
+    {
+      "id": "ch06",
+      "role": "scene",
+      "path": "assets/covers/ch06.webp",
+      "size": [
+        1200,
+        800
+      ],
+      "characters": [
+        "doc",
+        "asst",
+        "sia",
+        "moa",
+        "fly",
+        "jupanbot",
+        "x1",
+        "x2",
+        "x3"
+      ],
+      "robot": "jupanbot-v2",
+      "prompt_en": "City street at noon. Translucent floating eyes above camera poles. A citizen walks while small puzzle pieces (cake, car, ID badge, map pin) slip out of their pocket. The X3 silhouette quietly collects the pieces and assembles a jigsaw portrait. Intern Sia covers one piece with a blur sticker.",
+      "source_of": null,
+      "status": "ok"
+    },
+    {
+      "id": "ch07",
+      "role": "scene",
+      "path": "assets/covers/ch07.webp",
+      "size": [
+        1200,
+        800
+      ],
+      "characters": [
+        "doc",
+        "asst",
+        "sia",
+        "moa",
+        "fly",
+        "jupanbot",
+        "x1",
+        "x2",
+        "x3"
+      ],
+      "robot": "jupanbot-v2",
+      "prompt_en": "Bank-like hall. A giant invisible glove (outlined with dotted pixels) moves coins along glowing chain links. The X3 silhouette splits a gold coin into many small coins that fall into a mixer machine. Intern Sia follows the coin trail with a lantern; the abacus robot counts. In a corner, a server is locked with a padlock and a ransom note shaped like a receipt; a backup drive beside it shines green.",
+      "source_of": null,
+      "status": "ok"
+    },
+    {
+      "id": "ch08",
+      "role": "scene",
+      "path": "assets/covers/ch08.webp",
+      "size": [
+        1200,
+        800
+      ],
+      "characters": [
+        "doc",
+        "asst",
+        "sia",
+        "moa",
+        "fly",
+        "jupanbot",
+        "x1",
+        "x2",
+        "x3"
+      ],
+      "robot": "jupanbot-v2",
+      "prompt_en": "Cozy white home interior. A family builds a large shield from five tiles, each with an icon: key (passkey), cloud with arrow (backup), stop hand (block), phone with return arrow (call back), vault (password manager). Grandma holds a phone with a green check. Outside the window the X1 silhouette shrugs and walks away.",
+      "source_of": null,
+      "status": "ok"
+    },
+    {
+      "id": "ch09",
+      "role": "scene",
+      "path": "assets/covers/ch09.webp",
+      "size": [
+        1200,
+        800
+      ],
+      "characters": [
+        "doc",
+        "asst",
+        "sia",
+        "moa",
+        "fly",
+        "jupanbot",
+        "x1",
+        "x2",
+        "x3"
+      ],
+      "robot": "jupanbot-v2",
+      "prompt_en": "Top-down town map with many tiny buildings linked by glowing lines. Some buildings wear green shields and stop a red wave from spreading. The professor plants a flag at the threshold where the wave stops. Two company buildings shake hands over a coin labeled \"+\". The X2 silhouette looks frustrated at a blocked hub building.",
+      "source_of": null,
+      "status": "ok"
+    },
+    {
+      "id": "ch10",
+      "role": "scene",
+      "path": "assets/covers/ch10.webp",
+      "size": [
+        1200,
+        800
+      ],
+      "characters": [
+        "doc",
+        "asst",
+        "sia",
+        "moa",
+        "fly",
+        "jupanbot",
+        "x1",
+        "x2",
+        "x3"
+      ],
+      "robot": "jupanbot-v2",
+      "prompt_en": "Bright white lab in morning light. The three silhouettes X1, X2, X3 tear up a giant red receipt showing a minus sign. The whole team stands behind a four-layer shield; the layers show icons: rulebook, carrot, stick, gavel. The professor holds a gavel in one hand and an abacus in the other. Pixel-square confetti.",
+      "source_of": null,
+      "status": "ok"
+    },
+    {
+      "id": "rl",
+      "role": "scene",
+      "path": "assets/covers/rl.webp",
+      "size": [
+        1200,
+        800
+      ],
+      "characters": [
+        "doc",
+        "asst",
+        "sia",
+        "moa",
+        "fly",
+        "jupanbot",
+        "x1",
+        "x2",
+        "x3"
+      ],
+      "robot": "jupanbot-v2",
+      "prompt_en": "Game-board style lab table. A small agent token (a black silhouette pawn) stands at a fork with three paths: a green path to a \"work desk\", a gray path to an old phone, a red path to a server. Above each path floats a score number that changes. On the side, four toggle switches with icons (rulebook, gavel, stick, carrot); when the rulebook and gavel switches are ON, the red path's score turns negative and the pawn turns toward the green path. The fruit-fly researcher holds a stopwatch; the abacus robot plots a rising curve.",
+      "source_of": null,
+      "status": "ok"
+    },
+    {
+      "id": "practice",
+      "role": "scene",
+      "path": "practice/cover.webp",
+      "size": [
+        1600,
+        900
+      ],
+      "characters": [
+        "doc",
+        "asst",
+        "sia",
+        "moa",
+        "fly",
+        "jupanbot",
+        "x1",
+        "x2",
+        "x3"
+      ],
+      "robot": "jupanbot-v2",
+      "prompt_en": "Wide control-room scene in a white lab. Four tabs on a big wall screen, each a small scene: a call center with many phones, an office desk with an envelope, a server with a padlock, two buildings with shields. In front, intern Sia and intern Moa turn dials on a control panel (green dials and blue dials). The professor watches with arms crossed; the abacus robot shows a scoreboard with a green check and a red cross.",
+      "source_of": null,
+      "status": "ok"
+    }
+  ]
+}
