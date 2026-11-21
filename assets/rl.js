@@ -72,7 +72,7 @@ document.querySelectorAll('[data-rl]').forEach(box => {
     const lines = [
       ['doctor', good ? 'E16' : 'E09', '박사', good ? `학습이 끝났어요. ${cfg.agentName}은(는) '${names[pol]}'을(를) 골랐어요. 도덕을 가르친 적은 없습니다. 보상 구조가 바뀌었을 뿐이에요.` : `${cfg.agentName}은(는) 여전히 '${names[pol]}'을(를) 골라요. 어떤 제도가 빠졌는지 보세요. 규칙만 있고 집행이 없지는 않나요?`],
       ['jupanbot', 'E16', '주판봇', good ? '이제 범죄는 영원히 0이에요!' : '처벌만 더 세게 하면 바로 해결돼요!'],
-      ['fruitfly', 'E09', '초파리 연구원', `마지막 200회 중 ${crime ? '범죄' : '생략'} 선택은 ${fmt(share * 100)}%야. 이건 이 모형 안의 숫자일 뿐, 제도를 끄면 바로 되돌아가. 비교 실험으로 확인해 봐.`]];
+      ['fruitfly', 'E09', '초파리 연구원', `마지막 200회 중 ${crime ? '범죄' : '생략'} 선택은 ${fmt(share * 100)}%예요. 이건 이 모형 안의 숫자일 뿐이라, 제도를 끄면 바로 되돌아가요. 비교 실험으로 확인해 보세요.`]];
     out.innerHTML = `<div class="res">마지막 200회의 ${crime ? '범죄' : '생략'} 선택 비율: <span class="big ${share > .5 ? 'pos' : 'neg'}">${fmt(share * 100)}%</span></div><div class="fig-rl"></div>
       <table class="parts"><tr><th>행동</th><th>배운 가치 Q(만 원)</th><th>기댓값(검산)</th></tr>${names.map((n, i) => `<tr><td>${n}</td><td>${fmt(res.Q[i])}</td><td>${fmt(expected(cfg, k)[i])}</td></tr>`).join('')}</table>` +
       lines.map(([d, e, n, t]) => `<div class="say"><img src="assets/chars/${d}/${e}.webp" alt="${n}" width="58" height="58"><div class="bub"><div class="who">${n}</div><div class="txt">${t}</div></div></div>`).join('');

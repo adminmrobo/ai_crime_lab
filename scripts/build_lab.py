@@ -4,6 +4,7 @@ import os, re, glob, html, json
 import markdown
 from lab_data import CH, TOOLS
 from steps_data import STEPS, REVIEW, INST, RL
+from polite import polite
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 SITE_URL = "https://adminmrobo.github.io/ai_crime_lab/"
@@ -49,7 +50,7 @@ def img(who, expr=None, pre=""):
 def bubble(who, text, expr=None, pre=""):
     name, role, *_ = CAST[who]
     x = who.startswith("X")
-    body = mdc(text).removeprefix("<p>").removesuffix("</p>")
+    body = mdc(polite(text)).removeprefix("<p>").removesuffix("</p>")
     return (f'<div class="say {"right x" if x else "left"}">{img(who, expr, pre)}<div class="bub"><div class="who">{name}<span>{role}</span></div>'
             f'<div class="txt">{body}</div></div></div>')
 
@@ -239,7 +240,7 @@ def chapter_page(slug, meta, body, idx, chapters):
     duel = (f'<section class="step" id="duel"><div class="lab">대결</div><h2>{du["x"]} vs 추적 팀 — 계산서 공방</h2><div class="duel"><div class="vs">'
             f'<div class="side xs">{img(du["x"], "E16" if du["winner"] == "x" else "E09")}<b>{du["x"]}의 수</b><br>{html.escape(du["xmove"])}</div><div class="v">VS</div>'
             f'<div class="side ts">{img(du["team"], "E16" if du["winner"] != "x" else "E02")}<b>{CAST[du["team"]][0]}의 수</b><br>{html.escape(du["tmove"])}</div></div>'
-            f'<div class="verdict">{img("박사", "E10")}<div>심판 박사 · {wtxt}<br><span style="font-weight:400">{html.escape(du["verdict"])}</span></div></div></div></section>')
+            f'<div class="verdict">{img("박사", "E10")}<div>심판 박사 · {wtxt}<br><span style="font-weight:400">{html.escape(polite(du["verdict"]))}</span></div></div></div></section>')
     wrapq = f'<section class="step" id="wrap"><div class="lab">정리</div><h2>정리 퀴즈</h2>' + "".join(quiz(*q) for q in d["quiz"]) + "</section>"
     outro = f'<section class="step" id="outro"><div class="lab">아웃트로</div><h2>오늘의 연구실을 마치며</h2>' + "".join(bubble(w, t, e) for w, e, t in d["outro"]) + "</section>"
     kgrows = "".join(f'<tr><td>{html.escape(a)}</td><td>{html.escape(b)}</td><td>' + " ".join(f'<a href="{c}.html">{c.replace("ch", "")}장</a>' if c != "ch00" else '<a href="ch00.html">서장</a>' for c in cs.split()) + "</td></tr>" for a, b, cs in d["kg"])
@@ -296,7 +297,7 @@ def build():
     dtxt = open(os.path.join(ROOT, "content", "data.md"), encoding="utf-8").read().replace("{{CODE}}", "")
     simple_page("data", "모의 데이터와 재현 코드", dtxt, f'<button class="copy" data-t="src">코드 복사</button><pre id="src" style="background:#f6f8fb;padding:14px;border-radius:10px;font-size:12.5px;line-height:1.5;max-height:600px">{html.escape(code)}</pre>')
     # 그림 지시문 모음
-    with open(os.path.join(ROOT, "images", "PROMPTS.md"), "w", encoding="utf-8") as f:
+    with open(os.devnull, "w", encoding="utf-8") as f:
         f.write("# 그림 지시문 모음 (16비트 RPG 픽셀아트, 낮의 연구실·흰 배경)\n\n")
         f.write("- 만드는 순서: 시리즈 표지 → 서장~10장 장면 → 실전 연습장 표지\n- 비율: 표지 1600×900, 장면 1200×800 → WebP로 변환해 `assets/covers/`에 저장\n"
                 "- 캐릭터는 fruitfly-lab-expressions 정본(박사·하루·시아·모아·주판봇·초파리·X1~X3 실루엣)을 참고 그림으로 함께 올린다.\n"
