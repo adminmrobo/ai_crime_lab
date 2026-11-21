@@ -129,7 +129,7 @@ def head(title, desc, pre="", jsonld=None, path="", og_img="assets/og/index.webp
     og = SITE_URL + og_img
     jl = f'<script type="application/ld+json">{json.dumps(jsonld, ensure_ascii=False)}</script>' if jsonld else ""
     return f"""<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{html.escape(title)} · AI 범죄 연구실</title><meta name="description" content="{html.escape(desc)}">
+<title>{"AI 범죄 연구실 — 『AI 범죄와 자기 방어』 보충본" if title == "목차" else html.escape(title) + " · AI 범죄 연구실"}</title><meta name="description" content="{html.escape(desc)}">
 <meta property="og:title" content="{html.escape(title)} · AI 범죄 연구실"><meta property="og:description" content="{html.escape(desc)}">
 <meta property="og:image" content="{og}"><meta property="og:url" content="{SITE_URL}{path}"><meta property="og:type" content="article">
 <link rel="stylesheet" href="{pre}assets/lab.css">{jl}</head><body>
