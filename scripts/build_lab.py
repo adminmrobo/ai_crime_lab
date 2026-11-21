@@ -110,8 +110,23 @@ def quiz(q, opts, a, ex):
     return f'<div class="quiz" data-a="{a}"><div class="q">확인 퀴즈 · {html.escape(q)}</div>{bs}<div class="ex" hidden><b></b>{html.escape(ex)}</div></div>'
 
 
-def head(title, desc, pre="", jsonld=None, path=""):
-    og = SITE_URL + "assets/lineup.webp"
+ALT = {
+    "ch00": "두 장면 그림 — 의심스러운 링크 메시지와 익숙한 목소리 전화를 받는 직장인, 뒤에서 비용↓ 수익↑ 영수증을 든 X1 실루엣",
+    "ch01": "한 대의 전화로 일하는 사기범과 말풍선을 수백 개 쏟아내는 서버, 깔때기 그래프를 돋보기로 읽는 인턴 시아",
+    "ch02": "화이트보드에 기대효용 식을 쓰는 박사, p·f·g 구슬을 옮기는 주판봇, 손을 든 X1·X2·X3 실루엣",
+    "ch03": "다섯 얼굴이 뜬 영상회의 화면 앞에서 송금 버튼을 망설이는 직원과 콜백 카드를 든 조수 하루",
+    "ch04": "봉투 알림이 뜬 사무실, 확인·멈춤·신고 순서를 교육하는 인턴 모아, 천장에서 낚싯대를 드리운 X1 실루엣",
+    "ch05": "색을 바꾸는 슬라임을 부리는 X2 실루엣, 무너지는 규칙 표지판, 새벽 3시 이상 신호를 보는 하루와 초파리 연구원",
+    "ch06": "카메라 기둥 위에 뜬 눈, 주머니에서 흘린 정보 조각을 맞추는 X3 실루엣, 조각 하나를 가리는 인턴 시아",
+    "ch07": "점선 장갑이 옮기는 동전 사슬, 동전을 쪼개 섞는 X3 실루엣, 등불로 흔적을 쫓는 시아와 잠긴 서버 옆 초록 백업",
+    "ch08": "패스키·백업·차단·콜백·비밀번호 관리자 조각으로 방패를 만드는 가족, 창밖에서 돌아서는 X1 실루엣",
+    "ch09": "초록 방패를 쓴 건물들이 붉은 파동을 막는 마을 지도, 문턱에 깃발을 꽂는 박사, 막힌 허브 앞의 X2 실루엣",
+    "ch10": "마이너스가 찍힌 붉은 영수증을 찢는 X1·X2·X3 실루엣, 규칙·당근·채찍·의사봉 네 겹 방패 앞의 연구실 식구",
+}
+
+
+def head(title, desc, pre="", jsonld=None, path="", og_img="assets/og/index.webp"):
+    og = SITE_URL + og_img
     jl = f'<script type="application/ld+json">{json.dumps(jsonld, ensure_ascii=False)}</script>' if jsonld else ""
     return f"""<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{html.escape(title)} · AI 범죄 연구실</title><meta name="description" content="{html.escape(desc)}">
@@ -193,6 +208,7 @@ def rl_step(slug, n):
 <dl><dt>숫자로 한 번 해 보기</dt><dd>{html.escape(tr)}</dd></dl><div class="mini">{img('하루','E01')}<div><b>하루</b> 화살표는 '이렇게 고쳐 쓴다'는 뜻이군요. 보상이 확실히 나쁘면 Q가 금방 내려가고, 그 행동을 덜 고르게 돼요.</div></div></div></div>
 <div class="pair"><div><b>일상으로 치면</b>벌금 고지서가 '가끔' 오면 습관이 안 바뀌고, '매번 확실히' 오면 바뀐다.</div><div><b>현장에서는</b>정책 실험(시범 사업)에서 제도를 바꾼 뒤 행동 변화를 재는 방식과 같다. 여기서는 그것을 가상 에이전트로 미리 해 본다.</div></div>
 <h3>단계 대화 · AI 판단 코너</h3>{bubble('박사', '처벌을 아주 무겁게만 하면 ' + r['agentName'] + '의 행동이 바뀔까요?', 'E07')}{bubble('주판봇', '당연하죠! 처벌이 무거우면 아무도 안 해요.', 'E16')}{bubble('초파리', '집행이 없으면 처벌을 받을 일이 드물어. 아래에서 「규칙 + 처벌(집행 없음)」과 「규칙 + 집행」을 비교 실험으로 눌러 봐.', 'E09')}{bubble(who, ('처벌이 무거워도 잡을 사람이 없으면 내 계산은 그대로다.' if crime else '확인하라는 규정만 있고 아무도 안 보면, 나는 그냥 바로 처리한다.'), 'E09' if not who.startswith('X') else 'E16')}
+<figure class="fig"><img src="assets/covers/rl.webp" alt="세 갈래 길 앞의 말과 길마다 바뀌는 점수, 규칙·의사봉·채찍·당근 스위치를 켜면 붉은 길 점수가 음수가 되어 말이 초록 길로 돌아서는 그림" width="1200" height="800" loading="lazy"><figcaption>규칙과 집행 스위치를 켜면 범죄 쪽 길의 점수가 음수로 바뀌고, 에이전트가 합법 쪽 길을 배웁니다.</figcaption></figure>
 <div class="panel"><h4>실험: 제도를 켜고 끄며 학습시키기</h4><p class="mute">{'세 행동: ' + ' · '.join(r['actions'])}. 보상 단위는 만 원, 모든 숫자는 교육용 예시다.</p><div data-rl='{html.escape(json.dumps(cfg, ensure_ascii=False))}'></div></div>
 {bubble('박사', '풀이: 에이전트는 도덕을 모릅니다. 규칙이 있어야 처벌할 근거가 생기고, 집행이 있어야 처벌이 실제 보상에 들어가며, 인센티브가 있어야 지키는 쪽이 이익이 됩니다. 이 네 가지가 함께 있을 때 학습된 행동이 바뀝니다. 해석: 이 숫자는 정책에서 «선언보다 집행 예산과 확인 절차의 비용이 더 중요하다»는 뜻입니다.', 'E10')}
 <aside class="box warn" style="background:#fff8e6;border-color:#b7791f"><div class="bt" style="color:#b7791f">이 단계의 한계 — 여기서는 단순하게 봤어요</div><p>에이전트는 한 명이고 확률은 고정이며, 평판·양심·처벌 공포의 과대평가 같은 사람의 특성은 빠져 있다. 도덕이 쓸모없다는 뜻이 아니다. 도덕만으로는 의도한 효과를 보장할 수 없다는 뜻이다. 실제 정책 효과는 현장 데이터로 다시 재야 한다.</p></aside>
@@ -260,11 +276,11 @@ def chapter_page(slug, meta, body, idx, chapters):
              else '<a href="practice/index.html">마지막 장 · 실전 연습장 →</a>')
     hero = (f'<section class="hero"><div><div class="no">{meta["no"]}</div><h1>{html.escape(meta["title"])}</h1><p class="sub">{html.escape(meta["subtitle"])}</p>'
             f'<div class="meta">원고 대응: {html.escape(meta["source"])}<br>범죄경제학 초점: {html.escape(meta["focus"])}</div></div>'
-            f'<img class="cover" src="assets/lineup.webp" alt="연구실 식구 단체 사진 — 박사, 조수 하루, 인턴 시아·모아, 주판봇, 초파리 연구원" width="1200" height="678"></section>')
+            f'<img class="cover" src="assets/covers/{slug}.webp" alt="{html.escape(ALT[slug])}" width="1200" height="800"></section>')
     intro_html = convert(intro, slug)
     inner = (hero + three + "<h2 style='margin-top:30px'>등장인물</h2>" + cast + why + intro_html + "".join(html_steps)
              + tool_step(slug, d, n_tool) + inst_step(slug, n_tool + 1) + rl_step(slug, n_tool + 2) + duel + wrapq + outro + kg + export + f'<div class="pn">{prev_}{next_}</div>' + foot())
-    page = (head(meta["title"], meta["subtitle"], "", jsonld, slug + ".html") + f'<div class="wrap"><nav class="toc">{toc}</nav><main>{inner}</main></div>'
+    page = (head(meta["title"], meta["subtitle"], "", jsonld, slug + ".html", f"assets/og/{slug}.webp") + f'<div class="wrap"><nav class="toc">{toc}</nav><main>{inner}</main></div>'
             + '<script src="assets/lab.js"></script><script src="assets/rl.js"></script></body></html>')
     open(os.path.join(ROOT, slug + ".html"), "w", encoding="utf-8").write(page)
 
@@ -281,9 +297,9 @@ def build():
     cards = []
     for idx, (slug, meta, body) in enumerate(chapters):
         chapter_page(slug, meta, body, idx, chapters)
-        cards.append(f'<a class="card" href="{slug}.html"><div class="cno">{meta["no"]}</div><div class="ct">{html.escape(meta["title"])}</div>'
+        cards.append(f'<a class="card" href="{slug}.html"><img class="thumb" src="assets/thumbs/{slug}.webp" alt="" width="600" height="400" loading="lazy"><div class="cno">{meta["no"]}</div><div class="ct">{html.escape(meta["title"])}</div>'
                      f'<div class="cs">{html.escape(meta["subtitle"])}</div><div class="cf">분석 도구 · {TOOLS[CH[slug]["tool"]["kind"]]}</div></a>')
-    cards.append('<a class="card practice" href="practice/index.html"><div class="cno">마지막 장</div><div class="ct">실전 연습장</div>'
+    cards.append('<a class="card practice" href="practice/index.html"><img class="thumb" src="practice/cover.webp" alt="" width="1600" height="900" loading="lazy"><div class="cno">마지막 장</div><div class="ct">실전 연습장</div>'
                  '<div class="cs">콜센터·검사 게임·랜섬 협상·기업 연결망 네 사업장을 직접 운영해 범죄자의 계산서를 뒤집어 본다.</div><div class="cf">시뮬레이터 · 미션 3개씩</div></a>')
     imeta, ibody = parse(os.path.join(ROOT, "content", "index.md"))
     inner = convert(ibody, "index").replace("{{CARDS}}", '<div class="cards" id="chapters">' + "".join(cards) + "</div>").replace("{{BOOK}}", html.escape(BOOK))

@@ -1,6 +1,6 @@
 title: 목차
 ---
-<section class="hero"><div><div class="no">AI 범죄 연구실 · 보충본</div><h1>범죄자의 계산서를 뒤집어라</h1><p class="sub">AI는 왜 범죄자에게 '남는 장사'가 되었을까. 범죄경제학·게임이론·AI 분석으로 계산하고, 대응책으로 다시 계산한다.</p><div class="book">{{BOOK}} <a href="https://adminmrobo.github.io/who_am_i/who_am_i.html">저자 소개</a></div></div><img class="cover" src="assets/lineup.webp" alt="연구실 식구 단체 사진" width="1200" height="678"></section>
+<section class="hero"><div><div class="no">AI 범죄 연구실 · 보충본</div><h1>범죄자의 계산서를 뒤집어라</h1><p class="sub">AI는 왜 범죄자에게 '남는 장사'가 되었을까. 범죄경제학·게임이론·AI 분석으로 계산하고, 대응책으로 다시 계산한다.</p><div class="book">{{BOOK}} <a href="https://adminmrobo.github.io/who_am_i/who_am_i.html">저자 소개</a></div></div><img class="cover" src="assets/covers/index.webp" alt="COST·RISK·PROFIT 주판 점수판 앞의 연구실 식구들과 영수증을 든 X1·X2·X3 실루엣" width="1600" height="900"></section>
 
 <section class="three"><h2>처음 오신 분께 — 이 사이트를 3줄로</h2><ol><li><b>무엇을</b>: AI가 범죄에 쓰인 실제 사례를 서장과 10개 장에 걸쳐 풀어 본다.</li><li><b>왜 중요한가</b>: 범죄자도 비용과 이익을 따진다. 그 계산을 알면 막을 곳이 보인다.</li><li><b>생활·업무에서는</b>: 장마다 '계산서 뒤집기'로 개인·조직·정책이 할 일을 정리한다.</li></ol><p class="note">코드와 수식을 몰라도 됩니다. 마지막 장 '실전 연습장'에서 직접 운영해 볼 수 있습니다.</p></section>
 

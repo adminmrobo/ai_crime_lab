@@ -124,3 +124,6 @@ svg.g{width:100%;height:auto;display:block;background:#fff;border:1px solid var(
 @media(max-width:900px){.toc{display:none}.wrap{display:block}.duo,.pair{grid-template-columns:minmax(0,1fr)}.hero{grid-template-columns:minmax(0,1fr)}.step{margin-top:64px}}
 @media(max-width:600px){.ctl{grid-template-columns:minmax(0,1fr) 76px}.ctl input{grid-column:1/-1;grid-row:2}.bigrow{grid-template-columns:minmax(0,1fr)}.duel .vs{grid-template-columns:minmax(0,1fr)}.duel .v{display:none}table{font-size:13px}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
+
+.card .thumb{display:block;max-width:none;width:calc(100% + 32px);margin:-14px -16px 10px;height:auto;aspect-ratio:3/2;object-fit:cover;border-radius:12px 12px 0 0}
+.fig{margin:18px 0}.fig img{width:100%;height:auto;border-radius:12px;border:1px solid var(--line)}.fig figcaption{font-size:14px;color:#556;margin-top:6px}

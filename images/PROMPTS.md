@@ -139,8 +139,8 @@ Wide control-room scene in a white lab. Four tabs on a big wall screen, each a s
 
 ## 6. 저장 이름 체크리스트
 
-- [ ] assets/covers/index.webp
-- [ ] assets/covers/ch00.webp ~ ch10.webp (11장)
-- [ ] assets/covers/rl.webp
-- [ ] practice/cover.webp
-- [ ] assets/thumbs/, assets/og/ (자르기)
+- [x] assets/covers/index.webp
+- [x] assets/covers/ch00.webp ~ ch10.webp (11장)
+- [x] assets/covers/rl.webp
+- [x] practice/cover.webp
+- [x] assets/thumbs/, assets/og/ (자르기)
