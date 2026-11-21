@@ -1,0 +1,37 @@
+<svg viewBox="0 0 720 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="10만 명 중 &#x27;세상에 나 하나뿐&#x27;인 사람의 비율" font-family="Pretendard, Noto Sans KR, sans-serif">
+<rect width="720" height="380" fill="#ffffff"/>
+<text x="70" y="26" font-size="16" font-weight="700" fill="#1d2430">10만 명 중 &#x27;세상에 나 하나뿐&#x27;인 사람의 비율</text>
+<text x="696" y="26" font-size="11" text-anchor="end" fill="#8a93a0">모의 데이터(가상)</text>
+<line x1="70" x2="696" y1="298.0" y2="298.0" stroke="#e8ecf1"/>
+<text x="62" y="302.0" font-size="11" text-anchor="end" fill="#5b6572">0</text>
+<line x1="70" x2="696" y1="247.6" y2="247.6" stroke="#e8ecf1"/>
+<text x="62" y="251.6" font-size="11" text-anchor="end" fill="#5b6572">20</text>
+<line x1="70" x2="696" y1="197.2" y2="197.2" stroke="#e8ecf1"/>
+<text x="62" y="201.2" font-size="11" text-anchor="end" fill="#5b6572">40</text>
+<line x1="70" x2="696" y1="146.8" y2="146.8" stroke="#e8ecf1"/>
+<text x="62" y="150.8" font-size="11" text-anchor="end" fill="#5b6572">60</text>
+<line x1="70" x2="696" y1="96.4" y2="96.4" stroke="#e8ecf1"/>
+<text x="62" y="100.4" font-size="11" text-anchor="end" fill="#5b6572">80</text>
+<line x1="70" x2="696" y1="46.0" y2="46.0" stroke="#e8ecf1"/>
+<text x="62" y="50.0" font-size="11" text-anchor="end" fill="#5b6572">100</text>
+<text x="383.0" y="368" font-size="12" text-anchor="middle" fill="#3b4450">공개 정보 조각을 하나씩 더할 때</text>
+<text transform="translate(16,181.0) rotate(-90)" font-size="12" text-anchor="middle" fill="#3b4450">유일하게 특정되는 비율(%)</text>
+<text x="122.2" y="314" font-size="11.5" text-anchor="middle" fill="#3b4450">시군구</text>
+<rect x="100.2" y="298.0" width="44.0" height="0.5" rx="3" fill="#7a5bd1"/>
+<text x="122.2" y="293.0" font-size="10.5" text-anchor="middle" fill="#1d2430">0</text>
+<text x="226.5" y="314" font-size="11.5" text-anchor="middle" fill="#3b4450">+출생연도</text>
+<rect x="204.5" y="297.7" width="44.0" height="0.5" rx="3" fill="#7a5bd1"/>
+<text x="226.5" y="292.7" font-size="10.5" text-anchor="middle" fill="#1d2430">0.1</text>
+<text x="330.8" y="314" font-size="11.5" text-anchor="middle" fill="#3b4450">+성별</text>
+<rect x="308.8" y="289.9" width="44.0" height="8.1" rx="3" fill="#7a5bd1"/>
+<text x="330.8" y="284.9" font-size="10.5" text-anchor="middle" fill="#1d2430">3.2</text>
+<text x="435.2" y="314" font-size="11.5" text-anchor="middle" fill="#3b4450">+출생월</text>
+<rect x="413.2" y="109.0" width="44.0" height="189.0" rx="3" fill="#7a5bd1"/>
+<text x="435.2" y="104.0" font-size="10.5" text-anchor="middle" fill="#1d2430">75</text>
+<text x="539.5" y="314" font-size="11.5" text-anchor="middle" fill="#3b4450">+직업군</text>
+<rect x="517.5" y="52.0" width="44.0" height="246.0" rx="3" fill="#7a5bd1"/>
+<text x="539.5" y="47.0" font-size="10.5" text-anchor="middle" fill="#1d2430">98</text>
+<text x="643.8" y="314" font-size="11.5" text-anchor="middle" fill="#3b4450">+차종</text>
+<rect x="621.8" y="46.3" width="44.0" height="251.7" rx="3" fill="#7a5bd1"/>
+<text x="643.8" y="41.3" font-size="10.5" text-anchor="middle" fill="#1d2430">100</text>
+</svg>

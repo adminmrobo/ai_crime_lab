@@ -1,0 +1,268 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>진화하는 사이버 범죄 · AI 범죄 연구실</title><meta name="description" content="의심했는데도 속는 이유, 그리고 범죄자의 계산법">
+<meta property="og:title" content="진화하는 사이버 범죄 · AI 범죄 연구실"><meta property="og:description" content="의심했는데도 속는 이유, 그리고 범죄자의 계산법">
+<meta property="og:image" content="https://adminmrobo.github.io/ai_crime_lab/assets/lineup.webp"><meta property="og:url" content="https://adminmrobo.github.io/ai_crime_lab/ch00.html"><meta property="og:type" content="article">
+<link rel="stylesheet" href="assets/lab.css"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "LearningResource", "name": "진화하는 사이버 범죄", "description": "AI가 범죄자의 '계산서'를 어떻게 바꿨는지 두 장면과 숫자로 본다.", "inLanguage": "ko", "isPartOf": {"@type": "Book", "name": "AI 범죄와 자기 방어"}, "author": {"@type": "Person", "name": "안상선", "url": "https://adminmrobo.github.io/who_am_i/who_am_i.html"}, "teaches": ["기대이익", "범죄경제학", "대화형 자동범죄", "서비스형 범죄(CaaS)"], "educationalLevel": "입문", "url": "https://adminmrobo.github.io/ai_crime_lab/ch00.html", "about": ["범죄경제학", "범죄경제학", "AI 범죄"]}</script></head><body>
+<header class="top"><a class="brand" href="index.html">AI 범죄 연구실 — 범죄자의 계산서를 뒤집어라</a>
+<a href="index.html#chapters">목차</a><a href="practice/index.html">실전 연습장</a><a href="workbook.html">통합 작업본</a><a href="references.html">참고문헌</a><a href="data.html">모의 데이터</a></header><div class="wrap"><nav class="toc"><b>서장</b><a href='#three'>처음 오신 분께</a><a href='#why'>왜 · 큰 그림</a><a href="#s1">단계 1</a><a href="#s2">단계 2</a><a href="#s3">단계 3</a><a href="#s4">단계 4</a><a href='#tool'>단계 5 · 분석 도구</a><a href='#duel'>대결</a><a href='#wrap'>정리 퀴즈</a><a href='#outro'>아웃트로</a><a href='#kg'>지식 색인</a><a href='#export'>꾸러미</a></nav><main><section class="hero"><div><div class="no">서장</div><h1>진화하는 사이버 범죄</h1><p class="sub">의심했는데도 속는 이유, 그리고 범죄자의 계산법</p><div class="meta">원고 대응: PDF 서장 1)~2)<br>범죄경제학 초점: 기술은 중립이다 — 범죄가 되려면 비용·성공률·감시 공백 세 조건이 맞아야 한다</div></div><img class="cover" src="assets/lineup.webp" alt="연구실 식구 단체 사진 — 박사, 조수 하루, 인턴 시아·모아, 주판봇, 초파리 연구원" width="1200" height="678"></section><section class="three" id="three"><h2>처음 오신 분께 — 이 페이지를 3줄로</h2><ol><li><b>무엇을</b>: AI가 범죄자의 &#x27;계산서&#x27;를 어떻게 바꿨는지 두 장면과 숫자로 본다.</li><li><b>왜 중요한가</b>: 피해자는 몰라서 속은 게 아니다. 의심을 이길 증거가 싸졌기 때문에 속았다.</li><li><b>생활·업무에서는</b>: 생활에서는 &#x27;요청이 온 경로가 아닌 다른 경로로 다시 확인&#x27;이 첫 번째 방패다.</li></ol><p class="note">코드와 수식을 몰라도 됩니다. 수식은 조수(하루)가 대신 묻고, 박사가 숫자로 한 번 풀어 드립니다.</p><details><summary>영어 약어 풀이</summary><ul><li><b>AI</b> — Artificial Intelligence, 인공지능</li><li><b>DEX</b> — Decentralized Exchange, 탈중앙화 거래소</li><li><b>ROI</b> — Return on Investment, 투자 수익률</li></ul></details></section><h2 style='margin-top:30px'>등장인물</h2><div class="cast"><figure><img src="assets/chars/doctor/E07.webp" alt="박사" loading="lazy" width="58" height="58"><b>박사</b><span>해설자</span></figure><figure><img src="assets/chars/haru/E10.webp" alt="조수(하루)" loading="lazy" width="58" height="58"><b>조수(하루)</b><span>추적 팀 · 대응 설계</span></figure><figure><img src="assets/chars/sia/E09.webp" alt="인턴1 시아" loading="lazy" width="58" height="58"><b>인턴1 시아</b><span>추적 팀 · 현장 사례</span></figure><figure><img src="assets/chars/moa/E07.webp" alt="인턴2 모아" loading="lazy" width="58" height="58"><b>인턴2 모아</b><span>추적 팀 · 제도·법</span></figure><figure><img src="assets/chars/jupanbot/E16.webp" alt="주판봇" loading="lazy" width="58" height="58"><b>주판봇</b><span>계산 담당</span></figure><figure><img src="assets/chars/fruitfly/E09.webp" alt="초파리 연구원" loading="lazy" width="58" height="58"><b>초파리 연구원</b><span>데이터·모델 분석</span></figure><figure><img src="assets/chars/x1/E13.webp" alt="X1" loading="lazy" width="58" height="58"><b>X1</b><span>범죄자 대역 · 사기·사칭</span></figure><figure><img src="assets/chars/x2/E13.webp" alt="X2" loading="lazy" width="58" height="58"><b>X2</b><span>범죄자 대역 · 자동화 공격·랜섬</span></figure><figure><img src="assets/chars/x3/E13.webp" alt="X3" loading="lazy" width="58" height="58"><b>X3</b><span>범죄자 대역 · 세탁·정보 브로커</span></figure></div><section class="why" id="why"><h2>왜 이 장이 필요한가</h2><div class="say left"><img src="assets/chars/doctor/E09.webp" alt="박사" loading="lazy" width="58" height="58"><div class="bub"><div class="who">박사<span>해설자</span></div><div class="txt">뉴스는 'AI 범죄가 늘었다'고만 말한다. 왜 늘었는지 묻지 않으면 대응도 막연해진다. 그래서 이 시리즈는 범죄자의 손익부터 계산한다.</div></div></div></section><section class="big"><h3>큰 그림 — 지금 어디쯤인가</h3><div class="bigrow"><div><small>앞에서</small>—</div><div class="now"><small>이 장</small>범죄자의 계산서라는 공통 언어</div><div><small>다음에</small>1장: 그 계산서가 1:N 규모로 커지는 과정</div></div><p class="mute">이 장의 분석 도구: 범죄경제학. 여기서 한 번 멈춰도 괜찮아요. 처음엔 다들 계산서 기호에서 오래 봅니다.</p></section>
+<div class="say left"><img src="assets/chars/doctor/E07.webp" alt="박사" loading="lazy" width="58" height="58"><div class="bub"><div class="who">박사<span>해설자</span></div><div class="txt">서장은 두 장면에서 출발한다. 둘 다 피해자가 '피싱을 알고 있었고, 의심도 했다'는 공통점이 있다. 그런데도 속았다. 이 장은 그 이유를 묻는다.</div></div></div>
+<section class="step" id="s1"><div class="lab">단계 1</div><h2>의심했는데도 속는 두 장면</h2><h3>장면 1 — 동료 '민수'의 투자 링크</h3>
+<p>직장 동료 민수에게서 "요즘 투자 좀 잘 풀린다, 링크 하나 보낸다"는 메시지가 온다. 사칭일까 싶어 최근 나눈 대화와 회사 일을 물어본다. 답이 다 맞는다. 찜찜해서 가입만 했다. 다음 날 계좌에서 알 수 없는 인출이 시작된다.</p>
+<h3>장면 2 — 모르는 번호, 엄마의 목소리</h3>
+<p>"얘야, 사고가 났어. 경찰이랑 같이 있어. 빨리 이 통장으로…" 분명 엄마의 목소리다. 송금 직전에 엄마에게 다시 전화해 보니 무슨 일이냐고 되묻는다.</p>
+<div class="say left"><img src="assets/chars/sia/E09.webp" alt="인턴1 시아" loading="lazy" width="58" height="58"><div class="bub"><div class="who">인턴1 시아<span>추적 팀 · 현장 사례</span></div><div class="txt">두 장면 모두 국내외에서 실제로 여러 번 보고된 수법을 재구성한 것이에요. 첫 번째는 지인의 말투·대화 패턴·프로필 사진을 흉내 낸 AI 대화, 두 번째는 가족 목소리를 복제한 음성 합성이에요.</div></div></div>
+<div class="say left"><img src="assets/chars/moa/E07.webp" alt="인턴2 모아" loading="lazy" width="58" height="58"><div class="bub"><div class="who">인턴2 모아<span>추적 팀 · 제도·법</span></div><div class="txt">피해자는 '설마'보다 '아는 사람이니까'를 먼저 믿었어요. 과거 대화를 인용하고, 익숙한 말투를 쓰고, 가족 목소리까지 들려주면 의심이 버티지 못하죠.</div></div></div>
+<div class="say right x"><img src="assets/chars/x1/E13.webp" alt="X1" loading="lazy" width="58" height="58"><div class="bub"><div class="who">X1<span>범죄자 대역 · 사기·사칭</span></div><div class="txt">바로 그거다. 나는 의심을 없애려고 애쓰지 않는다. 의심을 이길 만큼의 '증거'를 싸게 만들 수 있으면 된다. 예전엔 그 증거가 비쌌고, 지금은 싸다.</div></div></div>
+
+<aside class="box key" style="background:#fffaf0;border-color:#c98318"><div class="bt" style="color:#c98318">핵심 정리</div><p>피해자가 몰라서 속은 것이 아니다. <strong>의심을 이길 만큼 정교한 증거를 범죄자가 싸게 만들 수 있게 된 것</strong>이 변화의 핵심이다.</p></aside></section><section class="step" id="s2"><div class="lab">단계 2</div><h2>기술은 중립이다 — 범죄가 되려면 필요한 세 조건</h2>
+<div class="say left"><img src="assets/chars/doctor/E07.webp" alt="박사" loading="lazy" width="58" height="58"><div class="bub"><div class="who">박사<span>해설자</span></div><div class="txt">새로운 기술이 나왔다고 자동으로 범죄가 늘지는 않는다. 원고는 기술이 범죄 도구로 작동하려면 사회적·경제적·심리적 조건이 함께 맞아야 한다고 본다. 세 가지로 정리하면 이렇다.</div></div></div>
+<table>
+<thead>
+<tr>
+<th>조건</th>
+<th>원고의 설명</th>
+<th>계산서의 변수</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>① 범죄 비용을 얼마나 줄이는가</td>
+<td>말투·음성을 몇 분 만에 복제해 수십 명에게 동시에 접근</td>
+<td>c(시도 비용)↓, N(시도 수)↑</td>
+</tr>
+<tr>
+<td>② 성공률을 얼마나 높이는가</td>
+<td>감정이 담긴 진짜 같은 목소리, 행동 패턴 예측</td>
+<td>π(성공 확률)↑</td>
+</tr>
+<tr>
+<td>③ 감시·통제가 얼마나 미비한가</td>
+<td>기술 확산은 빠르고 규제와 방어는 늦다</td>
+<td>p(검거 확률)↓, f(처벌)↓</td>
+</tr>
+</tbody>
+</table>
+<p>그리고 이 모든 조건에 연료를 대는 것이 <strong>개인정보</strong>다. AI가 '사람처럼' 말하고 들리는 것은 기술이 정교해서만이 아니라 무엇을 학습했느냐에 달려 있다. 유출된 정보, 공개된 SNS, 사진 속 위치, 댓글 습관이 모두 학습 재료가 된다.</p>
+<aside class="box econ" style="background:#fff4f2;border-color:#d6453d"><div class="bt" style="color:#d6453d">범죄자의 계산서 · X1의 하루 — 전통 사기와 AI 사기</div><p>X1이 두 가지 방식을 비교한다(모의 설정, 단위 만 원).</p>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>전통 수작업 사기</th>
+<th>AI 자동화 사기</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>하루 시도 수 N</td>
+<td>30통</td>
+<td>3,000건</td>
+</tr>
+<tr>
+<td>성공 확률 π</td>
+<td>0.4%</td>
+<td>0.3%</td>
+</tr>
+<tr>
+<td>성공 1건 수익 g</td>
+<td>500</td>
+<td>300</td>
+</tr>
+<tr>
+<td>시도 1건 비용 c</td>
+<td>2</td>
+<td>0.03</td>
+</tr>
+<tr>
+<td>성공 1건당 검거 확률 p</td>
+<td>25%</td>
+<td>3%</td>
+</tr>
+<tr>
+<td>처벌 금전 환산 f</td>
+<td>3,000</td>
+<td>3,000</td>
+</tr>
+</tbody>
+</table>
+<p>전통 방식은 하루 성공 0.12건, 순이익 <strong>−90만 원</strong>이다. AI 방식은 성공 9건, 순이익 <strong>1,800만 원</strong>이다. 건당 성공 확률은 오히려 낮은데도 결과가 뒤집힌다.</p></aside>
+
+<figure class="chart"><svg viewBox="0 0 720 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="X1의 하루 계산서: 전통 사기 vs AI 사기" font-family="Pretendard, Noto Sans KR, sans-serif">
+<rect width="720" height="380" fill="#ffffff"/>
+<text x="70" y="26" font-size="16" font-weight="700" fill="#1d2430">X1의 하루 계산서: 전통 사기 vs AI 사기</text>
+<text x="696" y="26" font-size="11" text-anchor="end" fill="#8a93a0">모의 데이터(가상)</text>
+<line x1="70" x2="696" y1="298.0" y2="298.0" stroke="#e8ecf1"/>
+<text x="62" y="302.0" font-size="11" text-anchor="end" fill="#5b6572">-1,000</text>
+<line x1="70" x2="696" y1="266.5" y2="266.5" stroke="#e8ecf1"/>
+<text x="62" y="270.5" font-size="11" text-anchor="end" fill="#5b6572">-500</text>
+<line x1="70" x2="696" y1="235.0" y2="235.0" stroke="#e8ecf1"/>
+<text x="62" y="239.0" font-size="11" text-anchor="end" fill="#5b6572">0</text>
+<line x1="70" x2="696" y1="203.5" y2="203.5" stroke="#e8ecf1"/>
+<text x="62" y="207.5" font-size="11" text-anchor="end" fill="#5b6572">500</text>
+<line x1="70" x2="696" y1="172.0" y2="172.0" stroke="#e8ecf1"/>
+<text x="62" y="176.0" font-size="11" text-anchor="end" fill="#5b6572">1,000</text>
+<line x1="70" x2="696" y1="140.5" y2="140.5" stroke="#e8ecf1"/>
+<text x="62" y="144.5" font-size="11" text-anchor="end" fill="#5b6572">1,500</text>
+<line x1="70" x2="696" y1="109.0" y2="109.0" stroke="#e8ecf1"/>
+<text x="62" y="113.0" font-size="11" text-anchor="end" fill="#5b6572">2,000</text>
+<line x1="70" x2="696" y1="77.5" y2="77.5" stroke="#e8ecf1"/>
+<text x="62" y="81.5" font-size="11" text-anchor="end" fill="#5b6572">2,500</text>
+<line x1="70" x2="696" y1="46.0" y2="46.0" stroke="#e8ecf1"/>
+<text x="62" y="50.0" font-size="11" text-anchor="end" fill="#5b6572">3,000</text>
+<text x="383.0" y="368" font-size="12" text-anchor="middle" fill="#3b4450">항목</text>
+<text transform="translate(16,181.0) rotate(-90)" font-size="12" text-anchor="middle" fill="#3b4450">만 원/일</text>
+<text x="148.2" y="314" font-size="11.5" text-anchor="middle" fill="#3b4450">기대 수익</text>
+<rect x="103.2" y="231.2" width="44.0" height="3.8" rx="3" fill="#9aa3ad"/>
+<text x="125.2" y="226.2" font-size="10.5" text-anchor="middle" fill="#1d2430">60</text>
+<rect x="149.2" y="64.9" width="44.0" height="170.1" rx="3" fill="#d6453d"/>
+<text x="171.2" y="59.9" font-size="10.5" text-anchor="middle" fill="#1d2430">2,700</text>
+<text x="304.8" y="314" font-size="11.5" text-anchor="middle" fill="#3b4450">직접 비용</text>
+<rect x="259.8" y="235.0" width="44.0" height="3.8" rx="3" fill="#9aa3ad"/>
+<text x="281.8" y="251.8" font-size="10.5" text-anchor="middle" fill="#1d2430">-60</text>
+<rect x="305.8" y="235.0" width="44.0" height="5.7" rx="3" fill="#d6453d"/>
+<text x="327.8" y="253.7" font-size="10.5" text-anchor="middle" fill="#1d2430">-90</text>
+<text x="461.2" y="314" font-size="11.5" text-anchor="middle" fill="#3b4450">처벌 기대비용</text>
+<rect x="416.2" y="235.0" width="44.0" height="5.7" rx="3" fill="#9aa3ad"/>
+<text x="438.2" y="253.7" font-size="10.5" text-anchor="middle" fill="#1d2430">-90</text>
+<rect x="462.2" y="235.0" width="44.0" height="51.0" rx="3" fill="#d6453d"/>
+<text x="484.2" y="299.0" font-size="10.5" text-anchor="middle" fill="#1d2430">-810</text>
+<text x="617.8" y="314" font-size="11.5" text-anchor="middle" fill="#3b4450">순이익</text>
+<rect x="572.8" y="235.0" width="44.0" height="5.7" rx="3" fill="#9aa3ad"/>
+<text x="594.8" y="253.7" font-size="10.5" text-anchor="middle" fill="#1d2430">-90</text>
+<rect x="618.8" y="121.6" width="44.0" height="113.4" rx="3" fill="#d6453d"/>
+<text x="640.8" y="116.6" font-size="10.5" text-anchor="middle" fill="#1d2430">1,800</text>
+<line x1="70" x2="696" y1="235.0" y2="235.0" stroke="#1d2430"/>
+<line x1="70" x2="92" y1="346" y2="346" stroke="#9aa3ad" stroke-width="4"/>
+<text x="98" y="350" font-size="11.5" fill="#3b4450">전통 수작업 사기</text>
+<line x1="213.5" x2="235.5" y1="346" y2="346" stroke="#d6453d" stroke-width="4"/>
+<text x="241.5" y="350" font-size="11.5" fill="#3b4450">AI 자동화 사기</text>
+</svg><figcaption>X1의 하루 계산서. 건당 성공률이 비슷해도, 시도 비용이 수십 분의 1로 떨어지고 시도 수가 백 배로 늘면 계산 결과는 정반대가 된다. (모의 데이터)</figcaption></figure>
+
+<div class="say left"><img src="assets/chars/jupanbot/E16.webp" alt="주판봇" loading="lazy" width="58" height="58"><div class="bub"><div class="who">주판봇<span>계산 담당</span></div><div class="txt">계산 핵심을 짚을게요. 전통 방식은 처벌 기대비용(90)이 수익(60)보다 커서 손해예요. AI 방식은 수익 2,700에서 비용 90과 처벌 기대비용 810을 빼도 1,800이 남아요. 바뀐 건 <strong>시도 비용 c와 검거 확률 p</strong>, 그리고 그 덕에 가능해진 <strong>시도 수 N</strong>이에요.</div></div></div>
+<div class="say left"><img src="assets/chars/fruitfly/E09.webp" alt="초파리 연구원" loading="lazy" width="58" height="58"><div class="bub"><div class="who">초파리 연구원<span>데이터·모델 분석</span></div><div class="txt">이 계산은 아래 '분석 도구 단계'의 계산기로 직접 바꿔 볼 수 있어요.</div></div></div></section><section class="step" id="s3"><div class="lab">단계 3</div><h2>AI 범죄의 여섯 가지 특징</h2>
+<div class="say left"><img src="assets/chars/doctor/E07.webp" alt="박사" loading="lazy" width="58" height="58"><div class="bub"><div class="who">박사<span>해설자</span></div><div class="txt">원고는 AI 범죄가 기존 사이버 범죄와 다른 점을 여섯 가지로 정리한다. 각 특징이 계산서의 어느 변수를 건드리는지 같이 보자.</div></div></div>
+<table>
+<thead>
+<tr>
+<th>특징</th>
+<th>원고 요지</th>
+<th>바뀌는 변수</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. 개인정보 악용의 자동화</td>
+<td>SNS·사진 메타데이터·댓글 패턴을 자동 수집해 대화 습관까지 학습</td>
+<td>c↓, π↑</td>
+</tr>
+<tr>
+<td>2. 은폐가 쉬운 해킹</td>
+<td>정상 트래픽에 숨고 시점을 분산, 자율 AI 에이전트가 경로를 바꿈</td>
+<td>p↓</td>
+</tr>
+<tr>
+<td>3. 정보 활용 방식의 진화</td>
+<td>유출 정보로 목소리·얼굴·문체를 재현, 오타까지 흉내</td>
+<td>π↑</td>
+</tr>
+<tr>
+<td>4. 범죄 수익의 은닉</td>
+<td>크로스체인 브리지·탈중앙화 거래소·스테이블코인</td>
+<td>p↓, g의 확정성↑</td>
+</tr>
+<tr>
+<td>5. 적발·단속의 어려움</td>
+<td>수사기관도 합성음을 구분하기 어렵고 원본 증거 확보가 어려움</td>
+<td>p↓, f↓</td>
+</tr>
+<tr>
+<td>6. 범죄 사업 모델의 소프트웨어화</td>
+<td>구독형 피싱 키트, 개발·고객지원·자금관리 팀을 갖춘 기업형 조직</td>
+<td>c↓, 진입장벽↓</td>
+</tr>
+</tbody>
+</table>
+<div class="say right x"><img src="assets/chars/x3/E13.webp" alt="X3" loading="lazy" width="58" height="58"><div class="bub"><div class="who">X3<span>범죄자 대역 · 세탁·정보 브로커</span></div><div class="txt">4번이 내 담당이다. 돈은 훔치는 순간이 아니라 <strong>쓸 수 있게 되는 순간</strong> 내 것이 된다. 그 사이를 AI가 계산해 준다. 수수료와 익명성을 동시에 따지는 경로를 사람 손으로 짜기는 어렵다.</div></div></div>
+<div class="say left"><img src="assets/chars/moa/E07.webp" alt="인턴2 모아" loading="lazy" width="58" height="58"><div class="bub"><div class="who">인턴2 모아<span>추적 팀 · 제도·법</span></div><div class="txt">원고 각주의 Chainalysis 보고를 보면 2024년 피싱·스캠 관련 암호화폐 수익이 <strong>최소</strong> 99억 달러로 추정됐어요. 다만 '최소'라는 말이 붙은 추정치이고, 서장의 '40조 원 세탁'은 '불법 주소가 받은 금액' 추정이라 표현을 다듬어야 해요.</div></div></div>
+
+<aside class="box case" style="background:#f4f7fd;border-color:#3d63c9"><div class="bt" style="color:#3d63c9">사례 분석 · 범죄 사업 모델의 소프트웨어화</div><p>원고가 강조하는 것은 범죄가 '개인의 일탈'에서 <strong>사업</strong>으로 바뀌었다는 점이다. 개발팀, 고객지원팀, 자금관리팀, 마케팅팀이 따로 있고, 캠페인 효과를 분석해 투자 수익률(ROI) 중심으로 수법을 고친다. 경제학으로 말하면 범죄의 <strong>고정비는 도구 개발자가 지고, 실행자는 구독료만 내는 구조</strong>가 생긴 것이다. 고정비가 쪼개져 공유되면 진입하는 사람이 늘어난다. 2장에서 이 효과를 '참여율' 모의 실험으로 확인한다.</p></aside></section><section class="step" id="s4"><div class="lab">단계 4</div><h2>이 블로그의 분석 틀과 읽는 순서</h2>
+<div class="say left"><img src="assets/chars/doctor/E07.webp" alt="박사" loading="lazy" width="58" height="58"><div class="bub"><div class="who">박사<span>해설자</span></div><div class="txt">원고는 "어떻게 범죄가 일어나는가"보다 "<strong>왜 범죄자는 AI를 고르는가</strong>"를 묻겠다고 선언한다. 그래서 대응도 '범죄자의 계산법'에서 출발해야 한다. 막연히 보안을 강화하거나 처벌을 높이는 것만으로는 부족하고, AI가 범죄자의 수익과 위험을 어떻게 바꾸는지 그 구조를 알아야 정밀한 억제가 가능하다.</div></div></div>
+<p>원고가 약속한 세 가지 접근을 블로그에서는 이렇게 이어 간다.</p>
+<ol>
+<li><strong>범죄경제학 렌즈</strong> — 모든 장에 '범죄자의 계산서'를 둔다.</li>
+<li><strong>생활유형별 맞춤 보안</strong> — 8장에서 SNS 활동형·온라인 금융형·재택 비즈니스형 세 유형의 연간 기대손실을 계산한다.</li>
+<li><strong>사회적·윤리적 차원</strong> — 9장에서 외부성과 집단 면역, 10장에서 회복력을 다룬다.</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>묶음</th>
+<th>장</th>
+<th>질문</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>현황과 배경</td>
+<td>1~3장</td>
+<td>AI는 범죄를 어떻게 바꿨고, 왜 범죄자는 AI를 고르며, 딥페이크는 무엇을 무너뜨리는가</td>
+</tr>
+<tr>
+<td>범죄 유형</td>
+<td>4~7장</td>
+<td>피싱·자동화 공격·감시와 프라이버시·금융 범죄는 각각 어떻게 작동하는가</td>
+</tr>
+<tr>
+<td>대응</td>
+<td>8~10장</td>
+<td>개인·사회·미래는 계산서를 어떻게 뒤집는가</td>
+</tr>
+</tbody>
+</table>
+<aside class="box flip" style="background:#effaf4;border-color:#1f8a5b"><div class="bt" style="color:#1f8a5b">계산서 뒤집기 — 대응 · 하루의 첫 번째 제안</div><div class="say left"><img src="assets/chars/haru/E10.webp" alt="조수(하루)" loading="lazy" width="58" height="58"><div class="bub"><div class="who">조수(하루)<span>추적 팀 · 대응 설계</span></div><div class="txt">서장에서 바로 쓸 수 있는 대응은 하나예요. <strong>"요청이 들어온 경로가 아닌 다른 경로로 한 번 더 확인한다."</strong> 민수의 링크는 민수에게 직접 전화로, 엄마의 전화는 엄마 번호로 다시 걸어서요. 이 습관 하나가 X1의 성공 확률 π를 크게 낮춰요. 10장에서 이 효과를 다른 대응과 함께 다시 계산할게요.</div></div></div></aside>
+</section><section class="step" id="tool"><div class="lab">단계 5 · 분석 도구 — 범죄경제학</div><h2>범죄자의 계산서 — 시도 한 번의 기대이익</h2><span class="tag">방법: 기댓값 계산</span>
+<div class="say left"><img src="assets/chars/doctor/E07.webp" alt="박사" loading="lazy" width="58" height="58"><div class="bub"><div class="who">박사<span>해설자</span></div><div class="txt">현장 질문부터 해 볼게요. 범죄가 왜 늘었는지 '나쁜 사람이 많아져서'로는 설명이 안 된다.</div></div></div>
+<div class="duo"><div class="whybox"><h4>왜 이 방법을 쓰나</h4><dl><dt>문제 상황</dt><dd>범죄가 왜 늘었는지 &#x27;나쁜 사람이 많아져서&#x27;로는 설명이 안 된다.</dd><dt>앞 방법의 한계</dt><dd>도덕만 보면 대응은 &#x27;조심하세요&#x27;에서 멈춘다.</dd><dt>해법</dt><dd>범죄자도 비용과 이익을 따진다고 보고, 시도 한 번의 기대이익을 숫자로 적는다.</dd><dt>쉽게 말하면</dt><dd>장사꾼이 &#x27;한 통 걸면 평균 얼마 남나&#x27;를 따지는 것과 같다.</dd></dl></div>
+<div class="mathbox"><h4>수식을 어려워하는 조수가 대신 물어봅니다</h4><div class="mini"><img src="assets/chars/haru/E04.webp" alt="조수(하루)" loading="lazy" width="58" height="58"><div><b>하루</b> 박사님, π(파이)랑 p가 같이 나오니까 헷갈려요. 이 식은 어떻게 읽어요?</div></div>
+<dl><dt>학교 수학으로 보면</dt><dd>확률과 통계의 &#x27;기댓값&#x27;, 그리고 일차식</dd></dl><table class="parts"><tr><th>식 조각</th><th>읽는 법</th><th>뜻</th></tr><tr><td><b>π</b></td><td>파이</td><td>시도 한 번이 성공할 확률</td></tr><tr><td><b>g</b></td><td>지</td><td>성공 한 번의 수익</td></tr><tr><td><b>p</b></td><td>피</td><td>성공했을 때 잡힐 확률</td></tr><tr><td><b>f</b></td><td>에프</td><td>잡혔을 때 처벌을 돈으로 환산한 값</td></tr><tr><td><b>c</b></td><td>씨</td><td>시도 한 번에 드는 비용</td></tr><tr><td><b>π × (g − p × f) − c</b></td><td></td><td>시도 한 번의 기대이익</td></tr></table>
+<dl><dt>숫자로 한 번 해 보기</dt><dd>AI 사기: 0.003 × (300 − 0.03 × 3,000) − 0.03 = 0.003 × 210 − 0.03 = 0.6만 원. 하루 3,000번이면 1,800만 원이다.</dd></dl><div class="mini"><img src="assets/chars/haru/E01.webp" alt="조수(하루)" loading="lazy" width="58" height="58"><div><b>하루</b> 아, 한 번에 6천 원 남는 장사를 3천 번 하는 거네요. 한 번은 작은데 곱하니까 커져요.</div></div></div></div>
+<div class="pair"><div><b>일상으로 치면</b>편의점이 껌 하나에 몇십 원 남겨도, 하루 수천 개 팔면 큰돈이 되는 것과 같다.</div><div><b>현장에서는</b>보안팀은 &#x27;어느 숫자를 바꾸면 이 곱셈이 0 아래로 내려가나&#x27;를 묻는다.</div></div>
+<h3>AI 판단 코너 — 주판봇의 확신, 맞을까?</h3><div class="say left"><img src="assets/chars/doctor/E07.webp" alt="박사" loading="lazy" width="58" height="58"><div class="bub"><div class="who">박사<span>해설자</span></div><div class="txt">시도 비용 c를 2만 원에서 300원으로 줄이면 무엇이 달라질까요?</div></div></div><div class="say left"><img src="assets/chars/jupanbot/E16.webp" alt="주판봇" loading="lazy" width="58" height="58"><div class="bub"><div class="who">주판봇<span>계산 담당</span></div><div class="txt">간단해요. 무조건 범죄가 늘어요. 비용이 줄었으니까요!</div></div></div><div class="say left"><img src="assets/chars/fruitfly/E09.webp" alt="초파리 연구원" loading="lazy" width="58" height="58"><div class="bub"><div class="who">초파리 연구원<span>데이터·모델 분석</span></div><div class="txt">정말 무조건일까? 검거 확률 p를 올리면 어떻게 되는지 아래 계산기에서 눌러 봐.</div></div></div><div class="say left"><img src="assets/chars/haru/E10.webp" alt="조수(하루)" loading="lazy" width="58" height="58"><div class="bub"><div class="who">조수(하루)<span>추적 팀 · 대응 설계</span></div><div class="txt">p를 3%에서 6%로 올리니 하루 순이익이 1,800만 원에서 990만 원으로 거의 반이 됐어요.</div></div></div>
+<div class="panel"><h4>실험: 직접 바꿔 보기</h4><div data-w="w-ch00" data-k="calc"></div></div>
+<div class="say left"><img src="assets/chars/doctor/E10.webp" alt="박사" loading="lazy" width="58" height="58"><div class="bub"><div class="who">박사<span>해설자</span></div><div class="txt">풀이: 기대이익은 '성공 확률 × (수익 − 처벌 기대)'에서 시도 비용을 뺀 값이다. AI는 c를 낮추고 N을 키웠다. 그래서 건당 성공률이 조금 낮아도 전체 이익은 커졌다.</div></div></div>
+<aside class="box warn" style="background:#fff8e6;border-color:#b7791f"><div class="bt" style="color:#b7791f">이 단계의 한계 — 여기서는 단순하게 봤어요</div><p>실제 범죄자는 위험을 싫어하기도 하고, 처벌을 돈으로 정확히 환산할 수도 없다. 2장에서 위험 회피를 넣은 베커 모형으로 보완한다.</p></aside>
+<details><summary>교안의 파이썬 코드로 보면 (몰라도 됩니다)</summary><p><code>profit = N * pi * (g - p * f) - N * c</code><br>시도 수 × 한 번의 기대이익을 계산한다.</p></details><div class="quiz" data-a="1"><div class="q">확인 퀴즈 · 시도 비용 c만 낮아지고 나머지가 그대로일 때, 기대이익은?</div><button type="button">① 줄어든다</button><button type="button">② 늘어난다</button><button type="button">③ 변하지 않는다</button><div class="ex" hidden><b></b>c는 빼는 항이다. c가 작아지면 기대이익은 늘어난다.</div></div></section><section class="step" id="duel"><div class="lab">대결</div><h2>X1 vs 추적 팀 — 계산서 공방</h2><div class="duel"><div class="vs"><div class="side xs"><img src="assets/chars/x1/E09.webp" alt="X1" loading="lazy" width="58" height="58"><b>X1의 수</b><br>공개 영상 몇 개로 엄마 목소리를 만들어 &#x27;사고 났다&#x27;고 전화한다.</div><div class="v">VS</div><div class="side ts"><img src="assets/chars/haru/E16.webp" alt="조수(하루)" loading="lazy" width="58" height="58"><b>조수(하루)의 수</b><br>전화를 끊고 엄마 번호로 다시 건다.</div></div><div class="verdict"><img src="assets/chars/doctor/E10.webp" alt="박사" loading="lazy" width="58" height="58"><div>심판 박사 · 추적 팀 승<br><span style="font-weight:400">추적 팀 승. 확인 한 번으로 성공 확률 π가 거의 0이 된다.</span></div></div></div></section><section class="step" id="wrap"><div class="lab">정리</div><h2>정리 퀴즈</h2><div class="quiz" data-a="1"><div class="q">확인 퀴즈 · 서장의 두 장면에서 피해자가 속은 핵심 이유는?</div><button type="button">① 피싱을 전혀 몰랐다</button><button type="button">② 의심을 이길 증거가 싸게 만들어졌다</button><button type="button">③ 은행이 실수했다</button><div class="ex" hidden><b></b>피해자는 의심했지만, AI가 만든 &#x27;아는 사람의 증거&#x27;가 의심을 이겼다.</div></div><div class="quiz" data-a="2"><div class="q">확인 퀴즈 · 원고가 말한 기술이 범죄가 되는 세 조건이 아닌 것은?</div><button type="button">① 범죄 비용을 줄인다</button><button type="button">② 성공률을 높인다</button><button type="button">③ 피해자가 늘 부자다</button><div class="ex" hidden><b></b>세 조건은 비용 감소, 성공률 상승, 감시·통제의 공백이다.</div></div></section><section class="step" id="outro"><div class="lab">아웃트로</div><h2>오늘의 연구실을 마치며</h2><div class="say left"><img src="assets/chars/doctor/E16.webp" alt="박사" loading="lazy" width="58" height="58"><div class="bub"><div class="who">박사<span>해설자</span></div><div class="txt">오늘은 '범죄자의 계산서'라는 공통 언어를 만들었다.</div></div></div><div class="say right x"><img src="assets/chars/x1/E15.webp" alt="X1" loading="lazy" width="58" height="58"><div class="bub"><div class="who">X1<span>범죄자 대역 · 사기·사칭</span></div><div class="txt">다시 걸면 끝이라니, 계산이 안 맞는군.</div></div></div><div class="say left"><img src="assets/chars/haru/E01.webp" alt="조수(하루)" loading="lazy" width="58" height="58"><div class="bub"><div class="who">조수(하루)<span>추적 팀 · 대응 설계</span></div><div class="txt">다음 장에서는 이 계산서가 수천 명 규모로 커지는 걸 볼게요.</div></div></div></section><section class="step kg" id="kg"><div class="lab">지식 색인</div><h2>이 장의 개념 지도</h2><table><tr><th>개념</th><th>뜻</th><th>함께 보는 장</th></tr><tr><td>기대이익</td><td>확률을 곱해 평균적으로 남는 이익</td><td><a href="ch00.html">서장</a> <a href="ch02.html">02장</a> <a href="ch10.html">10장</a></td></tr><tr><td>범죄경제학</td><td>범죄를 비용과 편익의 선택으로 분석하는 경제학</td><td><a href="ch00.html">서장</a> <a href="ch02.html">02장</a></td></tr><tr><td>대화형 자동범죄</td><td>AI가 사람처럼 대화하며 수행하는 범죄</td><td><a href="ch01.html">01장</a></td></tr><tr><td>서비스형 범죄(CaaS)</td><td>범죄 도구를 구독·임대로 파는 구조</td><td><a href="ch00.html">서장</a> <a href="ch07.html">07장</a></td></tr></table></section><section class="step export" id="export"><div class="lab">꾸러미</div><h2>온톨로지·서지 꾸러미</h2><p class="mute">강의 자료나 지식 그래프에 옮길 때 쓰세요.</p><details><summary>JSON-LD (schema.org)</summary><button class="copy" data-t="jl-ch00">복사</button><pre id="jl-ch00">{
+ &quot;@context&quot;: &quot;https://schema.org&quot;,
+ &quot;@type&quot;: &quot;LearningResource&quot;,
+ &quot;name&quot;: &quot;진화하는 사이버 범죄&quot;,
+ &quot;description&quot;: &quot;AI가 범죄자의 &#x27;계산서&#x27;를 어떻게 바꿨는지 두 장면과 숫자로 본다.&quot;,
+ &quot;inLanguage&quot;: &quot;ko&quot;,
+ &quot;isPartOf&quot;: {
+  &quot;@type&quot;: &quot;Book&quot;,
+  &quot;name&quot;: &quot;AI 범죄와 자기 방어&quot;
+ },
+ &quot;author&quot;: {
+  &quot;@type&quot;: &quot;Person&quot;,
+  &quot;name&quot;: &quot;안상선&quot;,
+  &quot;url&quot;: &quot;https://adminmrobo.github.io/who_am_i/who_am_i.html&quot;
+ },
+ &quot;teaches&quot;: [
+  &quot;기대이익&quot;,
+  &quot;범죄경제학&quot;,
+  &quot;대화형 자동범죄&quot;,
+  &quot;서비스형 범죄(CaaS)&quot;
+ ],
+ &quot;educationalLevel&quot;: &quot;입문&quot;,
+ &quot;url&quot;: &quot;https://adminmrobo.github.io/ai_crime_lab/ch00.html&quot;,
+ &quot;about&quot;: [
+  &quot;범죄경제학&quot;,
+  &quot;범죄경제학&quot;,
+  &quot;AI 범죄&quot;
+ ]
+}</pre></details><details><summary>BibTeX</summary><button class="copy" data-t="bib-ch00">복사</button><pre id="bib-ch00">@misc{ahn2026aicrime_ch00,
+  author = {안상선},
+  title = {AI 범죄 연구실 — 서장 진화하는 사이버 범죄},
+  note = {『AI 범죄와 자기 방어』 보충본},
+  year = {2026},
+  url = {https://adminmrobo.github.io/ai_crime_lab/ch00.html}
+}</pre></details></section><div class="pn"><a href="index.html">← 목차</a><a href="ch01.html">1장 AI 범죄, 새로운 디지털 위험의 시대 →</a></div><footer class="foot">글 · 안상선 (<a href="https://adminmrobo.github.io/who_am_i/who_am_i.html">https://adminmrobo.github.io/who_am_i/who_am_i.html</a>) · (주)M-Robo 대표<br>이 사이트는 『AI 범죄와 자기 방어』의 사례 보충본이다. '모의 데이터(가상)'는 설명용 가상의 수치이며 실제 통계가 아니다. X1~X3는 범죄자 역할을 맡은 대역이다. 범죄 수법은 작동 원리까지만 다룬다. · <a href="references.html">참고문헌</a> · <a href="data.html">모의 데이터와 재현 코드</a> · <a href="workbook.html">통합 작업본</a></footer></main></div><script src="assets/lab.js"></script></body></html>

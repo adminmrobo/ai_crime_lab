@@ -1,0 +1,38 @@
+<svg viewBox="0 0 720 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="X1의 하루 순이익: 방어를 하나씩 더할 때" font-family="Pretendard, Noto Sans KR, sans-serif">
+<rect width="720" height="380" fill="#ffffff"/>
+<text x="70" y="26" font-size="16" font-weight="700" fill="#1d2430">X1의 하루 순이익: 방어를 하나씩 더할 때</text>
+<text x="696" y="26" font-size="11" text-anchor="end" fill="#8a93a0">모의 데이터(가상)</text>
+<line x1="70" x2="696" y1="298.0" y2="298.0" stroke="#e8ecf1"/>
+<text x="62" y="302.0" font-size="11" text-anchor="end" fill="#5b6572">-500</text>
+<line x1="70" x2="696" y1="247.6" y2="247.6" stroke="#e8ecf1"/>
+<text x="62" y="251.6" font-size="11" text-anchor="end" fill="#5b6572">0</text>
+<line x1="70" x2="696" y1="197.2" y2="197.2" stroke="#e8ecf1"/>
+<text x="62" y="201.2" font-size="11" text-anchor="end" fill="#5b6572">500</text>
+<line x1="70" x2="696" y1="146.8" y2="146.8" stroke="#e8ecf1"/>
+<text x="62" y="150.8" font-size="11" text-anchor="end" fill="#5b6572">1,000</text>
+<line x1="70" x2="696" y1="96.4" y2="96.4" stroke="#e8ecf1"/>
+<text x="62" y="100.4" font-size="11" text-anchor="end" fill="#5b6572">1,500</text>
+<line x1="70" x2="696" y1="46.0" y2="46.0" stroke="#e8ecf1"/>
+<text x="62" y="50.0" font-size="11" text-anchor="end" fill="#5b6572">2,000</text>
+<text x="383.0" y="368" font-size="12" text-anchor="middle" fill="#3b4450">누적 대응</text>
+<text transform="translate(16,181.0) rotate(-90)" font-size="12" text-anchor="middle" fill="#3b4450">순이익(만 원/일)</text>
+<text x="122.2" y="314" font-size="11.5" text-anchor="middle" fill="#3b4450">기본</text>
+<rect x="100.2" y="66.2" width="44.0" height="181.4" rx="3" fill="#d6453d"/>
+<text x="122.2" y="61.2" font-size="10.5" text-anchor="middle" fill="#1d2430">1,800</text>
+<text x="226.5" y="314" font-size="11.5" text-anchor="middle" fill="#3b4450">+속도 제한</text>
+<rect x="204.5" y="193.2" width="44.0" height="54.4" rx="3" fill="#d6453d"/>
+<text x="226.5" y="188.2" font-size="10.5" text-anchor="middle" fill="#1d2430">540</text>
+<text x="330.8" y="314" font-size="11.5" text-anchor="middle" fill="#3b4450">+확인 습관</text>
+<rect x="308.8" y="227.5" width="44.0" height="20.1" rx="3" fill="#d6453d"/>
+<text x="330.8" y="222.5" font-size="10.5" text-anchor="middle" fill="#1d2430">200</text>
+<text x="435.2" y="314" font-size="11.5" text-anchor="middle" fill="#3b4450">+패스키</text>
+<rect x="413.2" y="238.9" width="44.0" height="8.7" rx="3" fill="#d6453d"/>
+<text x="435.2" y="233.9" font-size="10.5" text-anchor="middle" fill="#1d2430">86</text>
+<text x="539.5" y="314" font-size="11.5" text-anchor="middle" fill="#3b4450">+지급정지</text>
+<rect x="517.5" y="247.6" width="44.0" height="1.1" rx="3" fill="#d6453d"/>
+<text x="539.5" y="261.7" font-size="10.5" text-anchor="middle" fill="#1d2430">-11</text>
+<text x="643.8" y="314" font-size="11.5" text-anchor="middle" fill="#3b4450">+국제 공조</text>
+<rect x="621.8" y="247.6" width="44.0" height="6.0" rx="3" fill="#d6453d"/>
+<text x="643.8" y="266.6" font-size="10.5" text-anchor="middle" fill="#1d2430">-59</text>
+<line x1="70" x2="696" y1="247.6" y2="247.6" stroke="#1d2430"/>
+</svg>

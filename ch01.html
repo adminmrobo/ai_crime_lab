@@ -1,0 +1,156 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI 범죄, 새로운 디지털 위험의 시대 · AI 범죄 연구실</title><meta name="description" content="사기꾼 한 명이 하루 몇 명을 속이던 시대에서, AI 한 대가 수천 명과 동시에 대화하는 시대로">
+<meta property="og:title" content="AI 범죄, 새로운 디지털 위험의 시대 · AI 범죄 연구실"><meta property="og:description" content="사기꾼 한 명이 하루 몇 명을 속이던 시대에서, AI 한 대가 수천 명과 동시에 대화하는 시대로">
+<meta property="og:image" content="https://adminmrobo.github.io/ai_crime_lab/assets/lineup.webp"><meta property="og:url" content="https://adminmrobo.github.io/ai_crime_lab/ch01.html"><meta property="og:type" content="article">
+<link rel="stylesheet" href="assets/lab.css"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "LearningResource", "name": "AI 범죄, 새로운 디지털 위험의 시대", "description": "AI 한 대가 수천 명과 동시에 대화하는 '대화형 자동범죄'를 본다.", "inLanguage": "ko", "isPartOf": {"@type": "Book", "name": "AI 범죄와 자기 방어"}, "author": {"@type": "Person", "name": "안상선", "url": "https://adminmrobo.github.io/who_am_i/who_am_i.html"}, "teaches": ["1:N 생산함수", "퍼널", "IDSGAN", "딥페이크 성착취물"], "educationalLevel": "입문", "url": "https://adminmrobo.github.io/ai_crime_lab/ch01.html", "about": ["AI·데이터 분석", "범죄경제학", "AI 범죄"]}</script></head><body>
+<header class="top"><a class="brand" href="index.html">AI 범죄 연구실 — 범죄자의 계산서를 뒤집어라</a>
+<a href="index.html#chapters">목차</a><a href="practice/index.html">실전 연습장</a><a href="workbook.html">통합 작업본</a><a href="references.html">참고문헌</a><a href="data.html">모의 데이터</a></header><div class="wrap"><nav class="toc"><b>1장</b><a href='#three'>처음 오신 분께</a><a href='#why'>왜 · 큰 그림</a><a href="#s1">단계 1</a><a href="#s2">단계 2</a><a href="#s3">단계 3</a><a href="#s4">단계 4</a><a href='#tool'>단계 5 · 분석 도구</a><a href='#duel'>대결</a><a href='#wrap'>정리 퀴즈</a><a href='#outro'>아웃트로</a><a href='#kg'>지식 색인</a><a href='#export'>꾸러미</a></nav><main><section class="hero"><div><div class="no">1장</div><h1>AI 범죄, 새로운 디지털 위험의 시대</h1><p class="sub">사기꾼 한 명이 하루 몇 명을 속이던 시대에서, AI 한 대가 수천 명과 동시에 대화하는 시대로</p><div class="meta">원고 대응: PDF 1장 1-1·1-2 + 5장 확장본 1장<br>범죄경제학 초점: 1:N 생산함수 — 대화형 자동범죄가 바꾼 범죄의 규모와 속도</div></div><img class="cover" src="assets/lineup.webp" alt="연구실 식구 단체 사진 — 박사, 조수 하루, 인턴 시아·모아, 주판봇, 초파리 연구원" width="1200" height="678"></section><section class="three" id="three"><h2>처음 오신 분께 — 이 페이지를 3줄로</h2><ol><li><b>무엇을</b>: AI 한 대가 수천 명과 동시에 대화하는 &#x27;대화형 자동범죄&#x27;를 본다.</li><li><b>왜 중요한가</b>: 범죄의 생산량이 사람 수가 아니라 연산 자원에 비례하게 됐다.</li><li><b>생활·업무에서는</b>: 생활에서는 &#x27;얼굴을 봤으니 안전&#x27;이라는 규칙부터 버려야 한다.</li></ol><p class="note">코드와 수식을 몰라도 됩니다. 수식은 조수(하루)가 대신 묻고, 박사가 숫자로 한 번 풀어 드립니다.</p><details><summary>영어 약어 풀이</summary><ul><li><b>DDoS</b> — Distributed Denial of Service, 분산 서비스 거부 공격</li><li><b>GAN</b> — Generative Adversarial Network, 생성적 적대 신경망</li><li><b>IDS</b> — Intrusion Detection System, 침입 탐지 시스템</li></ul></details></section><h2 style='margin-top:30px'>등장인물</h2><div class="cast"><figure><img src="assets/chars/doctor/E07.webp" alt="박사" loading="lazy" width="58" height="58"><b>박사</b><span>해설자</span></figure><figure><img src="assets/chars/haru/E10.webp" alt="조수(하루)" loading="lazy" width="58" height="58"><b>조수(하루)</b><span>추적 팀 · 대응 설계</span></figure><figure><img src="assets/chars/sia/E09.webp" alt="인턴1 시아" loading="lazy" width="58" height="58"><b>인턴1 시아</b><span>추적 팀 · 현장 사례</span></figure><figure><img src="assets/chars/moa/E07.webp" alt="인턴2 모아" loading="lazy" width="58" height="58"><b>인턴2 모아</b><span>추적 팀 · 제도·법</span></figure><figure><img src="assets/chars/jupanbot/E16.webp" alt="주판봇" loading="lazy" width="58" height="58"><b>주판봇</b><span>계산 담당</span></figure><figure><img src="assets/chars/fruitfly/E09.webp" alt="초파리 연구원" loading="lazy" width="58" height="58"><b>초파리 연구원</b><span>데이터·모델 분석</span></figure><figure><img src="assets/chars/x1/E13.webp" alt="X1" loading="lazy" width="58" height="58"><b>X1</b><span>범죄자 대역 · 사기·사칭</span></figure><figure><img src="assets/chars/x2/E13.webp" alt="X2" loading="lazy" width="58" height="58"><b>X2</b><span>범죄자 대역 · 자동화 공격·랜섬</span></figure><figure><img src="assets/chars/x3/E13.webp" alt="X3" loading="lazy" width="58" height="58"><b>X3</b><span>범죄자 대역 · 세탁·정보 브로커</span></figure></div><section class="why" id="why"><h2>왜 이 장이 필요한가</h2><div class="say left"><img src="assets/chars/doctor/E09.webp" alt="박사" loading="lazy" width="58" height="58"><div class="bub"><div class="who">박사<span>해설자</span></div><div class="txt">서장의 계산서는 한 사람의 하루였다. 그런데 AI는 '사람 수'라는 제약을 없앴다. 규모가 바뀌면 피해의 모양도 바뀐다.</div></div></div></section><section class="big"><h3>큰 그림 — 지금 어디쯤인가</h3><div class="bigrow"><div><small>앞에서</small>서장: 시도 한 번의 계산서</div><div class="now"><small>이 장</small>그 계산서를 곱하는 1:N 구조</div><div><small>다음에</small>2장: 범죄를 고르는 사람이 왜 늘어나는가</div></div><p class="mute">이 장의 분석 도구: AI·데이터 분석. 여기서 한 번 멈춰도 괜찮아요. 처음엔 다들 계산서 기호에서 오래 봅니다.</p></section>
+<div class="say left"><img src="assets/chars/doctor/E07.webp" alt="박사" loading="lazy" width="58" height="58"><div class="bub"><div class="who">박사<span>해설자</span></div><div class="txt">1장은 '규모'의 이야기다. AI가 범죄를 더 똑똑하게 만든 것도 맞지만, 더 결정적인 변화는 <strong>한 사람이 감당할 수 있는 피해자 수의 한계가 사라졌다</strong>는 점이다.</div></div></div>
+<section class="step" id="s1"><div class="lab">단계 1</div><h2>대화형 자동범죄란 무엇인가</h2><p>과거에는 사기범이 피해자와 직접 마주하거나, 코딩을 익힌 전문 해커만 시스템에 침입할 수 있었다. 지금은 얼굴을 마주할 필요도, 고도의 전문성도 필요 없다. 원고는 이를 <strong>대화형 자동범죄(Conversational Automated Crime)</strong>라는 새 유형으로 규정한다. AI가 사람처럼 자연스럽게 대화하고, 맞춤형 메시지나 콘텐츠를 자동으로 만들어 범죄 목적을 수행하는 디지털 범죄다(King et al., 2020; TRM).</p>
+<div class="say left"><img src="assets/chars/sia/E09.webp" alt="인턴1 시아" loading="lazy" width="58" height="58"><div class="bub"><div class="who">인턴1 시아<span>추적 팀 · 현장 사례</span></div><div class="txt">핵심은 AI가 '도구'에서 '실행자'로 올라섰다는 점이에요. 사람이 문장을 쓰고 AI가 다듬는 게 아니라, AI가 실시간 대화로 감정을 읽고 신뢰를 쌓고 민감한 정보를 뽑아내요.</div></div></div>
+<div class="say left"><img src="assets/chars/doctor/E07.webp" alt="박사" loading="lazy" width="58" height="58"><div class="bub"><div class="who">박사<span>해설자</span></div><div class="txt">5장 확장본의 비유를 빌리면, 예전 자동화 공격은 자동차 공장의 <strong>조립 로봇</strong>이었다. 정해진 동작을 빠르게 반복하지만 예상 밖 상황에는 대처하지 못한다. AI 공격은 대상마다 조립법을 바꾸는 <strong>생각하는 로봇</strong>이다.</div></div></div>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>반복하는 기계(기존 자동화)</th>
+<th>생각하는 기계(AI 자동화)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>작동 방식</td>
+<td>미리 정한 규칙과 패턴</td>
+<td>상황을 분석해 스스로 수법 선택</td>
+</tr>
+<tr>
+<td>대상</td>
+<td>모두에게 같은 메시지</td>
+<td>사람마다 다른 메시지</td>
+</tr>
+<tr>
+<td>예상 밖 반응</td>
+<td>대처 불가</td>
+<td>즉석에서 대답을 바꿈</td>
+</tr>
+<tr>
+<td>탐지</td>
+<td>비교적 쉬움</td>
+<td>정상 행동을 흉내 내 어려움</td>
+</tr>
+</tbody>
+</table></section><section class="step" id="s2"><div class="lab">단계 2</div><h2>사례 분석 — 10분 만에 8억 원, 푸젠성 영상통화 사기</h2>
+<aside class="box case" style="background:#f4f7fd;border-color:#3d63c9"><div class="bt" style="color:#3d63c9">사례 분석 · 2023년 중국 푸젠성 AI 영상통화 사기</div><p>한 기술 기업 대표가 평소 알던 지인과 영상통화를 했다. 외모·말투·몸짓이 모두 같았고 실시간 통화처럼 보였다. 지인은 입찰 보증금이 급하다며 송금을 부탁했고, 대표는 430만 위안(약 8억 원)을 보냈다. 지인에게 나중에 확인했을 때에야 얼굴과 목소리가 실시간으로 합성된 가짜였음을 알았다(중앙일보, 2023-06-19 보도 정리).</p></aside>
+
+<div class="say right x"><img src="assets/chars/x1/E13.webp" alt="X1" loading="lazy" width="58" height="58"><div class="bub"><div class="who">X1<span>범죄자 대역 · 사기·사칭</span></div><div class="txt">이 사건을 내 계산서로 다시 써 보자. 예전 같으면 지인의 얼굴과 목소리를 흉내 낼 공범을 구하고, 말투를 연습시키고, 들킬 위험을 감수해야 했다. 지금은 공개 영상 몇 개와 합성 도구면 된다. <strong>고정비가 사라졌고, 성공했을 때의 수익은 그대로다.</strong></div></div></div>
+<div class="say left"><img src="assets/chars/moa/E07.webp" alt="인턴2 모아" loading="lazy" width="58" height="58"><div class="bub"><div class="who">인턴2 모아<span>추적 팀 · 제도·법</span></div><div class="txt">그리고 피해자가 '영상으로 직접 확인했다'는 사실이 오히려 의심을 거두게 했어요. 확인 수단이 공격 수단으로 바뀐 거예요. 3장에서 다룰 2024년 홍콩 화상회의 사기는 이 수법이 다자간 회의로 커진 사례예요.</div></div></div>
+
+<div class="say left"><img src="assets/chars/doctor/E07.webp" alt="박사" loading="lazy" width="58" height="58"><div class="bub"><div class="who">박사<span>해설자</span></div><div class="txt">이 사건이 무서운 이유는 기술의 정교함보다 <strong>신뢰 체계의 붕괴</strong>에 있다. 사회는 '얼굴을 보고, 목소리를 듣고, 아는 사람이 맞다'는 확인 위에서 돌아간다. 그 확인이 위조되면 모든 거래에 추가 확인 비용이 붙는다. 피해자 한 명의 손실을 넘어 사회 전체의 거래 비용이 오르는 것이다.</div></div></div></section><section class="step" id="s3"><div class="lab">단계 3</div><h2>숫자로 보는 1:N — 메시지 1만 건의 여정</h2><p>원고는 "과거에는 사기꾼 한 명이 하루 몇 명을 겨우 속였지만, 지금은 AI 한 대가 수십만 명을 표적으로 삼을 수 있다"고 쓴다. 이것이 계산서에서 어떤 의미인지 초파리 연구원이 모의 실험으로 확인했다.</p>
+<aside class="box data" style="background:#f3f1fd;border-color:#7a5bd1"><div class="bt" style="color:#7a5bd1">주판봇·초파리 분석실 · 모의 실험 — 일반 대량 문자 vs AI 맞춤 메시지 1만 건</div><div class="say left"><img src="assets/chars/fruitfly/E09.webp" alt="초파리 연구원" loading="lazy" width="58" height="58"><div class="bub"><div class="who">초파리 연구원<span>데이터·모델 분석</span></div><div class="txt">같은 1만 명에게 두 종류의 메시지를 보냈다고 가정했어요. 단계마다 다음 단계로 넘어갈 확률을 정해 두고 이항분포로 뽑았어요(시드 고정). 일반 문자는 열람 21%, 클릭 15%, 정보 입력 19%, 송금 15%. AI 맞춤 메시지는 이름·직장·최근 관심사를 반영했다고 보고 열람 54%, 클릭 27%, 입력 28%, 송금 22%로 설정했어요.</div></div></div>
+<div class="say left"><img src="assets/chars/jupanbot/E16.webp" alt="주판봇" loading="lazy" width="58" height="58"><div class="bub"><div class="who">주판봇<span>계산 담당</span></div><div class="txt">결과는 일반 문자 <strong>송금 10명</strong>, AI 맞춤 메시지 <strong>송금 83명</strong>이에요. 단계마다 확률이 두세 배씩만 올라가도, 네 단계를 곱하면 최종 결과는 8배 넘게 벌어져요. 여기에 '하루 처리량'을 곱하면 차이가 더 커져요. 사람 사기꾼이 하루 깊은 대화를 8건 한다면, AI 챗봇은 5,000건을 동시에 해요.</div></div></div></aside>
+
+<figure class="chart"><svg viewBox="0 0 720 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="메시지 1만 건이 송금까지 가는 길" font-family="Pretendard, Noto Sans KR, sans-serif"><rect width="720" height="380" fill="#fff"/>
+<text x="20" y="26" font-size="16" font-weight="700" fill="#1d2430">메시지 1만 건이 송금까지 가는 길</text>
+<text x="696" y="26" font-size="11" text-anchor="end" fill="#8a93a0">모의 데이터(가상)</text>
+<text x="142" y="76.4" font-size="12" text-anchor="end" fill="#3b4450">발송</text>
+<rect x="150" y="51.3" width="506.0" height="19.1" rx="3" fill="#9aa3ad"/>
+<text x="661.0" y="64.8" font-size="10.5" fill="#1d2430">10,000</text>
+<rect x="150" y="72.4" width="506.0" height="19.1" rx="3" fill="#d6453d"/>
+<text x="661.0" y="86.0" font-size="10.5" fill="#1d2430">10,000</text>
+<text x="142" y="129.2" font-size="12" text-anchor="end" fill="#3b4450">열람</text>
+<rect x="150" y="104.1" width="105.8" height="19.1" rx="3" fill="#9aa3ad"/>
+<text x="260.8" y="117.6" font-size="10.5" fill="#1d2430">2,091</text>
+<rect x="150" y="125.2" width="276.8" height="19.1" rx="3" fill="#d6453d"/>
+<text x="431.8" y="138.8" font-size="10.5" fill="#1d2430">5,471</text>
+<text x="142" y="182.0" font-size="12" text-anchor="end" fill="#3b4450">링크 클릭</text>
+<rect x="150" y="156.9" width="17.1" height="19.1" rx="3" fill="#9aa3ad"/>
+<text x="172.1" y="170.4" font-size="10.5" fill="#1d2430">337</text>
+<rect x="150" y="178.0" width="76.3" height="19.1" rx="3" fill="#d6453d"/>
+<text x="231.3" y="191.6" font-size="10.5" fill="#1d2430">1,508</text>
+<text x="142" y="234.8" font-size="12" text-anchor="end" fill="#3b4450">정보 입력</text>
+<rect x="150" y="209.7" width="3.3" height="19.1" rx="3" fill="#9aa3ad"/>
+<text x="158.3" y="223.2" font-size="10.5" fill="#1d2430">65</text>
+<rect x="150" y="230.8" width="20.8" height="19.1" rx="3" fill="#d6453d"/>
+<text x="175.8" y="244.4" font-size="10.5" fill="#1d2430">412</text>
+<text x="142" y="287.6" font-size="12" text-anchor="end" fill="#3b4450">송금</text>
+<rect x="150" y="262.5" width="1.0" height="19.1" rx="3" fill="#9aa3ad"/>
+<text x="156.0" y="276.0" font-size="10.5" fill="#1d2430">10</text>
+<rect x="150" y="283.6" width="4.2" height="19.1" rx="3" fill="#d6453d"/>
+<text x="159.2" y="297.2" font-size="10.5" fill="#1d2430">83</text>
+<text x="403.0" y="368" font-size="12" text-anchor="middle" fill="#3b4450">단계별 인원(명)</text>
+<rect x="150" y="336" width="18" height="10" fill="#9aa3ad" rx="2"/><text x="174" y="345" font-size="11.5" fill="#3b4450">일반 대량 문자</text>
+<rect x="282.0" y="336" width="18" height="10" fill="#d6453d" rx="2"/><text x="306.0" y="345" font-size="11.5" fill="#3b4450">AI 맞춤 메시지</text>
+</svg><figcaption>단계마다 넘어갈 확률이 조금씩 오르면 최종 송금 인원은 곱셈으로 불어난다. AI가 바꾼 것은 한 단계가 아니라 모든 단계다. (모의 데이터)</figcaption></figure>
+
+<aside class="box econ" style="background:#fff4f2;border-color:#d6453d"><div class="bt" style="color:#d6453d">범죄자의 계산서 · X1의 생산함수</div><p>전통 사기의 생산량은 <strong>사람 수 × 하루 대화 수 × 성공률</strong>이었다. 사람을 늘리면 인건비와 내부 고발 위험이 같이 늘었다. AI 사기의 생산량은 <strong>연산 자원 × 대화 수 × 성공률</strong>이다. 연산 자원은 클라우드에서 빌리면 되고, 입을 열 공범도 없다.</p>
+<div class="say right x"><img src="assets/chars/x1/E13.webp" alt="X1" loading="lazy" width="58" height="58"><div class="bub"><div class="who">X1<span>범죄자 대역 · 사기·사칭</span></div><div class="txt">직원을 늘리지 않고도 매출을 600배로 늘리는 사업이 있다면, 누구라도 그 사업을 하고 싶어 하지 않겠나.</div></div></div></aside></section><section class="step" id="s4"><div class="lab">단계 4</div><h2>AI 범죄의 유형과 사회적 파장</h2><h3>개인 맞춤형 피싱과 심리조작</h3>
+<p>피해자의 이름·직업·관심사·대화 스타일을 학습한 AI가 진짜 사람처럼 메시지를 보낸다. 여기에 음성 합성이 더해지면 피해자는 아는 사람의 목소리로 전화를 받는다. 원고는 <strong>몸캠 피싱</strong>의 자동화도 지적한다. 실제 사람처럼 보이는 가상 인물이 영상통화를 유도하고, 녹화한 뒤 협박 메시지를 자동으로 보낸다. 이 모든 과정이 대규모로 동시에 진행된다.</p>
+<h3>자동화된 해킹과 악성코드</h3>
+<ul>
+<li><strong>IDSGAN</strong>(Lin et al., 2018): 생성적 적대 신경망으로 침입 탐지 시스템을 속이는 트래픽을 만들어, 실험에서 탐지율이 80% 이상에서 1% 미만으로 떨어졌다.</li>
+<li><strong>AI 기반 DDoS</strong>: 정상 요청처럼 보이는 트래픽으로 서버를 마비시키고 공격 시점과 패턴을 자동으로 바꾼다.</li>
+<li><strong>범죄 특화 AI</strong>: WormGPT·FraudGPT 같은 도구가 피싱 메일 작성부터 사기 실행까지 '범죄 자동화 플랫폼'으로 광고되었다(Trustwave, 2023).</li>
+</ul>
+<h3>법의 공백과 신뢰 붕괴</h3>
+<div class="say left"><img src="assets/chars/moa/E07.webp" alt="인턴2 모아" loading="lazy" width="58" height="58"><div class="bub"><div class="who">인턴2 모아<span>추적 팀 · 제도·법</span></div><div class="txt">원고는 딥페이크 성범죄의 피해가 특히 회복하기 어렵다고 강조해요. 삭제는 어렵고 유포는 통제되지 않아요. 피해자가 반박할수록 오히려 퍼지는 역효과도 있어요.</div></div></div>
+<div class="say left"><img src="assets/chars/moa/E07.webp" alt="인턴2 모아" loading="lazy" width="58" height="58"><div class="bub"><div class="who">인턴2 모아<span>추적 팀 · 제도·법</span></div><div class="txt">법 쪽에서 한 가지 갱신할 점이 있어요. 원고는 "단순 제작·보관은 처벌 사각지대"라고 썼는데, 2024년 10월 성폭력처벌법 개정으로 허위영상물의 소지·구입·저장·시청도 처벌 대상이 됐어요. 출판 전에 최신 조문으로 고쳐야 해요.</div></div></div>
+<div class="say left"><img src="assets/chars/doctor/E07.webp" alt="박사" loading="lazy" width="58" height="58"><div class="bub"><div class="who">박사<span>해설자</span></div><div class="txt">그럼에도 '입증 부담' 문제는 남는다. 피해자가 "AI가 쓰였다"는 사실을 스스로 입증해야 하는 구조라면, 법이 있어도 실제 보호는 약하다. 2장과 5장에서 이 입증의 비대칭을 계산서의 f(처벌)가 사실상 낮아지는 문제로 다시 다룬다.</div></div></div>
+
+<aside class="box flip" style="background:#effaf4;border-color:#1f8a5b"><div class="bt" style="color:#1f8a5b">계산서 뒤집기 — 대응 · 1:N에는 1:N으로</div><div class="say left"><img src="assets/chars/haru/E10.webp" alt="조수(하루)" loading="lazy" width="58" height="58"><div class="bub"><div class="who">조수(하루)<span>추적 팀 · 대응 설계</span></div><div class="txt">공격이 1:N이면 방어도 1:N이어야 해요. 한 사람이 하나씩 조심하는 것만으로는 부족해요.</div></div></div>
+<ul>
+<li><strong>통신사·플랫폼의 발송량 제한과 이상 탐지</strong>: 한 계정이 짧은 시간에 수천 건의 대화를 여는 패턴은 그 자체가 신호다. 시도 수 N을 직접 깎는다.</li>
+<li><strong>영상·음성 확인을 고액 송금의 근거에서 빼기</strong>: 푸젠성·홍콩 사례처럼 '얼굴을 봤으니 안전'이라는 규칙을 조직 규정에서 없앤다. 성공 확률 π를 깎는다.</li>
+<li><strong>피해 신고의 속도</strong>: 대화형 자동범죄는 같은 대본을 수천 명에게 쓴다. 한 명의 빠른 신고가 대본 전체를 무력화한다(9장의 집단 면역).</li>
+</ul></aside>
+
+<aside class="box key" style="background:#fffaf0;border-color:#c98318"><div class="bt" style="color:#c98318">핵심 정리</div><ul>
+<li>AI는 범죄를 '사건'에서 '공정'으로 바꿨다. 생산량은 사람 수가 아니라 연산 자원에 비례한다.</li>
+<li>단계별 확률의 작은 상승이 곱해져 최종 피해는 크게 불어난다(모의 실험에서 약 8배).</li>
+<li>대응도 개인 단위가 아니라 발송량·확인 규칙·신고 속도 같은 <strong>시스템 단위</strong>로 설계해야 한다.</li>
+</ul></aside>
+</section><section class="step" id="tool"><div class="lab">단계 5 · 분석 도구 — AI·데이터 분석</div><h2>퍼널 확률의 곱셈 — 맞춤 메시지는 왜 8배가 되나</h2><span class="tag">방법: 확률의 곱셈(독립시행)</span>
+<div class="say left"><img src="assets/chars/doctor/E07.webp" alt="박사" loading="lazy" width="58" height="58"><div class="bub"><div class="who">박사<span>해설자</span></div><div class="txt">현장 질문부터 해 볼게요. AI 맞춤 메시지는 각 단계의 성공률을 2~3배 올린다. 최종 피해가 2~3배일까?</div></div></div>
+<div class="duo"><div class="whybox"><h4>왜 이 방법을 쓰나</h4><dl><dt>문제 상황</dt><dd>AI 맞춤 메시지는 각 단계의 성공률을 2~3배 올린다. 최종 피해가 2~3배일까?</dd><dt>앞 방법의 한계</dt><dd>단계별 비율만 보면 &#x27;조금 더 잘 통한다&#x27; 정도로 느껴진다.</dd><dt>해법</dt><dd>단계 확률을 곱해 최종 전환율을 계산한다.</dd><dt>쉽게 말하면</dt><dd>문 네 개를 연달아 통과하는 게임에서, 문마다 통과율이 두 배면 끝까지 가는 사람은 16배가 될 수 있다.</dd></dl></div>
+<div class="mathbox"><h4>수식을 어려워하는 조수가 대신 물어봅니다</h4><div class="mini"><img src="assets/chars/haru/E04.webp" alt="조수(하루)" loading="lazy" width="58" height="58"><div><b>하루</b> 열람·클릭·입력·송금, 확률이 네 개인데 왜 더하지 않고 곱해요?</div></div>
+<dl><dt>학교 수학으로 보면</dt><dd>확률의 곱셈정리(독립시행)</dd></dl><table class="parts"><tr><th>식 조각</th><th>읽는 법</th><th>뜻</th></tr><tr><td><b>r₁</b></td><td>알 일</td><td>열람할 확률</td></tr><tr><td><b>r₂</b></td><td>알 이</td><td>열람한 사람이 클릭할 확률</td></tr><tr><td><b>r₃·r₄</b></td><td></td><td>입력·송금할 확률</td></tr><tr><td><b>N × r₁ × r₂ × r₃ × r₄</b></td><td></td><td>끝까지 간 사람 수</td></tr></table>
+<dl><dt>숫자로 한 번 해 보기</dt><dd>일반 문자: 10,000 × 0.21 × 0.15 × 0.19 × 0.15 ≈ 9명. AI 맞춤: 10,000 × 0.54 × 0.27 × 0.28 × 0.22 ≈ 90명. 모의 실험은 무작위 추출이라 10명과 83명이 나왔다.</dd></dl><div class="mini"><img src="assets/chars/haru/E01.webp" alt="조수(하루)" loading="lazy" width="58" height="58"><div><b>하루</b> 앞 단계를 통과한 사람 중에서 다시 고르니까 곱하는 거군요. 그래서 차이가 눈덩이처럼 커져요.</div></div></div></div>
+<div class="pair"><div><b>일상으로 치면</b>입학 시험이 서류·필기·면접·신체검사 네 관문이면, 관문마다 합격률이 조금씩만 올라도 최종 합격자는 크게 는다.</div><div><b>현장에서는</b>통신사·플랫폼은 첫 관문(열람)을 막는 대량 발송 차단이 가장 효과가 크다는 것을 이 곱셈에서 읽는다.</div></div>
+<h3>AI 판단 코너 — 주판봇의 확신, 맞을까?</h3><div class="say left"><img src="assets/chars/doctor/E07.webp" alt="박사" loading="lazy" width="58" height="58"><div class="bub"><div class="who">박사<span>해설자</span></div><div class="txt">단계마다 확률이 두 배씩 오르면 최종 결과는 몇 배가 될까요?</div></div></div><div class="say left"><img src="assets/chars/jupanbot/E16.webp" alt="주판봇" loading="lazy" width="58" height="58"><div class="bub"><div class="who">주판봇<span>계산 담당</span></div><div class="txt">네 단계니까 2 + 2 + 2 + 2, 8배예요!</div></div></div><div class="say left"><img src="assets/chars/fruitfly/E09.webp" alt="초파리 연구원" loading="lazy" width="58" height="58"><div class="bub"><div class="who">초파리 연구원<span>데이터·모델 분석</span></div><div class="txt">더하는 게 맞나? 아래 슬라이더로 한 단계만 바꿔 봐.</div></div></div><div class="say left"><img src="assets/chars/haru/E10.webp" alt="조수(하루)" loading="lazy" width="58" height="58"><div class="bub"><div class="who">조수(하루)<span>추적 팀 · 대응 설계</span></div><div class="txt">곱셈이라 2 × 2 × 2 × 2 = 16배예요. 주판봇 답은 우연히 8이었을 뿐이에요.</div></div></div>
+<div class="panel"><h4>실험: 직접 바꿔 보기</h4><div data-w="w-ch01" data-k="funnel"></div></div>
+<div class="say left"><img src="assets/chars/doctor/E10.webp" alt="박사" loading="lazy" width="58" height="58"><div class="bub"><div class="who">박사<span>해설자</span></div><div class="txt">풀이: AI는 한 단계가 아니라 모든 단계의 확률을 조금씩 올린다. 곱셈 구조 때문에 최종 피해는 크게 불어난다.</div></div></div>
+<aside class="box warn" style="background:#fff8e6;border-color:#b7791f"><div class="bt" style="color:#b7791f">이 단계의 한계 — 여기서는 단순하게 봤어요</div><p>실제 단계는 서로 독립이 아니다. 신뢰가 쌓이면 다음 단계 확률도 함께 오르므로, 곱셈 추정은 오히려 보수적일 수 있다.</p></aside>
+<details><summary>교안의 파이썬 코드로 보면 (몰라도 됩니다)</summary><p><code>final = N * r1 * r2 * r3 * r4</code><br>발송 수에 단계별 확률을 차례로 곱한다.</p></details><div class="quiz" data-a="2"><div class="q">확인 퀴즈 · 네 단계 확률이 모두 두 배가 되면 최종 송금 인원은?</div><button type="button">① 2배</button><button type="button">② 8배</button><button type="button">③ 16배</button><div class="ex" hidden><b></b>2 × 2 × 2 × 2 = 16배다(확률이 1을 넘지 않는 범위에서).</div></div></section><section class="step" id="duel"><div class="lab">대결</div><h2>X1 vs 추적 팀 — 계산서 공방</h2><div class="duel"><div class="vs"><div class="side xs"><img src="assets/chars/x1/E09.webp" alt="X1" loading="lazy" width="58" height="58"><b>X1의 수</b><br>AI 챗봇 5,000개로 지인 말투를 흉내 내 동시에 대화를 연다.</div><div class="v">VS</div><div class="side ts"><img src="assets/chars/moa/E16.webp" alt="인턴2 모아" loading="lazy" width="58" height="58"><b>인턴2 모아의 수</b><br>통신사·메신저에 대량 동시 대화 탐지와 발송량 제한을 요청한다.</div></div><div class="verdict"><img src="assets/chars/doctor/E10.webp" alt="박사" loading="lazy" width="58" height="58"><div>심판 박사 · 추적 팀 승<br><span style="font-weight:400">추적 팀 판정승. 첫 관문 N을 깎으면 곱셈 전체가 줄어든다.</span></div></div></div></section><section class="step" id="wrap"><div class="lab">정리</div><h2>정리 퀴즈</h2><div class="quiz" data-a="1"><div class="q">확인 퀴즈 · 2023년 푸젠성 사건에서 피해자가 의심을 거둔 계기는?</div><button type="button">① 경찰의 전화</button><button type="button">② 실시간 영상통화 속 지인의 얼굴과 목소리</button><button type="button">③ 은행 문자</button><div class="ex" hidden><b></b>합성된 영상통화가 &#x27;확인 수단&#x27;처럼 작동했다.</div></div><div class="quiz" data-a="1"><div class="q">확인 퀴즈 · 대화형 자동범죄에서 AI의 역할은?</div><button type="button">① 문장 맞춤법 교정만</button><button type="button">② 도구이자 실행자</button><button type="button">③ 피해자 보호</button><div class="ex" hidden><b></b>AI가 대화를 이어 가며 범죄를 직접 수행한다.</div></div></section><section class="step" id="outro"><div class="lab">아웃트로</div><h2>오늘의 연구실을 마치며</h2><div class="say left"><img src="assets/chars/doctor/E16.webp" alt="박사" loading="lazy" width="58" height="58"><div class="bub"><div class="who">박사<span>해설자</span></div><div class="txt">AI가 바꾼 건 한 번의 정교함이 아니라 곱셈의 크기다.</div></div></div><div class="say right x"><img src="assets/chars/x1/E02.webp" alt="X1" loading="lazy" width="58" height="58"><div class="bub"><div class="who">X1<span>범죄자 대역 · 사기·사칭</span></div><div class="txt">첫 관문을 막으니 뒤 단계가 아무리 좋아도 소용이 없군.</div></div></div><div class="say left"><img src="assets/chars/sia/E01.webp" alt="인턴1 시아" loading="lazy" width="58" height="58"><div class="bub"><div class="who">인턴1 시아<span>추적 팀 · 현장 사례</span></div><div class="txt">다음 장은 범죄를 '고르는 사람' 쪽을 볼 차례예요.</div></div></div></section><section class="step kg" id="kg"><div class="lab">지식 색인</div><h2>이 장의 개념 지도</h2><table><tr><th>개념</th><th>뜻</th><th>함께 보는 장</th></tr><tr><td>1:N 생산함수</td><td>한 공격자가 다수를 동시에 상대하는 구조</td><td><a href="ch01.html">01장</a> <a href="ch05.html">05장</a></td></tr><tr><td>퍼널</td><td>단계별로 줄어드는 전환 과정</td><td><a href="ch01.html">01장</a></td></tr><tr><td>IDSGAN</td><td>GAN으로 침입 탐지를 속이는 트래픽을 만든 연구</td><td><a href="ch01.html">01장</a> <a href="ch05.html">05장</a></td></tr><tr><td>딥페이크 성착취물</td><td>합성 성적 영상물 범죄</td><td><a href="ch01.html">01장</a> <a href="ch03.html">03장</a></td></tr></table></section><section class="step export" id="export"><div class="lab">꾸러미</div><h2>온톨로지·서지 꾸러미</h2><p class="mute">강의 자료나 지식 그래프에 옮길 때 쓰세요.</p><details><summary>JSON-LD (schema.org)</summary><button class="copy" data-t="jl-ch01">복사</button><pre id="jl-ch01">{
+ &quot;@context&quot;: &quot;https://schema.org&quot;,
+ &quot;@type&quot;: &quot;LearningResource&quot;,
+ &quot;name&quot;: &quot;AI 범죄, 새로운 디지털 위험의 시대&quot;,
+ &quot;description&quot;: &quot;AI 한 대가 수천 명과 동시에 대화하는 &#x27;대화형 자동범죄&#x27;를 본다.&quot;,
+ &quot;inLanguage&quot;: &quot;ko&quot;,
+ &quot;isPartOf&quot;: {
+  &quot;@type&quot;: &quot;Book&quot;,
+  &quot;name&quot;: &quot;AI 범죄와 자기 방어&quot;
+ },
+ &quot;author&quot;: {
+  &quot;@type&quot;: &quot;Person&quot;,
+  &quot;name&quot;: &quot;안상선&quot;,
+  &quot;url&quot;: &quot;https://adminmrobo.github.io/who_am_i/who_am_i.html&quot;
+ },
+ &quot;teaches&quot;: [
+  &quot;1:N 생산함수&quot;,
+  &quot;퍼널&quot;,
+  &quot;IDSGAN&quot;,
+  &quot;딥페이크 성착취물&quot;
+ ],
+ &quot;educationalLevel&quot;: &quot;입문&quot;,
+ &quot;url&quot;: &quot;https://adminmrobo.github.io/ai_crime_lab/ch01.html&quot;,
+ &quot;about&quot;: [
+  &quot;AI·데이터 분석&quot;,
+  &quot;범죄경제학&quot;,
+  &quot;AI 범죄&quot;
+ ]
+}</pre></details><details><summary>BibTeX</summary><button class="copy" data-t="bib-ch01">복사</button><pre id="bib-ch01">@misc{ahn2026aicrime_ch01,
+  author = {안상선},
+  title = {AI 범죄 연구실 — 1장 AI 범죄, 새로운 디지털 위험의 시대},
+  note = {『AI 범죄와 자기 방어』 보충본},
+  year = {2026},
+  url = {https://adminmrobo.github.io/ai_crime_lab/ch01.html}
+}</pre></details></section><div class="pn"><a href="ch00.html">← 서장 진화하는 사이버 범죄</a><a href="ch02.html">2장 범죄자의 경제학 — AI가 범죄를 매력적으로 만드는 이유 →</a></div><footer class="foot">글 · 안상선 (<a href="https://adminmrobo.github.io/who_am_i/who_am_i.html">https://adminmrobo.github.io/who_am_i/who_am_i.html</a>) · (주)M-Robo 대표<br>이 사이트는 『AI 범죄와 자기 방어』의 사례 보충본이다. '모의 데이터(가상)'는 설명용 가상의 수치이며 실제 통계가 아니다. X1~X3는 범죄자 역할을 맡은 대역이다. 범죄 수법은 작동 원리까지만 다룬다. · <a href="references.html">참고문헌</a> · <a href="data.html">모의 데이터와 재현 코드</a> · <a href="workbook.html">통합 작업본</a></footer></main></div><script src="assets/lab.js"></script></body></html>

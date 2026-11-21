@@ -1,0 +1,578 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>모의 데이터와 재현 코드 · AI 범죄 연구실</title><meta name="description" content="모의 데이터와 재현 코드">
+<meta property="og:title" content="모의 데이터와 재현 코드 · AI 범죄 연구실"><meta property="og:description" content="모의 데이터와 재현 코드">
+<meta property="og:image" content="https://adminmrobo.github.io/ai_crime_lab/assets/lineup.webp"><meta property="og:url" content="https://adminmrobo.github.io/ai_crime_lab/data.html"><meta property="og:type" content="article">
+<link rel="stylesheet" href="assets/lab.css"></head><body>
+<header class="top"><a class="brand" href="index.html">AI 범죄 연구실 — 범죄자의 계산서를 뒤집어라</a>
+<a href="index.html#chapters">목차</a><a href="practice/index.html">실전 연습장</a><a href="workbook.html">통합 작업본</a><a href="references.html">참고문헌</a><a href="data.html">모의 데이터</a></header><div class="wrap"><main><h1>모의 데이터 설계와 재현 코드</h1>
+<p>이 블로그의 차트는 모두 <strong>모의 데이터(가상)</strong>다. 실제 통계가 아니며, 개념과 방향을 보여 주려고 만든 값이다. 아래 코드(파이썬, numpy·pandas)를 그대로 실행하면 같은 수치와 차트가 다시 나온다(시드 20261121).</p>
+<table>
+<thead>
+<tr>
+<th>장</th>
+<th>차트</th>
+<th>핵심 가정</th>
+<th>결과를 크게 좌우하는 가정</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>서장</td>
+<td>X1의 하루 계산서</td>
+<td>전통: 30건·0.4%·500·2·25% / AI: 3,000건·0.3%·300·0.03·3%</td>
+<td>시도 비용과 검거 확률</td>
+</tr>
+<tr>
+<td>1장</td>
+<td>1만 건 퍼널</td>
+<td>단계별 전환율(일반 21·15·19·15%, AI 54·27·28·22%)</td>
+<td>단계별 전환율</td>
+</tr>
+<tr>
+<td>2장</td>
+<td>베커 곡선</td>
+<td>Y=3,000, 로그 효용, 전통 g=2,000·f=2,500, AI g=4,000·f=1,500</td>
+<td>g와 f (본문 민감도 표 참고)</td>
+</tr>
+<tr>
+<td>2장</td>
+<td>참여율</td>
+<td>소득 로그정규, 심리적 비용 로그정규(중앙값 2,000), AI 투입 시간 1/4</td>
+<td>투입 시간 비율, 심리적 비용 분포</td>
+</tr>
+<tr>
+<td>3장</td>
+<td>GAN 경쟁</td>
+<td>개념 설명용 함수 곡선(학습 결과 아님)</td>
+<td>곡선 형태 자체가 가정</td>
+</tr>
+<tr>
+<td>3장</td>
+<td>판별 설문</td>
+<td>연령대별 240명, 기준 정답률 51~62%, 확인 질문 90%</td>
+<td>기준 정답률</td>
+</tr>
+<tr>
+<td>4장</td>
+<td>모의 훈련</td>
+<td>클릭률 일반 8%, AI 27%, 훈련 시 월 감소율 0.27</td>
+<td>훈련 감소율</td>
+</tr>
+<tr>
+<td>5장</td>
+<td>적응형 공격</td>
+<td>고정 규칙 지수 감소, 행위 탐지·공유는 완만한 변화</td>
+<td>감소 속도</td>
+</tr>
+<tr>
+<td>5장</td>
+<td>로그인 이상 탐지</td>
+<td>정상 4,900건(14시 전후)·공격 100건(새벽, 실패 다수)</td>
+<td>공격이 시간대를 흉내 내지 않는다는 가정(낙관적)</td>
+</tr>
+<tr>
+<td>6장</td>
+<td>재식별</td>
+<td>10만 명, 속성 무작위·독립</td>
+<td>실제 인구는 속성이 상관되어 유일 비율이 달라짐</td>
+</tr>
+<tr>
+<td>7장</td>
+<td>추적 확률</td>
+<td>홉당 감쇠, 6번째 홉 믹서 시 확률 0.45배</td>
+<td>감쇠율</td>
+</tr>
+<tr>
+<td>7장</td>
+<td>랜섬 전략</td>
+<td>대형 10곳·20억·지급 20%·비용 3억/곳, 자동화 300곳·3,000만·30%·150만/곳</td>
+<td>지급률과 침투 비용</td>
+</tr>
+<tr>
+<td>8장</td>
+<td>생활유형</td>
+<td>위협별 연간 확률·손실, 방패 후 25~35% 잔존</td>
+<td>잔존 비율</td>
+</tr>
+<tr>
+<td>9장</td>
+<td>집단 면역</td>
+<td>BA 연결망 500곳(m=3), 전파 30%, 보안 기업 92% 감소, 공유 시 전파 18%</td>
+<td>연결망 구조와 전파율</td>
+</tr>
+<tr>
+<td>10장</td>
+<td>탐지 지연</td>
+<td>로지스틱 피해 곡선(최대 10억, 중간점 20일), 백업 시 35%</td>
+<td>곡선 모양</td>
+</tr>
+<tr>
+<td>10장</td>
+<td>계산서 뒤집기</td>
+<td>서장 AI 설정에서 N·π·g·p를 단계적으로 변경</td>
+<td>각 대응의 효과 크기</td>
+</tr>
+</tbody>
+</table>
+<h2>재현 코드</h2><button class="copy" data-t="src">코드 복사</button><pre id="src" style="background:#f6f8fb;padding:14px;border-radius:10px;font-size:12.5px;line-height:1.5;max-height:600px">&quot;&quot;&quot;간단한 SVG 차트 도구 (외부 라이브러리 없이 흰 배경용).&quot;&quot;&quot;
+from html import escape
+
+PAL = {
+    &quot;crime&quot;: &quot;#d6453d&quot;,   # 범죄자 쪽
+    &quot;crime2&quot;: &quot;#f08a5d&quot;,
+    &quot;defense&quot;: &quot;#1f8a5b&quot;,  # 방어 쪽
+    &quot;defense2&quot;: &quot;#6cc08b&quot;,
+    &quot;neutral&quot;: &quot;#4a6fd1&quot;,
+    &quot;neutral2&quot;: &quot;#93a9e8&quot;,
+    &quot;gray&quot;: &quot;#9aa3ad&quot;,
+    &quot;violet&quot;: &quot;#7a5bd1&quot;,
+    &quot;amber&quot;: &quot;#d9902b&quot;,
+}
+W, H = 720, 380
+ML, MR, MT, MB = 70, 24, 46, 64
+
+
+def _fmt(v):
+    if abs(v) &gt;= 1000:
+        return f&quot;{v:,.0f}&quot;
+    if abs(v) &gt;= 10 or float(v).is_integer():
+        return f&quot;{v:.0f}&quot;
+    return f&quot;{v:.2f}&quot;.rstrip(&quot;0&quot;).rstrip(&quot;.&quot;)
+
+
+def _nice(lo, hi, n=5):
+    import math
+    if hi == lo:
+        hi = lo + 1
+    span = hi - lo
+    raw = span / n
+    mag = 10 ** math.floor(math.log10(raw))
+    step = min([1, 2, 2.5, 5, 10], key=lambda s: abs(s * mag - raw)) * mag
+    start = math.floor(lo / step) * step
+    ticks = []
+    t = start
+    while t &lt;= hi + step * 0.001:
+        ticks.append(round(t, 10))
+        t += step
+    if ticks[-1] &lt; hi - 1e-9:
+        ticks.append(round(ticks[-1] + step, 10))
+    return ticks
+
+
+def _frame(title, xlab, ylab, ticks, ymap, pw):
+    s = [f&#x27;&lt;svg viewBox=&quot;0 0 {W} {H}&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; role=&quot;img&quot; &#x27;
+         f&#x27;aria-label=&quot;{escape(title)}&quot; font-family=&quot;Pretendard, Noto Sans KR, sans-serif&quot;&gt;&#x27;,
+         f&#x27;&lt;rect width=&quot;{W}&quot; height=&quot;{H}&quot; fill=&quot;#ffffff&quot;/&gt;&#x27;,
+         f&#x27;&lt;text x=&quot;{ML}&quot; y=&quot;26&quot; font-size=&quot;16&quot; font-weight=&quot;700&quot; fill=&quot;#1d2430&quot;&gt;{escape(title)}&lt;/text&gt;&#x27;,
+         f&#x27;&lt;text x=&quot;{W-MR}&quot; y=&quot;26&quot; font-size=&quot;11&quot; text-anchor=&quot;end&quot; fill=&quot;#8a93a0&quot;&gt;모의 데이터(가상)&lt;/text&gt;&#x27;]
+    for t in ticks:
+        y = ymap(t)
+        s.append(f&#x27;&lt;line x1=&quot;{ML}&quot; x2=&quot;{ML+pw}&quot; y1=&quot;{y:.1f}&quot; y2=&quot;{y:.1f}&quot; stroke=&quot;#e8ecf1&quot;/&gt;&#x27;)
+        s.append(f&#x27;&lt;text x=&quot;{ML-8}&quot; y=&quot;{y+4:.1f}&quot; font-size=&quot;11&quot; text-anchor=&quot;end&quot; fill=&quot;#5b6572&quot;&gt;{_fmt(t)}&lt;/text&gt;&#x27;)
+    s.append(f&#x27;&lt;text x=&quot;{ML+pw/2}&quot; y=&quot;{H-12}&quot; font-size=&quot;12&quot; text-anchor=&quot;middle&quot; fill=&quot;#3b4450&quot;&gt;{escape(xlab)}&lt;/text&gt;&#x27;)
+    s.append(f&#x27;&lt;text transform=&quot;translate(16,{MT+(H-MT-MB)/2}) rotate(-90)&quot; font-size=&quot;12&quot; &#x27;
+             f&#x27;text-anchor=&quot;middle&quot; fill=&quot;#3b4450&quot;&gt;{escape(ylab)}&lt;/text&gt;&#x27;)
+    return s
+
+
+def _legend(s, names, colors, dashes=None):
+    x = ML
+    y = H - 34
+    for i, (n, c) in enumerate(zip(names, colors)):
+        d = (dashes or [None] * len(names))[i]
+        dash = f&#x27; stroke-dasharray=&quot;{d}&quot;&#x27; if d else &quot;&quot;
+        s.append(f&#x27;&lt;line x1=&quot;{x}&quot; x2=&quot;{x+22}&quot; y1=&quot;{y}&quot; y2=&quot;{y}&quot; stroke=&quot;{c}&quot; stroke-width=&quot;4&quot;{dash}/&gt;&#x27;)
+        s.append(f&#x27;&lt;text x=&quot;{x+28}&quot; y=&quot;{y+4}&quot; font-size=&quot;11.5&quot; fill=&quot;#3b4450&quot;&gt;{escape(n)}&lt;/text&gt;&#x27;)
+        x += 40 + len(n) * 11.5
+
+
+def line_chart(title, xs, series, xlab, ylab, ymin=None, ymax=None, xticks=None, hline=None, vline=None):
+    &quot;&quot;&quot;series: list of (name, ys, color, dash)&quot;&quot;&quot;
+    pw, ph = W - ML - MR, H - MT - MB - 18
+    allv = [v for _, ys, _, _ in series for v in ys]
+    lo = min(allv) if ymin is None else ymin
+    hi = max(allv) if ymax is None else ymax
+    ticks = _nice(lo, hi)
+    lo, hi = ticks[0], ticks[-1]
+    xlo, xhi = min(xs), max(xs)
+    xmap = lambda x: ML + (x - xlo) / (xhi - xlo) * pw
+    ymap = lambda y: MT + ph - (y - lo) / (hi - lo) * ph
+    s = _frame(title, xlab, ylab, ticks, ymap, pw)
+    for xt in (xticks or _nice(xlo, xhi, 6)):
+        if xlo &lt;= xt &lt;= xhi:
+            s.append(f&#x27;&lt;text x=&quot;{xmap(xt):.1f}&quot; y=&quot;{MT+ph+16}&quot; font-size=&quot;11&quot; text-anchor=&quot;middle&quot; fill=&quot;#5b6572&quot;&gt;{_fmt(xt)}&lt;/text&gt;&#x27;)
+    if hline is not None:
+        y = ymap(hline[0])
+        s.append(f&#x27;&lt;line x1=&quot;{ML}&quot; x2=&quot;{ML+pw}&quot; y1=&quot;{y:.1f}&quot; y2=&quot;{y:.1f}&quot; stroke=&quot;#1d2430&quot; stroke-dasharray=&quot;4 4&quot;/&gt;&#x27;)
+        s.append(f&#x27;&lt;text x=&quot;{ML+pw-4}&quot; y=&quot;{y-6:.1f}&quot; font-size=&quot;11&quot; text-anchor=&quot;end&quot; fill=&quot;#1d2430&quot;&gt;{escape(hline[1])}&lt;/text&gt;&#x27;)
+    if vline is not None:
+        x = xmap(vline[0])
+        s.append(f&#x27;&lt;line x1=&quot;{x:.1f}&quot; x2=&quot;{x:.1f}&quot; y1=&quot;{MT}&quot; y2=&quot;{MT+ph}&quot; stroke=&quot;#7a5bd1&quot; stroke-dasharray=&quot;4 4&quot;/&gt;&#x27;)
+        s.append(f&#x27;&lt;text x=&quot;{x+5:.1f}&quot; y=&quot;{MT+12}&quot; font-size=&quot;11&quot; fill=&quot;#7a5bd1&quot;&gt;{escape(vline[1])}&lt;/text&gt;&#x27;)
+    for name, ys, col, dash in series:
+        pts = &quot; &quot;.join(f&quot;{xmap(x):.1f},{ymap(y):.1f}&quot; for x, y in zip(xs, ys))
+        d = f&#x27; stroke-dasharray=&quot;{dash}&quot;&#x27; if dash else &quot;&quot;
+        s.append(f&#x27;&lt;polyline points=&quot;{pts}&quot; fill=&quot;none&quot; stroke=&quot;{col}&quot; stroke-width=&quot;3&quot; stroke-linejoin=&quot;round&quot;{d}/&gt;&#x27;)
+    _legend(s, [n for n, *_ in series], [c for _, _, c, _ in series], [d for *_, d in series])
+    s.append(&quot;&lt;/svg&gt;&quot;)
+    return &quot;\n&quot;.join(s)
+
+
+def bar_chart(title, cats, series, xlab, ylab, ymin=None, ymax=None, labels=True):
+    &quot;&quot;&quot;series: list of (name, values, color). 묶음 막대.&quot;&quot;&quot;
+    pw, ph = W - ML - MR, H - MT - MB - 18
+    allv = [v for _, vs, _ in series for v in vs] + [0]
+    lo = min(allv) if ymin is None else ymin
+    hi = max(allv) * 1.08 if ymax is None else ymax
+    ticks = _nice(lo, hi)
+    lo, hi = ticks[0], ticks[-1]
+    ymap = lambda y: MT + ph - (y - lo) / (hi - lo) * ph
+    s = _frame(title, xlab, ylab, ticks, ymap, pw)
+    n, k = len(cats), len(series)
+    gw = pw / n
+    bw = min(46, gw * 0.75 / k)
+    for i, c in enumerate(cats):
+        cx = ML + gw * i + gw / 2
+        s.append(f&#x27;&lt;text x=&quot;{cx:.1f}&quot; y=&quot;{MT+ph+16}&quot; font-size=&quot;11.5&quot; text-anchor=&quot;middle&quot; fill=&quot;#3b4450&quot;&gt;{escape(c)}&lt;/text&gt;&#x27;)
+        for j, (name, vs, col) in enumerate(series):
+            v = vs[i]
+            x = cx - bw * k / 2 + j * bw
+            y0, y1 = ymap(max(v, 0)), ymap(min(v, 0))
+            s.append(f&#x27;&lt;rect x=&quot;{x+1:.1f}&quot; y=&quot;{y0:.1f}&quot; width=&quot;{bw-2:.1f}&quot; height=&quot;{max(y1-y0,0.5):.1f}&quot; rx=&quot;3&quot; fill=&quot;{col}&quot;/&gt;&#x27;)
+            if labels:
+                ty = y0 - 5 if v &gt;= 0 else y1 + 13
+                s.append(f&#x27;&lt;text x=&quot;{x+bw/2:.1f}&quot; y=&quot;{ty:.1f}&quot; font-size=&quot;10.5&quot; text-anchor=&quot;middle&quot; fill=&quot;#1d2430&quot;&gt;{_fmt(v)}&lt;/text&gt;&#x27;)
+    if lo &lt; 0:
+        s.append(f&#x27;&lt;line x1=&quot;{ML}&quot; x2=&quot;{ML+pw}&quot; y1=&quot;{ymap(0):.1f}&quot; y2=&quot;{ymap(0):.1f}&quot; stroke=&quot;#1d2430&quot;/&gt;&#x27;)
+    if k &gt; 1 or series[0][0]:
+        _legend(s, [n for n, *_ in series], [c for *_, c in series])
+    s.append(&quot;&lt;/svg&gt;&quot;)
+    return &quot;\n&quot;.join(s)
+
+
+def hbar_chart(title, cats, series, xlab):
+    &quot;&quot;&quot;가로 막대(퍼널용). series: list of (name, values, color)&quot;&quot;&quot;
+    lw = 150
+    pw = W - lw - MR - 40
+    rowh = (H - MT - 70) / len(cats)
+    hi = max(v for _, vs, _ in series for v in vs)
+    s = [f&#x27;&lt;svg viewBox=&quot;0 0 {W} {H}&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; role=&quot;img&quot; aria-label=&quot;{escape(title)}&quot; &#x27;
+         f&#x27;font-family=&quot;Pretendard, Noto Sans KR, sans-serif&quot;&gt;&lt;rect width=&quot;{W}&quot; height=&quot;{H}&quot; fill=&quot;#fff&quot;/&gt;&#x27;,
+         f&#x27;&lt;text x=&quot;20&quot; y=&quot;26&quot; font-size=&quot;16&quot; font-weight=&quot;700&quot; fill=&quot;#1d2430&quot;&gt;{escape(title)}&lt;/text&gt;&#x27;,
+         f&#x27;&lt;text x=&quot;{W-MR}&quot; y=&quot;26&quot; font-size=&quot;11&quot; text-anchor=&quot;end&quot; fill=&quot;#8a93a0&quot;&gt;모의 데이터(가상)&lt;/text&gt;&#x27;]
+    k = len(series)
+    bh = rowh * 0.8 / k
+    for i, c in enumerate(cats):
+        y = MT + rowh * i
+        s.append(f&#x27;&lt;text x=&quot;{lw-8}&quot; y=&quot;{y+rowh/2+4:.1f}&quot; font-size=&quot;12&quot; text-anchor=&quot;end&quot; fill=&quot;#3b4450&quot;&gt;{escape(c)}&lt;/text&gt;&#x27;)
+        for j, (name, vs, col) in enumerate(series):
+            w = max(vs[i] / hi * pw, 1)
+            yy = y + rowh * 0.1 + j * bh
+            s.append(f&#x27;&lt;rect x=&quot;{lw}&quot; y=&quot;{yy:.1f}&quot; width=&quot;{w:.1f}&quot; height=&quot;{bh-2:.1f}&quot; rx=&quot;3&quot; fill=&quot;{col}&quot;/&gt;&#x27;)
+            s.append(f&#x27;&lt;text x=&quot;{lw+w+5:.1f}&quot; y=&quot;{yy+bh/2+3:.1f}&quot; font-size=&quot;10.5&quot; fill=&quot;#1d2430&quot;&gt;{_fmt(vs[i])}&lt;/text&gt;&#x27;)
+    s.append(f&#x27;&lt;text x=&quot;{lw+pw/2}&quot; y=&quot;{H-12}&quot; font-size=&quot;12&quot; text-anchor=&quot;middle&quot; fill=&quot;#3b4450&quot;&gt;{escape(xlab)}&lt;/text&gt;&#x27;)
+    x = lw
+    for name, _, col in series:
+        s.append(f&#x27;&lt;rect x=&quot;{x}&quot; y=&quot;{H-44}&quot; width=&quot;18&quot; height=&quot;10&quot; fill=&quot;{col}&quot; rx=&quot;2&quot;/&gt;&#x27;
+                 f&#x27;&lt;text x=&quot;{x+24}&quot; y=&quot;{H-35}&quot; font-size=&quot;11.5&quot; fill=&quot;#3b4450&quot;&gt;{escape(name)}&lt;/text&gt;&#x27;)
+        x += 40 + len(name) * 11.5
+    s.append(&quot;&lt;/svg&gt;&quot;)
+    return &quot;\n&quot;.join(s)
+
+
+&quot;&quot;&quot;장별 모의 데이터(가상) 생성 + SVG 차트 출력. 시드 고정으로 누구나 같은 결과를 재현할 수 있다.&quot;&quot;&quot;
+import json, math, os, sys
+import numpy as np
+sys.path.insert(0, os.path.dirname(__file__))
+from charts import line_chart, bar_chart, hbar_chart, PAL as P
+
+OUT = os.path.join(os.path.dirname(__file__), &quot;..&quot;, &quot;assets&quot;, &quot;charts&quot;)
+os.makedirs(OUT, exist_ok=True)
+rng = np.random.default_rng(20261121)
+NUM = {}
+
+
+def save(name, svg):
+    with open(os.path.join(OUT, name + &quot;.svg&quot;), &quot;w&quot;, encoding=&quot;utf-8&quot;) as f:
+        f.write(svg)
+
+
+# ---------------- 서장: 전통 사기 vs AI 사기 하루 손익 (만원) ----------------
+def day_pl(N, pi, g, c, p, f):
+    succ = N * pi
+    return dict(시도=N, 성공=succ, 수익=succ * g, 비용=N * c, 처벌기대=succ * p * f,
+                순이익=succ * g - N * c - succ * p * f)
+
+trad = day_pl(N=30, pi=0.004, g=500, c=2, p=0.25, f=3000)
+ai = day_pl(N=3000, pi=0.003, g=300, c=0.03, p=0.03, f=3000)
+NUM[&quot;ch0&quot;] = {&quot;trad&quot;: trad, &quot;ai&quot;: ai}
+save(&quot;ch0_daily_pl&quot;, bar_chart(&quot;X1의 하루 계산서: 전통 사기 vs AI 사기&quot;, [&quot;기대 수익&quot;, &quot;직접 비용&quot;, &quot;처벌 기대비용&quot;, &quot;순이익&quot;],
+     [(&quot;전통 수작업 사기&quot;, [trad[&quot;수익&quot;], -trad[&quot;비용&quot;], -trad[&quot;처벌기대&quot;], trad[&quot;순이익&quot;]], P[&quot;gray&quot;]),
+      (&quot;AI 자동화 사기&quot;, [ai[&quot;수익&quot;], -ai[&quot;비용&quot;], -ai[&quot;처벌기대&quot;], ai[&quot;순이익&quot;]], P[&quot;crime&quot;])],
+     &quot;항목&quot;, &quot;만 원/일&quot;))
+
+# ---------------- 1장: 메시지 1만 건 퍼널 ----------------
+def funnel(rates):
+    n = 10000
+    out = [n]
+    for r in rates:
+        n = rng.binomial(n, r)
+        out.append(int(n))
+    return out
+
+gen = funnel([0.21, 0.15, 0.19, 0.15])
+per = funnel([0.54, 0.27, 0.28, 0.22])
+stages = [&quot;발송&quot;, &quot;열람&quot;, &quot;링크 클릭&quot;, &quot;정보 입력&quot;, &quot;송금&quot;]
+NUM[&quot;ch1&quot;] = {&quot;generic&quot;: gen, &quot;ai&quot;: per, &quot;human_per_day&quot;: 8, &quot;ai_per_day&quot;: 5000}
+save(&quot;ch1_funnel&quot;, hbar_chart(&quot;메시지 1만 건이 송금까지 가는 길&quot;, stages,
+     [(&quot;일반 대량 문자&quot;, gen, P[&quot;gray&quot;]), (&quot;AI 맞춤 메시지&quot;, per, P[&quot;crime&quot;])], &quot;단계별 인원(명)&quot;))
+
+# ---------------- 2장: 베커 모형 ----------------
+Y = 3000  # 연 합법 소득(만원)
+U = lambda w: math.log(max(w, 1))
+def ce_gain(p, g, f):
+    eu = p * U(Y - f) + (1 - p) * U(Y + g)
+    return math.exp(eu) - Y  # 확실성 등가 - 합법 소득
+
+ps = [i / 100 for i in range(0, 61)]
+tr = [ce_gain(p, 2000, 2500) for p in ps]
+aic = [ce_gain(p, 4000, 1500) for p in ps]
+def breakeven(g, f):
+    lo, hi = 0, 1
+    for _ in range(60):
+        m = (lo + hi) / 2
+        if ce_gain(m, g, f) &gt; 0:
+            lo = m
+        else:
+            hi = m
+    return lo
+pt, pa = breakeven(2000, 2500), breakeven(4000, 1500)
+NUM[&quot;ch2&quot;] = {&quot;p_star_trad&quot;: round(pt, 3), &quot;p_star_ai&quot;: round(pa, 3)}
+save(&quot;ch2_becker&quot;, line_chart(&quot;검거 확률 p가 오를 때 범죄의 매력(확실성 등가 기준)&quot;, ps,
+     [(&quot;전통 범죄 (g=2,000 · f=2,500)&quot;, tr, P[&quot;gray&quot;], None), (&quot;AI 범죄 (g=4,000 · f=1,500)&quot;, aic, P[&quot;crime&quot;], None)],
+     &quot;검거 확률 p&quot;, &quot;합법 소득 대비 이득(만 원)&quot;, ymin=-2000, hline=(0, &quot;손익분기선&quot;), xticks=[0, .1, .2, .3, .4, .5, .6]))
+
+# 예비 범죄자 1,000명: 소득 10분위별 참여율
+n = 1000
+inc = np.sort(rng.lognormal(mean=np.log(3000), sigma=0.55, size=n))
+moral = rng.lognormal(mean=np.log(2000), sigma=1.0, size=n)
+hours = 200  # 연간 투입 시간
+def particip(pi, g, c, p, f, tcost):
+    wage = inc / 2000  # 시간당 합법 임금(만원)
+    opp = wage * hours * tcost
+    gain = pi * g - c - p * f - opp - moral
+    return gain &gt; 0
+pt_ = particip(0.40, 2500, 200, 0.20, 2000, 1.0)
+pa_ = particip(0.45, 2200, 40, 0.08, 1500, 0.25)
+dec = np.array_split(np.arange(n), 10)
+rt = [float(pt_[d].mean() * 100) for d in dec]
+ra = [float(pa_[d].mean() * 100) for d in dec]
+NUM[&quot;ch2&quot;].update({&quot;part_trad&quot;: float(pt_.mean() * 100), &quot;part_ai&quot;: float(pa_.mean() * 100),
+                   &quot;top3_trad&quot;: float(np.mean(rt[7:])), &quot;top3_ai&quot;: float(np.mean(ra[7:]))})
+save(&quot;ch2_participation&quot;, bar_chart(&quot;예비 범죄자 1,000명의 참여율: 소득 분위별&quot;, [f&quot;{i+1}분위&quot; for i in range(10)],
+     [(&quot;전통 범죄&quot;, rt, P[&quot;gray&quot;]), (&quot;AI 범죄&quot;, ra, P[&quot;crime&quot;])], &quot;합법 소득 분위(1=낮음, 10=높음)&quot;, &quot;범죄 참여율(%)&quot;, ymax=40, labels=False))
+
+# ---------------- 3장: 생성자·판별자 경쟁 / 판별률 ----------------
+r = np.arange(1, 31)
+genq = 100 / (1 + np.exp(-(r - 12) / 4))
+disc = 55 + 40 * np.exp(-r / 9) + 6 * np.sin(r / 2.2)
+human = 50 + 45 * np.exp(-r / 7)
+save(&quot;ch3_gan&quot;, line_chart(&quot;위조지폐범(생성자)과 형사(판별자)의 30라운드&quot;, r.tolist(),
+     [(&quot;생성자 위조 품질 지수&quot;, genq.tolist(), P[&quot;crime&quot;], None),
+      (&quot;판별자 탐지 정확도(%)&quot;, disc.tolist(), P[&quot;neutral&quot;], None),
+      (&quot;사람 눈 판별 정확도(%)&quot;, human.tolist(), P[&quot;gray&quot;], &quot;6 4&quot;)],
+     &quot;학습 라운드&quot;, &quot;지수 / 정확도(%)&quot;, ymin=0, ymax=100, hline=(50, &quot;동전 던지기 수준(50%)&quot;)))
+
+ages = [&quot;20대&quot;, &quot;30대&quot;, &quot;40대&quot;, &quot;50대&quot;, &quot;60대 이상&quot;]
+base = [62, 59, 56, 53, 51]
+sv = []
+for b in base:
+    k = rng.binomial(240, b / 100)
+    sv.append(round(k / 240 * 100, 1))
+rule = [round(rng.binomial(240, 0.9) / 240 * 100, 1) for _ in ages]
+NUM[&quot;ch3&quot;] = {&quot;survey&quot;: sv, &quot;rule&quot;: rule}
+save(&quot;ch3_survey&quot;, bar_chart(&quot;가족 목소리 딥페이크, 귀로만 가려낼 수 있을까 (1,200명)&quot;, ages,
+     [(&quot;귀로만 판별&quot;, sv, P[&quot;gray&quot;]), (&quot;가족 확인 질문 규칙 사용&quot;, rule, P[&quot;defense&quot;])], &quot;연령대&quot;, &quot;정답률(%)&quot;, ymax=100))
+
+# ---------------- 4장: 임직원 2,000명 모의 피싱 훈련 ----------------
+months = list(range(1, 7))
+def clickpath(start, decay, n=1000):
+    out = []
+    for m in months:
+        rate = start * math.exp(-decay * (m - 1))
+        out.append(round(rng.binomial(n, rate) / n * 100, 1))
+    return out
+gen_untr = clickpath(0.08, 0.0)
+ai_untr = clickpath(0.27, 0.0)
+ai_tr = clickpath(0.27, 0.27)
+NUM[&quot;ch4&quot;] = {&quot;gen&quot;: gen_untr, &quot;ai_untr&quot;: ai_untr, &quot;ai_tr&quot;: ai_tr}
+save(&quot;ch4_training&quot;, line_chart(&quot;임직원 2,000명 모의 피싱: 6개월 클릭률&quot;, months,
+     [(&quot;일반 피싱 · 훈련 없음&quot;, gen_untr, P[&quot;gray&quot;], &quot;6 4&quot;),
+      (&quot;AI 맞춤 피싱 · 훈련 없음&quot;, ai_untr, P[&quot;crime&quot;], None),
+      (&quot;AI 맞춤 피싱 · 월 1회 시나리오 훈련&quot;, ai_tr, P[&quot;defense&quot;], None)],
+     &quot;개월&quot;, &quot;링크 클릭률(%)&quot;, ymin=0, ymax=35, xticks=months))
+
+# 심리 요소별 클릭률
+levers = [&quot;권위&quot;, &quot;긴급성&quot;, &quot;호기심&quot;, &quot;신뢰(지인)&quot;, &quot;보상&quot;]
+lv = [round(rng.binomial(400, q) / 4, 1) for q in [0.22, 0.26, 0.17, 0.34, 0.14]]
+NUM[&quot;ch4&quot;][&quot;levers&quot;] = dict(zip(levers, lv))
+save(&quot;ch4_levers&quot;, bar_chart(&quot;미끼의 심리 요소별 클릭률 (요소당 400명)&quot;, levers, [(&quot;&quot;, lv, P[&quot;crime2&quot;])],
+     &quot;메시지에 쓴 심리 요소&quot;, &quot;클릭률(%)&quot;, ymax=40))
+
+# ---------------- 5장: 적응형 공격 vs 방어 ----------------
+rounds = list(range(1, 21))
+static = [83 * math.exp(-(k - 1) / 7) + 12 for k in rounds]
+behav = [86 - 6 * (1 - math.exp(-(k - 1) / 5)) + rng.normal(0, 1.2) for k in rounds]
+shared = [88 + 6 * (1 - math.exp(-(k - 1) / 6)) + rng.normal(0, 1.0) for k in rounds]
+NUM[&quot;ch5&quot;] = {&quot;static_end&quot;: round(static[-1], 1), &quot;behav_end&quot;: round(behav[-1], 1), &quot;shared_end&quot;: round(shared[-1], 1)}
+save(&quot;ch5_adaptive&quot;, line_chart(&quot;공격이 학습할 때 방어 차단율은 어떻게 변할까 (20라운드)&quot;, rounds,
+     [(&quot;고정 규칙(시그니처) 필터&quot;, static, P[&quot;gray&quot;], None),
+      (&quot;행위 기반 이상 탐지&quot;, behav, P[&quot;neutral&quot;], None),
+      (&quot;행위 탐지 + 조직 간 위협 정보 공유&quot;, shared, P[&quot;defense&quot;], None)],
+     &quot;공격 라운드(공격자가 매번 수법을 바꿈)&quot;, &quot;차단율(%)&quot;, ymin=0, ymax=100, xticks=[1, 5, 10, 15, 20]))
+
+# 로그인 5,000건 이상 탐지 (초파리)
+normal_h = rng.normal(14, 2.5, 4900) % 24
+attack_h = rng.normal(3.5, 1.2, 100) % 24
+fail_n = np.concatenate([rng.poisson(0.3, 4900), rng.poisson(4.5, 100)])
+hour = np.concatenate([normal_h, attack_h])
+lab = np.concatenate([np.zeros(4900), np.ones(100)])
+z = (np.abs(hour - 14) / 2.5) + fail_n / 1.2
+pred = z &gt; 4.0
+tp = int(((pred == 1) &amp; (lab == 1)).sum()); fp = int(((pred == 1) &amp; (lab == 0)).sum())
+fn = int(((pred == 0) &amp; (lab == 1)).sum())
+NUM[&quot;ch5&quot;].update({&quot;tp&quot;: tp, &quot;fp&quot;: fp, &quot;fn&quot;: fn, &quot;recall&quot;: round(tp / 100 * 100, 1), &quot;precision&quot;: round(tp / (tp + fp) * 100, 1)})
+
+# ---------------- 6장: 10만 명 재식별 ----------------
+import pandas as pd
+N6 = 100000
+df = pd.DataFrame({
+    &quot;시군구&quot;: rng.integers(0, 250, N6),
+    &quot;출생연도&quot;: rng.integers(1950, 2008, N6),
+    &quot;성별&quot;: rng.integers(0, 2, N6),
+    &quot;직업군&quot;: rng.choice(20, N6, p=np.array([.15, .12, .1, .08, .08, .07, .06, .05, .05, .04, .04, .03, .03, .02, .02, .02, .01, .01, .01, .01]) / 1.0),
+    &quot;출생월&quot;: rng.integers(1, 13, N6),
+    &quot;차종&quot;: rng.integers(0, 30, N6),
+})
+cols = [&quot;시군구&quot;, &quot;출생연도&quot;, &quot;성별&quot;, &quot;출생월&quot;, &quot;직업군&quot;, &quot;차종&quot;]
+uniq = []
+for i in range(1, len(cols) + 1):
+    g = df.groupby(cols[:i]).size()
+    u = (g == 1).sum() / N6 * 100
+    uniq.append(round(float(u), 1))
+NUM[&quot;ch6&quot;] = dict(zip([&quot;+&quot; + c for c in cols], uniq))
+save(&quot;ch6_reident&quot;, bar_chart(&quot;10만 명 중 &#x27;세상에 나 하나뿐&#x27;인 사람의 비율&quot;, [&quot;시군구&quot;, &quot;+출생연도&quot;, &quot;+성별&quot;, &quot;+출생월&quot;, &quot;+직업군&quot;, &quot;+차종&quot;],
+     [(&quot;&quot;, uniq, P[&quot;violet&quot;])], &quot;공개 정보 조각을 하나씩 더할 때&quot;, &quot;유일하게 특정되는 비율(%)&quot;, ymax=100))
+
+# ---------------- 7장: 세탁 추적 / 랜섬 전략 ----------------
+hops = list(range(0, 21))
+manual = [100 * math.exp(-h / 4.5) for h in hops]
+ml = [100 * (0.25 + 0.75 * math.exp(-h / 14)) for h in hops]
+mix = [100 * (0.25 + 0.75 * math.exp(-h / 14)) * (0.45 if h &gt;= 6 else 1) for h in hops]
+NUM[&quot;ch7&quot;] = {&quot;manual10&quot;: round(manual[10], 1), &quot;ml10&quot;: round(ml[10], 1), &quot;mix10&quot;: round(mix[10], 1)}
+save(&quot;ch7_trace&quot;, line_chart(&quot;쪼개고 옮길수록 추적 확률은 얼마나 떨어질까&quot;, hops,
+     [(&quot;수작업 추적&quot;, manual, P[&quot;gray&quot;], None), (&quot;머신러닝 군집 분석 추적&quot;, ml, P[&quot;neutral&quot;], None),
+      (&quot;머신러닝 추적 · 6번째 이동에서 믹서 경유&quot;, mix, P[&quot;crime&quot;], &quot;6 4&quot;)],
+     &quot;자금 이동 횟수(홉)&quot;, &quot;출처까지 이어 갈 확률(%)&quot;, ymin=0, ymax=100, xticks=[0, 5, 10, 15, 20]))
+
+A = dict(n=10, ransom=200000, pay=0.20, cost_per=30000)   # 만원 단위가 아니라 천원? -&gt; 만원
+B = dict(n=300, ransom=3000, pay=0.30, cost_per=150)
+def rev(d):
+    r_ = d[&quot;n&quot;] * d[&quot;ransom&quot;] * d[&quot;pay&quot;] / 10000  # 억 원
+    c_ = d[&quot;n&quot;] * d[&quot;cost_per&quot;] / 10000
+    return round(r_, 1), round(c_, 1), round(r_ - c_, 1)
+ra_, rb_ = rev(A), rev(B)
+NUM[&quot;ch7&quot;].update({&quot;A&quot;: ra_, &quot;B&quot;: rb_})
+save(&quot;ch7_ransom&quot;, bar_chart(&quot;X2의 두 가지 영업 전략 (1년)&quot;, [&quot;기대 몸값 수입&quot;, &quot;운영 비용&quot;, &quot;순이익&quot;],
+     [(&quot;대형 표적 10곳 · 건당 20억&quot;, list(ra_), P[&quot;gray&quot;]), (&quot;AI 자동화 300곳 · 건당 3,000만&quot;, list(rb_), P[&quot;crime&quot;])],
+     &quot;항목&quot;, &quot;억 원&quot;))
+
+# ---------------- 8장: 생활유형별 연간 기대손실 ----------------
+personas = [&quot;SNS 활동형&quot;, &quot;온라인 금융형&quot;, &quot;재택 비즈니스형&quot;]
+threats = {  # (연간 발생확률, 손실 만원)
+    &quot;SNS 활동형&quot;: [(0.06, 300), (0.03, 150), (0.02, 800)],
+    &quot;온라인 금융형&quot;: [(0.04, 1500), (0.05, 400), (0.02, 2500)],
+    &quot;재택 비즈니스형&quot;: [(0.05, 900), (0.03, 3000), (0.02, 1200)],
+}
+reduce = [0.25, 0.30, 0.35]  # 대책 적용 후 남는 비율
+before = [round(sum(p * l for p, l in threats[k]), 1) for k in personas]
+after = [round(sum(p * l * r for (p, l), r in zip(threats[k], reduce)), 1) for k in personas]
+NUM[&quot;ch8&quot;] = {&quot;before&quot;: before, &quot;after&quot;: after}
+save(&quot;ch8_personas&quot;, bar_chart(&quot;생활유형별 연간 기대손실: 방패 전과 후&quot;, personas,
+     [(&quot;방패 전&quot;, before, P[&quot;crime2&quot;]), (&quot;기본 방패 5종 적용 후&quot;, after, P[&quot;defense&quot;])], &quot;생활유형&quot;, &quot;연간 기대손실(만 원)&quot;))
+
+# ---------------- 9장: 집단 면역 시뮬레이션 ----------------
+def ba_graph(n, m, seed):
+    rr = np.random.default_rng(seed)
+    edges = [(i, j) for i in range(m) for j in range(i)]
+    deg = [m - 1] * m
+    adj = [set(j for j in range(m) if j != i) for i in range(m)]
+    for v in range(m, n):
+        tot = sum(deg)
+        targets = set()
+        while len(targets) &lt; m:
+            targets.add(int(rr.choice(len(deg), p=np.array(deg) / tot)))
+        adj.append(set())
+        deg.append(0)
+        for t in targets:
+            adj[v].add(t); adj[t].add(v); deg[t] += 1; deg[v] += 1
+    return adj
+G = ba_graph(500, 3, 7)
+def spread(secure_rate, beta, runs=30):
+    res = []
+    for k in range(runs):
+        rr = np.random.default_rng(1000 + k)
+        secure = rr.random(500) &lt; secure_rate
+        infected = {int(rr.integers(500))}
+        frontier = list(infected)
+        while frontier:
+            nf = []
+            for u in frontier:
+                for v in G[u]:
+                    if v in infected:
+                        continue
+                    b = beta * (0.08 if secure[v] else 1.0)
+                    if rr.random() &lt; b:
+                        infected.add(v); nf.append(v)
+            frontier = nf
+        res.append(len(infected) / 5)
+    return float(np.mean(res))
+rates = [0, .1, .2, .3, .4, .5, .6, .7, .8, .9]
+s_alone = [spread(x, 0.30) for x in rates]
+s_share = [spread(x, 0.18) for x in rates]
+NUM[&quot;ch9&quot;] = {&quot;alone&quot;: [round(v, 1) for v in s_alone], &quot;share&quot;: [round(v, 1) for v in s_share]}
+save(&quot;ch9_herd&quot;, line_chart(&quot;기업 500곳 연결망: 보안을 갖춘 기업 비율과 피해 확산&quot;, [int(x * 100) for x in rates],
+     [(&quot;각자 방어&quot;, s_alone, P[&quot;crime&quot;], None), (&quot;위협 정보 공유(전파력 40% 감소)&quot;, s_share, P[&quot;defense&quot;], None)],
+     &quot;기본 보안을 갖춘 기업 비율(%)&quot;, &quot;최종 피해 기업 비율(%)&quot;, ymin=0, ymax=100, xticks=[0, 20, 40, 60, 80, 90]))
+
+# ---------------- 10장: 탐지 지연 vs 손실 / 계산서 뒤집기 ----------------
+days = list(range(0, 61))
+loss_full = [10 / (1 + math.exp(-(d - 20) / 5)) for d in days]  # 억 원
+NUM[&quot;ch10&quot;] = {&quot;d1&quot;: round(loss_full[1], 2), &quot;d7&quot;: round(loss_full[7], 2), &quot;d30&quot;: round(loss_full[30], 2)}
+save(&quot;ch10_dwell&quot;, line_chart(&quot;침입을 알아차리기까지 걸린 날과 피해액&quot;, days,
+     [(&quot;백업 없음&quot;, loss_full, P[&quot;crime&quot;], None), (&quot;분리 백업 + 복구 훈련&quot;, [v * 0.35 for v in loss_full], P[&quot;defense&quot;], None)],
+     &quot;탐지까지 걸린 날&quot;, &quot;누적 피해액(억 원)&quot;, ymin=0, ymax=10, xticks=[0, 7, 14, 30, 45, 60], vline=(3, &quot;골든타임 3일&quot;)))
+
+base_profit = ai[&quot;순이익&quot;]
+steps = [(&quot;AI 사기 기본&quot;, 0)]
+pi_, p_, g_, N_ = 0.003, 0.03, 300, 3000
+def prof(pi, p, g, N, c=0.03, f=3000):
+    s = N * pi
+    return s * g - N * c - s * p * f
+vals = [prof(pi_, p_, g_, N_)]
+labels = [&quot;AI 사기 기본값&quot;]
+for lab_, kw in [(&quot;속도 제한·이상 탐지&quot;, dict(N=900)), (&quot;별도 채널 확인 습관&quot;, dict(pi=0.0012)),
+                 (&quot;피싱 내성 인증·패스키&quot;, dict(pi=0.0006)), (&quot;지급정지·출금 지연&quot;, dict(g=120)),
+                 (&quot;국제 공조·위협 정보 공유&quot;, dict(p=0.06))]:
+    pi_ = kw.get(&quot;pi&quot;, pi_); p_ = kw.get(&quot;p&quot;, p_); g_ = kw.get(&quot;g&quot;, g_); N_ = kw.get(&quot;N&quot;, N_)
+    vals.append(prof(pi_, p_, g_, N_)); labels.append(&quot;+&quot; + lab_)
+NUM[&quot;ch10&quot;][&quot;flip&quot;] = [round(v, 1) for v in vals]
+save(&quot;ch10_flip&quot;, bar_chart(&quot;X1의 하루 순이익: 방어를 하나씩 더할 때&quot;, [&quot;기본&quot;, &quot;+속도 제한&quot;, &quot;+확인 습관&quot;, &quot;+패스키&quot;, &quot;+지급정지&quot;, &quot;+국제 공조&quot;],
+     [(&quot;&quot;, [round(v, 1) for v in vals], P[&quot;crime&quot;])], &quot;누적 대응&quot;, &quot;순이익(만 원/일)&quot;))
+
+with open(os.path.join(OUT, &quot;numbers.json&quot;), &quot;w&quot;, encoding=&quot;utf-8&quot;) as f:
+    json.dump(NUM, f, ensure_ascii=False, indent=1, default=float)
+print(json.dumps(NUM, ensure_ascii=False, indent=1, default=float))
+
+
+</pre><footer class="foot">글 · 안상선 (<a href="https://adminmrobo.github.io/who_am_i/who_am_i.html">https://adminmrobo.github.io/who_am_i/who_am_i.html</a>) · (주)M-Robo 대표<br>이 사이트는 『AI 범죄와 자기 방어』의 사례 보충본이다. '모의 데이터(가상)'는 설명용 가상의 수치이며 실제 통계가 아니다. X1~X3는 범죄자 역할을 맡은 대역이다. 범죄 수법은 작동 원리까지만 다룬다. · <a href="references.html">참고문헌</a> · <a href="data.html">모의 데이터와 재현 코드</a> · <a href="workbook.html">통합 작업본</a></footer></main></div><script src="assets/lab.js"></script></body></html>

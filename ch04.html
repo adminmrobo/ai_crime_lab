@@ -1,0 +1,293 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>완벽한 사기꾼 — AI가 바꾸는 피싱과 사회공학 · AI 범죄 연구실</title><meta name="description" content="정교함과 대량을 동시에 — 개인화 비용이 0에 가까워질 때">
+<meta property="og:title" content="완벽한 사기꾼 — AI가 바꾸는 피싱과 사회공학 · AI 범죄 연구실"><meta property="og:description" content="정교함과 대량을 동시에 — 개인화 비용이 0에 가까워질 때">
+<meta property="og:image" content="https://adminmrobo.github.io/ai_crime_lab/assets/lineup.webp"><meta property="og:url" content="https://adminmrobo.github.io/ai_crime_lab/ch04.html"><meta property="og:type" content="article">
+<link rel="stylesheet" href="assets/lab.css"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "LearningResource", "name": "완벽한 사기꾼 — AI가 바꾸는 피싱과 사회공학", "description": "피싱과 사회공학이 사람의 신뢰·공포·호기심·권위를 어떻게 이용하는지 본다.", "inLanguage": "ko", "isPartOf": {"@type": "Book", "name": "AI 범죄와 자기 방어"}, "author": {"@type": "Person", "name": "안상선", "url": "https://adminmrobo.github.io/who_am_i/who_am_i.html"}, "teaches": ["사회공학", "검사 게임", "멤버십 추론", "스피어피싱"], "educationalLevel": "입문", "url": "https://adminmrobo.github.io/ai_crime_lab/ch04.html", "about": ["게임이론", "범죄경제학", "AI 범죄"]}</script></head><body>
+<header class="top"><a class="brand" href="index.html">AI 범죄 연구실 — 범죄자의 계산서를 뒤집어라</a>
+<a href="index.html#chapters">목차</a><a href="practice/index.html">실전 연습장</a><a href="workbook.html">통합 작업본</a><a href="references.html">참고문헌</a><a href="data.html">모의 데이터</a></header><div class="wrap"><nav class="toc"><b>4장</b><a href='#three'>처음 오신 분께</a><a href='#why'>왜 · 큰 그림</a><a href="#s1">단계 1</a><a href="#s2">단계 2</a><a href="#s3">단계 3</a><a href="#s4">단계 4</a><a href='#tool'>단계 5 · 분석 도구</a><a href='#duel'>대결</a><a href='#wrap'>정리 퀴즈</a><a href='#outro'>아웃트로</a><a href='#kg'>지식 색인</a><a href='#export'>꾸러미</a></nav><main><section class="hero"><div><div class="no">4장</div><h1>완벽한 사기꾼 — AI가 바꾸는 피싱과 사회공학</h1><p class="sub">정교함과 대량을 동시에 — 개인화 비용이 0에 가까워질 때</p><div class="meta">원고 대응: PDF 4장 4-1·4-2 + 4장 확장본 전체<br>범죄경제학 초점: 개인화 비용의 붕괴 — &#x27;대량이면 조잡, 정교하면 소량&#x27;이라는 상충관계가 깨진다</div></div><img class="cover" src="assets/lineup.webp" alt="연구실 식구 단체 사진 — 박사, 조수 하루, 인턴 시아·모아, 주판봇, 초파리 연구원" width="1200" height="678"></section><section class="three" id="three"><h2>처음 오신 분께 — 이 페이지를 3줄로</h2><ol><li><b>무엇을</b>: 피싱과 사회공학이 사람의 신뢰·공포·호기심·권위를 어떻게 이용하는지 본다.</li><li><b>왜 중요한가</b>: AI는 &#x27;대량이면 조잡, 정교하면 소량&#x27;이라는 오래된 상충관계를 깨뜨렸다.</li><li><b>생활·업무에서는</b>: 조직에서는 반복 훈련과 &#x27;쉬운 확인 절차&#x27;가 가장 효과가 크다.</li></ol><p class="note">코드와 수식을 몰라도 됩니다. 수식은 조수(하루)가 대신 묻고, 박사가 숫자로 한 번 풀어 드립니다.</p><details><summary>영어 약어 풀이</summary><ul><li><b>BEC</b> — Business Email Compromise, 업무 메일 사칭</li><li><b>MFA</b> — Multi-Factor Authentication, 다중 인증</li><li><b>FIDO2</b> — 비밀번호 없는 인증 표준</li></ul></details></section><h2 style='margin-top:30px'>등장인물</h2><div class="cast"><figure><img src="assets/chars/doctor/E07.webp" alt="박사" loading="lazy" width="58" height="58"><b>박사</b><span>해설자</span></figure><figure><img src="assets/chars/haru/E10.webp" alt="조수(하루)" loading="lazy" width="58" height="58"><b>조수(하루)</b><span>추적 팀 · 대응 설계</span></figure><figure><img src="assets/chars/sia/E09.webp" alt="인턴1 시아" loading="lazy" width="58" height="58"><b>인턴1 시아</b><span>추적 팀 · 현장 사례</span></figure><figure><img src="assets/chars/moa/E07.webp" alt="인턴2 모아" loading="lazy" width="58" height="58"><b>인턴2 모아</b><span>추적 팀 · 제도·법</span></figure><figure><img src="assets/chars/jupanbot/E16.webp" alt="주판봇" loading="lazy" width="58" height="58"><b>주판봇</b><span>계산 담당</span></figure><figure><img src="assets/chars/fruitfly/E09.webp" alt="초파리 연구원" loading="lazy" width="58" height="58"><b>초파리 연구원</b><span>데이터·모델 분석</span></figure><figure><img src="assets/chars/x1/E13.webp" alt="X1" loading="lazy" width="58" height="58"><b>X1</b><span>범죄자 대역 · 사기·사칭</span></figure><figure><img src="assets/chars/x2/E13.webp" alt="X2" loading="lazy" width="58" height="58"><b>X2</b><span>범죄자 대역 · 자동화 공격·랜섬</span></figure><figure><img src="assets/chars/x3/E13.webp" alt="X3" loading="lazy" width="58" height="58"><b>X3</b><span>범죄자 대역 · 세탁·정보 브로커</span></figure></div><section class="why" id="why"><h2>왜 이 장이 필요한가</h2><div class="say left"><img src="assets/chars/doctor/E09.webp" alt="박사" loading="lazy" width="58" height="58"><div class="bub"><div class="who">박사<span>해설자</span></div><div class="txt">3장의 딥페이크는 '얼굴'을 위조했다. 하지만 공격이 통하는 진짜 이유는 사람의 심리다. 심리의 약점을 알아야 방어 절차를 설계할 수 있다.</div></div></div></section><section class="big"><h3>큰 그림 — 지금 어디쯤인가</h3><div class="bigrow"><div><small>앞에서</small>3장: 신호의 위조</div><div class="now"><small>이 장</small>심리를 겨냥한 사회공학</div><div><small>다음에</small>5장: 그 공격이 스스로 학습하며 진화하는 모습</div></div><p class="mute">이 장의 분석 도구: 게임이론. 여기서 한 번 멈춰도 괜찮아요. 처음엔 다들 계산서 기호에서 오래 봅니다.</p></section>
+<div class="say left"><img src="assets/chars/doctor/E07.webp" alt="박사" loading="lazy" width="58" height="58"><div class="bub"><div class="who">박사<span>해설자</span></div><div class="txt">"고객님, 계좌에서 이상 거래가 감지되었습니다." 예전에는 어색한 번역투와 오탈자가 피싱을 가려내는 단서였다. 생성형 AI는 그 단서를 지운다. 4장은 사람의 마음을 해킹하는 기술, 사회공학이 AI를 만나 어떻게 바뀌었는지 본다.</div></div></div>
+<section class="step" id="s1"><div class="lab">단계 1</div><h2>사회공학 — 사람이 가장 약한 고리</h2><p>사회공학(Social Engineering)은 기술의 허점이 아니라 <strong>사람의 심리와 신뢰</strong>를 이용해 정보를 빼내거나 시스템에 침입하는 기법이다. 확장본은 공격이 기대는 심리를 네 가지로 정리한다.</p>
+<table>
+<thead>
+<tr>
+<th>심리 요소</th>
+<th>공격자의 말</th>
+<th>왜 통하는가</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>신뢰</td>
+<td>"나야, 민수", "은행 보안팀입니다"</td>
+<td>사회는 신뢰 없이 돌아가지 않는다</td>
+</tr>
+<tr>
+<td>공포·긴급성</td>
+<td>"24시간 안에 조치하지 않으면 법적 조치"</td>
+<td>시간 압박이 판단을 감정에 맡기게 한다</td>
+</tr>
+<tr>
+<td>호기심·보상</td>
+<td>"당첨되셨습니다", "급여 명세서.pdf"</td>
+<td>확인하고 싶은 마음을 이용한다</td>
+</tr>
+<tr>
+<td>권위</td>
+<td>"대표님 지시입니다", "검찰입니다"</td>
+<td>밀그램 실험이 보여 준 복종 경향</td>
+</tr>
+</tbody>
+</table>
+<p>공격은 보통 네 단계로 짜인다. <strong>정보 수집 → 신뢰 관계 형성 → 취약점 악용 → 실행</strong>. 원고의 AI 공격 5단계(5장)와 짝을 이룬다.</p>
+<aside class="box data" style="background:#f3f1fd;border-color:#7a5bd1"><div class="bt" style="color:#7a5bd1">주판봇·초파리 분석실 · 미끼의 심리 요소별 클릭률 (요소당 400명)</div><div class="say left"><img src="assets/chars/fruitfly/E09.webp" alt="초파리 연구원" loading="lazy" width="58" height="58"><div class="bub"><div class="who">초파리 연구원<span>데이터·모델 분석</span></div><div class="txt">같은 회사 직원들에게 심리 요소만 바꾼 모의 메일을 보냈다고 가정했어요. 지인 사칭(신뢰)이 <strong>33.8%</strong>로 가장 높고, 긴급성 <strong>27.2%</strong>, 권위 <strong>22.2%</strong>, 호기심 <strong>17.5%</strong>, 보상 <strong>10.5%</strong> 순이에요.</div></div></div>
+<div class="say left"><img src="assets/chars/jupanbot/E16.webp" alt="주판봇" loading="lazy" width="58" height="58"><div class="bub"><div class="who">주판봇<span>계산 담당</span></div><div class="txt">신뢰를 흉내 내는 데 가장 큰 비용이 들었는데, AI가 그 비용을 가장 많이 깎았어요. 그러니 X1이 지인 사칭에 집중하는 건 계산상 당연해요.</div></div></div></aside>
+
+<figure class="chart"><svg viewBox="0 0 720 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="미끼의 심리 요소별 클릭률 (요소당 400명)" font-family="Pretendard, Noto Sans KR, sans-serif">
+<rect width="720" height="380" fill="#ffffff"/>
+<text x="70" y="26" font-size="16" font-weight="700" fill="#1d2430">미끼의 심리 요소별 클릭률 (요소당 400명)</text>
+<text x="696" y="26" font-size="11" text-anchor="end" fill="#8a93a0">모의 데이터(가상)</text>
+<line x1="70" x2="696" y1="298.0" y2="298.0" stroke="#e8ecf1"/>
+<text x="62" y="302.0" font-size="11" text-anchor="end" fill="#5b6572">0</text>
+<line x1="70" x2="696" y1="235.0" y2="235.0" stroke="#e8ecf1"/>
+<text x="62" y="239.0" font-size="11" text-anchor="end" fill="#5b6572">10</text>
+<line x1="70" x2="696" y1="172.0" y2="172.0" stroke="#e8ecf1"/>
+<text x="62" y="176.0" font-size="11" text-anchor="end" fill="#5b6572">20</text>
+<line x1="70" x2="696" y1="109.0" y2="109.0" stroke="#e8ecf1"/>
+<text x="62" y="113.0" font-size="11" text-anchor="end" fill="#5b6572">30</text>
+<line x1="70" x2="696" y1="46.0" y2="46.0" stroke="#e8ecf1"/>
+<text x="62" y="50.0" font-size="11" text-anchor="end" fill="#5b6572">40</text>
+<text x="383.0" y="368" font-size="12" text-anchor="middle" fill="#3b4450">메시지에 쓴 심리 요소</text>
+<text transform="translate(16,181.0) rotate(-90)" font-size="12" text-anchor="middle" fill="#3b4450">클릭률(%)</text>
+<text x="132.6" y="314" font-size="11.5" text-anchor="middle" fill="#3b4450">권위</text>
+<rect x="110.6" y="158.1" width="44.0" height="139.9" rx="3" fill="#f08a5d"/>
+<text x="132.6" y="153.1" font-size="10.5" text-anchor="middle" fill="#1d2430">22</text>
+<text x="257.8" y="314" font-size="11.5" text-anchor="middle" fill="#3b4450">긴급성</text>
+<rect x="235.8" y="126.6" width="44.0" height="171.4" rx="3" fill="#f08a5d"/>
+<text x="257.8" y="121.6" font-size="10.5" text-anchor="middle" fill="#1d2430">27</text>
+<text x="383.0" y="314" font-size="11.5" text-anchor="middle" fill="#3b4450">호기심</text>
+<rect x="361.0" y="187.8" width="44.0" height="110.2" rx="3" fill="#f08a5d"/>
+<text x="383.0" y="182.8" font-size="10.5" text-anchor="middle" fill="#1d2430">18</text>
+<text x="508.2" y="314" font-size="11.5" text-anchor="middle" fill="#3b4450">신뢰(지인)</text>
+<rect x="486.2" y="85.1" width="44.0" height="212.9" rx="3" fill="#f08a5d"/>
+<text x="508.2" y="80.1" font-size="10.5" text-anchor="middle" fill="#1d2430">34</text>
+<text x="633.4" y="314" font-size="11.5" text-anchor="middle" fill="#3b4450">보상</text>
+<rect x="611.4" y="231.8" width="44.0" height="66.2" rx="3" fill="#f08a5d"/>
+<text x="633.4" y="226.8" font-size="10.5" text-anchor="middle" fill="#1d2430">10</text>
+</svg><figcaption>지인을 흉내 낸 메시지가 가장 잘 통한다. AI는 바로 그 &#x27;지인 흉내&#x27;의 비용을 가장 많이 낮췄다. (모의 데이터)</figcaption></figure></section><section class="step" id="s2"><div class="lab">단계 2</div><h2>사회공학 공격의 유형과 실제 사례</h2>
+<div class="say left"><img src="assets/chars/sia/E09.webp" alt="인턴1 시아" loading="lazy" width="58" height="58"><div class="bub"><div class="who">인턴1 시아<span>추적 팀 · 현장 사례</span></div><div class="txt">유형부터 정리할게요. 불특정 다수에게 뿌리는 <strong>피싱</strong>, 특정인을 겨냥하는 <strong>스피어피싱</strong>, 경영진을 노리는 <strong>웨일링</strong>, 문자의 <strong>스미싱</strong>, 음성의 <strong>비싱(보이스피싱)</strong>, 그럴듯한 핑계를 꾸미는 <strong>프리텍스팅</strong>, 미끼를 던지는 <strong>베이팅</strong>, 가짜 경고로 겁주는 <strong>스케어웨어</strong>, 출입문을 따라 들어가는 <strong>테일게이팅</strong>까지요.</div></div></div>
+
+<aside class="box case" style="background:#f4f7fd;border-color:#3d63c9"><div class="bt" style="color:#3d63c9">사례 분석 · 다섯 사건으로 본 사회공학의 진화</div><table>
+<thead>
+<tr>
+<th>연도</th>
+<th>사건</th>
+<th>수법</th>
+<th>시사점</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2011</td>
+<td>RSA SecurID 침해</td>
+<td>'2011 채용 계획' 엑셀 첨부 메일, 스팸함에서 꺼내 연 직원 한 명</td>
+<td>보안 기업도 사람 한 명으로 뚫린다</td>
+</tr>
+<tr>
+<td>2016</td>
+<td>존 포데스타 메일</td>
+<td>가짜 구글 비밀번호 경고 메일</td>
+<td>공포 + 권위(구글) 조합의 위력</td>
+</tr>
+<tr>
+<td>2010년대</td>
+<td>미국 국세청(IRS) 사칭 전화</td>
+<td>"세금 체납, 즉시 납부 안 하면 체포"</td>
+<td>공포·긴급성 대본의 대량 생산</td>
+</tr>
+<tr>
+<td>2019</td>
+<td>영국 에너지 기업 CEO 음성</td>
+<td>AI 음성 복제 + 긴급 송금 지시</td>
+<td>AI가 사회공학에 본격 등장</td>
+</tr>
+<tr>
+<td>2024</td>
+<td>홍콩 화상회의 사기</td>
+<td>다자간 딥페이크 회의</td>
+<td>확인 수단 자체가 공격 수단</td>
+</tr>
+</tbody>
+</table>
+<div class="say left"><img src="assets/chars/moa/E07.webp" alt="인턴2 모아" loading="lazy" width="58" height="58"><div class="bub"><div class="who">인턴2 모아<span>추적 팀 · 제도·법</span></div><div class="txt">확장본 작업 때 정정한 점이 있어요. 2016년 가짜 구글 경고 메일에 당한 사람은 클린턴 캠프의 존 포데스타였고, 민주당 전국위원회(DNC) 해킹과는 구분해야 해요.</div></div></div></aside></section><section class="step" id="s3"><div class="lab">단계 3</div><h2>AI가 바꾼 것 — 개인화 비용의 붕괴</h2>
+<div class="say left"><img src="assets/chars/doctor/E07.webp" alt="박사" loading="lazy" width="58" height="58"><div class="bub"><div class="who">박사<span>해설자</span></div><div class="txt">확장본의 비교표가 이 장의 요점을 보여 준다.</div></div></div>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>기존 자동화 공격</th>
+<th>AI 기반 자동화 공격</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>공격 메시지</td>
+<td>단순·정형화, 무차별</td>
+<td>맞춤형·개인화, 표적별 최적화</td>
+</tr>
+<tr>
+<td>정보 수집</td>
+<td>제한적, 수동적</td>
+<td>대규모 자동화, 실시간 분석</td>
+</tr>
+<tr>
+<td>탐지 회피</td>
+<td>패턴 고정, 쉽게 탐지</td>
+<td>탐지 패턴을 학습해 우회</td>
+</tr>
+<tr>
+<td>공격 채널</td>
+<td>일부(주로 이메일)</td>
+<td>이메일·문자·음성·영상 동시</td>
+</tr>
+<tr>
+<td>신뢰성·설득력</td>
+<td>낮음</td>
+<td>매우 높음(딥페이크 등)</td>
+</tr>
+<tr>
+<td>공격 속도·규모</td>
+<td>대량이지만 획일적</td>
+<td>실시간, 대규모, 개별 맞춤</td>
+</tr>
+<tr>
+<td>성공률</td>
+<td>낮음</td>
+<td>높음</td>
+</tr>
+</tbody>
+</table>
+<div class="say left"><img src="assets/chars/doctor/E07.webp" alt="박사" loading="lazy" width="58" height="58"><div class="bub"><div class="who">박사<span>해설자</span></div><div class="txt">가장 중요한 변화는 첫 줄과 마지막 줄의 관계다. 예전에는 <strong>대량이면 조잡하고, 정교하면 소량</strong>이었다. 수백만 명에게 같은 메일을 뿌리거나, 한 사람에게 맞춘 메일을 공들여 쓰거나 둘 중 하나였다. AI는 이 상충관계를 깬다. <strong>대량이면서 정교한 공격</strong>이 가능해졌다.</div></div></div>
+
+<div class="say right x"><img src="assets/chars/x1/E13.webp" alt="X1" loading="lazy" width="58" height="58"><div class="bub"><div class="who">X1<span>범죄자 대역 · 사기·사칭</span></div><div class="txt">내 입장에서 정리하면 이렇다. 예전에는 한 통의 정교한 메일에 30분이 들었다. 지금은 30초다. 같은 하루에 60배의 정교한 메일을 쓴다.</div></div></div>
+<h3>AI 챗봇과 SNS 정보 수집</h3>
+<ul>
+<li><strong>대화형 미끼</strong>: 피해자가 답장하면 그 내용에 맞춰 대화를 이어 가고, 의심 섞인 질문에도 그럴듯한 해명을 즉시 내놓는다.</li>
+<li><strong>SNS 기반 맞춤 사기</strong>: 여행 사진을 자주 올리면 항공사·호텔 사칭, 반려동물 사진이면 동물병원 사칭 문자가 온다.</li>
+<li><strong>허위 정보 유포</strong>: 2023년 펜타곤 폭발 가짜 사진, 톰 크루즈 목소리를 흉내 낸 가짜 다큐멘터리 영상처럼 유명인의 신뢰를 빌려 퍼뜨린다.</li>
+</ul>
+<h3>AI 모델 자체를 노리는 공격</h3>
+<div class="say left"><img src="assets/chars/sia/E09.webp" alt="인턴1 시아" loading="lazy" width="58" height="58"><div class="bub"><div class="who">인턴1 시아<span>추적 팀 · 현장 사례</span></div><div class="txt">원고는 사람만이 아니라 AI 모델도 표적이 된다고 짚어요.</div></div></div>
+<ul>
+<li><strong>데이터 오염(포이즈닝)</strong>: 2016년 마이크로소프트 챗봇 Tay가 하루 만에 혐오 발언을 쏟아낸 사건.</li>
+<li><strong>회피 공격</strong>: 사람 눈엔 같아 보이는 미세한 변화로 모델의 판단을 뒤집는 적대적 예시(Szegedy et al., 2013).</li>
+<li><strong>모델 추출</strong>: API를 반복 호출해 입출력만으로 비슷한 모델을 복제.</li>
+<li><strong>멤버십 추론</strong>: 출력을 분석해 특정 데이터가 학습에 쓰였는지 알아내는 공격(Shokri et al., 2017). 의료·금융 모델이라면 그 자체가 개인정보 유출이다.</li>
+</ul>
+<div class="say left"><img src="assets/chars/doctor/E07.webp" alt="박사" loading="lazy" width="58" height="58"><div class="bub"><div class="who">박사<span>해설자</span></div><div class="txt">이 대목은 내 2024년 연구(「금융 분야의 이상탐지 모델 보안을 위한 통계 기반의 적대적 데이터 대응 방안」, 『미래사회』 15(3))와도 이어진다. 방어용 이상탐지 모델도 공격 대상이 될 수 있으므로, 모델을 지키는 통계적 장치가 함께 필요하다.</div></div></div></section><section class="step" id="s4"><div class="lab">단계 4</div><h2>임직원 2,000명 모의 피싱 훈련 — 사람은 고칠 수 있는가</h2>
+<aside class="box data" style="background:#f3f1fd;border-color:#7a5bd1"><div class="bt" style="color:#7a5bd1">주판봇·초파리 분석실 · 6개월 모의 훈련</div><div class="say left"><img src="assets/chars/fruitfly/E09.webp" alt="초파리 연구원" loading="lazy" width="58" height="58"><div class="bub"><div class="who">초파리 연구원<span>데이터·모델 분석</span></div><div class="txt">직원 2,000명을 두 집단으로 나눴다고 가정했어요. 한 집단은 훈련 없이 매달 AI 맞춤 피싱 메일을 받고, 다른 집단은 매달 실제 사례를 본뜬 시나리오 훈련 후 같은 메일을 받아요. 비교용으로 일반 피싱 메일의 클릭률도 넣었어요.</div></div></div>
+<div class="say left"><img src="assets/chars/jupanbot/E16.webp" alt="주판봇" loading="lazy" width="58" height="58"><div class="bub"><div class="who">주판봇<span>계산 담당</span></div><div class="txt">일반 피싱 클릭률은 <strong>7~9%</strong>예요. AI 맞춤 피싱은 훈련이 없으면 <strong>22~29%</strong>에서 내려오지 않아요. 훈련 집단은 1개월 <strong>27.3%</strong>에서 6개월 <strong>6.6%</strong>까지 떨어졌어요. AI 맞춤 피싱의 효과를 거의 일반 피싱 수준으로 되돌린 셈이에요.</div></div></div></aside>
+
+<figure class="chart"><svg viewBox="0 0 720 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="임직원 2,000명 모의 피싱: 6개월 클릭률" font-family="Pretendard, Noto Sans KR, sans-serif">
+<rect width="720" height="380" fill="#ffffff"/>
+<text x="70" y="26" font-size="16" font-weight="700" fill="#1d2430">임직원 2,000명 모의 피싱: 6개월 클릭률</text>
+<text x="696" y="26" font-size="11" text-anchor="end" fill="#8a93a0">모의 데이터(가상)</text>
+<line x1="70" x2="696" y1="298.0" y2="298.0" stroke="#e8ecf1"/>
+<text x="62" y="302.0" font-size="11" text-anchor="end" fill="#5b6572">0</text>
+<line x1="70" x2="696" y1="262.0" y2="262.0" stroke="#e8ecf1"/>
+<text x="62" y="266.0" font-size="11" text-anchor="end" fill="#5b6572">5</text>
+<line x1="70" x2="696" y1="226.0" y2="226.0" stroke="#e8ecf1"/>
+<text x="62" y="230.0" font-size="11" text-anchor="end" fill="#5b6572">10</text>
+<line x1="70" x2="696" y1="190.0" y2="190.0" stroke="#e8ecf1"/>
+<text x="62" y="194.0" font-size="11" text-anchor="end" fill="#5b6572">15</text>
+<line x1="70" x2="696" y1="154.0" y2="154.0" stroke="#e8ecf1"/>
+<text x="62" y="158.0" font-size="11" text-anchor="end" fill="#5b6572">20</text>
+<line x1="70" x2="696" y1="118.0" y2="118.0" stroke="#e8ecf1"/>
+<text x="62" y="122.0" font-size="11" text-anchor="end" fill="#5b6572">25</text>
+<line x1="70" x2="696" y1="82.0" y2="82.0" stroke="#e8ecf1"/>
+<text x="62" y="86.0" font-size="11" text-anchor="end" fill="#5b6572">30</text>
+<line x1="70" x2="696" y1="46.0" y2="46.0" stroke="#e8ecf1"/>
+<text x="62" y="50.0" font-size="11" text-anchor="end" fill="#5b6572">35</text>
+<text x="383.0" y="368" font-size="12" text-anchor="middle" fill="#3b4450">개월</text>
+<text transform="translate(16,181.0) rotate(-90)" font-size="12" text-anchor="middle" fill="#3b4450">링크 클릭률(%)</text>
+<text x="70.0" y="314" font-size="11" text-anchor="middle" fill="#5b6572">1</text>
+<text x="195.2" y="314" font-size="11" text-anchor="middle" fill="#5b6572">2</text>
+<text x="320.4" y="314" font-size="11" text-anchor="middle" fill="#5b6572">3</text>
+<text x="445.6" y="314" font-size="11" text-anchor="middle" fill="#5b6572">4</text>
+<text x="570.8" y="314" font-size="11" text-anchor="middle" fill="#5b6572">5</text>
+<text x="696.0" y="314" font-size="11" text-anchor="middle" fill="#5b6572">6</text>
+<polyline points="70.0,245.4 195.2,243.3 320.4,251.2 445.6,239.0 570.8,244.0 696.0,231.0" fill="none" stroke="#9aa3ad" stroke-width="3" stroke-linejoin="round" stroke-dasharray="6 4"/>
+<polyline points="70.0,94.2 195.2,139.6 320.4,112.2 445.6,102.9 570.8,87.8 696.0,95.0" fill="none" stroke="#d6453d" stroke-width="3" stroke-linejoin="round"/>
+<polyline points="70.0,101.4 195.2,150.4 320.4,164.8 445.6,209.4 570.8,231.0 696.0,250.5" fill="none" stroke="#1f8a5b" stroke-width="3" stroke-linejoin="round"/>
+<line x1="70" x2="92" y1="346" y2="346" stroke="#9aa3ad" stroke-width="4" stroke-dasharray="6 4"/>
+<text x="98" y="350" font-size="11.5" fill="#3b4450">일반 피싱 · 훈련 없음</text>
+<line x1="259.5" x2="281.5" y1="346" y2="346" stroke="#d6453d" stroke-width="4"/>
+<text x="287.5" y="350" font-size="11.5" fill="#3b4450">AI 맞춤 피싱 · 훈련 없음</text>
+<line x1="483.5" x2="505.5" y1="346" y2="346" stroke="#1f8a5b" stroke-width="4"/>
+<text x="511.5" y="350" font-size="11.5" fill="#3b4450">AI 맞춤 피싱 · 월 1회 시나리오 훈련</text>
+</svg><figcaption>AI 맞춤 피싱은 일반 피싱보다 세 배 이상 잘 통한다. 그러나 반복 시나리오 훈련은 그 격차를 6개월 만에 거의 지운다. (모의 데이터)</figcaption></figure>
+
+<div class="say left"><img src="assets/chars/moa/E07.webp" alt="인턴2 모아" loading="lazy" width="58" height="58"><div class="bub"><div class="who">인턴2 모아<span>추적 팀 · 제도·법</span></div><div class="txt">원고와 확장본이 공통으로 말하는 교훈이에요. 한 번 듣는 강의가 아니라 <strong>반복 훈련</strong>이어야 해요. 소방 훈련처럼 몸에 익혀야 실제 상황에서 멈출 수 있어요.</div></div></div>
+
+<aside class="box econ" style="background:#fff4f2;border-color:#d6453d"><div class="bt" style="color:#d6453d">범죄자의 계산서 · X1의 반론</div><div class="say right x"><img src="assets/chars/x1/E13.webp" alt="X1" loading="lazy" width="58" height="58"><div class="bub"><div class="who">X1<span>범죄자 대역 · 사기·사칭</span></div><div class="txt">훈련받은 회사는 피하면 된다. 나는 훈련 안 받은 곳을 고른다. AI가 표적을 고르는 데도 도움을 준다.</div></div></div>
+<div class="say left"><img src="assets/chars/doctor/E07.webp" alt="박사" loading="lazy" width="58" height="58"><div class="bub"><div class="who">박사<span>해설자</span></div><div class="txt">바로 이것이 9장의 외부성 문제다. 한 기업의 훈련은 그 기업만 보호하는 것이 아니라, 범죄자를 덜 준비된 곳으로 옮겨 가게 만든다. 사회 전체의 방어 수준이 일정선을 넘어야 X1의 '표적 고르기' 전략도 통하지 않는다.</div></div></div></aside>
+
+<aside class="box flip" style="background:#effaf4;border-color:#1f8a5b"><div class="bt" style="color:#1f8a5b">계산서 뒤집기 — 대응 · 완벽한 사기꾼을 이기는 방법</div><div class="say left"><img src="assets/chars/haru/E10.webp" alt="조수(하루)" loading="lazy" width="58" height="58"><div class="bub"><div class="who">조수(하루)<span>추적 팀 · 대응 설계</span></div><div class="txt">기술·제도·개인 세 층으로 정리할게요.</div></div></div>
+<ul>
+<li><strong>기술</strong>: AI 기반 메일 분석(문체·의도 분석), 딥페이크 탐지, 행동 기반 탐지, 제로 트러스트, 피싱 내성 인증(패스키·보안 키). 문자 인증은 유심 탈취에 약하니 중요한 계정에는 쓰지 않는다.</li>
+<li><strong>제도</strong>: AI 생성물 표기, 범죄용 도구 처벌, 통신사·플랫폼의 사칭 차단 책임, 국제 공조.</li>
+<li><strong>조직</strong>: 송금·계좌 변경의 이중 확인, 결재 시스템 밖 지시 금지, 위기 대응 시나리오.</li>
+<li><strong>개인</strong>: 공식 채널로 재확인, 출처 불명 링크·QR코드 피하기(큐싱), 공개 정보 줄이기, 피해가 의심되면 즉시 은행 지급정지(112·1332·118).</li>
+</ul>
+<p>새 상식은 하나예요. <strong>"어색한 것을 의심하라"에서 "완벽해 보이는 것일수록 확인하라"로.</strong></p></aside>
+
+<aside class="box key" style="background:#fffaf0;border-color:#c98318"><div class="bt" style="color:#c98318">핵심 정리</div><ul>
+<li>사회공학의 본질(신뢰·공포·호기심·권위)은 AI 이전과 같다. 바뀐 것은 그 심리를 건드리는 <strong>비용</strong>이다.</li>
+<li>AI는 '대량 vs 정교'의 상충관계를 깨뜨렸다. 모의 실험에서 맞춤 피싱은 일반 피싱보다 세 배 이상 잘 통했다.</li>
+<li>그러나 사람은 고칠 수 있다. 반복 훈련은 격차를 6개월 만에 거의 지웠다.</li>
+</ul></aside>
+</section><section class="step" id="tool"><div class="lab">단계 5 · 분석 도구 — 게임이론</div><h2>검사 게임 — 직원은 얼마나 자주 확인해야 하나</h2><span class="tag">방법: 게임이론의 혼합 전략 균형</span>
+<div class="say left"><img src="assets/chars/doctor/E07.webp" alt="박사" loading="lazy" width="58" height="58"><div class="bub"><div class="who">박사<span>해설자</span></div><div class="txt">현장 질문부터 해 볼게요. 모든 메일을 확인하면 업무가 멈추고, 하나도 안 하면 뚫린다.</div></div></div>
+<div class="duo"><div class="whybox"><h4>왜 이 방법을 쓰나</h4><dl><dt>문제 상황</dt><dd>모든 메일을 확인하면 업무가 멈추고, 하나도 안 하면 뚫린다.</dd><dt>앞 방법의 한계</dt><dd>&#x27;적당히 확인하라&#x27;는 말로는 얼마나 자주인지 알 수 없다.</dd><dt>해법</dt><dd>사기꾼과 직원이 서로의 행동을 예상하는 게임으로 보고, 둘 다 전략을 바꿀 이유가 없는 균형을 찾는다.</dd><dt>쉽게 말하면</dt><dd>숨바꼭질에서 술래가 어디를 얼마나 자주 볼지 정하는 문제와 같다.</dd></dl></div>
+<div class="mathbox"><h4>수식을 어려워하는 조수가 대신 물어봅니다</h4><div class="mini"><img src="assets/chars/haru/E04.webp" alt="조수(하루)" loading="lazy" width="58" height="58"><div><b>하루</b> 왜 처벌 f를 올렸는데 사기 시도 비율은 안 바뀌어요? 이상해요!</div></div>
+<dl><dt>학교 수학으로 보면</dt><dd>연립 일차방정식, 확률</dd></dl><table class="parts"><tr><th>식 조각</th><th>읽는 법</th><th>뜻</th></tr><tr><td><b>y</b></td><td>와이</td><td>직원이 확인하는 비율</td></tr><tr><td><b>x</b></td><td>엑스</td><td>사기꾼이 공격을 시도하는 비율</td></tr><tr><td><b>y* = g ÷ (g + f)</b></td><td></td><td>사기꾼이 공격해도 안 해도 같아지는 확인 비율</td></tr><tr><td><b>x* = k ÷ L</b></td><td></td><td>직원이 확인해도 안 해도 같아지는 공격 비율(k 확인 비용, L 피해액)</td></tr></table>
+<dl><dt>숫자로 한 번 해 보기</dt><dd>g=300, f=3,000이면 y* = 300 ÷ 3,300 ≈ 9%. 확인 비용 k=3, 피해 L=300이면 x* = 3 ÷ 300 = 1%. 처벌 f를 두 배로 올리면 y*는 약 5%로 내려가지만 x*는 1% 그대로다.</dd></dl><div class="mini"><img src="assets/chars/haru/E01.webp" alt="조수(하루)" loading="lazy" width="58" height="58"><div><b>하루</b> 균형에서는 상대를 무관심하게 만드는 비율이 정해지는 거군요. 처벌은 직원의 확인을 줄여 주고, 공격 비율은 확인 비용이 정해요.</div></div></div></div>
+<div class="pair"><div><b>일상으로 치면</b>주차 단속도 그렇다. 벌금을 올리면 단속원이 덜 돌아도 되지만, 위반율은 단속에 드는 비용에 더 좌우된다.</div><div><b>현장에서는</b>그래서 조직은 &#x27;확인 비용 k&#x27;를 낮추는 데 투자한다. 원클릭 콜백, 결재 시스템 안의 송금 확인 버튼 같은 것이다.</div></div>
+<h3>AI 판단 코너 — 주판봇의 확신, 맞을까?</h3><div class="say left"><img src="assets/chars/doctor/E07.webp" alt="박사" loading="lazy" width="58" height="58"><div class="bub"><div class="who">박사<span>해설자</span></div><div class="txt">사기 시도를 줄이려면 처벌을 올릴까요, 확인을 쉽게 만들까요?</div></div></div><div class="say left"><img src="assets/chars/jupanbot/E16.webp" alt="주판봇" loading="lazy" width="58" height="58"><div class="bub"><div class="who">주판봇<span>계산 담당</span></div><div class="txt">처벌이죠. 무서우면 안 하잖아요!</div></div></div><div class="say left"><img src="assets/chars/fruitfly/E09.webp" alt="초파리 연구원" loading="lazy" width="58" height="58"><div class="bub"><div class="who">초파리 연구원<span>데이터·모델 분석</span></div><div class="txt">균형에서도 그럴까? 아래에서 f와 k를 하나씩 바꿔 봐.</div></div></div><div class="say left"><img src="assets/chars/haru/E10.webp" alt="조수(하루)" loading="lazy" width="58" height="58"><div class="bub"><div class="who">조수(하루)<span>추적 팀 · 대응 설계</span></div><div class="txt">f를 올리면 확인 비율 y*만 내려가고, 공격 비율 x*는 k를 낮췄을 때만 내려가요.</div></div></div>
+<div class="panel"><h4>실험: 직접 바꿔 보기</h4><div data-w="w-ch04" data-k="inspect"></div></div>
+<div class="say left"><img src="assets/chars/doctor/E10.webp" alt="박사" loading="lazy" width="58" height="58"><div class="bub"><div class="who">박사<span>해설자</span></div><div class="txt">풀이: 혼합 전략 균형에서 각자의 비율은 상대방의 손익으로 정해진다. 처벌 f는 방어자의 확인 부담을 줄이고, 확인 비용 k를 낮추는 설계가 공격 비율을 낮춘다. 2장의 '확실성' 이야기와 같은 방향이다.</div></div></div>
+<aside class="box warn" style="background:#fff8e6;border-color:#b7791f"><div class="bt" style="color:#b7791f">이 단계의 한계 — 여기서는 단순하게 봤어요</div><p>실제 사기꾼은 여러 회사를 고르고, 학습도 한다. 이 모형은 한 회사와 한 사기꾼의 단순한 게임이다(츠벨리스의 역설로 알려진 결과를 단순화했다).</p></aside>
+<details><summary>교안의 파이썬 코드로 보면 (몰라도 됩니다)</summary><p><code>y_star = g/(g+f); x_star = k/L</code><br>두 균형 비율을 계산한다.</p></details><div class="quiz" data-a="1"><div class="q">확인 퀴즈 · 검사 게임의 균형에서 사기 시도 비율 x*를 낮추는 것은?</div><button type="button">① 처벌 f 인상</button><button type="button">② 확인 비용 k 인하</button><button type="button">③ 사기꾼 수익 g 인상</button><div class="ex" hidden><b></b>x* = k ÷ L이다. 확인이 싸지면 공격 비율이 내려간다.</div></div></section><section class="step" id="duel"><div class="lab">대결</div><h2>X1 vs 추적 팀 — 계산서 공방</h2><div class="duel"><div class="vs"><div class="side xs"><img src="assets/chars/x1/E09.webp" alt="X1" loading="lazy" width="58" height="58"><b>X1의 수</b><br>&#x27;대표님 지시, 오늘 안에 송금&#x27; 메일을 AI로 2,000명에게 맞춤 발송한다.</div><div class="v">VS</div><div class="side ts"><img src="assets/chars/moa/E16.webp" alt="인턴2 모아" loading="lazy" width="58" height="58"><b>인턴2 모아의 수</b><br>6개월 시나리오 훈련과 결재 시스템 안 &#x27;원클릭 콜백&#x27; 버튼을 만든다.</div></div><div class="verdict"><img src="assets/chars/doctor/E10.webp" alt="박사" loading="lazy" width="58" height="58"><div>심판 박사 · 추적 팀 승<br><span style="font-weight:400">추적 팀 승. 클릭률이 27%에서 6.6%로 내려가고 확인 비용 k가 줄었다.</span></div></div></div></section><section class="step" id="wrap"><div class="lab">정리</div><h2>정리 퀴즈</h2><div class="quiz" data-a="1"><div class="q">확인 퀴즈 · 모의 실험에서 가장 잘 통한 심리 요소는?</div><button type="button">① 보상</button><button type="button">② 신뢰(지인)</button><button type="button">③ 호기심</button><div class="ex" hidden><b></b>지인 사칭 33.8%로 가장 높았다.</div></div><div class="quiz" data-a="1"><div class="q">확인 퀴즈 · 2011년 RSA 침해의 시작은?</div><button type="button">① 서버 취약점</button><button type="button">② &#x27;2011 채용 계획&#x27; 첨부 메일</button><button type="button">③ 내부자 매수</button><div class="ex" hidden><b></b>직원 한 명이 첨부 파일을 연 것이 시작이었다.</div></div></section><section class="step" id="outro"><div class="lab">아웃트로</div><h2>오늘의 연구실을 마치며</h2><div class="say left"><img src="assets/chars/doctor/E16.webp" alt="박사" loading="lazy" width="58" height="58"><div class="bub"><div class="who">박사<span>해설자</span></div><div class="txt">사람은 고칠 수 있다. 확인을 쉽게 만들면 더 잘 고쳐진다.</div></div></div><div class="say right x"><img src="assets/chars/x1/E03.webp" alt="X1" loading="lazy" width="58" height="58"><div class="bub"><div class="who">X1<span>범죄자 대역 · 사기·사칭</span></div><div class="txt">훈련받은 회사는 피하면 된다. 다른 데로 간다.</div></div></div><div class="say left"><img src="assets/chars/sia/E09.webp" alt="인턴1 시아" loading="lazy" width="58" height="58"><div class="bub"><div class="who">인턴1 시아<span>추적 팀 · 현장 사례</span></div><div class="txt">그게 9장의 외부성 문제예요. 기억해 둘게요.</div></div></div></section><section class="step kg" id="kg"><div class="lab">지식 색인</div><h2>이 장의 개념 지도</h2><table><tr><th>개념</th><th>뜻</th><th>함께 보는 장</th></tr><tr><td>사회공학</td><td>기술 대신 사람의 심리를 공격하는 기법</td><td><a href="ch04.html">04장</a></td></tr><tr><td>검사 게임</td><td>감시자와 위반자의 혼합 전략 게임</td><td><a href="ch04.html">04장</a> <a href="ch02.html">02장</a></td></tr><tr><td>멤버십 추론</td><td>모델 출력으로 학습 데이터 포함 여부를 알아내는 공격</td><td><a href="ch04.html">04장</a> <a href="ch06.html">06장</a></td></tr><tr><td>스피어피싱</td><td>특정인을 겨냥한 맞춤 피싱</td><td><a href="ch04.html">04장</a> <a href="ch05.html">05장</a></td></tr></table></section><section class="step export" id="export"><div class="lab">꾸러미</div><h2>온톨로지·서지 꾸러미</h2><p class="mute">강의 자료나 지식 그래프에 옮길 때 쓰세요.</p><details><summary>JSON-LD (schema.org)</summary><button class="copy" data-t="jl-ch04">복사</button><pre id="jl-ch04">{
+ &quot;@context&quot;: &quot;https://schema.org&quot;,
+ &quot;@type&quot;: &quot;LearningResource&quot;,
+ &quot;name&quot;: &quot;완벽한 사기꾼 — AI가 바꾸는 피싱과 사회공학&quot;,
+ &quot;description&quot;: &quot;피싱과 사회공학이 사람의 신뢰·공포·호기심·권위를 어떻게 이용하는지 본다.&quot;,
+ &quot;inLanguage&quot;: &quot;ko&quot;,
+ &quot;isPartOf&quot;: {
+  &quot;@type&quot;: &quot;Book&quot;,
+  &quot;name&quot;: &quot;AI 범죄와 자기 방어&quot;
+ },
+ &quot;author&quot;: {
+  &quot;@type&quot;: &quot;Person&quot;,
+  &quot;name&quot;: &quot;안상선&quot;,
+  &quot;url&quot;: &quot;https://adminmrobo.github.io/who_am_i/who_am_i.html&quot;
+ },
+ &quot;teaches&quot;: [
+  &quot;사회공학&quot;,
+  &quot;검사 게임&quot;,
+  &quot;멤버십 추론&quot;,
+  &quot;스피어피싱&quot;
+ ],
+ &quot;educationalLevel&quot;: &quot;입문&quot;,
+ &quot;url&quot;: &quot;https://adminmrobo.github.io/ai_crime_lab/ch04.html&quot;,
+ &quot;about&quot;: [
+  &quot;게임이론&quot;,
+  &quot;범죄경제학&quot;,
+  &quot;AI 범죄&quot;
+ ]
+}</pre></details><details><summary>BibTeX</summary><button class="copy" data-t="bib-ch04">복사</button><pre id="bib-ch04">@misc{ahn2026aicrime_ch04,
+  author = {안상선},
+  title = {AI 범죄 연구실 — 4장 완벽한 사기꾼 — AI가 바꾸는 피싱과 사회공학},
+  note = {『AI 범죄와 자기 방어』 보충본},
+  year = {2026},
+  url = {https://adminmrobo.github.io/ai_crime_lab/ch04.html}
+}</pre></details></section><div class="pn"><a href="ch03.html">← 3장 진짜인 듯 가짜인 세상 — 딥페이크의 위협</a><a href="ch05.html">5장 끊임없는 진화 — AI 기반 자동화 공격의 세계 →</a></div><footer class="foot">글 · 안상선 (<a href="https://adminmrobo.github.io/who_am_i/who_am_i.html">https://adminmrobo.github.io/who_am_i/who_am_i.html</a>) · (주)M-Robo 대표<br>이 사이트는 『AI 범죄와 자기 방어』의 사례 보충본이다. '모의 데이터(가상)'는 설명용 가상의 수치이며 실제 통계가 아니다. X1~X3는 범죄자 역할을 맡은 대역이다. 범죄 수법은 작동 원리까지만 다룬다. · <a href="references.html">참고문헌</a> · <a href="data.html">모의 데이터와 재현 코드</a> · <a href="workbook.html">통합 작업본</a></footer></main></div><script src="assets/lab.js"></script></body></html>

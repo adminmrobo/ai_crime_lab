@@ -1,0 +1,36 @@
+<svg viewBox="0 0 720 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="검거 확률 p가 오를 때 범죄의 매력(확실성 등가 기준)" font-family="Pretendard, Noto Sans KR, sans-serif">
+<rect width="720" height="380" fill="#ffffff"/>
+<text x="70" y="26" font-size="16" font-weight="700" fill="#1d2430">검거 확률 p가 오를 때 범죄의 매력(확실성 등가 기준)</text>
+<text x="696" y="26" font-size="11" text-anchor="end" fill="#8a93a0">모의 데이터(가상)</text>
+<line x1="70" x2="696" y1="298.0" y2="298.0" stroke="#e8ecf1"/>
+<text x="62" y="302.0" font-size="11" text-anchor="end" fill="#5b6572">-2,000</text>
+<line x1="70" x2="696" y1="256.0" y2="256.0" stroke="#e8ecf1"/>
+<text x="62" y="260.0" font-size="11" text-anchor="end" fill="#5b6572">-1,000</text>
+<line x1="70" x2="696" y1="214.0" y2="214.0" stroke="#e8ecf1"/>
+<text x="62" y="218.0" font-size="11" text-anchor="end" fill="#5b6572">0</text>
+<line x1="70" x2="696" y1="172.0" y2="172.0" stroke="#e8ecf1"/>
+<text x="62" y="176.0" font-size="11" text-anchor="end" fill="#5b6572">1,000</text>
+<line x1="70" x2="696" y1="130.0" y2="130.0" stroke="#e8ecf1"/>
+<text x="62" y="134.0" font-size="11" text-anchor="end" fill="#5b6572">2,000</text>
+<line x1="70" x2="696" y1="88.0" y2="88.0" stroke="#e8ecf1"/>
+<text x="62" y="92.0" font-size="11" text-anchor="end" fill="#5b6572">3,000</text>
+<line x1="70" x2="696" y1="46.0" y2="46.0" stroke="#e8ecf1"/>
+<text x="62" y="50.0" font-size="11" text-anchor="end" fill="#5b6572">4,000</text>
+<text x="383.0" y="368" font-size="12" text-anchor="middle" fill="#3b4450">검거 확률 p</text>
+<text transform="translate(16,181.0) rotate(-90)" font-size="12" text-anchor="middle" fill="#3b4450">합법 소득 대비 이득(만 원)</text>
+<text x="70.0" y="314" font-size="11" text-anchor="middle" fill="#5b6572">0</text>
+<text x="174.3" y="314" font-size="11" text-anchor="middle" fill="#5b6572">0.1</text>
+<text x="278.7" y="314" font-size="11" text-anchor="middle" fill="#5b6572">0.2</text>
+<text x="383.0" y="314" font-size="11" text-anchor="middle" fill="#5b6572">0.3</text>
+<text x="487.3" y="314" font-size="11" text-anchor="middle" fill="#5b6572">0.4</text>
+<text x="591.7" y="314" font-size="11" text-anchor="middle" fill="#5b6572">0.5</text>
+<text x="696.0" y="314" font-size="11" text-anchor="middle" fill="#5b6572">0.6</text>
+<line x1="70" x2="696" y1="214.0" y2="214.0" stroke="#1d2430" stroke-dasharray="4 4"/>
+<text x="692" y="208.0" font-size="11" text-anchor="end" fill="#1d2430">손익분기선</text>
+<polyline points="70.0,130.0 80.4,134.8 90.9,139.5 101.3,144.0 111.7,148.5 122.2,152.8 132.6,157.1 143.0,161.3 153.5,165.3 163.9,169.3 174.3,173.2 184.8,177.0 195.2,180.7 205.6,184.3 216.1,187.9 226.5,191.3 236.9,194.7 247.4,198.0 257.8,201.3 268.2,204.4 278.7,207.5 289.1,210.5 299.5,213.5 310.0,216.3 320.4,219.2 330.8,221.9 341.3,224.6 351.7,227.2 362.1,229.8 372.6,232.3 383.0,234.8 393.4,237.1 403.9,239.5 414.3,241.8 424.7,244.0 435.2,246.2 445.6,248.3 456.0,250.4 466.5,252.5 476.9,254.5 487.3,256.4 497.8,258.3 508.2,260.2 518.6,262.0 529.1,263.8 539.5,265.5 549.9,267.2 560.4,268.8 570.8,270.5 581.2,272.0 591.7,273.6 602.1,275.1 612.5,276.6 623.0,278.0 633.4,279.4 643.8,280.8 654.3,282.2 664.7,283.5 675.1,284.8 685.6,286.0 696.0,287.3" fill="none" stroke="#9aa3ad" stroke-width="3" stroke-linejoin="round"/>
+<polyline points="70.0,46.0 80.4,50.5 90.9,54.9 101.3,59.3 111.7,63.6 122.2,67.8 132.6,72.0 143.0,76.1 153.5,80.1 163.9,84.1 174.3,88.0 184.8,91.8 195.2,95.6 205.6,99.4 216.1,103.0 226.5,106.7 236.9,110.2 247.4,113.7 257.8,117.2 268.2,120.6 278.7,124.0 289.1,127.3 299.5,130.5 310.0,133.7 320.4,136.9 330.8,140.0 341.3,143.0 351.7,146.0 362.1,149.0 372.6,151.9 383.0,154.8 393.4,157.6 403.9,160.4 414.3,163.2 424.7,165.9 435.2,168.5 445.6,171.1 456.0,173.7 466.5,176.3 476.9,178.8 487.3,181.2 497.8,183.7 508.2,186.1 518.6,188.4 529.1,190.7 539.5,193.0 549.9,195.3 560.4,197.5 570.8,199.6 581.2,201.8 591.7,203.9 602.1,206.0 612.5,208.0 623.0,210.1 633.4,212.0 643.8,214.0 654.3,215.9 664.7,217.8 675.1,219.7 685.6,221.5 696.0,223.3" fill="none" stroke="#d6453d" stroke-width="3" stroke-linejoin="round"/>
+<line x1="70" x2="92" y1="346" y2="346" stroke="#9aa3ad" stroke-width="4"/>
+<text x="98" y="350" font-size="11.5" fill="#3b4450">전통 범죄 (g=2,000 · f=2,500)</text>
+<line x1="397.5" x2="419.5" y1="346" y2="346" stroke="#d6453d" stroke-width="4"/>
+<text x="425.5" y="350" font-size="11.5" fill="#3b4450">AI 범죄 (g=4,000 · f=1,500)</text>
+</svg>

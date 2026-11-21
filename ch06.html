@@ -1,0 +1,185 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>보이지 않는 눈 — AI 감시와 프라이버시의 위기 · AI 범죄 연구실</title><meta name="description" content="개인정보는 범죄의 원재료다 — 조각 몇 개면 &#x27;세상에 나 하나&#x27;가 된다">
+<meta property="og:title" content="보이지 않는 눈 — AI 감시와 프라이버시의 위기 · AI 범죄 연구실"><meta property="og:description" content="개인정보는 범죄의 원재료다 — 조각 몇 개면 &#x27;세상에 나 하나&#x27;가 된다">
+<meta property="og:image" content="https://adminmrobo.github.io/ai_crime_lab/assets/lineup.webp"><meta property="og:url" content="https://adminmrobo.github.io/ai_crime_lab/ch06.html"><meta property="og:type" content="article">
+<link rel="stylesheet" href="assets/lab.css"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "LearningResource", "name": "보이지 않는 눈 — AI 감시와 프라이버시의 위기", "description": "AI 감시와 데이터 수집이 일상에서 어떻게 작동하는지 본다.", "inLanguage": "ko", "isPartOf": {"@type": "Book", "name": "AI 범죄와 자기 방어"}, "author": {"@type": "Person", "name": "안상선", "url": "https://adminmrobo.github.io/who_am_i/who_am_i.html"}, "teaches": ["재식별", "데이터 브로커", "비례성 원칙", "차분 프라이버시"], "educationalLevel": "입문", "url": "https://adminmrobo.github.io/ai_crime_lab/ch06.html", "about": ["AI·데이터 분석", "범죄경제학", "AI 범죄"]}</script></head><body>
+<header class="top"><a class="brand" href="index.html">AI 범죄 연구실 — 범죄자의 계산서를 뒤집어라</a>
+<a href="index.html#chapters">목차</a><a href="practice/index.html">실전 연습장</a><a href="workbook.html">통합 작업본</a><a href="references.html">참고문헌</a><a href="data.html">모의 데이터</a></header><div class="wrap"><nav class="toc"><b>6장</b><a href='#three'>처음 오신 분께</a><a href='#why'>왜 · 큰 그림</a><a href="#s1">단계 1</a><a href="#s2">단계 2</a><a href="#s3">단계 3</a><a href="#s4">단계 4</a><a href='#tool'>단계 5 · 분석 도구</a><a href='#duel'>대결</a><a href='#wrap'>정리 퀴즈</a><a href='#outro'>아웃트로</a><a href='#kg'>지식 색인</a><a href='#export'>꾸러미</a></nav><main><section class="hero"><div><div class="no">6장</div><h1>보이지 않는 눈 — AI 감시와 프라이버시의 위기</h1><p class="sub">개인정보는 범죄의 원재료다 — 조각 몇 개면 &#x27;세상에 나 하나&#x27;가 된다</p><div class="meta">원고 대응: PDF 6장 6-1·6-2 + 6장 확장본<br>범죄경제학 초점: 정보 수집 비용 c의 대납 — 감시·수집된 데이터가 유출되면 범죄자의 준비 비용을 사회가 대신 치른다</div></div><img class="cover" src="assets/lineup.webp" alt="연구실 식구 단체 사진 — 박사, 조수 하루, 인턴 시아·모아, 주판봇, 초파리 연구원" width="1200" height="678"></section><section class="three" id="three"><h2>처음 오신 분께 — 이 페이지를 3줄로</h2><ol><li><b>무엇을</b>: AI 감시와 데이터 수집이 일상에서 어떻게 작동하는지 본다.</li><li><b>왜 중요한가</b>: 무해해 보이는 정보 조각 몇 개만 모여도 사람이 특정된다.</li><li><b>생활·업무에서는</b>: 기업과 기관이 데이터를 덜 모으는 것이 곧 범죄 억제가 된다.</li></ol><p class="note">코드와 수식을 몰라도 됩니다. 수식은 조수(하루)가 대신 묻고, 박사가 숫자로 한 번 풀어 드립니다.</p><details><summary>영어 약어 풀이</summary><ul><li><b>IoT</b> — Internet of Things, 사물인터넷</li><li><b>FTC</b> — Federal Trade Commission, 미국 연방거래위원회</li></ul></details></section><h2 style='margin-top:30px'>등장인물</h2><div class="cast"><figure><img src="assets/chars/doctor/E07.webp" alt="박사" loading="lazy" width="58" height="58"><b>박사</b><span>해설자</span></figure><figure><img src="assets/chars/haru/E10.webp" alt="조수(하루)" loading="lazy" width="58" height="58"><b>조수(하루)</b><span>추적 팀 · 대응 설계</span></figure><figure><img src="assets/chars/sia/E09.webp" alt="인턴1 시아" loading="lazy" width="58" height="58"><b>인턴1 시아</b><span>추적 팀 · 현장 사례</span></figure><figure><img src="assets/chars/moa/E07.webp" alt="인턴2 모아" loading="lazy" width="58" height="58"><b>인턴2 모아</b><span>추적 팀 · 제도·법</span></figure><figure><img src="assets/chars/jupanbot/E16.webp" alt="주판봇" loading="lazy" width="58" height="58"><b>주판봇</b><span>계산 담당</span></figure><figure><img src="assets/chars/fruitfly/E09.webp" alt="초파리 연구원" loading="lazy" width="58" height="58"><b>초파리 연구원</b><span>데이터·모델 분석</span></figure><figure><img src="assets/chars/x1/E13.webp" alt="X1" loading="lazy" width="58" height="58"><b>X1</b><span>범죄자 대역 · 사기·사칭</span></figure><figure><img src="assets/chars/x2/E13.webp" alt="X2" loading="lazy" width="58" height="58"><b>X2</b><span>범죄자 대역 · 자동화 공격·랜섬</span></figure><figure><img src="assets/chars/x3/E13.webp" alt="X3" loading="lazy" width="58" height="58"><b>X3</b><span>범죄자 대역 · 세탁·정보 브로커</span></figure></div><section class="why" id="why"><h2>왜 이 장이 필요한가</h2><div class="say left"><img src="assets/chars/doctor/E09.webp" alt="박사" loading="lazy" width="58" height="58"><div class="bub"><div class="who">박사<span>해설자</span></div><div class="txt">5장의 공격은 모두 '표적 정보'를 먹고 자란다. 그 정보가 어디서 오는지 모르면 공격의 원재료를 끊을 수 없다.</div></div></div></section><section class="big"><h3>큰 그림 — 지금 어디쯤인가</h3><div class="bigrow"><div><small>앞에서</small>5장: 학습하는 공격</div><div class="now"><small>이 장</small>공격의 원재료, 개인정보와 감시</div><div><small>다음에</small>7장: 정보가 돈으로 바뀌는 금융 범죄</div></div><p class="mute">이 장의 분석 도구: AI·데이터 분석. 여기서 한 번 멈춰도 괜찮아요. 처음엔 다들 계산서 기호에서 오래 봅니다.</p></section>
+<div class="say left"><img src="assets/chars/doctor/E07.webp" alt="박사" loading="lazy" width="58" height="58"><div class="bub"><div class="who">박사<span>해설자</span></div><div class="txt">6장은 범죄 그 자체보다 범죄의 <strong>원재료</strong>를 다룬다. 서장에서 개인정보를 AI 범죄의 연료라고 했다. 그 연료가 어디서 만들어지고, 어떻게 쌓이고, 어떻게 흘러 나가는지 보자.</div></div></div>
+<section class="step" id="s1"><div class="lab">단계 1</div><h2>일상이 된 감시의 눈</h2><p>지하철역 CCTV는 얼굴로 이동 경로를 추적하고, 쇼핑몰은 행동 분석으로 구매 패턴을 읽고, 스마트폰 앱은 위치를, 음성 비서는 대화를 모은다. 2019년 기준 <strong>75개국 이상</strong>이 AI 감시 시스템을 도입했다(Carnegie, 2019). 팬데믹은 마스크 착용 감지와 위치 추적으로 이 흐름을 가속했다.</p>
+<p>AI 감시는 세 단계로 작동한다.</p>
+<table>
+<thead>
+<tr>
+<th>단계</th>
+<th>하는 일</th>
+<th>개인이 아는가</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>수집</td>
+<td>CCTV·센서·스마트폰·IoT로 얼굴·위치·행동 수집</td>
+<td>대부분 모른다</td>
+</tr>
+<tr>
+<td>분석</td>
+<td>머신러닝이 얼굴을 수치로 바꾸고 이상 행동을 감지</td>
+<td>기준을 모른다</td>
+</tr>
+<tr>
+<td>판단</td>
+<td>식별·예측·사전 대응</td>
+<td>결과만 받는다</td>
+</tr>
+</tbody>
+</table>
+<div class="say left"><img src="assets/chars/sia/E09.webp" alt="인턴1 시아" loading="lazy" width="58" height="58"><div class="bub"><div class="who">인턴1 시아<span>추적 팀 · 현장 사례</span></div><div class="txt">감시의 초점이 '사후 대응'에서 '사전 예방'으로 옮겨 갔다는 게 원고의 문제의식이에요. 아직 일어나지 않은 일을 예측해 통제하려는 거예요.</div></div></div>
+<div class="say left"><img src="assets/chars/moa/E07.webp" alt="인턴2 모아" loading="lazy" width="58" height="58"><div class="bub"><div class="who">인턴2 모아<span>추적 팀 · 제도·법</span></div><div class="txt">확장본은 이걸 <strong>감시의 이중성</strong>으로 정리해요. 화재 감지, 독거노인 응급 대응, 혼잡도 예측처럼 이로운 쓰임도 분명하지만, 개인의 자율성 침해와 권력 집중이라는 그림자도 같이 와요.</div></div></div></section><section class="step" id="s2"><div class="lab">단계 2</div><h2>수집·가공·유통 — 개인정보의 보이지 않는 구조</h2><h3>데이터 수집의 경로</h3>
+<ul>
+<li><strong>직접 수집</strong>: 가입 정보, 게시물·댓글·좋아요·친구 관계.</li>
+<li><strong>간접 수집</strong>: 쿠키·픽셀 태그가 온라인 행동을, 앱이 위치·통화 기록·사진을, IoT가 음성 명령을 모은다. 오프라인 카드 사용까지 디지털 프로필에 붙는다.</li>
+<li><strong>데이터 브로커</strong>: 공공 기록·상거래·설문을 엮어 소득·건강·소비 성향·정치 성향까지 담긴 프로필을 만든다. 원고는 글로벌 데이터 브로커 산업 규모를 연 2,000억 달러로 소개한다(University of Winnipeg, 2024).</li>
+</ul>
+<h3>알고리즘이 만드는 '디지털 인격'</h3>
+<p>검색·위치·소비·SNS를 합쳐 만든 가상의 정체성은 실제의 나와 다를 수 있다. 가족을 위해 검색한 건강용품이 '본인의 질병'으로 해석되기도 한다. 그런데도 이 디지털 인격이 보험·금융·채용에서 결정에 쓰인다.</p>
+<aside class="box case" style="background:#f4f7fd;border-color:#3d63c9"><div class="bt" style="color:#3d63c9">사례 분석 · 수집된 데이터가 흘러 나갈 때</div><table>
+<thead>
+<tr>
+<th>사건</th>
+<th>규모</th>
+<th>의미</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>케임브리지 애널리티카(2018 폭로)</td>
+<td>페이스북 이용자 최대 약 8,700만 명 정보가 동의 없이 정치 광고에 활용</td>
+<td>프로파일링이 민주적 의사결정을 겨냥할 수 있다</td>
+</tr>
+<tr>
+<td>에퀴팩스 유출(2017)</td>
+<td>약 1억 4,700만 명의 신용정보</td>
+<td>수집 기업 한 곳의 실패가 국민 절반의 위험이 된다</td>
+</tr>
+<tr>
+<td>라이트에이드 얼굴인식(2023)</td>
+<td>미 연방거래위원회(FTC), 5년간 얼굴인식 감시 사용 금지</td>
+<td>오인식이 특정 고객을 '도둑'으로 낙인찍은 사례</td>
+</tr>
+</tbody>
+</table>
+<div class="say left"><img src="assets/chars/doctor/E07.webp" alt="박사" loading="lazy" width="58" height="58"><div class="bub"><div class="who">박사<span>해설자</span></div><div class="txt">확장본 작업에서 바로잡은 점도 있다. 라이트에이드는 '자진 철거'가 아니라 FTC 제재에 따른 5년 사용 금지였다.</div></div></div></aside></section><section class="step" id="s3"><div class="lab">단계 3</div><h2>조각 여섯 개면 충분하다 — 재식별 모의 실험</h2>
+<div class="say right x"><img src="assets/chars/x3/E13.webp" alt="X3" loading="lazy" width="58" height="58"><div class="bub"><div class="who">X3<span>범죄자 대역 · 세탁·정보 브로커</span></div><div class="txt">내 사업 얘기를 하자. 나는 비밀번호를 훔치지 않는다. 사람들이 이미 흘려 놓은 조각을 모아 붙인다. 이름이 없어도 된다. 조각만 충분하면 그 사람이 누구인지 알 수 있다.</div></div></div>
+
+<aside class="box data" style="background:#f3f1fd;border-color:#7a5bd1"><div class="bt" style="color:#7a5bd1">주판봇·초파리 분석실 · 10만 명 모의 인구에서 &#x27;나 하나뿐&#x27;인 사람 찾기</div><div class="say left"><img src="assets/chars/fruitfly/E09.webp" alt="초파리 연구원" loading="lazy" width="58" height="58"><div class="bub"><div class="who">초파리 연구원<span>데이터·모델 분석</span></div><div class="txt">가상 인구 10만 명을 만들고 시군구(250곳), 출생연도, 성별, 출생월, 직업군(20종), 차종(30종)을 무작위로 붙였어요. 정보 조각을 하나씩 더할 때 <strong>그 조합을 가진 사람이 딱 한 명뿐인 비율</strong>을 셌어요.</div></div></div>
+<div class="say left"><img src="assets/chars/jupanbot/E16.webp" alt="주판봇" loading="lazy" width="58" height="58"><div class="bub"><div class="who">주판봇<span>계산 담당</span></div><div class="txt">시군구만으로는 0%, 출생연도를 더해도 0.1%, 성별까지 3.2%예요. 그런데 <strong>출생월</strong>을 더하는 순간 <strong>75.0%</strong>로 뛰고, 직업군까지 <strong>97.6%</strong>, 차종까지 <strong>99.9%</strong>예요. 하나하나는 무해해 보이는 정보가 여섯 개 모이면 사실상 실명이 돼요.</div></div></div></aside>
+
+<figure class="chart"><svg viewBox="0 0 720 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="10만 명 중 &#x27;세상에 나 하나뿐&#x27;인 사람의 비율" font-family="Pretendard, Noto Sans KR, sans-serif">
+<rect width="720" height="380" fill="#ffffff"/>
+<text x="70" y="26" font-size="16" font-weight="700" fill="#1d2430">10만 명 중 &#x27;세상에 나 하나뿐&#x27;인 사람의 비율</text>
+<text x="696" y="26" font-size="11" text-anchor="end" fill="#8a93a0">모의 데이터(가상)</text>
+<line x1="70" x2="696" y1="298.0" y2="298.0" stroke="#e8ecf1"/>
+<text x="62" y="302.0" font-size="11" text-anchor="end" fill="#5b6572">0</text>
+<line x1="70" x2="696" y1="247.6" y2="247.6" stroke="#e8ecf1"/>
+<text x="62" y="251.6" font-size="11" text-anchor="end" fill="#5b6572">20</text>
+<line x1="70" x2="696" y1="197.2" y2="197.2" stroke="#e8ecf1"/>
+<text x="62" y="201.2" font-size="11" text-anchor="end" fill="#5b6572">40</text>
+<line x1="70" x2="696" y1="146.8" y2="146.8" stroke="#e8ecf1"/>
+<text x="62" y="150.8" font-size="11" text-anchor="end" fill="#5b6572">60</text>
+<line x1="70" x2="696" y1="96.4" y2="96.4" stroke="#e8ecf1"/>
+<text x="62" y="100.4" font-size="11" text-anchor="end" fill="#5b6572">80</text>
+<line x1="70" x2="696" y1="46.0" y2="46.0" stroke="#e8ecf1"/>
+<text x="62" y="50.0" font-size="11" text-anchor="end" fill="#5b6572">100</text>
+<text x="383.0" y="368" font-size="12" text-anchor="middle" fill="#3b4450">공개 정보 조각을 하나씩 더할 때</text>
+<text transform="translate(16,181.0) rotate(-90)" font-size="12" text-anchor="middle" fill="#3b4450">유일하게 특정되는 비율(%)</text>
+<text x="122.2" y="314" font-size="11.5" text-anchor="middle" fill="#3b4450">시군구</text>
+<rect x="100.2" y="298.0" width="44.0" height="0.5" rx="3" fill="#7a5bd1"/>
+<text x="122.2" y="293.0" font-size="10.5" text-anchor="middle" fill="#1d2430">0</text>
+<text x="226.5" y="314" font-size="11.5" text-anchor="middle" fill="#3b4450">+출생연도</text>
+<rect x="204.5" y="297.7" width="44.0" height="0.5" rx="3" fill="#7a5bd1"/>
+<text x="226.5" y="292.7" font-size="10.5" text-anchor="middle" fill="#1d2430">0.1</text>
+<text x="330.8" y="314" font-size="11.5" text-anchor="middle" fill="#3b4450">+성별</text>
+<rect x="308.8" y="289.9" width="44.0" height="8.1" rx="3" fill="#7a5bd1"/>
+<text x="330.8" y="284.9" font-size="10.5" text-anchor="middle" fill="#1d2430">3.2</text>
+<text x="435.2" y="314" font-size="11.5" text-anchor="middle" fill="#3b4450">+출생월</text>
+<rect x="413.2" y="109.0" width="44.0" height="189.0" rx="3" fill="#7a5bd1"/>
+<text x="435.2" y="104.0" font-size="10.5" text-anchor="middle" fill="#1d2430">75</text>
+<text x="539.5" y="314" font-size="11.5" text-anchor="middle" fill="#3b4450">+직업군</text>
+<rect x="517.5" y="52.0" width="44.0" height="246.0" rx="3" fill="#7a5bd1"/>
+<text x="539.5" y="47.0" font-size="10.5" text-anchor="middle" fill="#1d2430">98</text>
+<text x="643.8" y="314" font-size="11.5" text-anchor="middle" fill="#3b4450">+차종</text>
+<rect x="621.8" y="46.3" width="44.0" height="251.7" rx="3" fill="#7a5bd1"/>
+<text x="643.8" y="41.3" font-size="10.5" text-anchor="middle" fill="#1d2430">100</text>
+</svg><figcaption>개별 조각은 무해하지만 조합은 사람을 특정한다. 네 번째 조각에서 급격히 뛰는 지점이 &#x27;비식별 정보&#x27;라는 말의 한계다. (모의 데이터)</figcaption></figure>
+
+<div class="say left"><img src="assets/chars/doctor/E07.webp" alt="박사" loading="lazy" width="58" height="58"><div class="bub"><div class="who">박사<span>해설자</span></div><div class="txt">실제 연구에서도 같은 현상이 보고되어 왔다. 미국에서 우편번호·생년월일·성별 세 가지만으로 인구 대다수를 특정할 수 있다는 라타냐 스위니의 연구가 대표적이다. 원고가 인용한 나라야난 외(2012)도 빅데이터 프라이버시를 '사전 예방' 원칙으로 다뤄야 한다고 본다.</div></div></div>
+
+<aside class="box econ" style="background:#fff4f2;border-color:#d6453d"><div class="bt" style="color:#d6453d">범죄자의 계산서 · X3의 계산 — 누가 내 준비 비용을 내 주는가</div><p>4장의 맞춤 피싱, 7장의 표적 선별은 모두 '표적에 대한 정보'가 있어야 한다. 예전에는 이 정찰에 몇 주가 들었다(c가 컸다). 지금은 기업과 기관이 이미 모으고 가공해 둔 데이터가 유출되거나 거래되면, <strong>범죄자의 정찰 비용을 사회가 대신 치른 것</strong>이 된다.</p>
+<div class="say right x"><img src="assets/chars/x3/E13.webp" alt="X3" loading="lazy" width="58" height="58"><div class="bub"><div class="who">X3<span>범죄자 대역 · 세탁·정보 브로커</span></div><div class="txt">감시 사회는 나에게 공짜 정찰대다. 나는 수집하지 않는다. 유출을 기다린다.</div></div></div>
+<div class="say left"><img src="assets/chars/jupanbot/E16.webp" alt="주판봇" loading="lazy" width="58" height="58"><div class="bub"><div class="who">주판봇<span>계산 담당</span></div><div class="txt">그래서 개인정보 보호는 프라이버시 문제이면서 <strong>범죄 비용 문제</strong>이기도 해요. 수집을 줄이면 X3의 원재료 가격이 올라가요.</div></div></div></aside></section><section class="step" id="s4"><div class="lab">단계 4</div><h2>균형 잡힌 감시 체계 — 대응</h2>
+<aside class="box flip" style="background:#effaf4;border-color:#1f8a5b"><div class="bt" style="color:#1f8a5b">계산서 뒤집기 — 대응 · 원재료의 값을 올려라</div><div class="say left"><img src="assets/chars/haru/E10.webp" alt="조수(하루)" loading="lazy" width="58" height="58"><div class="bub"><div class="who">조수(하루)<span>추적 팀 · 대응 설계</span></div><div class="txt">수집하는 쪽, 규제하는 쪽, 개인 세 방향이에요.</div></div></div>
+<p><strong>수집하는 쪽(기업·기관)</strong>
+- 데이터 최소 수집과 보관 기한: 모으지 않은 데이터는 유출되지 않는다.
+- 가명·결합 처리 시 재식별 위험 평가: 위 실험처럼 조합 위험을 수치로 점검한다.
+- 프라이버시 강화 기술: 차분 프라이버시, 연합학습, 동형암호처럼 원본을 덜 노출하는 분석.</p>
+<p><strong>규제하는 쪽</strong>
+- 비례성 원칙: 감시의 강도는 목적의 중요성에 비례하고, 덜 침해적인 방법이 있으면 그것부터.
+- 투명성과 책임: 도입 결정의 공개, 시민 참여, 오남용 책임과 구제 수단.
+- 국경을 넘는 데이터에 대한 국제 공통 원칙.</p>
+<p><strong>개인</strong>
+- SNS 공개 범위 점검: 생일·직장·차량·동선 같은 '조각'을 한꺼번에 공개하지 않는다.
+- 앱 권한 정리, 쓰지 않는 계정 탈퇴, 데이터 브로커·검색 노출 확인.
+- 8장의 '디지털 건강검진' 체크리스트로 이어진다.</p></aside>
+
+<aside class="box key" style="background:#fffaf0;border-color:#c98318"><div class="bt" style="color:#c98318">핵심 정리</div><ul>
+<li>AI 감시는 수집·분석·판단을 자동화하며, 개인은 기준도 과정도 모른 채 결과만 받는다.</li>
+<li>무해해 보이는 정보 조각 여섯 개면 모의 인구의 99.9%가 특정된다.</li>
+<li>수집된 데이터의 유출은 범죄자의 <strong>정찰 비용을 사회가 대신 내는 것</strong>이다. 최소 수집이 곧 범죄 억제다.</li>
+</ul></aside>
+</section><section class="step" id="tool"><div class="lab">단계 5 · 분석 도구 — AI·데이터 분석</div><h2>재식별 — 조각 몇 개면 &#x27;세상에 나 하나&#x27;가 되나</h2><span class="tag">방법: 경우의 수와 지수함수</span>
+<div class="say left"><img src="assets/chars/doctor/E07.webp" alt="박사" loading="lazy" width="58" height="58"><div class="bub"><div class="who">박사<span>해설자</span></div><div class="txt">현장 질문부터 해 볼게요. 이름을 지운 데이터는 안전하다고들 한다.</div></div></div>
+<div class="duo"><div class="whybox"><h4>왜 이 방법을 쓰나</h4><dl><dt>문제 상황</dt><dd>이름을 지운 데이터는 안전하다고들 한다.</dd><dt>앞 방법의 한계</dt><dd>속성을 조합하면 그 조합을 가진 사람이 한 명뿐인 경우가 많아진다.</dd><dt>해법</dt><dd>가능한 조합 수 K를 세고, 인구 N 중 &#x27;나와 같은 조합이 아무도 없을 확률&#x27;을 계산한다.</dd><dt>쉽게 말하면</dt><dd>반에서 생일만으로는 겹치는 친구가 있지만, 생일+혈액형+사는 동네면 거의 나 혼자다.</dd></dl></div>
+<div class="mathbox"><h4>수식을 어려워하는 조수가 대신 물어봅니다</h4><div class="mini"><img src="assets/chars/haru/E04.webp" alt="조수(하루)" loading="lazy" width="58" height="58"><div><b>하루</b> e는 뭐예요? 갑자기 지수가 나와서 놀랐어요.</div></div>
+<dl><dt>학교 수학으로 보면</dt><dd>경우의 수(곱의 법칙), 지수함수</dd></dl><table class="parts"><tr><th>식 조각</th><th>읽는 법</th><th>뜻</th></tr><tr><td><b>K</b></td><td>케이</td><td>가능한 조합 수 = 각 속성 가짓수의 곱</td></tr><tr><td><b>N</b></td><td>엔</td><td>인구 수</td></tr><tr><td><b>e^(−(N−1)/K)</b></td><td></td><td>다른 N−1명이 모두 나와 다른 조합일 확률(근사)</td></tr><tr><td><b>e</b></td><td>자연상수</td><td>약 2.718, 이런 &#x27;모두 피할 확률&#x27;에 자주 나온다</td></tr></table>
+<dl><dt>숫자로 한 번 해 보기</dt><dd>시군구 250 × 출생연도 58 × 성별 2 × 출생월 12 = K = 348,000. N = 100,000이면 e^(−99,999 ÷ 348,000) ≈ 0.75, 즉 약 75%가 유일하다. 모의 실험 결과(75.0%)와 맞는다.</dd></dl><div class="mini"><img src="assets/chars/haru/E01.webp" alt="조수(하루)" loading="lazy" width="58" height="58"><div><b>하루</b> 조합 수가 인구보다 커지는 순간 대부분이 혼자가 되는 거네요. 출생월 하나가 그 순간이었어요.</div></div></div></div>
+<div class="pair"><div><b>일상으로 치면</b>온라인 퀴즈 &#x27;당신의 생일·첫 반려동물·태어난 동네는?&#x27;이 위험한 이유가 이것이다.</div><div><b>현장에서는</b>가명정보를 결합·공개하기 전에 이 계산으로 재식별 위험을 점검한다.</div></div>
+<h3>AI 판단 코너 — 주판봇의 확신, 맞을까?</h3><div class="say left"><img src="assets/chars/doctor/E07.webp" alt="박사" loading="lazy" width="58" height="58"><div class="bub"><div class="who">박사<span>해설자</span></div><div class="txt">이름이 없는 데이터라면 안전할까요?</div></div></div><div class="say left"><img src="assets/chars/jupanbot/E16.webp" alt="주판봇" loading="lazy" width="58" height="58"><div class="bub"><div class="who">주판봇<span>계산 담당</span></div><div class="txt">그럼요. 이름이 없잖아요!</div></div></div><div class="say left"><img src="assets/chars/fruitfly/E09.webp" alt="초파리 연구원" loading="lazy" width="58" height="58"><div class="bub"><div class="who">초파리 연구원<span>데이터·모델 분석</span></div><div class="txt">출생월 하나만 더해 볼래? 아래 상자를 하나씩 켜 봐.</div></div></div><div class="say left"><img src="assets/chars/haru/E10.webp" alt="조수(하루)" loading="lazy" width="58" height="58"><div class="bub"><div class="who">조수(하루)<span>추적 팀 · 대응 설계</span></div><div class="txt">출생월을 켜니 유일한 사람이 3%에서 75%로 뛰었어요.</div></div></div>
+<div class="panel"><h4>실험: 직접 바꿔 보기</h4><div data-w="w-ch06" data-k="reid"></div></div>
+<div class="say left"><img src="assets/chars/doctor/E10.webp" alt="박사" loading="lazy" width="58" height="58"><div class="bub"><div class="who">박사<span>해설자</span></div><div class="txt">풀이: 재식별 위험은 속성 가짓수의 곱 K와 인구 N의 비로 결정된다. K가 N을 넘어서면 대부분이 특정된다. 그래서 공개할 속성 수와 세밀함을 줄이는 것이 핵심이다.</div></div></div>
+<aside class="box warn" style="background:#fff8e6;border-color:#b7791f"><div class="bt" style="color:#b7791f">이 단계의 한계 — 여기서는 단순하게 봤어요</div><p>실제 속성은 서로 관련되어 있고 고르게 퍼져 있지 않다. 근사식은 방향을 보는 용도다.</p></aside>
+<details><summary>교안의 파이썬 코드로 보면 (몰라도 됩니다)</summary><p><code>unique = exp(-(N-1)/K)</code><br>아무도 나와 같은 조합이 아닐 확률을 근사한다.</p></details><div class="quiz" data-a="0"><div class="q">확인 퀴즈 · 조합 수 K가 인구 N보다 훨씬 커지면?</div><button type="button">① 대부분이 특정된다</button><button type="button">② 아무도 특정되지 않는다</button><button type="button">③ 변화 없다</button><div class="ex" hidden><b></b>e^(−N/K)가 1에 가까워진다.</div></div></section><section class="step" id="duel"><div class="lab">대결</div><h2>X3 vs 추적 팀 — 계산서 공방</h2><div class="duel"><div class="vs"><div class="side xs"><img src="assets/chars/x3/E09.webp" alt="X3" loading="lazy" width="58" height="58"><b>X3의 수</b><br>유출된 쇼핑몰 데이터와 공개 SNS를 결합해 &#x27;표적 명단&#x27;을 만든다.</div><div class="v">VS</div><div class="side ts"><img src="assets/chars/moa/E16.webp" alt="인턴2 모아" loading="lazy" width="58" height="58"><b>인턴2 모아의 수</b><br>데이터 최소 수집·보관 기한과 결합 전 재식별 위험 평가를 의무화한다.</div></div><div class="verdict"><img src="assets/chars/doctor/E10.webp" alt="박사" loading="lazy" width="58" height="58"><div>심판 박사 · 추적 팀 승<br><span style="font-weight:400">추적 팀 판정승. 원재료가 줄자 X3의 정찰 비용 c가 다시 올랐다.</span></div></div></div></section><section class="step" id="wrap"><div class="lab">정리</div><h2>정리 퀴즈</h2><div class="quiz" data-a="1"><div class="q">확인 퀴즈 · 케임브리지 애널리티카 사건의 핵심 문제는?</div><button type="button">① 서버 장애</button><button type="button">② 동의 없는 대규모 프로파일링과 정치적 활용</button><button type="button">③ 암호화폐 탈취</button><div class="ex" hidden><b></b>최대 약 8,700만 명의 정보가 활용되었다.</div></div><div class="quiz" data-a="0"><div class="q">확인 퀴즈 · 데이터 유출이 범죄경제학에서 의미하는 것은?</div><button type="button">① 범죄자의 정찰 비용을 사회가 대신 낸다</button><button type="button">② 처벌이 강해진다</button><button type="button">③ 검거 확률이 오른다</button><div class="ex" hidden><b></b>범죄자의 c가 낮아진다.</div></div></section><section class="step" id="outro"><div class="lab">아웃트로</div><h2>오늘의 연구실을 마치며</h2><div class="say left"><img src="assets/chars/doctor/E16.webp" alt="박사" loading="lazy" width="58" height="58"><div class="bub"><div class="who">박사<span>해설자</span></div><div class="txt">모으지 않은 데이터는 유출되지 않는다.</div></div></div><div class="say right x"><img src="assets/chars/x3/E02.webp" alt="X3" loading="lazy" width="58" height="58"><div class="bub"><div class="who">X3<span>범죄자 대역 · 세탁·정보 브로커</span></div><div class="txt">공짜 정찰대가 사라지는군.</div></div></div><div class="say left"><img src="assets/chars/sia/E01.webp" alt="인턴1 시아" loading="lazy" width="58" height="58"><div class="bub"><div class="who">인턴1 시아<span>추적 팀 · 현장 사례</span></div><div class="txt">다음 장에서 정보가 어떻게 돈이 되는지 따라가요.</div></div></div></section><section class="step kg" id="kg"><div class="lab">지식 색인</div><h2>이 장의 개념 지도</h2><table><tr><th>개념</th><th>뜻</th><th>함께 보는 장</th></tr><tr><td>재식별</td><td>가명 데이터에서 개인을 다시 특정하는 것</td><td><a href="ch06.html">06장</a> <a href="ch07.html">07장</a></td></tr><tr><td>데이터 브로커</td><td>여러 출처의 개인정보를 모아 파는 사업자</td><td><a href="ch06.html">06장</a></td></tr><tr><td>비례성 원칙</td><td>감시 강도는 목적의 중요성에 비례해야 한다는 원칙</td><td><a href="ch06.html">06장</a> <a href="ch09.html">09장</a></td></tr><tr><td>차분 프라이버시</td><td>결과에 잡음을 넣어 개인 노출을 막는 기법</td><td><a href="ch06.html">06장</a></td></tr></table></section><section class="step export" id="export"><div class="lab">꾸러미</div><h2>온톨로지·서지 꾸러미</h2><p class="mute">강의 자료나 지식 그래프에 옮길 때 쓰세요.</p><details><summary>JSON-LD (schema.org)</summary><button class="copy" data-t="jl-ch06">복사</button><pre id="jl-ch06">{
+ &quot;@context&quot;: &quot;https://schema.org&quot;,
+ &quot;@type&quot;: &quot;LearningResource&quot;,
+ &quot;name&quot;: &quot;보이지 않는 눈 — AI 감시와 프라이버시의 위기&quot;,
+ &quot;description&quot;: &quot;AI 감시와 데이터 수집이 일상에서 어떻게 작동하는지 본다.&quot;,
+ &quot;inLanguage&quot;: &quot;ko&quot;,
+ &quot;isPartOf&quot;: {
+  &quot;@type&quot;: &quot;Book&quot;,
+  &quot;name&quot;: &quot;AI 범죄와 자기 방어&quot;
+ },
+ &quot;author&quot;: {
+  &quot;@type&quot;: &quot;Person&quot;,
+  &quot;name&quot;: &quot;안상선&quot;,
+  &quot;url&quot;: &quot;https://adminmrobo.github.io/who_am_i/who_am_i.html&quot;
+ },
+ &quot;teaches&quot;: [
+  &quot;재식별&quot;,
+  &quot;데이터 브로커&quot;,
+  &quot;비례성 원칙&quot;,
+  &quot;차분 프라이버시&quot;
+ ],
+ &quot;educationalLevel&quot;: &quot;입문&quot;,
+ &quot;url&quot;: &quot;https://adminmrobo.github.io/ai_crime_lab/ch06.html&quot;,
+ &quot;about&quot;: [
+  &quot;AI·데이터 분석&quot;,
+  &quot;범죄경제학&quot;,
+  &quot;AI 범죄&quot;
+ ]
+}</pre></details><details><summary>BibTeX</summary><button class="copy" data-t="bib-ch06">복사</button><pre id="bib-ch06">@misc{ahn2026aicrime_ch06,
+  author = {안상선},
+  title = {AI 범죄 연구실 — 6장 보이지 않는 눈 — AI 감시와 프라이버시의 위기},
+  note = {『AI 범죄와 자기 방어』 보충본},
+  year = {2026},
+  url = {https://adminmrobo.github.io/ai_crime_lab/ch06.html}
+}</pre></details></section><div class="pn"><a href="ch05.html">← 5장 끊임없는 진화 — AI 기반 자동화 공격의 세계</a><a href="ch07.html">7장 보이지 않는 손의 조작 — AI와 금융 범죄 →</a></div><footer class="foot">글 · 안상선 (<a href="https://adminmrobo.github.io/who_am_i/who_am_i.html">https://adminmrobo.github.io/who_am_i/who_am_i.html</a>) · (주)M-Robo 대표<br>이 사이트는 『AI 범죄와 자기 방어』의 사례 보충본이다. '모의 데이터(가상)'는 설명용 가상의 수치이며 실제 통계가 아니다. X1~X3는 범죄자 역할을 맡은 대역이다. 범죄 수법은 작동 원리까지만 다룬다. · <a href="references.html">참고문헌</a> · <a href="data.html">모의 데이터와 재현 코드</a> · <a href="workbook.html">통합 작업본</a></footer></main></div><script src="assets/lab.js"></script></body></html>

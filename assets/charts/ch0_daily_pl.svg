@@ -1,0 +1,50 @@
+<svg viewBox="0 0 720 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="X1의 하루 계산서: 전통 사기 vs AI 사기" font-family="Pretendard, Noto Sans KR, sans-serif">
+<rect width="720" height="380" fill="#ffffff"/>
+<text x="70" y="26" font-size="16" font-weight="700" fill="#1d2430">X1의 하루 계산서: 전통 사기 vs AI 사기</text>
+<text x="696" y="26" font-size="11" text-anchor="end" fill="#8a93a0">모의 데이터(가상)</text>
+<line x1="70" x2="696" y1="298.0" y2="298.0" stroke="#e8ecf1"/>
+<text x="62" y="302.0" font-size="11" text-anchor="end" fill="#5b6572">-1,000</text>
+<line x1="70" x2="696" y1="266.5" y2="266.5" stroke="#e8ecf1"/>
+<text x="62" y="270.5" font-size="11" text-anchor="end" fill="#5b6572">-500</text>
+<line x1="70" x2="696" y1="235.0" y2="235.0" stroke="#e8ecf1"/>
+<text x="62" y="239.0" font-size="11" text-anchor="end" fill="#5b6572">0</text>
+<line x1="70" x2="696" y1="203.5" y2="203.5" stroke="#e8ecf1"/>
+<text x="62" y="207.5" font-size="11" text-anchor="end" fill="#5b6572">500</text>
+<line x1="70" x2="696" y1="172.0" y2="172.0" stroke="#e8ecf1"/>
+<text x="62" y="176.0" font-size="11" text-anchor="end" fill="#5b6572">1,000</text>
+<line x1="70" x2="696" y1="140.5" y2="140.5" stroke="#e8ecf1"/>
+<text x="62" y="144.5" font-size="11" text-anchor="end" fill="#5b6572">1,500</text>
+<line x1="70" x2="696" y1="109.0" y2="109.0" stroke="#e8ecf1"/>
+<text x="62" y="113.0" font-size="11" text-anchor="end" fill="#5b6572">2,000</text>
+<line x1="70" x2="696" y1="77.5" y2="77.5" stroke="#e8ecf1"/>
+<text x="62" y="81.5" font-size="11" text-anchor="end" fill="#5b6572">2,500</text>
+<line x1="70" x2="696" y1="46.0" y2="46.0" stroke="#e8ecf1"/>
+<text x="62" y="50.0" font-size="11" text-anchor="end" fill="#5b6572">3,000</text>
+<text x="383.0" y="368" font-size="12" text-anchor="middle" fill="#3b4450">항목</text>
+<text transform="translate(16,181.0) rotate(-90)" font-size="12" text-anchor="middle" fill="#3b4450">만 원/일</text>
+<text x="148.2" y="314" font-size="11.5" text-anchor="middle" fill="#3b4450">기대 수익</text>
+<rect x="103.2" y="231.2" width="44.0" height="3.8" rx="3" fill="#9aa3ad"/>
+<text x="125.2" y="226.2" font-size="10.5" text-anchor="middle" fill="#1d2430">60</text>
+<rect x="149.2" y="64.9" width="44.0" height="170.1" rx="3" fill="#d6453d"/>
+<text x="171.2" y="59.9" font-size="10.5" text-anchor="middle" fill="#1d2430">2,700</text>
+<text x="304.8" y="314" font-size="11.5" text-anchor="middle" fill="#3b4450">직접 비용</text>
+<rect x="259.8" y="235.0" width="44.0" height="3.8" rx="3" fill="#9aa3ad"/>
+<text x="281.8" y="251.8" font-size="10.5" text-anchor="middle" fill="#1d2430">-60</text>
+<rect x="305.8" y="235.0" width="44.0" height="5.7" rx="3" fill="#d6453d"/>
+<text x="327.8" y="253.7" font-size="10.5" text-anchor="middle" fill="#1d2430">-90</text>
+<text x="461.2" y="314" font-size="11.5" text-anchor="middle" fill="#3b4450">처벌 기대비용</text>
+<rect x="416.2" y="235.0" width="44.0" height="5.7" rx="3" fill="#9aa3ad"/>
+<text x="438.2" y="253.7" font-size="10.5" text-anchor="middle" fill="#1d2430">-90</text>
+<rect x="462.2" y="235.0" width="44.0" height="51.0" rx="3" fill="#d6453d"/>
+<text x="484.2" y="299.0" font-size="10.5" text-anchor="middle" fill="#1d2430">-810</text>
+<text x="617.8" y="314" font-size="11.5" text-anchor="middle" fill="#3b4450">순이익</text>
+<rect x="572.8" y="235.0" width="44.0" height="5.7" rx="3" fill="#9aa3ad"/>
+<text x="594.8" y="253.7" font-size="10.5" text-anchor="middle" fill="#1d2430">-90</text>
+<rect x="618.8" y="121.6" width="44.0" height="113.4" rx="3" fill="#d6453d"/>
+<text x="640.8" y="116.6" font-size="10.5" text-anchor="middle" fill="#1d2430">1,800</text>
+<line x1="70" x2="696" y1="235.0" y2="235.0" stroke="#1d2430"/>
+<line x1="70" x2="92" y1="346" y2="346" stroke="#9aa3ad" stroke-width="4"/>
+<text x="98" y="350" font-size="11.5" fill="#3b4450">전통 수작업 사기</text>
+<line x1="213.5" x2="235.5" y1="346" y2="346" stroke="#d6453d" stroke-width="4"/>
+<text x="241.5" y="350" font-size="11.5" fill="#3b4450">AI 자동화 사기</text>
+</svg>
