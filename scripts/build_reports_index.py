@@ -72,7 +72,7 @@ td.num{{text-align:center;font-weight:800}}
 <div class="cards">{cards}</div>
 
 <h2 id="coverage" style="margin-top:40px">장별 검증 현황</h2>
-<p class="mute">한 대조 항목이 두 장에 걸치면 두 장 모두에 셉니다. 분야 전체에서 어디가 채워졌는지는 <a href="../ontology.html">AI 범죄학 온톨로지 지도</a>에서 봅니다.</p>
+<p class="mute">한 대조 항목이 두 장에 걸치면 두 장 모두에 셉니다. 분야 전체에서 어디가 채워졌는지는 <a href="../ontology.html">AI 범죄학 온톨로지 지도</a>에서, 지식 노드가 쌓여 온 과정은 <a href="https://adminmrobo.github.io/ahnboat_lab_cover_status/growth_crime.html?view=full">AI 범죄학 지식 노드 현황</a>에서 봅니다.</p>
 <table>{head}{rows}</table>
 
 <h2 id="legend" style="margin-top:40px">대조 표시 읽는 법</h2>

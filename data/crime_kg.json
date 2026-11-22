@@ -1,0 +1,1223 @@
+{
+ "version": "1.0",
+ "domain": "crime",
+ "repo": "ai_crime_lab",
+ "backbone": "backbone_crime 0.1",
+ "site": "https://adminmrobo.github.io/ai_crime_lab/",
+ "map": "https://adminmrobo.github.io/ai_crime_lab/ontology.html",
+ "areas": [
+  {
+   "id": "lab:area/ai-crime-basics",
+   "ko": "AI 범죄의 기초",
+   "en": "Foundations of AI crime"
+  },
+  {
+   "id": "lab:area/crime-economics",
+   "ko": "범죄경제학",
+   "en": "Economics of crime"
+  },
+  {
+   "id": "lab:area/crime-games",
+   "ko": "게임이론으로 본 범죄",
+   "en": "Game theory of crime"
+  },
+  {
+   "id": "lab:area/synthetic-media",
+   "ko": "합성 미디어와 신원 위조",
+   "en": "Synthetic media and identity forgery"
+  },
+  {
+   "id": "lab:area/social-engineering",
+   "ko": "피싱과 사회공학",
+   "en": "Phishing and social engineering"
+  },
+  {
+   "id": "lab:area/automated-attacks",
+   "ko": "자동화 공격",
+   "en": "Automated attacks"
+  },
+  {
+   "id": "lab:area/financial-crime",
+   "ko": "금융 범죄와 세탁",
+   "en": "Financial crime and laundering"
+  },
+  {
+   "id": "lab:area/surveillance-privacy",
+   "ko": "감시와 프라이버시",
+   "en": "Surveillance and privacy"
+  },
+  {
+   "id": "lab:area/detection-response",
+   "ko": "탐지와 대응",
+   "en": "Detection and response"
+  },
+  {
+   "id": "lab:area/institutions-policy",
+   "ko": "제도와 정책",
+   "en": "Institutions and policy"
+  },
+  {
+   "id": "lab:area/personal-defense",
+   "ko": "개인 방어와 회복력",
+   "en": "Personal defense and resilience"
+  },
+  {
+   "id": "lab:area/future-threats",
+   "ko": "미래 위협",
+   "en": "Future threats"
+  },
+  {
+   "id": "lab:area/field-verification",
+   "ko": "현장 검증",
+   "en": "Field verification"
+  }
+ ],
+ "pages": [
+  {
+   "file": "ch00.html",
+   "title": "서장 · 진화하는 사이버 범죄"
+  },
+  {
+   "file": "ch01.html",
+   "title": "1장 · AI 범죄, 새로운 디지털 위험의 시대"
+  },
+  {
+   "file": "ch02.html",
+   "title": "2장 · 범죄자의 경제학 — AI가 범죄를 매력적으로 만드는 이유"
+  },
+  {
+   "file": "ch03.html",
+   "title": "3장 · 진짜인 듯 가짜인 세상 — 딥페이크의 위협"
+  },
+  {
+   "file": "ch04.html",
+   "title": "4장 · 완벽한 사기꾼 — AI가 바꾸는 피싱과 사회공학"
+  },
+  {
+   "file": "ch05.html",
+   "title": "5장 · 끊임없는 진화 — AI 기반 자동화 공격의 세계"
+  },
+  {
+   "file": "ch06.html",
+   "title": "6장 · 보이지 않는 눈 — AI 감시와 프라이버시의 위기"
+  },
+  {
+   "file": "ch07.html",
+   "title": "7장 · 보이지 않는 손의 조작 — AI와 금융 범죄"
+  },
+  {
+   "file": "ch08.html",
+   "title": "8장 · 나만의 디지털 방패 만들기"
+  },
+  {
+   "file": "ch09.html",
+   "title": "9장 · 함께 만드는 안전한 AI 사회"
+  },
+  {
+   "file": "ch10.html",
+   "title": "10장 · 미래를 준비하는 디지털 생존 전략"
+  },
+  {
+   "file": "reports/2026-11-23_lnrs-synthetic-identity-deepfake/index.html",
+   "title": "리포트 No.001 · 만들어진 신원과 딥페이크 사기"
+  }
+ ],
+ "nodes": [
+  {
+   "id": "lab:concept/expected-utility-crime",
+   "ko": "기대이익",
+   "en": "Expected gain from crime",
+   "area": "lab:area/crime-economics",
+   "files": [
+    "ch00.html",
+    "reports/2026-11-23_lnrs-synthetic-identity-deepfake/index.html"
+   ]
+  },
+  {
+   "id": "lab:concept/economics-of-crime",
+   "ko": "범죄경제학",
+   "en": "Economics of crime",
+   "area": "lab:area/crime-economics",
+   "files": [
+    "ch00.html"
+   ]
+  },
+  {
+   "id": "lab:concept/conditions-for-crime",
+   "ko": "범죄가 되는 세 조건",
+   "en": "Three conditions for a technology to become crime",
+   "area": "lab:area/ai-crime-basics",
+   "files": [
+    "ch00.html"
+   ]
+  },
+  {
+   "id": "lab:concept/ai-crime-six-features",
+   "ko": "AI 범죄의 여섯 가지 특징",
+   "en": "Six features of AI crime",
+   "area": "lab:area/ai-crime-basics",
+   "files": [
+    "ch00.html"
+   ]
+  },
+  {
+   "id": "lab:concept/crime-as-a-service",
+   "ko": "서비스형 범죄(CaaS)",
+   "en": "Crime as a service",
+   "area": "lab:area/ai-crime-basics",
+   "files": [
+    "ch00.html"
+   ]
+  },
+  {
+   "id": "lab:concept/conversational-automated-crime",
+   "ko": "대화형 자동범죄",
+   "en": "Conversational automated crime",
+   "area": "lab:area/automated-attacks",
+   "files": [
+    "ch01.html"
+   ]
+  },
+  {
+   "id": "lab:concept/one-to-n-production",
+   "ko": "1:N 생산함수",
+   "en": "One-to-N production function",
+   "area": "lab:area/crime-economics",
+   "files": [
+    "ch01.html"
+   ]
+  },
+  {
+   "id": "lab:concept/scam-funnel",
+   "ko": "퍼널",
+   "en": "Scam funnel",
+   "area": "lab:area/social-engineering",
+   "files": [
+    "ch01.html"
+   ]
+  },
+  {
+   "id": "lab:method/idsgan",
+   "ko": "IDSGAN",
+   "en": "IDSGAN",
+   "area": "lab:area/automated-attacks",
+   "files": [
+    "ch01.html"
+   ]
+  },
+  {
+   "id": "lab:concept/deepfake-sexual-abuse-material",
+   "ko": "딥페이크 성착취물",
+   "en": "Deepfake sexual abuse material",
+   "area": "lab:area/synthetic-media",
+   "files": [
+    "ch01.html"
+   ]
+  },
+  {
+   "id": "lab:theory/becker-model",
+   "ko": "베커 모형",
+   "en": "Becker model of crime",
+   "area": "lab:area/crime-economics",
+   "files": [
+    "ch02.html"
+   ]
+  },
+  {
+   "id": "lab:concept/breakeven-arrest-probability",
+   "ko": "손익분기 검거 확률",
+   "en": "Break-even probability of apprehension",
+   "area": "lab:area/crime-economics",
+   "files": [
+    "ch02.html"
+   ]
+  },
+  {
+   "id": "lab:concept/certainty-of-punishment",
+   "ko": "처벌의 확실성",
+   "en": "Certainty of punishment",
+   "area": "lab:area/crime-economics",
+   "files": [
+    "ch02.html"
+   ]
+  },
+  {
+   "id": "lab:concept/opportunity-cost",
+   "ko": "기회비용",
+   "en": "Opportunity cost",
+   "area": "lab:area/crime-economics",
+   "files": [
+    "ch02.html"
+   ]
+  },
+  {
+   "id": "lab:concept/deepfake",
+   "ko": "딥페이크",
+   "en": "Deepfake",
+   "area": "lab:area/synthetic-media",
+   "files": [
+    "ch03.html",
+    "reports/2026-11-23_lnrs-synthetic-identity-deepfake/index.html"
+   ]
+  },
+  {
+   "id": "lab:method/gan",
+   "ko": "GAN",
+   "en": "Generative adversarial network",
+   "area": "lab:area/synthetic-media",
+   "files": [
+    "ch03.html"
+   ]
+  },
+  {
+   "id": "lab:concept/voice-cloning-scam",
+   "ko": "목소리 복제 금융사기",
+   "en": "Voice-cloning financial scam",
+   "area": "lab:area/synthetic-media",
+   "files": [
+    "ch03.html"
+   ]
+  },
+  {
+   "id": "lab:concept/signaling-game",
+   "ko": "신호 게임",
+   "en": "Signaling game",
+   "area": "lab:area/crime-games",
+   "files": [
+    "ch03.html"
+   ]
+  },
+  {
+   "id": "lab:concept/liars-dividend",
+   "ko": "거짓말쟁이의 배당",
+   "en": "Liar's dividend",
+   "area": "lab:area/synthetic-media",
+   "files": [
+    "ch03.html"
+   ]
+  },
+  {
+   "id": "lab:concept/verification-question",
+   "ko": "가족 확인 질문",
+   "en": "Pre-agreed verification question",
+   "area": "lab:area/personal-defense",
+   "files": [
+    "ch03.html"
+   ]
+  },
+  {
+   "id": "lab:concept/social-engineering",
+   "ko": "사회공학",
+   "en": "Social engineering",
+   "area": "lab:area/social-engineering",
+   "files": [
+    "ch04.html"
+   ]
+  },
+  {
+   "id": "lab:concept/inspection-game",
+   "ko": "검사 게임",
+   "en": "Inspection game",
+   "area": "lab:area/crime-games",
+   "files": [
+    "ch04.html"
+   ]
+  },
+  {
+   "id": "lab:method/membership-inference",
+   "ko": "멤버십 추론",
+   "en": "Membership inference",
+   "area": "lab:area/surveillance-privacy",
+   "files": [
+    "ch04.html"
+   ]
+  },
+  {
+   "id": "lab:concept/spear-phishing",
+   "ko": "스피어피싱",
+   "en": "Spear phishing",
+   "area": "lab:area/social-engineering",
+   "files": [
+    "ch04.html"
+   ]
+  },
+  {
+   "id": "lab:concept/attack-automation-stages",
+   "ko": "공격 자동화의 5단계",
+   "en": "Five stages of attack automation",
+   "area": "lab:area/automated-attacks",
+   "files": [
+    "ch05.html"
+   ]
+  },
+  {
+   "id": "lab:concept/adaptive-evasion",
+   "ko": "적응형 탐지 회피",
+   "en": "Adaptive detection evasion",
+   "area": "lab:area/automated-attacks",
+   "files": [
+    "ch05.html"
+   ]
+  },
+  {
+   "id": "lab:concept/false-flag",
+   "ko": "거짓 깃발",
+   "en": "False flag",
+   "area": "lab:area/automated-attacks",
+   "files": [
+    "ch05.html"
+   ]
+  },
+  {
+   "id": "lab:method/behavioral-anomaly-detection",
+   "ko": "행위 기반 이상 탐지",
+   "en": "Behavior-based anomaly detection",
+   "area": "lab:area/detection-response",
+   "files": [
+    "ch05.html"
+   ]
+  },
+  {
+   "id": "lab:metric/precision-recall",
+   "ko": "정밀도·재현율",
+   "en": "Precision and recall",
+   "area": "lab:area/detection-response",
+   "files": [
+    "ch05.html"
+   ]
+  },
+  {
+   "id": "lab:method/zero-trust",
+   "ko": "제로 트러스트",
+   "en": "Zero trust",
+   "area": "lab:area/personal-defense",
+   "files": [
+    "ch05.html"
+   ]
+  },
+  {
+   "id": "lab:concept/ai-surveillance",
+   "ko": "일상이 된 AI 감시",
+   "en": "Everyday AI surveillance",
+   "area": "lab:area/surveillance-privacy",
+   "files": [
+    "ch06.html"
+   ]
+  },
+  {
+   "id": "lab:concept/reidentification",
+   "ko": "재식별",
+   "en": "Re-identification",
+   "area": "lab:area/surveillance-privacy",
+   "files": [
+    "ch06.html"
+   ]
+  },
+  {
+   "id": "lab:concept/data-broker",
+   "ko": "데이터 브로커",
+   "en": "Data broker",
+   "area": "lab:area/surveillance-privacy",
+   "files": [
+    "ch06.html"
+   ]
+  },
+  {
+   "id": "lab:concept/proportionality-principle",
+   "ko": "비례성 원칙",
+   "en": "Proportionality principle",
+   "area": "lab:area/institutions-policy",
+   "files": [
+    "ch06.html"
+   ]
+  },
+  {
+   "id": "lab:method/differential-privacy",
+   "ko": "차분 프라이버시",
+   "en": "Differential privacy",
+   "area": "lab:area/surveillance-privacy",
+   "files": [
+    "ch06.html"
+   ]
+  },
+  {
+   "id": "lab:concept/crypto-theft-process",
+   "ko": "AI 기반 암호화폐 탈취",
+   "en": "AI-driven crypto theft",
+   "area": "lab:area/financial-crime",
+   "files": [
+    "ch07.html"
+   ]
+  },
+  {
+   "id": "lab:concept/raas",
+   "ko": "RaaS",
+   "en": "Ransomware as a service",
+   "area": "lab:area/financial-crime",
+   "files": [
+    "ch07.html"
+   ]
+  },
+  {
+   "id": "lab:concept/mixing-service",
+   "ko": "믹싱 서비스",
+   "en": "Mixing service",
+   "area": "lab:area/financial-crime",
+   "files": [
+    "ch07.html"
+   ]
+  },
+  {
+   "id": "lab:standard/travel-rule",
+   "ko": "트래블룰",
+   "en": "Travel rule",
+   "area": "lab:area/financial-crime",
+   "files": [
+    "ch07.html"
+   ]
+  },
+  {
+   "id": "lab:concept/double-extortion",
+   "ko": "이중 협박",
+   "en": "Double extortion",
+   "area": "lab:area/financial-crime",
+   "files": [
+    "ch07.html"
+   ]
+  },
+  {
+   "id": "lab:concept/ransom-negotiation",
+   "ko": "랜섬 협상 게임",
+   "en": "Ransom bargaining game",
+   "area": "lab:area/crime-games",
+   "files": [
+    "ch07.html"
+   ]
+  },
+  {
+   "id": "lab:method/passkey",
+   "ko": "패스키",
+   "en": "Passkey",
+   "area": "lab:area/personal-defense",
+   "files": [
+    "ch08.html"
+   ]
+  },
+  {
+   "id": "lab:method/identity-lock",
+   "ko": "명의도용 차단",
+   "en": "Identity theft blocking services",
+   "area": "lab:area/personal-defense",
+   "files": [
+    "ch08.html"
+   ]
+  },
+  {
+   "id": "lab:method/incident-response-5-steps",
+   "ko": "사고 대응 5단계",
+   "en": "Five-step incident response",
+   "area": "lab:area/personal-defense",
+   "files": [
+    "ch08.html"
+   ]
+  },
+  {
+   "id": "lab:concept/optimal-security-investment",
+   "ko": "최적 보안 투자",
+   "en": "Optimal security investment",
+   "area": "lab:area/personal-defense",
+   "files": [
+    "ch08.html"
+   ]
+  },
+  {
+   "id": "lab:concept/layered-defense",
+   "ko": "다층 방어",
+   "en": "Layered defense",
+   "area": "lab:area/personal-defense",
+   "files": [
+    "ch08.html"
+   ]
+  },
+  {
+   "id": "lab:concept/externality",
+   "ko": "외부성",
+   "en": "Externality",
+   "area": "lab:area/crime-games",
+   "files": [
+    "ch09.html"
+   ]
+  },
+  {
+   "id": "lab:concept/prisoners-dilemma",
+   "ko": "죄수의 딜레마",
+   "en": "Prisoner's dilemma",
+   "area": "lab:area/crime-games",
+   "files": [
+    "ch09.html"
+   ]
+  },
+  {
+   "id": "lab:concept/cyber-herd-immunity",
+   "ko": "사이버 집단 면역",
+   "en": "Cyber herd immunity",
+   "area": "lab:area/detection-response",
+   "files": [
+    "ch09.html"
+   ]
+  },
+  {
+   "id": "lab:concept/nash-equilibrium",
+   "ko": "내쉬 균형",
+   "en": "Nash equilibrium",
+   "area": "lab:area/crime-games",
+   "files": [
+    "ch09.html"
+   ]
+  },
+  {
+   "id": "lab:concept/cross-border-cooperation",
+   "ko": "국경을 넘는 협력",
+   "en": "Cross-border cooperation",
+   "area": "lab:area/institutions-policy",
+   "files": [
+    "ch09.html"
+   ]
+  },
+  {
+   "id": "lab:concept/resilience",
+   "ko": "회복력",
+   "en": "Resilience",
+   "area": "lab:area/personal-defense",
+   "files": [
+    "ch10.html"
+   ]
+  },
+  {
+   "id": "lab:concept/golden-time",
+   "ko": "골든타임",
+   "en": "Golden time",
+   "area": "lab:area/personal-defense",
+   "files": [
+    "ch10.html"
+   ]
+  },
+  {
+   "id": "lab:concept/synthetic-identity",
+   "ko": "합성 신원",
+   "en": "Synthetic identity",
+   "area": "lab:area/synthetic-media",
+   "files": [
+    "ch10.html",
+    "reports/2026-11-23_lnrs-synthetic-identity-deepfake/index.html"
+   ]
+  },
+  {
+   "id": "lab:concept/autonomous-attack-agent",
+   "ko": "자율형 공격 에이전트",
+   "en": "Autonomous attack agent",
+   "area": "lab:area/automated-attacks",
+   "files": [
+    "ch10.html"
+   ]
+  },
+  {
+   "id": "lab:concept/xr-iot-threats",
+   "ko": "메타버스·XR·IoT 위협",
+   "en": "XR and IoT threats",
+   "area": "lab:area/future-threats",
+   "files": [
+    "ch10.html"
+   ]
+  },
+  {
+   "id": "lab:standard/post-quantum-cryptography",
+   "ko": "양자 내성 암호",
+   "en": "Post-quantum cryptography",
+   "area": "lab:area/future-threats",
+   "files": [
+    "ch10.html"
+   ]
+  },
+  {
+   "id": "lab:concept/incentive-enforcement-design",
+   "ko": "제도 설계(인센티브·강제력)",
+   "en": "Institutional design with enforcement",
+   "area": "lab:area/institutions-policy",
+   "files": [
+    "ch00.html",
+    "ch01.html",
+    "ch02.html",
+    "ch03.html",
+    "ch04.html",
+    "ch05.html",
+    "ch06.html",
+    "ch07.html",
+    "ch08.html",
+    "ch09.html",
+    "ch10.html"
+   ]
+  },
+  {
+   "id": "lab:concept/true-identity-theft",
+   "ko": "실제 신원 도용",
+   "en": "True identity theft",
+   "area": "lab:area/social-engineering",
+   "files": [
+    "reports/2026-11-23_lnrs-synthetic-identity-deepfake/index.html"
+   ]
+  },
+  {
+   "id": "lab:concept/first-party-fraud",
+   "ko": "제1자 사기",
+   "en": "First-party fraud",
+   "area": "lab:area/financial-crime",
+   "files": [
+    "reports/2026-11-23_lnrs-synthetic-identity-deepfake/index.html"
+   ]
+  },
+  {
+   "id": "lab:concept/scalable-identity",
+   "ko": "규모(대량 생산)",
+   "en": "Scalable",
+   "area": "lab:area/ai-crime-basics",
+   "files": [
+    "reports/2026-11-23_lnrs-synthetic-identity-deepfake/index.html"
+   ]
+  },
+  {
+   "id": "lab:concept/adaptive-identity",
+   "ko": "적응(심사 통과 학습)",
+   "en": "Adaptive",
+   "area": "lab:area/automated-attacks",
+   "files": [
+    "reports/2026-11-23_lnrs-synthetic-identity-deepfake/index.html"
+   ]
+  },
+  {
+   "id": "lab:concept/patient-identity",
+   "ko": "인내(숙성 후 현금화)",
+   "en": "Patient",
+   "area": "lab:area/synthetic-media",
+   "files": [
+    "reports/2026-11-23_lnrs-synthetic-identity-deepfake/index.html"
+   ]
+  },
+  {
+   "id": "lab:concept/synthetic-farm",
+   "ko": "합성 농장·합성 주택",
+   "en": "Synthetic farm / synthetic house",
+   "area": "lab:area/synthetic-media",
+   "files": [
+    "reports/2026-11-23_lnrs-synthetic-identity-deepfake/index.html"
+   ]
+  },
+  {
+   "id": "lab:concept/injection-replay-attack",
+   "ko": "주입·재생 공격",
+   "en": "Injection and replay attacks",
+   "area": "lab:area/synthetic-media",
+   "files": [
+    "reports/2026-11-23_lnrs-synthetic-identity-deepfake/index.html"
+   ]
+  },
+  {
+   "id": "lab:concept/proof-of-life",
+   "ko": "생활 흔적(proof of life)",
+   "en": "Proof of life",
+   "area": "lab:area/detection-response",
+   "files": [
+    "reports/2026-11-23_lnrs-synthetic-identity-deepfake/index.html"
+   ]
+  },
+  {
+   "id": "lab:indicator/zero-noise",
+   "ko": "잡음 없음 신호",
+   "en": "Zero-noise signal",
+   "area": "lab:area/detection-response",
+   "files": [
+    "reports/2026-11-23_lnrs-synthetic-identity-deepfake/index.html"
+   ]
+  },
+  {
+   "id": "lab:concept/denominator",
+   "ko": "비율의 분모",
+   "en": "Denominator of a rate",
+   "area": "lab:area/field-verification",
+   "files": [
+    "reports/2026-11-23_lnrs-synthetic-identity-deepfake/index.html"
+   ]
+  },
+  {
+   "id": "lab:method/point-in-time-verification",
+   "ko": "시점 검증",
+   "en": "Point-in-time verification",
+   "area": "lab:area/detection-response",
+   "files": [
+    "reports/2026-11-23_lnrs-synthetic-identity-deepfake/index.html"
+   ]
+  },
+  {
+   "id": "lab:method/lifecycle-trust",
+   "ko": "생애주기 신뢰 모형",
+   "en": "Lifecycle identity trust model",
+   "area": "lab:area/detection-response",
+   "files": [
+    "reports/2026-11-23_lnrs-synthetic-identity-deepfake/index.html"
+   ]
+  },
+  {
+   "id": "lab:method/orchestration",
+   "ko": "오케스트레이션",
+   "en": "Orchestration",
+   "area": "lab:area/detection-response",
+   "files": [
+    "reports/2026-11-23_lnrs-synthetic-identity-deepfake/index.html"
+   ]
+  },
+  {
+   "id": "lab:method/step-up",
+   "ko": "단계별 추가 확인",
+   "en": "Adaptive step-up",
+   "area": "lab:area/personal-defense",
+   "files": [
+    "reports/2026-11-23_lnrs-synthetic-identity-deepfake/index.html"
+   ]
+  },
+  {
+   "id": "lab:method/liveness-check",
+   "ko": "라이브니스 검사",
+   "en": "Liveness check",
+   "area": "lab:area/detection-response",
+   "files": [
+    "reports/2026-11-23_lnrs-synthetic-identity-deepfake/index.html"
+   ]
+  },
+  {
+   "id": "lab:limitation/human-deepfake-detection",
+   "ko": "사람 눈의 딥페이크 판별 한계",
+   "en": "Limits of human deepfake detection",
+   "area": "lab:area/personal-defense",
+   "files": [
+    "reports/2026-11-23_lnrs-synthetic-identity-deepfake/index.html"
+   ]
+  },
+  {
+   "id": "lab:concept/arrest-probability",
+   "ko": "검거 확률 p",
+   "en": "Probability of apprehension p",
+   "area": "lab:area/crime-economics",
+   "files": [
+    "reports/2026-11-23_lnrs-synthetic-identity-deepfake/index.html"
+   ]
+  },
+  {
+   "id": "lab:concept/crime-gain",
+   "ko": "성공 시 이익 g",
+   "en": "Gain from crime g",
+   "area": "lab:area/crime-economics",
+   "files": [
+    "reports/2026-11-23_lnrs-synthetic-identity-deepfake/index.html"
+   ]
+  },
+  {
+   "id": "lab:concept/success-probability",
+   "ko": "성공 확률 π",
+   "en": "Success probability π",
+   "area": "lab:area/crime-economics",
+   "files": [
+    "reports/2026-11-23_lnrs-synthetic-identity-deepfake/index.html"
+   ]
+  },
+  {
+   "id": "lab:concept/crime-unit-cost",
+   "ko": "건당 비용 c",
+   "en": "Unit cost of crime c",
+   "area": "lab:area/crime-economics",
+   "files": [
+    "reports/2026-11-23_lnrs-synthetic-identity-deepfake/index.html"
+   ]
+  },
+  {
+   "id": "lab:indicator/synthetic-share",
+   "ko": "합성 신원 사기 비중",
+   "en": "Share of synthetic identity fraud",
+   "area": "lab:area/field-verification",
+   "files": [
+    "reports/2026-11-23_lnrs-synthetic-identity-deepfake/index.html"
+   ]
+  }
+ ],
+ "edges": [
+  [
+   "lab:theory/becker-model",
+   "lab:concept/economics-of-crime",
+   "derivedFrom"
+  ],
+  [
+   "lab:concept/breakeven-arrest-probability",
+   "lab:theory/becker-model",
+   "derivedFrom"
+  ],
+  [
+   "lab:concept/certainty-of-punishment",
+   "lab:theory/becker-model",
+   "relatedTo"
+  ],
+  [
+   "lab:concept/opportunity-cost",
+   "lab:theory/becker-model",
+   "partOf"
+  ],
+  [
+   "lab:concept/expected-utility-crime",
+   "lab:concept/economics-of-crime",
+   "partOf"
+  ],
+  [
+   "lab:concept/crime-as-a-service",
+   "lab:concept/ai-crime-six-features",
+   "partOf"
+  ],
+  [
+   "lab:concept/conditions-for-crime",
+   "lab:concept/ai-crime-six-features",
+   "prerequisiteOf"
+  ],
+  [
+   "lab:concept/one-to-n-production",
+   "lab:concept/conversational-automated-crime",
+   "relatedTo"
+  ],
+  [
+   "lab:concept/scam-funnel",
+   "lab:concept/conversational-automated-crime",
+   "relatedTo"
+  ],
+  [
+   "lab:method/idsgan",
+   "lab:concept/conversational-automated-crime",
+   "relatedTo"
+  ],
+  [
+   "lab:concept/deepfake-sexual-abuse-material",
+   "lab:concept/conversational-automated-crime",
+   "relatedTo"
+  ],
+  [
+   "lab:method/gan",
+   "lab:concept/deepfake",
+   "prerequisiteOf"
+  ],
+  [
+   "lab:concept/voice-cloning-scam",
+   "lab:concept/deepfake",
+   "partOf"
+  ],
+  [
+   "lab:concept/liars-dividend",
+   "lab:concept/deepfake",
+   "relatedTo"
+  ],
+  [
+   "lab:concept/signaling-game",
+   "lab:concept/deepfake",
+   "relatedTo"
+  ],
+  [
+   "lab:concept/verification-question",
+   "lab:concept/voice-cloning-scam",
+   "addressedBy"
+  ],
+  [
+   "lab:concept/spear-phishing",
+   "lab:concept/social-engineering",
+   "partOf"
+  ],
+  [
+   "lab:concept/inspection-game",
+   "lab:concept/social-engineering",
+   "relatedTo"
+  ],
+  [
+   "lab:method/membership-inference",
+   "lab:concept/social-engineering",
+   "relatedTo"
+  ],
+  [
+   "lab:concept/attack-automation-stages",
+   "lab:concept/adaptive-evasion",
+   "prerequisiteOf"
+  ],
+  [
+   "lab:concept/adaptive-evasion",
+   "lab:method/behavioral-anomaly-detection",
+   "addressedBy"
+  ],
+  [
+   "lab:method/behavioral-anomaly-detection",
+   "lab:metric/precision-recall",
+   "evaluatedBy"
+  ],
+  [
+   "lab:concept/false-flag",
+   "lab:concept/adaptive-evasion",
+   "relatedTo"
+  ],
+  [
+   "lab:method/zero-trust",
+   "lab:concept/adaptive-evasion",
+   "contrastsWith"
+  ],
+  [
+   "lab:concept/data-broker",
+   "lab:concept/reidentification",
+   "relatedTo"
+  ],
+  [
+   "lab:concept/reidentification",
+   "lab:method/differential-privacy",
+   "addressedBy"
+  ],
+  [
+   "lab:concept/proportionality-principle",
+   "lab:concept/ai-surveillance",
+   "relatedTo"
+  ],
+  [
+   "lab:concept/ai-surveillance",
+   "lab:concept/data-broker",
+   "relatedTo"
+  ],
+  [
+   "lab:concept/raas",
+   "lab:concept/double-extortion",
+   "relatedTo"
+  ],
+  [
+   "lab:concept/ransom-negotiation",
+   "lab:concept/double-extortion",
+   "relatedTo"
+  ],
+  [
+   "lab:concept/mixing-service",
+   "lab:standard/travel-rule",
+   "addressedBy"
+  ],
+  [
+   "lab:concept/crypto-theft-process",
+   "lab:concept/mixing-service",
+   "prerequisiteOf"
+  ],
+  [
+   "lab:method/passkey",
+   "lab:concept/layered-defense",
+   "partOf"
+  ],
+  [
+   "lab:method/identity-lock",
+   "lab:concept/layered-defense",
+   "partOf"
+  ],
+  [
+   "lab:method/incident-response-5-steps",
+   "lab:concept/layered-defense",
+   "partOf"
+  ],
+  [
+   "lab:concept/optimal-security-investment",
+   "lab:concept/layered-defense",
+   "relatedTo"
+  ],
+  [
+   "lab:concept/externality",
+   "lab:concept/prisoners-dilemma",
+   "prerequisiteOf"
+  ],
+  [
+   "lab:concept/nash-equilibrium",
+   "lab:concept/prisoners-dilemma",
+   "partOf"
+  ],
+  [
+   "lab:concept/cyber-herd-immunity",
+   "lab:concept/externality",
+   "relatedTo"
+  ],
+  [
+   "lab:concept/cross-border-cooperation",
+   "lab:concept/prisoners-dilemma",
+   "relatedTo"
+  ],
+  [
+   "lab:concept/golden-time",
+   "lab:concept/resilience",
+   "partOf"
+  ],
+  [
+   "lab:concept/synthetic-identity",
+   "lab:concept/autonomous-attack-agent",
+   "relatedTo"
+  ],
+  [
+   "lab:concept/xr-iot-threats",
+   "lab:concept/autonomous-attack-agent",
+   "relatedTo"
+  ],
+  [
+   "lab:standard/post-quantum-cryptography",
+   "lab:concept/xr-iot-threats",
+   "relatedTo"
+  ],
+  [
+   "lab:concept/incentive-enforcement-design",
+   "lab:concept/expected-utility-crime",
+   "relatedTo"
+  ],
+  [
+   "lab:concept/incentive-enforcement-design",
+   "lab:concept/conversational-automated-crime",
+   "relatedTo"
+  ],
+  [
+   "lab:concept/incentive-enforcement-design",
+   "lab:theory/becker-model",
+   "relatedTo"
+  ],
+  [
+   "lab:concept/incentive-enforcement-design",
+   "lab:concept/deepfake",
+   "relatedTo"
+  ],
+  [
+   "lab:concept/incentive-enforcement-design",
+   "lab:concept/social-engineering",
+   "relatedTo"
+  ],
+  [
+   "lab:concept/incentive-enforcement-design",
+   "lab:concept/attack-automation-stages",
+   "relatedTo"
+  ],
+  [
+   "lab:concept/incentive-enforcement-design",
+   "lab:concept/ai-surveillance",
+   "relatedTo"
+  ],
+  [
+   "lab:concept/incentive-enforcement-design",
+   "lab:concept/crypto-theft-process",
+   "relatedTo"
+  ],
+  [
+   "lab:concept/incentive-enforcement-design",
+   "lab:method/passkey",
+   "relatedTo"
+  ],
+  [
+   "lab:concept/incentive-enforcement-design",
+   "lab:concept/externality",
+   "relatedTo"
+  ],
+  [
+   "lab:concept/incentive-enforcement-design",
+   "lab:concept/resilience",
+   "relatedTo"
+  ],
+  [
+   "lab:concept/scalable-identity",
+   "lab:concept/synthetic-identity",
+   "partOf"
+  ],
+  [
+   "lab:concept/adaptive-identity",
+   "lab:concept/synthetic-identity",
+   "partOf"
+  ],
+  [
+   "lab:concept/patient-identity",
+   "lab:concept/synthetic-identity",
+   "partOf"
+  ],
+  [
+   "lab:concept/synthetic-identity",
+   "lab:concept/true-identity-theft",
+   "contrastsWith"
+  ],
+  [
+   "lab:concept/synthetic-farm",
+   "lab:concept/synthetic-identity",
+   "partOf"
+  ],
+  [
+   "lab:concept/deepfake",
+   "lab:concept/synthetic-identity",
+   "relatedTo"
+  ],
+  [
+   "lab:concept/injection-replay-attack",
+   "lab:concept/deepfake",
+   "relatedTo"
+  ],
+  [
+   "lab:method/lifecycle-trust",
+   "lab:method/point-in-time-verification",
+   "contrastsWith"
+  ],
+  [
+   "lab:method/liveness-check",
+   "lab:limitation/human-deepfake-detection",
+   "hasLimitation"
+  ],
+  [
+   "lab:method/orchestration",
+   "lab:method/lifecycle-trust",
+   "partOf"
+  ],
+  [
+   "lab:concept/synthetic-identity",
+   "lab:indicator/synthetic-share",
+   "measuredBy"
+  ],
+  [
+   "lab:concept/arrest-probability",
+   "lab:concept/expected-utility-crime",
+   "partOf"
+  ],
+  [
+   "lab:concept/crime-gain",
+   "lab:concept/expected-utility-crime",
+   "partOf"
+  ],
+  [
+   "lab:concept/success-probability",
+   "lab:concept/expected-utility-crime",
+   "partOf"
+  ],
+  [
+   "lab:concept/crime-unit-cost",
+   "lab:concept/expected-utility-crime",
+   "partOf"
+  ],
+  [
+   "lab:concept/patient-identity",
+   "lab:concept/crime-gain",
+   "relatedTo"
+  ],
+  [
+   "lab:concept/scalable-identity",
+   "lab:concept/crime-unit-cost",
+   "relatedTo"
+  ],
+  [
+   "lab:method/lifecycle-trust",
+   "lab:concept/success-probability",
+   "relatedTo"
+  ],
+  [
+   "lab:concept/denominator",
+   "lab:indicator/synthetic-share",
+   "prerequisiteOf"
+  ]
+ ]
+}

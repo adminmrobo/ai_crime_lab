@@ -153,6 +153,7 @@ main{{max-width:1040px}}
 <li>뼈대는 『AI 범죄와 자기 방어』(안상선, 2025)의 분석 틀(범죄경제학·게임이론·AI 분석)과 장 구성을 바탕으로 만든 작성자 초안 v0.1입니다. 원본은 <a href="https://github.com/adminmrobo/ahnboat_lab_explainer/blob/main/data/backbone_crime.json">ahnboat_lab_explainer의 backbone_crime.json</a>, 분야 규칙은 같은 저장소의 <code>packs/domain/DOMAIN_crime.md</code>입니다.</li>
 <li>책 개념은 각 장 페이지의 지식 색인 데이터(<code>kg-raw</code>)와 같습니다. 리포트 개념은 <a href="reports/index.html">리포트·뉴스 검증</a> 페이지의 지식 색인에서 가져와 뼈대 주제에 대응시켰습니다.</li>
 <li>'현장 확인'은 업계·기관 보고서에 같은 주제의 사실이 나왔다는 뜻이며, 책의 모의 수치가 그대로 맞았다는 뜻은 아닙니다. 항목별 관계는 각 리포트의 대조표에서 확인하세요.</li>
+<li>지식 노드가 쌓여 온 과정은 <a href="https://adminmrobo.github.io/ahnboat_lab_cover_status/growth_crime.html?view=full">AI 범죄학 지식 노드 현황</a>(ahnboat.xyz)에서 날짜 순서로 볼 수 있습니다. 그 데이터는 이 저장소의 <code>data/crime_kg.json</code>입니다.</li>
 <li>다시 만들기: <code>python scripts/build_crime_map.py</code> (새 리포트를 등록한 뒤)</li>
 </ul>
 <footer class="foot">글 · 안상선 (<a href="https://adminmrobo.github.io/who_am_i/who_am_i.html">https://adminmrobo.github.io/who_am_i/who_am_i.html</a>) · (주)M-Robo 대표<br>AI 범죄학 뼈대 v0.1(작성자 초안) · 『AI 범죄와 자기 방어』(커뮤니케이션북스, 2025) 보충 자료</footer>
@@ -226,4 +227,45 @@ chips();draw();
 }})();
 </script></body></html>"""
 (ROOT / "ontology.html").write_text(page, encoding="utf-8")
+
+# ── 지식 노드 현황(ahnboat.xyz growth_crime)용 내보내기: data/crime_kg.json ──
+import re as _re
+def _title(slug):
+    t = (ROOT / "content" / f"{slug}.md").read_text(encoding="utf-8").split("\n---")[0]
+    return dict(_re.findall(r"^(\w+):\s*(.+)$", t, _re.M)).get("title", slug)
+xpages = [{"file": f"{s}.html", "title": f"{CHNO[s]} · {_title(s)}"} for s in CHNO]
+xnodes, xedges = {}, []
+area_of = {t: t_area[t] for t in topics}
+for ch, i, t, ko, en, d, anc, tops, var in CO.C + [(s,) + CO.INST for s in CO.FIRST]:
+    n = xnodes.setdefault(i, {"id": i, "ko": ko, "en": en, "area": area_of[tops[0]], "files": []})
+    if f"{ch}.html" not in n["files"]:
+        n["files"].append(f"{ch}.html")
+for s_, p_, o_ in CO.REL:
+    xedges.append([s_, o_, p_])
+for s in CO.FIRST:
+    xedges.append([CO.INST[0], CO.FIRST[s], "relatedTo"])
+for r in REG["reports"]:
+    kgp = ROOT / "reports" / r["folder"] / "kg" / "kg.json"
+    if not kgp.exists():
+        continue
+    f = f'reports/{r["folder"]}/index.html'
+    xpages.append({"file": f, "title": f'리포트 No.{r["no"]} · {r["title"]}'})
+    kg = json.loads(kgp.read_text(encoding="utf-8"))
+    for nd in kg["nodes"]:
+        tops = CO.REPORT_MAP.get(nd["id"])
+        if not tops or nd["type"] == "Claim":
+            continue
+        n = xnodes.setdefault(nd["id"], {"id": nd["id"], "ko": nd["label"]["ko"], "en": nd["label"]["en"], "area": area_of[tops[0]], "files": []})
+        if f not in n["files"]:
+            n["files"].append(f)
+    for ed in kg["edges"]:
+        if ed["s"] in xnodes and ed["o"] in xnodes and ed["p"] != "lab:broader":
+            xedges.append([ed["s"], ed["o"], ed["p"].replace("lab:", "")])
+xedges = [e_ for e_ in xedges if e_[0] in xnodes and e_[1] in xnodes]
+export = {"version": "1.0", "domain": "crime", "repo": "ai_crime_lab", "backbone": "backbone_crime " + BB["version"],
+          "site": "https://adminmrobo.github.io/ai_crime_lab/", "map": "https://adminmrobo.github.io/ai_crime_lab/ontology.html",
+          "areas": [{"id": a["id"], "ko": a["label"]["ko"], "en": a["label"]["en"]} for a in areas],
+          "pages": xpages, "nodes": list(xnodes.values()), "edges": xedges}
+(ROOT / "data" / "crime_kg.json").write_text(json.dumps(export, ensure_ascii=False, indent=1), encoding="utf-8")
+print("crime_kg.json nodes", len(xnodes), "edges", len(xedges), "pages", len(xpages))
 print("ok topics", len(topics), cnt, "concepts", len(concepts))
