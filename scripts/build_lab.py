@@ -12,6 +12,19 @@ AUTHOR_URL = "https://adminmrobo.github.io/who_am_i/who_am_i.html"
 BOOK = ("『AI 범죄와 자기 방어』 — AI가 범죄에 쓰이는 실제 사례를 모으고, 범죄자가 왜 AI를 고르는지를 범죄경제학의 눈으로 묻는 책. "
         "범죄자도 비용과 이익을 따진다는 관점에서, AI가 범죄의 비용 구조와 수익 모델을 어떻게 바꾸었는지 풀어낸다. 이 사이트는 그 책을 사례와 함께 풀어 쓴 보충본이다.")
 
+GB_URL = "https://books.google.co.kr/books/about/AI_%EB%B2%94%EC%A3%84%EC%99%80_%EC%9E%90%EA%B8%B0_%EB%B0%A9%EC%96%B4.html?id=FimKEQAAQBAJ"
+BOOKINFO = {"title": "AI 범죄와 자기 방어", "subtitle": "AI 범죄 시대, 자기 방어의 지혜", "author": "안상선",
+            "publisher": "커뮤니케이션북스", "series": "인공지능총서", "date": "2025-10-10", "isbn": "9791143009050"}
+BOOK_BOX = (
+    '<section class="bookinfo" id="book"><h2>책 소개 — 『AI 범죄와 자기 방어』</h2>'
+    '<p class="mute">AI 범죄 시대, 자기 방어의 지혜 · 안상선 지음 · 커뮤니케이션북스(인공지능총서) · 2025년 10월 10일 · ISBN 9791143009050</p>'
+    '<ol><li><b>무엇을 다루나</b>: 친구를 사칭하는 메신저 피싱, 가족 목소리를 흉내 내는 보이스피싱처럼 이미 일상에 들어온 AI 범죄를 살펴봅니다.</li>'
+    '<li><b>어떤 눈으로 보나</b>: 범죄자가 왜 AI를 고르는지를 범죄경제학으로 묻습니다. 공격자의 비용·이익 계산을 알아야 제대로 막을 수 있다는 관점입니다.</li>'
+    '<li><b>무엇을 제안하나</b>: 개인에게 맞춘 보안 수칙과 함께, 기술 대책을 넘어 윤리·제도 차원의 사회적 대응을 제안합니다.</li></ol>'
+    '<p>이 사이트는 그 책을 사례·모의 데이터·시뮬레이션으로 풀어 쓴 보충본입니다. '
+    f'<a href="{GB_URL}" target="_blank" rel="noopener">Google 도서에서 보기</a> · '
+    '<a href="https://adminmrobo.github.io/who_am_i/who_am_i.html" target="_blank" rel="noopener">저자 소개</a></p></section>')
+
 CAST = {  # 이름: (표시, 역할, 폴더, 기본 표정)
     "박사": ("박사", "해설자", "doctor", "E07"),
     "하루": ("조수(하루)", "추적 팀 · 대응 설계", "haru", "E10"),
@@ -262,7 +275,7 @@ def chapter_page(slug, meta, body, idx, chapters):
     kgrows = "".join(f'<tr><td>{html.escape(a)}</td><td>{html.escape(b)}</td><td>' + " ".join(f'<a href="{c}.html">{c.replace("ch", "")}장</a>' if c != "ch00" else '<a href="ch00.html">서장</a>' for c in cs.split()) + "</td></tr>" for a, b, cs in d["kg"])
     kg = f'<section class="step kg" id="kg"><div class="lab">지식 색인</div><h2>이 장의 개념 지도</h2><table><tr><th>개념</th><th>뜻</th><th>함께 보는 장</th></tr>{kgrows}</table></section>'
     jsonld = {"@context": "https://schema.org", "@type": "LearningResource", "name": meta["title"], "description": d["three"][0],
-              "inLanguage": "ko", "isPartOf": {"@type": "Book", "name": "AI 범죄와 자기 방어"},
+              "inLanguage": "ko", "isPartOf": {"@type": "Book", "name": "AI 범죄와 자기 방어", "isbn": BOOKINFO["isbn"], "datePublished": BOOKINFO["date"], "publisher": {"@type": "Organization", "name": "커뮤니케이션북스"}, "url": GB_URL},
               "author": {"@type": "Person", "name": "안상선", "url": AUTHOR_URL},
               "teaches": [k[0] for k in d["kg"]], "educationalLevel": "입문", "url": SITE_URL + slug + ".html",
               "about": [TOOLS[d["tool"]["kind"]], "범죄경제학", "AI 범죄"]}
@@ -302,8 +315,8 @@ def build():
     cards.append('<a class="card practice" href="practice/index.html"><img class="thumb" src="practice/cover.webp" alt="" width="1600" height="900" loading="lazy"><div class="cno">마지막 장</div><div class="ct">실전 연습장</div>'
                  '<div class="cs">콜센터·검사 게임·랜섬 협상·기업 연결망 네 사업장을 직접 운영해 범죄자의 계산서를 뒤집어 본다.</div><div class="cf">시뮬레이터 · 미션 3개씩</div></a>')
     imeta, ibody = parse(os.path.join(ROOT, "content", "index.md"))
-    inner = convert(ibody, "index").replace("{{CARDS}}", '<div class="cards" id="chapters">' + "".join(cards) + "</div>").replace("{{BOOK}}", html.escape(BOOK))
-    jl = {"@context": "https://schema.org", "@type": "CollectionPage", "name": "AI 범죄 연구실", "description": BOOK,
+    inner = convert(ibody, "index").replace("{{CARDS}}", '<div class="cards" id="chapters">' + "".join(cards) + "</div>").replace("{{BOOK}}", html.escape(BOOK)).replace("{{BOOKBOX}}", BOOK_BOX)
+    jl = {"@context": "https://schema.org", "@type": "CollectionPage", "name": "AI 범죄 연구실", "description": BOOK, "about": {"@type": "Book", "name": BOOKINFO["title"], "alternativeHeadline": BOOKINFO["subtitle"], "author": {"@type": "Person", "name": "안상선"}, "publisher": {"@type": "Organization", "name": "커뮤니케이션북스"}, "datePublished": BOOKINFO["date"], "isbn": BOOKINFO["isbn"], "url": GB_URL},
           "author": {"@type": "Person", "name": "안상선", "url": AUTHOR_URL}, "inLanguage": "ko", "url": SITE_URL}
     open(os.path.join(ROOT, "index.html"), "w", encoding="utf-8").write(
         head("목차", "AI 범죄와 자기 방어 보충본 — 범죄경제학·게임이론·AI로 읽는 AI 범죄", "", jl, "") + f'<div class="wrap"><main>{inner}{foot()}</main></div><script src="assets/lab.js"></script></body></html>')

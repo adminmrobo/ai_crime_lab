@@ -127,3 +127,4 @@ svg.g{width:100%;height:auto;display:block;background:#fff;border:1px solid var(
 
 .card .thumb{display:block;max-width:none;width:calc(100% + 32px);margin:-14px -16px 10px;height:auto;aspect-ratio:3/2;object-fit:cover;border-radius:12px 12px 0 0}
 .fig{margin:18px 0}.fig img{width:100%;height:auto;border-radius:12px;border:1px solid var(--line)}.fig figcaption{font-size:14px;color:#556;margin-top:6px}
+.bookinfo{border:1px solid var(--line);border-radius:14px;padding:20px;margin:28px 0;background:#fff}.bookinfo h2{margin-top:0}.bookinfo ol{padding-left:20px;line-height:1.8}
