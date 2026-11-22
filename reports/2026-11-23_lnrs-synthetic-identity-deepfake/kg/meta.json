@@ -1,0 +1,40 @@
+{
+ "title": "만들어진 신원과 딥페이크 사기 — LexisNexis 보고서를 책으로 읽기",
+ "number": "R001",
+ "series": "AI 범죄 연구실 · 리포트·뉴스 검증",
+ "about": [
+  "lab:concept/synthetic-identity",
+  "lab:method/lifecycle-trust",
+  "lab:method/orchestration",
+  "lab:concept/expected-utility-crime",
+  "lab:limitation/onboarding-blind-spot"
+ ],
+ "basedOn": [
+  "lnrs2026stopping",
+  "ahn2025aicrime"
+ ],
+ "educationalLevel": "입문",
+ "creator": [
+  {
+   "name": "안상선",
+   "role": "author"
+  }
+ ],
+ "contributor": [
+  {
+   "name": "AI 보조 제작",
+   "role": "assistant"
+  }
+ ],
+ "date": "2026-11-23",
+ "version": "1.0",
+ "language": [
+  "ko"
+ ],
+ "license": "",
+ "url": "https://adminmrobo.github.io/ai_crime_lab/reports/2026-11-23_lnrs-synthetic-identity-deepfake/",
+ "registry": "KG_00_registry 0.2",
+ "learningResourceType": "news report",
+ "seeAlso": "",
+ "suggestedCitation": "안상선 (2026). 만들어진 신원과 딥페이크 사기 — LexisNexis 보고서를 책으로 읽기. AI 범죄 연구실 리포트·뉴스 검증 R001, v1.0."
+}

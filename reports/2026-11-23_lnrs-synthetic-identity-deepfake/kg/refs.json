@@ -1,0 +1,608 @@
+[
+ {
+  "id": "lnrs2026stopping",
+  "type": "report",
+  "title": "Stopping Synthetic Identity and Deepfake Fraud",
+  "author": [
+   {
+    "literal": "LexisNexis Risk Solutions"
+   }
+  ],
+  "issued": {
+   "date-parts": [
+    [
+     2026
+    ]
+   ]
+  },
+  "URL": "https://risk.lexisnexis.com/global/en/insights-resources/e-book/stopping-synthetic-identity-and-deepfake-fraud-ebook",
+  "accessed": {
+   "date-parts": [
+    [
+     2026,
+     11,
+     23
+    ]
+   ]
+  },
+  "lab": {
+   "work": "lab:work/lnrs2026stopping",
+   "role": "primary",
+   "supports": [
+    "lab:claim/synthetic-share-11pct-2025",
+    "lab:claim/new-account-1-in-11",
+    "lab:claim/genai-85pct-identity-fraud",
+    "lab:claim/ai-forgeries-57pct-attacks",
+    "lab:claim/human-detect-deepfake-20pct",
+    "lab:claim/synthetic-85pct-unflagged",
+    "lab:claim/synthetic-credit-650",
+    "lab:claim/london-1653-identities",
+    "lab:claim/chichester-439-entities",
+    "lab:claim/oxford-9-properties",
+    "lab:claim/deepfakes-prevented-400k-2025",
+    "lab:claim/onboarding-pass-rate-5-3pct",
+    "lab:claim/ebook-footnote-mismatch",
+    "lab:claim/position-lifecycle-monitoring"
+   ],
+   "locs": [],
+   "verified": {
+    "title": true,
+    "author": true,
+    "year": true,
+    "container": false,
+    "pages": false,
+    "doi": false
+   },
+   "checkedBy": "사용자 제공 PDF 원문 대조 및 공식 소개 페이지 확인, 2026-11-23 접속",
+   "checkedSource": "web"
+  }
+ },
+ {
+  "id": "lnrs2026synthetic",
+  "type": "webpage",
+  "title": "The Synthetic Identity Problem Is Getting Harder to Ignore",
+  "author": [
+   {
+    "literal": "LexisNexis Risk Solutions"
+   }
+  ],
+  "issued": {
+   "date-parts": [
+    [
+     2026
+    ]
+   ]
+  },
+  "URL": "https://lexisnexisrisk.com/en/business-services/insights-resources/synthetic-identity-theft-global-fraud-problem",
+  "accessed": {
+   "date-parts": [
+    [
+     2026,
+     11,
+     23
+    ]
+   ]
+  },
+  "lab": {
+   "work": "lab:work/lnrs2026synthetic",
+   "role": "data",
+   "supports": [
+    "lab:claim/synthetic-share-11pct-2025",
+    "lab:claim/synthetic-share-1-4pct-2024",
+    "lab:claim/true-identity-6-4pct-2025"
+   ],
+   "locs": [],
+   "verified": {
+    "title": true,
+    "author": true,
+    "year": true,
+    "container": false,
+    "pages": false,
+    "doi": false
+   },
+   "checkedBy": "웹 원문 확인, 2026-11-23 접속",
+   "checkedSource": "web"
+  }
+ },
+ {
+  "id": "lexisnexis2026synthetic",
+  "type": "webpage",
+  "title": "Synthetic Identities and Agentic Bots Posing as Human Contribute to 8% Global Rise in Fraud Attacks",
+  "author": [
+   {
+    "literal": "LexisNexis Risk Solutions"
+   }
+  ],
+  "issued": {
+   "date-parts": [
+    [
+     2026
+    ]
+   ]
+  },
+  "URL": "https://risk.lexisnexis.com/global/en/about-us/press-room/press-release/20260326-ccr-global-fraud",
+  "accessed": {
+   "date-parts": [
+    [
+     2026,
+     11,
+     23
+    ]
+   ]
+  },
+  "lab": {
+   "work": "lab:work/lexisnexis2026synthetic",
+   "role": "primary",
+   "supports": [
+    "lab:claim/synthetic-share-11pct-2025"
+   ],
+   "locs": [],
+   "verified": {
+    "title": true,
+    "author": true,
+    "year": true,
+    "container": false,
+    "pages": false,
+    "doi": false
+   },
+   "checkedBy": "보도자료 검색 결과 확인(2026-03-26), 2026-11-23 접속",
+   "checkedSource": "web"
+  }
+ },
+ {
+  "id": "ads2026lexisnexis",
+  "type": "webpage",
+  "title": "LexisNexis Risk Solutions releases Cybercrime Report",
+  "author": [
+   {
+    "literal": "ADS Group"
+   }
+  ],
+  "issued": {
+   "date-parts": [
+    [
+     2026
+    ]
+   ]
+  },
+  "URL": "https://www.adsgroup.org.uk/knowledge/industry-member-news/lexisnexis-risk-solutions-releases-cybercrime-report/",
+  "accessed": {
+   "date-parts": [
+    [
+     2026,
+     11,
+     23
+    ]
+   ]
+  },
+  "lab": {
+   "work": "lab:work/ads2026lexisnexis",
+   "role": "background",
+   "supports": [
+    "lab:claim/first-party-38pct-2025",
+    "lab:claim/no-victim-alarm"
+   ],
+   "locs": [],
+   "verified": {
+    "title": true,
+    "author": true,
+    "year": true,
+    "container": false,
+    "pages": false,
+    "doi": false
+   },
+   "checkedBy": "웹 검색 결과 원문 확인, 2026-11-23 접속",
+   "checkedSource": "web"
+  }
+ },
+ {
+  "id": "lexisnexis2024synthetics",
+  "type": "webpage",
+  "title": "UK synthetic identity research press release",
+  "author": [
+   {
+    "literal": "LexisNexis Risk Solutions UK"
+   }
+  ],
+  "issued": {
+   "date-parts": [
+    [
+     2024
+    ]
+   ]
+  },
+  "URL": "https://risk.lexisnexis.co.uk/about-us/press-room/press-release/20240612-synthetics",
+  "accessed": {
+   "date-parts": [
+    [
+     2026,
+     11,
+     23
+    ]
+   ]
+  },
+  "lab": {
+   "work": "lab:work/lexisnexis2024synthetics",
+   "role": "data",
+   "supports": [
+    "lab:claim/uk-2-8m-synthetic-profiles"
+   ],
+   "locs": [],
+   "verified": {
+    "title": true,
+    "author": true,
+    "year": true,
+    "container": false,
+    "pages": false,
+    "doi": false
+   },
+   "checkedBy": "보도자료 검색 결과 확인(2024-06-12), 2026-11-23 접속",
+   "checkedSource": "web"
+  }
+ },
+ {
+  "id": "finextra2024uk",
+  "type": "article-newspaper",
+  "title": "UK home to 3m 'Frankenstein' identities, posing multi-billion pound threat",
+  "author": [
+   {
+    "literal": "Finextra"
+   }
+  ],
+  "issued": {
+   "date-parts": [
+    [
+     2024
+    ]
+   ]
+  },
+  "URL": "https://finextra.com/newsarticle/44296/uk-home-to-3m-frankenstein-identities-posing-multi-billion-pound-threat",
+  "accessed": {
+   "date-parts": [
+    [
+     2026,
+     11,
+     23
+    ]
+   ]
+  },
+  "lab": {
+   "work": "lab:work/finextra2024uk",
+   "role": "background",
+   "supports": [
+    "lab:claim/uk-2-8m-synthetic-profiles"
+   ],
+   "locs": [],
+   "verified": {
+    "title": true,
+    "author": true,
+    "year": true,
+    "container": false,
+    "pages": false,
+    "doi": false
+   },
+   "checkedBy": "웹 검색 결과 확인, 2026-11-23 접속",
+   "checkedSource": "web"
+  }
+ },
+ {
+  "id": "yahoo2024three",
+  "type": "article-newspaper",
+  "title": "Three million 'Frankenstein' identities pose a multi-billion pound fraud threat",
+  "author": [
+   {
+    "literal": "Yahoo Finance"
+   }
+  ],
+  "issued": {
+   "date-parts": [
+    [
+     2024
+    ]
+   ]
+  },
+  "URL": "https://au.finance.yahoo.com/news/three-million-frankenstein-identities-pose-080000206.html",
+  "accessed": {
+   "date-parts": [
+    [
+     2026,
+     11,
+     23
+    ]
+   ]
+  },
+  "lab": {
+   "work": "lab:work/yahoo2024three",
+   "role": "background",
+   "supports": [
+    "lab:claim/chichester-439-entities"
+   ],
+   "locs": [],
+   "verified": {
+    "title": true,
+    "author": true,
+    "year": true,
+    "container": false,
+    "pages": false,
+    "doi": false
+   },
+   "checkedBy": "웹 검색 결과 확인, 2026-11-23 접속",
+   "checkedSource": "web"
+  }
+ },
+ {
+  "id": "dhs2024impact",
+  "type": "report",
+  "title": "Impact of Artificial Intelligence (AI) on Criminal and Illicit Activities",
+  "author": [
+   {
+    "literal": "U.S. Department of Homeland Security"
+   }
+  ],
+  "issued": {
+   "date-parts": [
+    [
+     2024
+    ]
+   ]
+  },
+  "URL": "https://dhs.gov/sites/default/files/2024-10/24_0927_ia_aep-impact-ai-on-criminal-and-illicit-activities.pdf",
+  "accessed": {
+   "date-parts": [
+    [
+     2026,
+     11,
+     23
+    ]
+   ]
+  },
+  "lab": {
+   "work": "lab:work/dhs2024impact",
+   "role": "background",
+   "supports": [
+    "lab:claim/genai-85pct-identity-fraud"
+   ],
+   "locs": [],
+   "verified": {
+    "title": true,
+    "author": true,
+    "year": true,
+    "container": false,
+    "pages": false,
+    "doi": false
+   },
+   "checkedBy": "PDF 존재·제목 확인(85% 수치 위치는 미대조), 2026-11-23 접속",
+   "checkedSource": "web"
+  }
+ },
+ {
+  "id": "entrust2024deepfake",
+  "type": "webpage",
+  "title": "Deepfake Attacks Strike Every Five Minutes Amid 244% Surge in Digital Document Forgeries",
+  "author": [
+   {
+    "literal": "Entrust"
+   }
+  ],
+  "issued": {
+   "date-parts": [
+    [
+     2024
+    ]
+   ]
+  },
+  "URL": "https://www.entrust.com/es/company/newsroom/deepfake-attacks-strike-every-five-minutes",
+  "accessed": {
+   "date-parts": [
+    [
+     2026,
+     11,
+     23
+    ]
+   ]
+  },
+  "lab": {
+   "work": "lab:work/entrust2024deepfake",
+   "role": "data",
+   "supports": [
+    "lab:claim/digital-forgeries-57pct-docs"
+   ],
+   "locs": [],
+   "verified": {
+    "title": true,
+    "author": true,
+    "year": true,
+    "container": false,
+    "pages": false,
+    "doi": false
+   },
+   "checkedBy": "보도자료 원문 확인(2024-11-19), 2026-11-23 접속",
+   "checkedSource": "web"
+  }
+ },
+ {
+  "id": "lexisnexis2026top",
+  "type": "report",
+  "title": "2026 Top Fraud Trends (infographic)",
+  "author": [
+   {
+    "literal": "LexisNexis Risk Solutions"
+   }
+  ],
+  "issued": {
+   "date-parts": [
+    [
+     2026
+    ]
+   ]
+  },
+  "URL": "https://risk.lexisnexis.com/-/media/files/government/infographics/ln%202026%20top%20fraud%20trends%20infographic%20w%20pdf.pdf",
+  "accessed": {
+   "date-parts": [
+    [
+     2026,
+     11,
+     23
+    ]
+   ]
+  },
+  "lab": {
+   "work": "lab:work/lexisnexis2026top",
+   "role": "data",
+   "supports": [
+    "lab:claim/first-party-38pct-2025",
+    "lab:claim/new-account-1-in-11"
+   ],
+   "locs": [],
+   "verified": {
+    "title": true,
+    "author": true,
+    "year": true,
+    "container": false,
+    "pages": false,
+    "doi": false
+   },
+   "checkedBy": "PDF 검색 결과 확인, 2026-11-23 접속",
+   "checkedSource": "web"
+  }
+ },
+ {
+  "id": "lexisnexis2026unmask",
+  "type": "webpage",
+  "title": "Unmask Deepfakes and Forged Documents with the Power of AI",
+  "author": [
+   {
+    "literal": "LexisNexis Risk Solutions"
+   }
+  ],
+  "issued": {
+   "date-parts": [
+    [
+     2026
+    ]
+   ]
+  },
+  "URL": "https://risk.lexisnexis.com/global/en/insights-resources/white-paper/unmask-deepfakes-with-the-power-of-ai",
+  "accessed": {
+   "date-parts": [
+    [
+     2026,
+     11,
+     23
+    ]
+   ]
+  },
+  "lab": {
+   "work": "lab:work/lexisnexis2026unmask",
+   "role": "background",
+   "supports": [
+    "lab:claim/human-detect-deepfake-20pct"
+   ],
+   "locs": [],
+   "verified": {
+    "title": true,
+    "author": true,
+    "year": true,
+    "container": false,
+    "pages": false,
+    "doi": false
+   },
+   "checkedBy": "소개 페이지 확인(85%·20% 표기), 2026-11-23 접속",
+   "checkedSource": "web"
+  }
+ },
+ {
+  "id": "scmedia2026spain",
+  "type": "article-newspaper",
+  "title": "Spain's data protection regulator clarifies biometric risk and necessity",
+  "author": [
+   {
+    "literal": "SC Media"
+   }
+  ],
+  "issued": {
+   "date-parts": [
+    [
+     2026
+    ]
+   ]
+  },
+  "URL": "https://www.scworld.com/brief/spains-data-protection-regulator-clarifies-biometric-risk-and-necessity",
+  "accessed": {
+   "date-parts": [
+    [
+     2026,
+     11,
+     23
+    ]
+   ]
+  },
+  "lab": {
+   "work": "lab:work/scmedia2026spain",
+   "role": "background",
+   "supports": [
+    "lab:claim/position-biometric-necessity"
+   ],
+   "locs": [],
+   "verified": {
+    "title": true,
+    "author": true,
+    "year": true,
+    "container": false,
+    "pages": false,
+    "doi": false
+   },
+   "checkedBy": "웹 검색 결과 확인(게시일 미확인), 2026-11-23 접속",
+   "checkedSource": "web"
+  }
+ },
+ {
+  "id": "ahn2025aicrime",
+  "type": "book",
+  "title": "AI 범죄와 자기 방어",
+  "author": [
+   {
+    "literal": "안상선"
+   }
+  ],
+  "issued": {
+   "date-parts": [
+    [
+     2025
+    ]
+   ]
+  },
+  "URL": "https://adminmrobo.github.io/ai_crime_lab/",
+  "accessed": {
+   "date-parts": [
+    [
+     2026,
+     11,
+     23
+    ]
+   ]
+  },
+  "lab": {
+   "work": "lab:work/ahn2025aicrime",
+   "role": "background",
+   "supports": [
+    "lab:claim/book-ch10-synthetic-future-threat",
+    "lab:claim/book-ch05-rule-filter-decay",
+    "lab:claim/book-ch03-procedure-over-ear",
+    "lab:claim/book-ch10-five-layers",
+    "lab:claim/book-ch08-lock-identity"
+   ],
+   "locs": [],
+   "verified": {
+    "title": true,
+    "author": true,
+    "year": true,
+    "container": false,
+    "pages": false,
+    "doi": false
+   },
+   "checkedBy": "저자 본인 책과 이 저장소의 장별 원고(content/*.md) 대조, 2026-11-23",
+   "checkedSource": "web"
+  }
+ }
+]

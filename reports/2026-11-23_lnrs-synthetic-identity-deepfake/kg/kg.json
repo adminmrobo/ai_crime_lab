@@ -1,0 +1,2731 @@
+{
+ "version": "1.0",
+ "page": "r001_lnrs-synthetic-identity-deepfake",
+ "nodes": [
+  {
+   "id": "lab:concept/synthetic-identity",
+   "type": "Concept",
+   "label": {
+    "ko": "합성 신원",
+    "en": "Synthetic identity"
+   },
+   "page": "r001_lnrs-synthetic-identity-deepfake",
+   "anchor": "#sec-2",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "econ",
+    "ai"
+   ],
+   "family": "responsible",
+   "definition": {
+    "ko": "진짜 정보 조각과 꾸민 정보를 섞어 만든, 실제로는 없는 사람의 신원"
+   },
+   "altLabel": {
+    "ko": [
+     "만들어진 신원",
+     "프랑켄슈타인 신원"
+    ]
+   }
+  },
+  {
+   "id": "lab:concept/true-identity-theft",
+   "type": "Concept",
+   "label": {
+    "ko": "실제 신원 도용",
+    "en": "True identity theft"
+   },
+   "page": "r001_lnrs-synthetic-identity-deepfake",
+   "anchor": "#sec-2",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "econ",
+    "ai"
+   ],
+   "family": "responsible",
+   "definition": {
+    "ko": "실제 사람의 신원·계정을 훔쳐 그 사람인 척하는 사기"
+   }
+  },
+  {
+   "id": "lab:concept/first-party-fraud",
+   "type": "Concept",
+   "label": {
+    "ko": "제1자 사기",
+    "en": "First-party fraud"
+   },
+   "page": "r001_lnrs-synthetic-identity-deepfake",
+   "anchor": "#sec-4",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "econ",
+    "ai"
+   ],
+   "family": "responsible",
+   "definition": {
+    "ko": "고객이 자기 이름으로 기관을 속이는 사기"
+   }
+  },
+  {
+   "id": "lab:concept/scalable-identity",
+   "type": "Concept",
+   "label": {
+    "ko": "규모(대량 생산)",
+    "en": "Scalable"
+   },
+   "page": "r001_lnrs-synthetic-identity-deepfake",
+   "anchor": "#sec-3-1",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "econ",
+    "ai"
+   ],
+   "family": "responsible",
+   "definition": {
+    "ko": "신원을 공장처럼 만들고 시험·반복한다"
+   }
+  },
+  {
+   "id": "lab:concept/adaptive-identity",
+   "type": "Concept",
+   "label": {
+    "ko": "적응(심사 통과 학습)",
+    "en": "Adaptive"
+   },
+   "page": "r001_lnrs-synthetic-identity-deepfake",
+   "anchor": "#sec-3-1",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "econ",
+    "ai"
+   ],
+   "family": "responsible",
+   "definition": {
+    "ko": "가입 심사를 통과할 때까지 시험하고 다듬는다"
+   }
+  },
+  {
+   "id": "lab:concept/patient-identity",
+   "type": "Concept",
+   "label": {
+    "ko": "인내(숙성 후 현금화)",
+    "en": "Patient"
+   },
+   "page": "r001_lnrs-synthetic-identity-deepfake",
+   "anchor": "#sec-3-1",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "econ",
+    "ai"
+   ],
+   "family": "responsible",
+   "definition": {
+    "ko": "바로 쓰지 않고 오래 키운 뒤 돈으로 바꾼다"
+   }
+  },
+  {
+   "id": "lab:concept/synthetic-farm",
+   "type": "Concept",
+   "label": {
+    "ko": "합성 농장·합성 주택",
+    "en": "Synthetic farm / synthetic house"
+   },
+   "page": "r001_lnrs-synthetic-identity-deepfake",
+   "anchor": "#fig-4-2",
+   "level": 3,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "econ",
+    "ai"
+   ],
+   "family": "responsible",
+   "definition": {
+    "ko": "한 주소에 비정상적으로 많은 신원과 신용 흔적이 연결된 곳"
+   }
+  },
+  {
+   "id": "lab:concept/deepfake",
+   "type": "Concept",
+   "label": {
+    "ko": "딥페이크",
+    "en": "Deepfake"
+   },
+   "page": "r001_lnrs-synthetic-identity-deepfake",
+   "anchor": "#sec-3-3",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "mentioned",
+   "match": [],
+   "domain": [
+    "econ",
+    "ai"
+   ],
+   "family": "generative",
+   "definition": {
+    "ko": "AI로 만든 가짜 얼굴·목소리·영상"
+   }
+  },
+  {
+   "id": "lab:concept/injection-replay-attack",
+   "type": "Concept",
+   "label": {
+    "ko": "주입·재생 공격",
+    "en": "Injection and replay attacks"
+   },
+   "page": "r001_lnrs-synthetic-identity-deepfake",
+   "anchor": "#q-real",
+   "level": 3,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "mentioned",
+   "match": [],
+   "domain": [
+    "econ",
+    "ai"
+   ],
+   "family": "responsible",
+   "definition": {
+    "ko": "미리 만든 영상을 넣거나 녹화본을 다시 틀어 생체 확인을 속이는 방식"
+   }
+  },
+  {
+   "id": "lab:concept/proof-of-life",
+   "type": "Concept",
+   "label": {
+    "ko": "생활 흔적(proof of life)",
+    "en": "Proof of life"
+   },
+   "page": "r001_lnrs-synthetic-identity-deepfake",
+   "anchor": "#sec-3-3",
+   "level": 3,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "econ",
+    "ai"
+   ],
+   "family": "responsible",
+   "definition": {
+    "ko": "실제 사람이 오래 살아온 흔적을 뒷받침하는 폭넓은 기록"
+   }
+  },
+  {
+   "id": "lab:indicator/zero-noise",
+   "type": "Indicator",
+   "label": {
+    "ko": "잡음 없음 신호",
+    "en": "Zero-noise signal"
+   },
+   "page": "r001_lnrs-synthetic-identity-deepfake",
+   "anchor": "#sec-3-3",
+   "level": 3,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "econ",
+    "ai"
+   ],
+   "family": "unsupervised",
+   "definition": {
+    "ko": "기록이 지나치게 깨끗하거나 짧은 기간에 몰려 있는 상태"
+   }
+  },
+  {
+   "id": "lab:concept/denominator",
+   "type": "Concept",
+   "label": {
+    "ko": "비율의 분모",
+    "en": "Denominator of a rate"
+   },
+   "page": "r001_lnrs-synthetic-identity-deepfake",
+   "anchor": "#memo-4",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "econ",
+    "ai"
+   ],
+   "family": "math",
+   "definition": {
+    "ko": "비율을 계산할 때 기준이 되는 전체 집단"
+   }
+  },
+  {
+   "id": "lab:method/point-in-time-verification",
+   "type": "Method",
+   "label": {
+    "ko": "시점 검증",
+    "en": "Point-in-time verification"
+   },
+   "page": "r001_lnrs-synthetic-identity-deepfake",
+   "anchor": "#fig-2-1",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "econ",
+    "ai"
+   ],
+   "family": "systems",
+   "definition": {
+    "ko": "가입 같은 한 순간에만 신원을 확인하는 방식"
+   }
+  },
+  {
+   "id": "lab:method/lifecycle-trust",
+   "type": "Method",
+   "label": {
+    "ko": "생애주기 신뢰 모형",
+    "en": "Lifecycle identity trust model"
+   },
+   "page": "r001_lnrs-synthetic-identity-deepfake",
+   "anchor": "#sec-3-3",
+   "level": 3,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "econ",
+    "ai"
+   ],
+   "family": "systems",
+   "definition": {
+    "ko": "가입 뒤에도 신호를 모아 시점마다 신원의 위험을 다시 판단하는 틀"
+   }
+  },
+  {
+   "id": "lab:method/orchestration",
+   "type": "Method",
+   "label": {
+    "ko": "오케스트레이션",
+    "en": "Orchestration"
+   },
+   "page": "r001_lnrs-synthetic-identity-deepfake",
+   "anchor": "#sec-3-3",
+   "level": 3,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "econ",
+    "ai"
+   ],
+   "family": "systems",
+   "definition": {
+    "ko": "여러 확인 도구의 신호를 순서대로 엮어 하나의 판단으로 모으는 일"
+   }
+  },
+  {
+   "id": "lab:method/step-up",
+   "type": "Method",
+   "label": {
+    "ko": "단계별 추가 확인",
+    "en": "Adaptive step-up"
+   },
+   "page": "r001_lnrs-synthetic-identity-deepfake",
+   "anchor": "#q-risk",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "econ",
+    "ai"
+   ],
+   "family": "systems",
+   "definition": {
+    "ko": "위험이 높을 때만 확인 절차를 하나 더 거치게 하는 방식"
+   }
+  },
+  {
+   "id": "lab:method/liveness-check",
+   "type": "Method",
+   "label": {
+    "ko": "라이브니스 검사",
+    "en": "Liveness check"
+   },
+   "page": "r001_lnrs-synthetic-identity-deepfake",
+   "anchor": "#q-real",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "mentioned",
+   "match": [],
+   "domain": [
+    "econ",
+    "ai"
+   ],
+   "family": "responsible",
+   "definition": {
+    "ko": "카메라 앞에 실제 살아 있는 사람이 있는지 확인하는 검사"
+   }
+  },
+  {
+   "id": "lab:concept/is-identity-real",
+   "type": "Concept",
+   "label": {
+    "ko": "질문 1 진짜 신원인가",
+    "en": "Is the identity real?"
+   },
+   "page": "r001_lnrs-synthetic-identity-deepfake",
+   "anchor": "#q-real",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "econ",
+    "ai"
+   ],
+   "family": "systems"
+  },
+  {
+   "id": "lab:concept/is-identity-trusted",
+   "type": "Concept",
+   "label": {
+    "ko": "질문 2 믿을 만한 신원인가",
+    "en": "Is the identity trusted?"
+   },
+   "page": "r001_lnrs-synthetic-identity-deepfake",
+   "anchor": "#q-trust",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "econ",
+    "ai"
+   ],
+   "family": "systems"
+  },
+  {
+   "id": "lab:concept/risk-now-and-over-time",
+   "type": "Concept",
+   "label": {
+    "ko": "질문 3 지금·앞으로의 위험",
+    "en": "Risk now and over time"
+   },
+   "page": "r001_lnrs-synthetic-identity-deepfake",
+   "anchor": "#q-risk",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "econ",
+    "ai"
+   ],
+   "family": "systems"
+  },
+  {
+   "id": "lab:limitation/onboarding-blind-spot",
+   "type": "Limitation",
+   "label": {
+    "ko": "가입 순간의 사각지대",
+    "en": "Onboarding blind spot"
+   },
+   "page": "r001_lnrs-synthetic-identity-deepfake",
+   "anchor": "#sec-3-2",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "econ",
+    "ai"
+   ],
+   "family": "systems",
+   "definition": {
+    "ko": "깨끗해 보이도록 설계된 신원은 한 시점 검사로 드러나지 않는다"
+   }
+  },
+  {
+   "id": "lab:limitation/tool-seams",
+   "type": "Limitation",
+   "label": {
+    "ko": "도구 사이 이음새",
+    "en": "Seams between tools"
+   },
+   "page": "r001_lnrs-synthetic-identity-deepfake",
+   "anchor": "#sec-3-2",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "econ",
+    "ai"
+   ],
+   "family": "systems",
+   "definition": {
+    "ko": "문서·기기·행동·연결망 도구가 따로 돌면 빈틈이 생긴다"
+   }
+  },
+  {
+   "id": "lab:limitation/human-deepfake-detection",
+   "type": "Limitation",
+   "label": {
+    "ko": "사람 눈의 딥페이크 판별 한계",
+    "en": "Limits of human deepfake detection"
+   },
+   "page": "r001_lnrs-synthetic-identity-deepfake",
+   "anchor": "#tbl-4-1",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "econ",
+    "ai"
+   ],
+   "family": "generative"
+  },
+  {
+   "id": "lab:concept/expected-utility-crime",
+   "type": "Concept",
+   "label": {
+    "ko": "범죄의 기대효용 E(U)",
+    "en": "Expected utility of crime"
+   },
+   "page": "r001_lnrs-synthetic-identity-deepfake",
+   "anchor": "#sec-6-2",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "econ",
+    "ai"
+   ],
+   "family": "math",
+   "definition": {
+    "ko": "잡힐 때의 손해와 안 잡힐 때의 이익을 확률로 가중 평균한 값(책 2장)"
+   }
+  },
+  {
+   "id": "lab:concept/arrest-probability",
+   "type": "Concept",
+   "label": {
+    "ko": "검거 확률 p",
+    "en": "Probability of apprehension p"
+   },
+   "page": "r001_lnrs-synthetic-identity-deepfake",
+   "anchor": "#sec-6-2",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "econ",
+    "ai"
+   ],
+   "family": "math"
+  },
+  {
+   "id": "lab:concept/crime-gain",
+   "type": "Concept",
+   "label": {
+    "ko": "성공 시 이익 g",
+    "en": "Gain from crime g"
+   },
+   "page": "r001_lnrs-synthetic-identity-deepfake",
+   "anchor": "#sec-6-2",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "econ",
+    "ai"
+   ],
+   "family": "math"
+  },
+  {
+   "id": "lab:concept/success-probability",
+   "type": "Concept",
+   "label": {
+    "ko": "성공 확률 π",
+    "en": "Success probability π"
+   },
+   "page": "r001_lnrs-synthetic-identity-deepfake",
+   "anchor": "#tbl-6-2",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "econ",
+    "ai"
+   ],
+   "family": "math"
+  },
+  {
+   "id": "lab:concept/crime-unit-cost",
+   "type": "Concept",
+   "label": {
+    "ko": "건당 비용 c",
+    "en": "Unit cost of crime c"
+   },
+   "page": "r001_lnrs-synthetic-identity-deepfake",
+   "anchor": "#tbl-6-2",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "econ",
+    "ai"
+   ],
+   "family": "math"
+  },
+  {
+   "id": "lab:analogy/empty-house-nameplate",
+   "type": "Analogy",
+   "label": {
+    "ko": "빈집의 문패",
+    "en": "Nameplate on an empty house"
+   },
+   "page": "r001_lnrs-synthetic-identity-deepfake",
+   "anchor": "#sec-2",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "econ",
+    "ai"
+   ],
+   "definition": {
+    "ko": "아무도 살지 않는 집에 문패를 달고 우편물을 받아 사는 집처럼 만드는 일"
+   }
+  },
+  {
+   "id": "lab:indicator/synthetic-share",
+   "type": "Indicator",
+   "label": {
+    "ko": "합성 신원 사기 비중",
+    "en": "Share of synthetic identity fraud"
+   },
+   "page": "r001_lnrs-synthetic-identity-deepfake",
+   "anchor": "#fig-4-1",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "econ",
+    "ai"
+   ],
+   "family": "evaluation"
+  },
+  {
+   "id": "lab:indicator/true-identity-share",
+   "type": "Indicator",
+   "label": {
+    "ko": "실제 신원 도용 비중",
+    "en": "Share of true identity theft"
+   },
+   "page": "r001_lnrs-synthetic-identity-deepfake",
+   "anchor": "#fig-4-1",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "econ",
+    "ai"
+   ],
+   "family": "evaluation"
+  },
+  {
+   "id": "lab:indicator/first-party-share",
+   "type": "Indicator",
+   "label": {
+    "ko": "제1자 사기 비중",
+    "en": "Share of first-party fraud"
+   },
+   "page": "r001_lnrs-synthetic-identity-deepfake",
+   "anchor": "#fig-4-1",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "econ",
+    "ai"
+   ],
+   "family": "evaluation"
+  },
+  {
+   "id": "lab:indicator/new-account-attack-rate",
+   "type": "Indicator",
+   "label": {
+    "ko": "가입 시도 중 공격 비율",
+    "en": "Attack rate at new account creation"
+   },
+   "page": "r001_lnrs-synthetic-identity-deepfake",
+   "anchor": "#sec-3-2",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "econ",
+    "ai"
+   ],
+   "family": "evaluation"
+  },
+  {
+   "id": "lab:claim/synthetic-share-11pct-2025",
+   "type": "Claim",
+   "label": {
+    "ko": "2025년 합성 신원은 전체 보고 사기의 11%",
+    "en": "Synthetic identity was 11% of reported fraud in 2025"
+   },
+   "page": "r001_lnrs-synthetic-identity-deepfake",
+   "anchor": "#fig-4-1",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "econ",
+    "ai"
+   ],
+   "source": [
+    {
+     "ref": "lnrs2026synthetic",
+     "loc": ""
+    },
+    {
+     "ref": "lexisnexis2026synthetic",
+     "loc": ""
+    },
+    {
+     "ref": "lnrs2026stopping",
+     "loc": "p.2"
+    }
+   ],
+   "asOf": "2026-03-26"
+  },
+  {
+   "id": "lab:claim/synthetic-share-1-4pct-2024",
+   "type": "Claim",
+   "label": {
+    "ko": "2024년 합성 신원은 전체 보고 사기의 1.4%",
+    "en": "Synthetic identity was 1.4% in 2024"
+   },
+   "page": "r001_lnrs-synthetic-identity-deepfake",
+   "anchor": "#fig-4-1",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "econ",
+    "ai"
+   ],
+   "source": [
+    {
+     "ref": "lnrs2026synthetic",
+     "loc": ""
+    }
+   ],
+   "asOf": "2026-03-26"
+  },
+  {
+   "id": "lab:claim/true-identity-6-4pct-2025",
+   "type": "Claim",
+   "label": {
+    "ko": "실제 신원 도용은 9.9%에서 6.4%로 감소",
+    "en": "True identity theft fell from 9.9% to 6.4%"
+   },
+   "page": "r001_lnrs-synthetic-identity-deepfake",
+   "anchor": "#fig-4-1",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "econ",
+    "ai"
+   ],
+   "source": [
+    {
+     "ref": "lnrs2026synthetic",
+     "loc": ""
+    }
+   ],
+   "asOf": "2026-03-26"
+  },
+  {
+   "id": "lab:claim/first-party-38pct-2025",
+   "type": "Claim",
+   "label": {
+    "ko": "제1자 사기 38.3%로 2년 연속 최다",
+    "en": "First-party fraud 38.3%, most reported"
+   },
+   "page": "r001_lnrs-synthetic-identity-deepfake",
+   "anchor": "#fig-4-1",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "econ",
+    "ai"
+   ],
+   "source": [
+    {
+     "ref": "ads2026lexisnexis",
+     "loc": ""
+    },
+    {
+     "ref": "lexisnexis2026top",
+     "loc": ""
+    }
+   ],
+   "asOf": "2026-03-31"
+  },
+  {
+   "id": "lab:claim/new-account-1-in-11",
+   "type": "Claim",
+   "label": {
+    "ko": "새 계정 개설 11건 중 1건이 공격",
+    "en": "1 in 11 new account creations were attacks"
+   },
+   "page": "r001_lnrs-synthetic-identity-deepfake",
+   "anchor": "#sec-3-2",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "econ",
+    "ai"
+   ],
+   "source": [
+    {
+     "ref": "lnrs2026stopping",
+     "loc": "p.4"
+    },
+    {
+     "ref": "lexisnexis2026top",
+     "loc": ""
+    }
+   ],
+   "asOf": "2026-03-26"
+  },
+  {
+   "id": "lab:claim/no-victim-alarm",
+   "type": "Claim",
+   "label": {
+    "ko": "합성 사기는 피해자가 바로 경보를 울리지 않아 범죄자에게 매력적",
+    "en": "No victim raises the alarm"
+   },
+   "page": "r001_lnrs-synthetic-identity-deepfake",
+   "anchor": "#sec-2",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "econ",
+    "ai"
+   ],
+   "source": [
+    {
+     "ref": "ads2026lexisnexis",
+     "loc": ""
+    }
+   ],
+   "asOf": "2026-03-31"
+  },
+  {
+   "id": "lab:claim/genai-85pct-identity-fraud",
+   "type": "Claim",
+   "label": {
+    "ko": "신원 사기의 85%에 생성형 AI 도구가 쓰임(전자책 인용)",
+    "en": "85% of identity fraud cases leverage genAI (as cited)"
+   },
+   "page": "r001_lnrs-synthetic-identity-deepfake",
+   "anchor": "#tbl-4-1",
+   "level": 3,
+   "status": "known",
+   "confidence": "medium",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "econ",
+    "ai"
+   ],
+   "source": [
+    {
+     "ref": "lnrs2026stopping",
+     "loc": "p.4"
+    },
+    {
+     "ref": "dhs2024impact",
+     "loc": ""
+    }
+   ],
+   "asOf": "2026-07-13"
+  },
+  {
+   "id": "lab:claim/ai-forgeries-57pct-attacks",
+   "type": "Claim",
+   "label": {
+    "ko": "AI 생성 위조가 2024년 공격의 57%에 관여(전자책 표현)",
+    "en": "AI-generated forgeries in 57% of attacks (ebook wording)"
+   },
+   "page": "r001_lnrs-synthetic-identity-deepfake",
+   "anchor": "#chk-1",
+   "level": 3,
+   "status": "known",
+   "confidence": "medium",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "econ",
+    "ai"
+   ],
+   "source": [
+    {
+     "ref": "lnrs2026stopping",
+     "loc": "p.5"
+    }
+   ],
+   "asOf": "2026-07-13"
+  },
+  {
+   "id": "lab:claim/digital-forgeries-57pct-docs",
+   "type": "Claim",
+   "label": {
+    "ko": "2024년 문서 위조 중 디지털 위조가 57%",
+    "en": "Digital forgeries were 57% of document fraud in 2024"
+   },
+   "page": "r001_lnrs-synthetic-identity-deepfake",
+   "anchor": "#chk-1",
+   "level": 3,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "econ",
+    "ai"
+   ],
+   "source": [
+    {
+     "ref": "entrust2024deepfake",
+     "loc": ""
+    }
+   ],
+   "asOf": "2024-11-19"
+  },
+  {
+   "id": "lab:claim/human-detect-deepfake-20pct",
+   "type": "Claim",
+   "label": {
+    "ko": "사람이 딥페이크를 맞게 알아보는 비율 약 20%",
+    "en": "People detect deepfakes ~20% of the time"
+   },
+   "page": "r001_lnrs-synthetic-identity-deepfake",
+   "anchor": "#tbl-4-1",
+   "level": 3,
+   "status": "known",
+   "confidence": "medium",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "econ",
+    "ai"
+   ],
+   "source": [
+    {
+     "ref": "lnrs2026stopping",
+     "loc": "p.5"
+    },
+    {
+     "ref": "lexisnexis2026unmask",
+     "loc": ""
+    }
+   ],
+   "asOf": "2026-07-13"
+  },
+  {
+   "id": "lab:claim/synthetic-85pct-unflagged",
+   "type": "Claim",
+   "label": {
+    "ko": "합성 신원의 85%가 다른 회사 모형에 걸리지 않음",
+    "en": "85% of synthetic identities not flagged by third-party models"
+   },
+   "page": "r001_lnrs-synthetic-identity-deepfake",
+   "anchor": "#tbl-4-1",
+   "level": 3,
+   "status": "known",
+   "confidence": "medium",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "econ",
+    "ai"
+   ],
+   "source": [
+    {
+     "ref": "lnrs2026stopping",
+     "loc": "p.7"
+    }
+   ],
+   "asOf": "2026-07-13"
+  },
+  {
+   "id": "lab:claim/synthetic-credit-650",
+   "type": "Claim",
+   "label": {
+    "ko": "합성 신원의 50% 이상이 신용 점수 650점 이상",
+    "en": "Over 50% had credit scores above 650"
+   },
+   "page": "r001_lnrs-synthetic-identity-deepfake",
+   "anchor": "#tbl-4-1",
+   "level": 3,
+   "status": "known",
+   "confidence": "medium",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "econ",
+    "ai"
+   ],
+   "source": [
+    {
+     "ref": "lnrs2026stopping",
+     "loc": "p.7"
+    }
+   ],
+   "asOf": "2026-07-13"
+  },
+  {
+   "id": "lab:claim/london-1653-identities",
+   "type": "Claim",
+   "label": {
+    "ko": "런던 한 주소에 1,653명, 정부 자료 확인 10명",
+    "en": "London address linked to 1,653 identities, 10 validated"
+   },
+   "page": "r001_lnrs-synthetic-identity-deepfake",
+   "anchor": "#fig-4-2",
+   "level": 3,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "econ",
+    "ai"
+   ],
+   "source": [
+    {
+     "ref": "lnrs2026stopping",
+     "loc": "p.10"
+    }
+   ],
+   "asOf": "2026-07-13"
+  },
+  {
+   "id": "lab:claim/chichester-439-entities",
+   "type": "Claim",
+   "label": {
+    "ko": "치체스터 농장 1곳에 7년간 439명, 실제 흔적 22명",
+    "en": "Chichester farm: 439 entities over 7 years, 22 real"
+   },
+   "page": "r001_lnrs-synthetic-identity-deepfake",
+   "anchor": "#fig-4-2",
+   "level": 3,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "econ",
+    "ai"
+   ],
+   "source": [
+    {
+     "ref": "lnrs2026stopping",
+     "loc": "p.10"
+    },
+    {
+     "ref": "yahoo2024three",
+     "loc": ""
+    }
+   ],
+   "asOf": "2026-07-13"
+  },
+  {
+   "id": "lab:claim/oxford-9-properties",
+   "type": "Claim",
+   "label": {
+    "ko": "옥스퍼드 주택 9곳에 150명 이상·신용 기록 450건 이상",
+    "en": "Oxford 9-property network 150+ entities"
+   },
+   "page": "r001_lnrs-synthetic-identity-deepfake",
+   "anchor": "#fig-4-2",
+   "level": 3,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "econ",
+    "ai"
+   ],
+   "source": [
+    {
+     "ref": "lnrs2026stopping",
+     "loc": "p.10"
+    }
+   ],
+   "asOf": "2026-07-13"
+  },
+  {
+   "id": "lab:claim/uk-2-8m-synthetic-profiles",
+   "type": "Claim",
+   "label": {
+    "ko": "영국 소비자 프로필 7,200만 건 중 280만 건에 합성 징후, 2027년 42억 파운드 추정",
+    "en": "2.8m of 72m UK profiles show synthetic signs; £4.2bn by 2027"
+   },
+   "page": "r001_lnrs-synthetic-identity-deepfake",
+   "anchor": "#tl-2024-06-12",
+   "level": 3,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "econ",
+    "ai"
+   ],
+   "source": [
+    {
+     "ref": "lexisnexis2024synthetics",
+     "loc": ""
+    },
+    {
+     "ref": "finextra2024uk",
+     "loc": ""
+    }
+   ],
+   "asOf": "2024-06-12"
+  },
+  {
+   "id": "lab:claim/deepfakes-prevented-400k-2025",
+   "type": "Claim",
+   "label": {
+    "ko": "2025년 자사 서비스가 딥페이크 시도 약 40만 건 차단(하루 약 1,100건)",
+    "en": "~400,000 deepfake attempts prevented in 2025"
+   },
+   "page": "r001_lnrs-synthetic-identity-deepfake",
+   "anchor": "#sec-3-4",
+   "level": 3,
+   "status": "known",
+   "confidence": "medium",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "econ",
+    "ai"
+   ],
+   "source": [
+    {
+     "ref": "lnrs2026stopping",
+     "loc": "p.11"
+    }
+   ],
+   "asOf": "2026-07-13"
+  },
+  {
+   "id": "lab:claim/onboarding-pass-rate-5-3pct",
+   "type": "Claim",
+   "label": {
+    "ko": "한 금융회사의 가입 확인 통과율 5.3% 상승",
+    "en": "5.3% increase in verification pass rates"
+   },
+   "page": "r001_lnrs-synthetic-identity-deepfake",
+   "anchor": "#sec-3-4",
+   "level": 3,
+   "status": "known",
+   "confidence": "medium",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "econ",
+    "ai"
+   ],
+   "source": [
+    {
+     "ref": "lnrs2026stopping",
+     "loc": "p.11"
+    }
+   ],
+   "asOf": "2026-07-13"
+  },
+  {
+   "id": "lab:claim/ebook-footnote-mismatch",
+   "type": "Claim",
+   "label": {
+    "ko": "전자책 각주 4·5번이 본문의 보고서 이름과 어긋남",
+    "en": "Footnotes 4 and 5 appear swapped"
+   },
+   "page": "r001_lnrs-synthetic-identity-deepfake",
+   "anchor": "#chk-2",
+   "level": 3,
+   "status": "known",
+   "confidence": "medium",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "econ",
+    "ai"
+   ],
+   "source": [
+    {
+     "ref": "lnrs2026stopping",
+     "loc": "p.7, p.11, p.12"
+    }
+   ],
+   "asOf": "2026-11-23"
+  },
+  {
+   "id": "lab:claim/position-lifecycle-monitoring",
+   "type": "Claim",
+   "label": {
+    "ko": "입장: 신호를 계속 모아 위험할 때만 확인을 더한다",
+    "en": "Position: continuous, risk-based trust"
+   },
+   "page": "r001_lnrs-synthetic-identity-deepfake",
+   "anchor": "#pos-lifecycle",
+   "level": 3,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "econ",
+    "ai"
+   ],
+   "source": [
+    {
+     "ref": "lnrs2026stopping",
+     "loc": "p.8-9"
+    }
+   ],
+   "asOf": "2026-07-13"
+  },
+  {
+   "id": "lab:claim/position-biometric-necessity",
+   "type": "Claim",
+   "label": {
+    "ko": "입장: 생체 정보 처리는 덜 침해적인 대안이 없을 때만 필요",
+    "en": "Position: biometric processing only when necessary"
+   },
+   "page": "r001_lnrs-synthetic-identity-deepfake",
+   "anchor": "#pos-necessity",
+   "level": 3,
+   "status": "known",
+   "confidence": "medium",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "econ",
+    "ai"
+   ],
+   "source": [
+    {
+     "ref": "scmedia2026spain",
+     "loc": ""
+    }
+   ],
+   "asOf": "2026-11-23"
+  },
+  {
+   "id": "lab:claim/book-ch10-synthetic-future-threat",
+   "type": "Claim",
+   "label": {
+    "ko": "책 10장: 합성 신원을 새로운 위협 목록에 둠",
+    "en": "Book ch.10 lists synthetic identity as an emerging threat"
+   },
+   "page": "r001_lnrs-synthetic-identity-deepfake",
+   "anchor": "#m-1",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "econ",
+    "ai"
+   ],
+   "source": [
+    {
+     "ref": "ahn2025aicrime",
+     "loc": "10장 §1"
+    }
+   ],
+   "asOf": "2025-10-10"
+  },
+  {
+   "id": "lab:claim/book-ch05-rule-filter-decay",
+   "type": "Claim",
+   "label": {
+    "ko": "책 5장(모의): 고정 규칙 필터 95%→17.5%, 행위 탐지 82.2%",
+    "en": "Book ch.5 (simulated): rule filter decays"
+   },
+   "page": "r001_lnrs-synthetic-identity-deepfake",
+   "anchor": "#m-4",
+   "level": 2,
+   "status": "known",
+   "confidence": "medium",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "econ",
+    "ai"
+   ],
+   "source": [
+    {
+     "ref": "ahn2025aicrime",
+     "loc": "5장 §2"
+    }
+   ],
+   "asOf": "2025-10-10"
+  },
+  {
+   "id": "lab:claim/book-ch03-procedure-over-ear",
+   "type": "Claim",
+   "label": {
+    "ko": "책 3장(모의): 귀 판별 52.9~63.7%, 확인 질문 약 90%",
+    "en": "Book ch.3 (simulated): procedure beats the ear"
+   },
+   "page": "r001_lnrs-synthetic-identity-deepfake",
+   "anchor": "#m-5",
+   "level": 2,
+   "status": "known",
+   "confidence": "medium",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "econ",
+    "ai"
+   ],
+   "source": [
+    {
+     "ref": "ahn2025aicrime",
+     "loc": "3장 §4"
+    }
+   ],
+   "asOf": "2025-10-10"
+  },
+  {
+   "id": "lab:claim/book-ch10-five-layers",
+   "type": "Claim",
+   "label": {
+    "ko": "책 8·10장: 하나의 대응으로는 계산서를 뒤집지 못한다(다층 방어)",
+    "en": "Book ch.8/10: layered defence"
+   },
+   "page": "r001_lnrs-synthetic-identity-deepfake",
+   "anchor": "#m-7",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "econ",
+    "ai"
+   ],
+   "source": [
+    {
+     "ref": "ahn2025aicrime",
+     "loc": "8장 §1, 10장 §3"
+    }
+   ],
+   "asOf": "2025-10-10"
+  },
+  {
+   "id": "lab:claim/book-ch08-lock-identity",
+   "type": "Claim",
+   "label": {
+    "ko": "책 8장: 비대면 계좌개설 안심차단 등 개인의 명의 잠금",
+    "en": "Book ch.8: personal identity locks"
+   },
+   "page": "r001_lnrs-synthetic-identity-deepfake",
+   "anchor": "#m-11",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "econ",
+    "ai"
+   ],
+   "source": [
+    {
+     "ref": "ahn2025aicrime",
+     "loc": "8장 §4"
+    }
+   ],
+   "asOf": "2025-10-10"
+  },
+  {
+   "id": "lab:question/korea-synthetic-scale",
+   "type": "Question",
+   "label": {
+    "ko": "한국 비대면 계좌의 합성 신원 규모는?",
+    "en": "Scale of synthetic identity in Korea?"
+   },
+   "page": "r001_lnrs-synthetic-identity-deepfake",
+   "anchor": "#unk-1",
+   "level": 3,
+   "status": "known",
+   "confidence": "low",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "econ",
+    "ai"
+   ]
+  },
+  {
+   "id": "lab:question/classification-effect",
+   "type": "Question",
+   "label": {
+    "ko": "11% 증가 중 분류 변경의 몫은?",
+    "en": "How much of the rise is reclassification?"
+   },
+   "page": "r001_lnrs-synthetic-identity-deepfake",
+   "anchor": "#unk-2",
+   "level": 3,
+   "status": "known",
+   "confidence": "low",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "econ",
+    "ai"
+   ]
+  },
+  {
+   "id": "lab:question/human-detection-conditions",
+   "type": "Question",
+   "label": {
+    "ko": "사람 판별 20%의 매체·조건은?",
+    "en": "Conditions behind the 20% figure?"
+   },
+   "page": "r001_lnrs-synthetic-identity-deepfake",
+   "anchor": "#unk-3",
+   "level": 3,
+   "status": "known",
+   "confidence": "low",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "econ",
+    "ai"
+   ]
+  },
+  {
+   "id": "lab:question/monitoring-cost",
+   "type": "Question",
+   "label": {
+    "ko": "지속 감시가 정상 고객에게 주는 비용은?",
+    "en": "Cost of continuous monitoring to genuine customers?"
+   },
+   "page": "r001_lnrs-synthetic-identity-deepfake",
+   "anchor": "#unk-4",
+   "level": 3,
+   "status": "known",
+   "confidence": "low",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "econ",
+    "ai"
+   ]
+  },
+  {
+   "id": "lab:quiz/r001-sec7-1",
+   "type": "QuizItem",
+   "label": {
+    "ko": "11건 중 1건과 11%의 분모 구분",
+    "en": "Distinguish the two 11s"
+   },
+   "page": "r001_lnrs-synthetic-identity-deepfake",
+   "anchor": "#quiz-7-1",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "econ",
+    "ai"
+   ]
+  },
+  {
+   "id": "lab:work/lnrs2026stopping",
+   "type": "Work",
+   "label": {
+    "ko": "LexisNexis Risk Solutions (2026) Stopping Synthetic Identity and Deepfake Fraud",
+    "en": "Stopping Synthetic Identity and Deepfake Fraud"
+   },
+   "page": "r001_lnrs-synthetic-identity-deepfake",
+   "anchor": "#refs",
+   "level": 3,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "mentioned",
+   "match": [],
+   "domain": [
+    "econ",
+    "ai"
+   ]
+  },
+  {
+   "id": "lab:work/lnrs2026synthetic",
+   "type": "Work",
+   "label": {
+    "ko": "LexisNexis Risk Solutions (2026) The Synthetic Identity Problem Is Getting Harder to Ignore",
+    "en": "The Synthetic Identity Problem Is Getting Harder to Ignore"
+   },
+   "page": "r001_lnrs-synthetic-identity-deepfake",
+   "anchor": "#refs",
+   "level": 3,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "mentioned",
+   "match": [],
+   "domain": [
+    "econ",
+    "ai"
+   ]
+  },
+  {
+   "id": "lab:work/lexisnexis2026synthetic",
+   "type": "Work",
+   "label": {
+    "ko": "LexisNexis Risk Solutions (2026) Synthetic Identities and Agentic Bots Posing as Human Contribute to 8% Global Rise in F",
+    "en": "Synthetic Identities and Agentic Bots Posing as Human Contribute to 8% Global Rise in Fraud Attacks"
+   },
+   "page": "r001_lnrs-synthetic-identity-deepfake",
+   "anchor": "#refs",
+   "level": 3,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "mentioned",
+   "match": [],
+   "domain": [
+    "econ",
+    "ai"
+   ]
+  },
+  {
+   "id": "lab:work/ads2026lexisnexis",
+   "type": "Work",
+   "label": {
+    "ko": "ADS Group (2026) LexisNexis Risk Solutions releases Cybercrime Report",
+    "en": "LexisNexis Risk Solutions releases Cybercrime Report"
+   },
+   "page": "r001_lnrs-synthetic-identity-deepfake",
+   "anchor": "#refs",
+   "level": 3,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "mentioned",
+   "match": [],
+   "domain": [
+    "econ",
+    "ai"
+   ]
+  },
+  {
+   "id": "lab:work/lexisnexis2024synthetics",
+   "type": "Work",
+   "label": {
+    "ko": "LexisNexis Risk Solutions UK (2024) UK synthetic identity research press release",
+    "en": "UK synthetic identity research press release"
+   },
+   "page": "r001_lnrs-synthetic-identity-deepfake",
+   "anchor": "#refs",
+   "level": 3,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "mentioned",
+   "match": [],
+   "domain": [
+    "econ",
+    "ai"
+   ]
+  },
+  {
+   "id": "lab:work/finextra2024uk",
+   "type": "Work",
+   "label": {
+    "ko": "Finextra (2024) UK home to 3m 'Frankenstein' identities, posing multi-billion pound threat",
+    "en": "UK home to 3m 'Frankenstein' identities, posing multi-billion pound threat"
+   },
+   "page": "r001_lnrs-synthetic-identity-deepfake",
+   "anchor": "#refs",
+   "level": 3,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "mentioned",
+   "match": [],
+   "domain": [
+    "econ",
+    "ai"
+   ]
+  },
+  {
+   "id": "lab:work/yahoo2024three",
+   "type": "Work",
+   "label": {
+    "ko": "Yahoo Finance (2024) Three million 'Frankenstein' identities pose a multi-billion pound fraud threat",
+    "en": "Three million 'Frankenstein' identities pose a multi-billion pound fraud threat"
+   },
+   "page": "r001_lnrs-synthetic-identity-deepfake",
+   "anchor": "#refs",
+   "level": 3,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "mentioned",
+   "match": [],
+   "domain": [
+    "econ",
+    "ai"
+   ]
+  },
+  {
+   "id": "lab:work/dhs2024impact",
+   "type": "Work",
+   "label": {
+    "ko": "U.S. Department of Homeland Security (2024) Impact of Artificial Intelligence (AI) on Criminal and Illicit Activities",
+    "en": "Impact of Artificial Intelligence (AI) on Criminal and Illicit Activities"
+   },
+   "page": "r001_lnrs-synthetic-identity-deepfake",
+   "anchor": "#refs",
+   "level": 3,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "mentioned",
+   "match": [],
+   "domain": [
+    "econ",
+    "ai"
+   ]
+  },
+  {
+   "id": "lab:work/entrust2024deepfake",
+   "type": "Work",
+   "label": {
+    "ko": "Entrust (2024) Deepfake Attacks Strike Every Five Minutes Amid 244% Surge in Digital Document Forgeries",
+    "en": "Deepfake Attacks Strike Every Five Minutes Amid 244% Surge in Digital Document Forgeries"
+   },
+   "page": "r001_lnrs-synthetic-identity-deepfake",
+   "anchor": "#refs",
+   "level": 3,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "mentioned",
+   "match": [],
+   "domain": [
+    "econ",
+    "ai"
+   ]
+  },
+  {
+   "id": "lab:work/lexisnexis2026top",
+   "type": "Work",
+   "label": {
+    "ko": "LexisNexis Risk Solutions (2026) 2026 Top Fraud Trends (infographic)",
+    "en": "2026 Top Fraud Trends (infographic)"
+   },
+   "page": "r001_lnrs-synthetic-identity-deepfake",
+   "anchor": "#refs",
+   "level": 3,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "mentioned",
+   "match": [],
+   "domain": [
+    "econ",
+    "ai"
+   ]
+  },
+  {
+   "id": "lab:work/lexisnexis2026unmask",
+   "type": "Work",
+   "label": {
+    "ko": "LexisNexis Risk Solutions (2026) Unmask Deepfakes and Forged Documents with the Power of AI",
+    "en": "Unmask Deepfakes and Forged Documents with the Power of AI"
+   },
+   "page": "r001_lnrs-synthetic-identity-deepfake",
+   "anchor": "#refs",
+   "level": 3,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "mentioned",
+   "match": [],
+   "domain": [
+    "econ",
+    "ai"
+   ]
+  },
+  {
+   "id": "lab:work/scmedia2026spain",
+   "type": "Work",
+   "label": {
+    "ko": "SC Media (2026) Spain's data protection regulator clarifies biometric risk and necessity",
+    "en": "Spain's data protection regulator clarifies biometric risk and necessity"
+   },
+   "page": "r001_lnrs-synthetic-identity-deepfake",
+   "anchor": "#refs",
+   "level": 3,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "mentioned",
+   "match": [],
+   "domain": [
+    "econ",
+    "ai"
+   ]
+  },
+  {
+   "id": "lab:work/ahn2025aicrime",
+   "type": "Work",
+   "label": {
+    "ko": "안상선 (2025) AI 범죄와 자기 방어",
+    "en": "AI 범죄와 자기 방어"
+   },
+   "page": "r001_lnrs-synthetic-identity-deepfake",
+   "anchor": "#refs",
+   "level": 3,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "mentioned",
+   "match": [],
+   "domain": [
+    "econ",
+    "ai"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "s": "lab:claim/synthetic-share-11pct-2025",
+   "p": "lab:assertedIn",
+   "o": "lab:work/lnrs2026synthetic",
+   "anchor": "#fig-4-1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/synthetic-share-11pct-2025",
+   "p": "lab:assertedIn",
+   "o": "lab:work/lexisnexis2026synthetic",
+   "anchor": "#fig-4-1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/synthetic-share-11pct-2025",
+   "p": "lab:assertedIn",
+   "o": "lab:work/lnrs2026stopping",
+   "anchor": "#fig-4-1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/synthetic-share-1-4pct-2024",
+   "p": "lab:assertedIn",
+   "o": "lab:work/lnrs2026synthetic",
+   "anchor": "#fig-4-1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/true-identity-6-4pct-2025",
+   "p": "lab:assertedIn",
+   "o": "lab:work/lnrs2026synthetic",
+   "anchor": "#fig-4-1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/first-party-38pct-2025",
+   "p": "lab:assertedIn",
+   "o": "lab:work/ads2026lexisnexis",
+   "anchor": "#fig-4-1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/first-party-38pct-2025",
+   "p": "lab:assertedIn",
+   "o": "lab:work/lexisnexis2026top",
+   "anchor": "#fig-4-1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/new-account-1-in-11",
+   "p": "lab:assertedIn",
+   "o": "lab:work/lnrs2026stopping",
+   "anchor": "#sec-3-2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/new-account-1-in-11",
+   "p": "lab:assertedIn",
+   "o": "lab:work/lexisnexis2026top",
+   "anchor": "#sec-3-2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/no-victim-alarm",
+   "p": "lab:assertedIn",
+   "o": "lab:work/ads2026lexisnexis",
+   "anchor": "#sec-2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/genai-85pct-identity-fraud",
+   "p": "lab:assertedIn",
+   "o": "lab:work/lnrs2026stopping",
+   "anchor": "#tbl-4-1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/genai-85pct-identity-fraud",
+   "p": "lab:assertedIn",
+   "o": "lab:work/dhs2024impact",
+   "anchor": "#tbl-4-1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/ai-forgeries-57pct-attacks",
+   "p": "lab:assertedIn",
+   "o": "lab:work/lnrs2026stopping",
+   "anchor": "#chk-1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/digital-forgeries-57pct-docs",
+   "p": "lab:assertedIn",
+   "o": "lab:work/entrust2024deepfake",
+   "anchor": "#chk-1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/human-detect-deepfake-20pct",
+   "p": "lab:assertedIn",
+   "o": "lab:work/lnrs2026stopping",
+   "anchor": "#tbl-4-1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/human-detect-deepfake-20pct",
+   "p": "lab:assertedIn",
+   "o": "lab:work/lexisnexis2026unmask",
+   "anchor": "#tbl-4-1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/synthetic-85pct-unflagged",
+   "p": "lab:assertedIn",
+   "o": "lab:work/lnrs2026stopping",
+   "anchor": "#tbl-4-1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/synthetic-credit-650",
+   "p": "lab:assertedIn",
+   "o": "lab:work/lnrs2026stopping",
+   "anchor": "#tbl-4-1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/london-1653-identities",
+   "p": "lab:assertedIn",
+   "o": "lab:work/lnrs2026stopping",
+   "anchor": "#fig-4-2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/chichester-439-entities",
+   "p": "lab:assertedIn",
+   "o": "lab:work/lnrs2026stopping",
+   "anchor": "#fig-4-2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/chichester-439-entities",
+   "p": "lab:assertedIn",
+   "o": "lab:work/yahoo2024three",
+   "anchor": "#fig-4-2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/oxford-9-properties",
+   "p": "lab:assertedIn",
+   "o": "lab:work/lnrs2026stopping",
+   "anchor": "#fig-4-2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/uk-2-8m-synthetic-profiles",
+   "p": "lab:assertedIn",
+   "o": "lab:work/lexisnexis2024synthetics",
+   "anchor": "#tl-2024-06-12",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/uk-2-8m-synthetic-profiles",
+   "p": "lab:assertedIn",
+   "o": "lab:work/finextra2024uk",
+   "anchor": "#tl-2024-06-12",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/deepfakes-prevented-400k-2025",
+   "p": "lab:assertedIn",
+   "o": "lab:work/lnrs2026stopping",
+   "anchor": "#sec-3-4",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/onboarding-pass-rate-5-3pct",
+   "p": "lab:assertedIn",
+   "o": "lab:work/lnrs2026stopping",
+   "anchor": "#sec-3-4",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/ebook-footnote-mismatch",
+   "p": "lab:assertedIn",
+   "o": "lab:work/lnrs2026stopping",
+   "anchor": "#chk-2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/position-lifecycle-monitoring",
+   "p": "lab:assertedIn",
+   "o": "lab:work/lnrs2026stopping",
+   "anchor": "#pos-lifecycle",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/position-biometric-necessity",
+   "p": "lab:assertedIn",
+   "o": "lab:work/scmedia2026spain",
+   "anchor": "#pos-necessity",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/book-ch10-synthetic-future-threat",
+   "p": "lab:assertedIn",
+   "o": "lab:work/ahn2025aicrime",
+   "anchor": "#m-1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/book-ch05-rule-filter-decay",
+   "p": "lab:assertedIn",
+   "o": "lab:work/ahn2025aicrime",
+   "anchor": "#m-4",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/book-ch03-procedure-over-ear",
+   "p": "lab:assertedIn",
+   "o": "lab:work/ahn2025aicrime",
+   "anchor": "#m-5",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/book-ch10-five-layers",
+   "p": "lab:assertedIn",
+   "o": "lab:work/ahn2025aicrime",
+   "anchor": "#m-7",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/book-ch08-lock-identity",
+   "p": "lab:assertedIn",
+   "o": "lab:work/ahn2025aicrime",
+   "anchor": "#m-11",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/synthetic-identity",
+   "p": "lab:broader",
+   "o": "lab:topic/ai-safety",
+   "anchor": "#sec-2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/true-identity-theft",
+   "p": "lab:broader",
+   "o": "lab:topic/ai-safety",
+   "anchor": "#sec-2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/first-party-fraud",
+   "p": "lab:broader",
+   "o": "lab:topic/ai-safety",
+   "anchor": "#sec-2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/synthetic-farm",
+   "p": "lab:broader",
+   "o": "lab:topic/ai-safety",
+   "anchor": "#sec-2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/injection-replay-attack",
+   "p": "lab:broader",
+   "o": "lab:topic/ai-safety",
+   "anchor": "#sec-2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/proof-of-life",
+   "p": "lab:broader",
+   "o": "lab:topic/ai-safety",
+   "anchor": "#sec-2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:method/liveness-check",
+   "p": "lab:broader",
+   "o": "lab:topic/ai-safety",
+   "anchor": "#sec-2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/synthetic-identity",
+   "p": "lab:broader",
+   "o": "lab:topic/privacy",
+   "anchor": "#sec-2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/true-identity-theft",
+   "p": "lab:broader",
+   "o": "lab:topic/privacy",
+   "anchor": "#sec-2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/deepfake",
+   "p": "lab:broader",
+   "o": "lab:topic/gan",
+   "anchor": "#sec-3-3",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:limitation/human-deepfake-detection",
+   "p": "lab:broader",
+   "o": "lab:topic/gan",
+   "anchor": "#tbl-4-1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:indicator/zero-noise",
+   "p": "lab:broader",
+   "o": "lab:topic/anomaly-detection",
+   "anchor": "#sec-3-3",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:method/point-in-time-verification",
+   "p": "lab:broader",
+   "o": "lab:topic/monitoring",
+   "anchor": "#sec-3-3",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:method/lifecycle-trust",
+   "p": "lab:broader",
+   "o": "lab:topic/monitoring",
+   "anchor": "#sec-3-3",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:method/orchestration",
+   "p": "lab:broader",
+   "o": "lab:topic/monitoring",
+   "anchor": "#sec-3-3",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:method/step-up",
+   "p": "lab:broader",
+   "o": "lab:topic/monitoring",
+   "anchor": "#sec-3-3",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:limitation/onboarding-blind-spot",
+   "p": "lab:broader",
+   "o": "lab:topic/monitoring",
+   "anchor": "#sec-3-3",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:limitation/tool-seams",
+   "p": "lab:broader",
+   "o": "lab:topic/monitoring",
+   "anchor": "#sec-3-3",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/is-identity-real",
+   "p": "lab:broader",
+   "o": "lab:topic/monitoring",
+   "anchor": "#sec-3-3",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/is-identity-trusted",
+   "p": "lab:broader",
+   "o": "lab:topic/monitoring",
+   "anchor": "#sec-3-3",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/risk-now-and-over-time",
+   "p": "lab:broader",
+   "o": "lab:topic/monitoring",
+   "anchor": "#sec-3-3",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/scalable-identity",
+   "p": "lab:partOf",
+   "o": "lab:concept/synthetic-identity",
+   "anchor": "#sec-3-1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/scalable-identity",
+   "p": "lab:broader",
+   "o": "lab:topic/ai-safety",
+   "anchor": "#sec-3-1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/adaptive-identity",
+   "p": "lab:partOf",
+   "o": "lab:concept/synthetic-identity",
+   "anchor": "#sec-3-1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/adaptive-identity",
+   "p": "lab:broader",
+   "o": "lab:topic/ai-safety",
+   "anchor": "#sec-3-1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/patient-identity",
+   "p": "lab:partOf",
+   "o": "lab:concept/synthetic-identity",
+   "anchor": "#sec-3-1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/patient-identity",
+   "p": "lab:broader",
+   "o": "lab:topic/ai-safety",
+   "anchor": "#sec-3-1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/denominator",
+   "p": "lab:broader",
+   "o": "lab:topic/probability-statistics",
+   "anchor": "#memo-4",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/expected-utility-crime",
+   "p": "lab:broader",
+   "o": "lab:topic/probability-statistics",
+   "anchor": "#sec-6-2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/arrest-probability",
+   "p": "lab:broader",
+   "o": "lab:topic/probability-statistics",
+   "anchor": "#sec-6-2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/crime-gain",
+   "p": "lab:broader",
+   "o": "lab:topic/probability-statistics",
+   "anchor": "#sec-6-2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/success-probability",
+   "p": "lab:broader",
+   "o": "lab:topic/probability-statistics",
+   "anchor": "#sec-6-2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/crime-unit-cost",
+   "p": "lab:broader",
+   "o": "lab:topic/probability-statistics",
+   "anchor": "#sec-6-2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/synthetic-identity",
+   "p": "lab:contrastsWith",
+   "o": "lab:concept/true-identity-theft",
+   "anchor": "#sec-2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:analogy/empty-house-nameplate",
+   "p": "lab:analogyOf",
+   "o": "lab:concept/synthetic-identity",
+   "anchor": "#sec-2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/synthetic-farm",
+   "p": "lab:partOf",
+   "o": "lab:concept/synthetic-identity",
+   "anchor": "#fig-4-2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/deepfake",
+   "p": "lab:relatedTo",
+   "o": "lab:concept/synthetic-identity",
+   "anchor": "#sec-3-3",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/injection-replay-attack",
+   "p": "lab:relatedTo",
+   "o": "lab:concept/deepfake",
+   "anchor": "#q-real",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:method/point-in-time-verification",
+   "p": "lab:hasLimitation",
+   "o": "lab:limitation/onboarding-blind-spot",
+   "anchor": "#sec-3-2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:limitation/onboarding-blind-spot",
+   "p": "lab:addressedBy",
+   "o": "lab:method/lifecycle-trust",
+   "anchor": "#sec-3-3",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:limitation/tool-seams",
+   "p": "lab:addressedBy",
+   "o": "lab:method/orchestration",
+   "anchor": "#sec-3-3",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:method/lifecycle-trust",
+   "p": "lab:contrastsWith",
+   "o": "lab:method/point-in-time-verification",
+   "anchor": "#fig-2-1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/is-identity-real",
+   "p": "lab:partOf",
+   "o": "lab:method/lifecycle-trust",
+   "anchor": "#q-real",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/is-identity-trusted",
+   "p": "lab:partOf",
+   "o": "lab:method/lifecycle-trust",
+   "anchor": "#q-trust",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/risk-now-and-over-time",
+   "p": "lab:partOf",
+   "o": "lab:method/lifecycle-trust",
+   "anchor": "#q-risk",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/is-identity-real",
+   "p": "lab:prerequisiteOf",
+   "o": "lab:concept/is-identity-trusted",
+   "anchor": "#sec-3-3",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/is-identity-trusted",
+   "p": "lab:prerequisiteOf",
+   "o": "lab:concept/risk-now-and-over-time",
+   "anchor": "#sec-3-3",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:method/liveness-check",
+   "p": "lab:partOf",
+   "o": "lab:concept/is-identity-real",
+   "anchor": "#q-real",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:method/liveness-check",
+   "p": "lab:hasLimitation",
+   "o": "lab:limitation/human-deepfake-detection",
+   "anchor": "#tbl-4-1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:method/step-up",
+   "p": "lab:partOf",
+   "o": "lab:concept/risk-now-and-over-time",
+   "anchor": "#q-risk",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:indicator/zero-noise",
+   "p": "lab:partOf",
+   "o": "lab:concept/is-identity-trusted",
+   "anchor": "#sec-3-3",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/proof-of-life",
+   "p": "lab:partOf",
+   "o": "lab:concept/is-identity-trusted",
+   "anchor": "#sec-3-3",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:method/orchestration",
+   "p": "lab:partOf",
+   "o": "lab:method/lifecycle-trust",
+   "anchor": "#sec-3-3",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/synthetic-identity",
+   "p": "lab:measuredBy",
+   "o": "lab:indicator/synthetic-share",
+   "anchor": "#fig-4-1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/true-identity-theft",
+   "p": "lab:measuredBy",
+   "o": "lab:indicator/true-identity-share",
+   "anchor": "#fig-4-1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/first-party-fraud",
+   "p": "lab:measuredBy",
+   "o": "lab:indicator/first-party-share",
+   "anchor": "#fig-4-1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:limitation/onboarding-blind-spot",
+   "p": "lab:measuredBy",
+   "o": "lab:indicator/new-account-attack-rate",
+   "anchor": "#sec-3-2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/synthetic-share-11pct-2025",
+   "p": "lab:supports",
+   "o": "lab:indicator/synthetic-share",
+   "anchor": "#fig-4-1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/synthetic-share-1-4pct-2024",
+   "p": "lab:supersededBy",
+   "o": "lab:claim/synthetic-share-11pct-2025",
+   "anchor": "#fig-4-1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/synthetic-share-1-4pct-2024",
+   "p": "lab:supports",
+   "o": "lab:indicator/synthetic-share",
+   "anchor": "#fig-4-1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/true-identity-6-4pct-2025",
+   "p": "lab:supports",
+   "o": "lab:indicator/true-identity-share",
+   "anchor": "#fig-4-1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/first-party-38pct-2025",
+   "p": "lab:supports",
+   "o": "lab:indicator/first-party-share",
+   "anchor": "#fig-4-1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/new-account-1-in-11",
+   "p": "lab:supports",
+   "o": "lab:indicator/new-account-attack-rate",
+   "anchor": "#sec-3-2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/no-victim-alarm",
+   "p": "lab:supports",
+   "o": "lab:concept/arrest-probability",
+   "anchor": "#sec-2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/genai-85pct-identity-fraud",
+   "p": "lab:supports",
+   "o": "lab:concept/deepfake",
+   "anchor": "#tbl-4-1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/human-detect-deepfake-20pct",
+   "p": "lab:supports",
+   "o": "lab:limitation/human-deepfake-detection",
+   "anchor": "#tbl-4-1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/ai-forgeries-57pct-attacks",
+   "p": "lab:contrastsWith",
+   "o": "lab:claim/digital-forgeries-57pct-docs",
+   "anchor": "#chk-1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/ai-forgeries-57pct-attacks",
+   "p": "lab:supports",
+   "o": "lab:concept/deepfake",
+   "anchor": "#tbl-4-1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/digital-forgeries-57pct-docs",
+   "p": "lab:supports",
+   "o": "lab:concept/deepfake",
+   "anchor": "#chk-1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/synthetic-85pct-unflagged",
+   "p": "lab:supports",
+   "o": "lab:limitation/onboarding-blind-spot",
+   "anchor": "#tbl-4-1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/synthetic-credit-650",
+   "p": "lab:supports",
+   "o": "lab:limitation/onboarding-blind-spot",
+   "anchor": "#tbl-4-1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/london-1653-identities",
+   "p": "lab:supports",
+   "o": "lab:concept/synthetic-farm",
+   "anchor": "#fig-4-2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/chichester-439-entities",
+   "p": "lab:supports",
+   "o": "lab:concept/synthetic-farm",
+   "anchor": "#fig-4-2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/oxford-9-properties",
+   "p": "lab:supports",
+   "o": "lab:concept/synthetic-farm",
+   "anchor": "#fig-4-2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/uk-2-8m-synthetic-profiles",
+   "p": "lab:supports",
+   "o": "lab:concept/synthetic-identity",
+   "anchor": "#tl-2024-06-12",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/deepfakes-prevented-400k-2025",
+   "p": "lab:supports",
+   "o": "lab:method/liveness-check",
+   "anchor": "#sec-3-4",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/onboarding-pass-rate-5-3pct",
+   "p": "lab:supports",
+   "o": "lab:method/orchestration",
+   "anchor": "#sec-3-4",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/ebook-footnote-mismatch",
+   "p": "lab:raises",
+   "o": "lab:question/human-detection-conditions",
+   "anchor": "#chk-2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/position-lifecycle-monitoring",
+   "p": "lab:supports",
+   "o": "lab:method/lifecycle-trust",
+   "anchor": "#pos-lifecycle",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/position-lifecycle-monitoring",
+   "p": "lab:contrastsWith",
+   "o": "lab:claim/position-biometric-necessity",
+   "anchor": "#tbl-5-1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/arrest-probability",
+   "p": "lab:partOf",
+   "o": "lab:concept/expected-utility-crime",
+   "anchor": "#sec-6-2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/crime-gain",
+   "p": "lab:partOf",
+   "o": "lab:concept/expected-utility-crime",
+   "anchor": "#sec-6-2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/success-probability",
+   "p": "lab:partOf",
+   "o": "lab:concept/expected-utility-crime",
+   "anchor": "#tbl-6-2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/crime-unit-cost",
+   "p": "lab:partOf",
+   "o": "lab:concept/expected-utility-crime",
+   "anchor": "#tbl-6-2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/patient-identity",
+   "p": "lab:relatedTo",
+   "o": "lab:concept/crime-gain",
+   "anchor": "#tbl-6-2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/scalable-identity",
+   "p": "lab:relatedTo",
+   "o": "lab:concept/crime-unit-cost",
+   "anchor": "#tbl-6-2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:method/lifecycle-trust",
+   "p": "lab:relatedTo",
+   "o": "lab:concept/success-probability",
+   "anchor": "#tbl-6-2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/book-ch10-synthetic-future-threat",
+   "p": "lab:supports",
+   "o": "lab:concept/synthetic-identity",
+   "anchor": "#m-1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/book-ch10-synthetic-future-threat",
+   "p": "lab:contrastsWith",
+   "o": "lab:claim/synthetic-share-11pct-2025",
+   "anchor": "#m-1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/book-ch05-rule-filter-decay",
+   "p": "lab:supports",
+   "o": "lab:limitation/onboarding-blind-spot",
+   "anchor": "#m-4",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/book-ch03-procedure-over-ear",
+   "p": "lab:supports",
+   "o": "lab:limitation/human-deepfake-detection",
+   "anchor": "#m-5",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/book-ch03-procedure-over-ear",
+   "p": "lab:contrastsWith",
+   "o": "lab:claim/human-detect-deepfake-20pct",
+   "anchor": "#m-5",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/book-ch10-five-layers",
+   "p": "lab:supports",
+   "o": "lab:method/orchestration",
+   "anchor": "#m-7",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/book-ch08-lock-identity",
+   "p": "lab:contrastsWith",
+   "o": "lab:claim/position-lifecycle-monitoring",
+   "anchor": "#m-11",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/synthetic-identity",
+   "p": "lab:raises",
+   "o": "lab:question/korea-synthetic-scale",
+   "anchor": "#unk-1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:indicator/synthetic-share",
+   "p": "lab:raises",
+   "o": "lab:question/classification-effect",
+   "anchor": "#unk-2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:limitation/human-deepfake-detection",
+   "p": "lab:raises",
+   "o": "lab:question/human-detection-conditions",
+   "anchor": "#unk-3",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:method/lifecycle-trust",
+   "p": "lab:raises",
+   "o": "lab:question/monitoring-cost",
+   "anchor": "#unk-4",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:quiz/r001-sec7-1",
+   "p": "lab:assesses",
+   "o": "lab:concept/denominator",
+   "anchor": "#quiz-7-1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/denominator",
+   "p": "lab:prerequisiteOf",
+   "o": "lab:indicator/new-account-attack-rate",
+   "anchor": "#memo-4",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/denominator",
+   "p": "lab:prerequisiteOf",
+   "o": "lab:indicator/synthetic-share",
+   "anchor": "#memo-4",
+   "confidence": "high"
+  }
+ ]
+}
