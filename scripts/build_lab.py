@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
 """content/*.md + scripts/lab_data.py → 루트 *.html (GitHub Pages)."""
 import os, re, glob, html, json
+import sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import crime_onto  # AI 범죄학(crime) 지식 색인 데이터
 import markdown
 from lab_data import CH, TOOLS
 from steps_data import STEPS, REVIEW, INST, RL
@@ -147,7 +150,7 @@ def head(title, desc, pre="", jsonld=None, path="", og_img="assets/og/index.webp
 <meta property="og:image" content="{og}"><meta property="og:url" content="{SITE_URL}{path}"><meta property="og:type" content="article">
 <link rel="stylesheet" href="{pre}assets/lab.css">{jl}</head><body>
 <header class="top"><a class="brand" href="{pre}index.html">AI 범죄 연구실 — 범죄자의 계산서를 뒤집어라</a>
-<a href="{pre}index.html#chapters">목차</a><a href="{pre}practice/index.html">실전 연습장</a><a href="{pre}reports/index.html">리포트 검증</a><a href="{pre}workbook.html">통합 작업본</a><a href="{pre}references.html">참고문헌</a><a href="{pre}data.html">모의 데이터</a></header>"""
+<a href="{pre}index.html#chapters">목차</a><a href="{pre}practice/index.html">실전 연습장</a><a href="{pre}reports/index.html">리포트 검증</a><a href="{pre}ontology.html">온톨로지 지도</a><a href="{pre}workbook.html">통합 작업본</a><a href="{pre}references.html">참고문헌</a><a href="{pre}data.html">모의 데이터</a></header>"""
 
 
 def foot(pre=""):
@@ -294,6 +297,7 @@ def chapter_page(slug, meta, body, idx, chapters):
     inner = (hero + three + "<h2 style='margin-top:30px'>등장인물</h2>" + cast + why + intro_html + "".join(html_steps)
              + tool_step(slug, d, n_tool) + inst_step(slug, n_tool + 1) + rl_step(slug, n_tool + 2) + duel + wrapq + outro + kg + export + f'<div class="pn">{prev_}{next_}</div>' + foot())
     page = (head(meta["title"], meta["subtitle"], "", jsonld, slug + ".html", f"assets/og/{slug}.webp") + f'<div class="wrap"><nav class="toc">{toc}</nav><main>{inner}</main></div>'
+            + '<script type="application/json" id="kg-raw">' + json.dumps(crime_onto.kg_raw(slug), ensure_ascii=False).replace("</", "<\\/") + '</script>'
             + '<script src="assets/lab.js"></script><script src="assets/rl.js"></script></body></html>')
     open(os.path.join(ROOT, slug + ".html"), "w", encoding="utf-8").write(page)
 
@@ -316,6 +320,8 @@ def build():
                  '<div class="cs">콜센터·검사 게임·랜섬 협상·기업 연결망 네 사업장을 직접 운영해 범죄자의 계산서를 뒤집어 본다.</div><div class="cf">시뮬레이터 · 미션 3개씩</div></a>')
     cards.append('<a class="card" href="reports/index.html" style="border:2px solid #3d63c9;background:#f8faff"><img class="thumb" src="reports/2026-11-23_lnrs-synthetic-identity-deepfake/thumb.webp" alt="" width="600" height="400" loading="lazy"><div class="cno">현장 검증</div><div class="ct">리포트·뉴스 검증 INDEX</div>'
                  '<div class="cs">새로 나온 보고서와 뉴스를 책의 장과 나란히 놓고, 책의 분석이 현장에서 어떻게 확인되는지 쌓아 간다.</div><div class="cf">박사의 뉴스 소개 · 장별 대조표</div></a>')
+    cards.append('<a class="card" href="ontology.html" style="border:2px solid #1f8a5b;background:#f3fbf6"><div class="cno">분야 지도</div><div class="ct">AI 범죄학 온톨로지 지도</div>'
+                 '<div class="cs">책의 분석 틀로 짠 13개 영역·49개 주제 위에, 책이 다룬 개념과 리포트로 확인된 개념을 겹쳐 본다.</div><div class="cf">3D 지도 · 영역별 커버리지</div></a>')
     imeta, ibody = parse(os.path.join(ROOT, "content", "index.md"))
     inner = convert(ibody, "index").replace("{{CARDS}}", '<div class="cards" id="chapters">' + "".join(cards) + "</div>").replace("{{BOOK}}", html.escape(BOOK)).replace("{{BOOKBOX}}", BOOK_BOX)
     jl = {"@context": "https://schema.org", "@type": "CollectionPage", "name": "AI 범죄 연구실", "description": BOOK, "about": {"@type": "Book", "name": BOOKINFO["title"], "alternativeHeadline": BOOKINFO["subtitle"], "author": {"@type": "Person", "name": "안상선"}, "publisher": {"@type": "Organization", "name": "커뮤니케이션북스"}, "datePublished": BOOKINFO["date"], "isbn": BOOKINFO["isbn"], "url": GB_URL},

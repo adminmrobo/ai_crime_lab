@@ -58,7 +58,7 @@ td.num{{text-align:center;font-weight:800}}
 .memo img{{width:80px;height:80px;flex:none;border-radius:50%;image-rendering:pixelated;background:#fff;border:1px solid var(--line)}}
 @media(max-width:700px){{.memo img{{width:56px;height:56px}}}}
 </style></head><body>
-<header class="top"><a class="brand" href="../index.html">AI 범죄 연구실</a><a href="../index.html#chapters">책 목차</a><a href="../practice/index.html">실전 연습장</a><a href="../references.html">참고문헌</a></header>
+<header class="top"><a class="brand" href="../index.html">AI 범죄 연구실</a><a href="../index.html#chapters">책 목차</a><a href="../ontology.html">온톨로지 지도</a><a href="../practice/index.html">실전 연습장</a><a href="../references.html">참고문헌</a></header>
 <div class="wrap"><main>
 <section class="hero" style="grid-template-columns:minmax(0,1fr)"><div>
 <div class="no">AI 범죄 연구실 · 리포트·뉴스 검증</div>
@@ -72,7 +72,7 @@ td.num{{text-align:center;font-weight:800}}
 <div class="cards">{cards}</div>
 
 <h2 id="coverage" style="margin-top:40px">장별 검증 현황</h2>
-<p class="mute">한 대조 항목이 두 장에 걸치면 두 장 모두에 셉니다.</p>
+<p class="mute">한 대조 항목이 두 장에 걸치면 두 장 모두에 셉니다. 분야 전체에서 어디가 채워졌는지는 <a href="../ontology.html">AI 범죄학 온톨로지 지도</a>에서 봅니다.</p>
 <table>{head}{rows}</table>
 
 <h2 id="legend" style="margin-top:40px">대조 표시 읽는 법</h2>

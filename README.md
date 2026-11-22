@@ -46,12 +46,24 @@
 - 새 리포트 등록: `reports/registry.json`에 추가 → `python scripts/build_reports_index.py`
 - 원본 PDF는 재배포 허락이 확인될 때만 올리고, 아니면 공식 링크만 적는다.
 
+## AI 범죄학 온톨로지 지도
+
+`ontology.html` — 책의 분석 틀로 만든 **AI 범죄학(crime) 뼈대**(13개 영역·49개 주제, 작성자 초안 v0.1) 위에 책 11개 장의 개념과 리포트 검증의 개념을 겹친 3D 지도와 영역별 커버리지 표.
+
+- 뼈대 원본: [ahnboat_lab_explainer `data/backbone_crime.json`](https://github.com/adminmrobo/ahnboat_lab_explainer/blob/main/data/backbone_crime.json) (사본 `data/backbone_crime.json`), 분야 규칙: `packs/domain/DOMAIN_crime.md`
+- 장마다 지식 색인 데이터(`<script id="kg-raw">`)를 넣어 ahnboat.xyz 분야별 온톨로지 지도에도 모인다. 개념 목록은 `scripts/crime_onto.py`
+- ahnboat.xyz 카탈로그 카드: `catalog_cards.json` (표지 현황 사이트가 받아 '인공지능 응용' 안에 AI 범죄학 소분류로 묶는다)
+- 3D 그래프 라이브러리: `assets/vendor/3d-force-graph.min.js` (MIT, v1.80.0)
+
 ## 다시 만들기
 
 ```bash
 pip install numpy pandas markdown
 python scripts/gen_data.py     # 모의 데이터·차트(assets/charts)
 python scripts/build_lab.py    # content/*.md + scripts/lab_data.py → *.html
+python scripts/build_reports_index.py   # reports/registry.json → reports/index.html
+python scripts/build_crime_map.py       # 뼈대 + 책 + 리포트 → ontology.html
+python scripts/build_catalog_cards.py   # → catalog_cards.json
 ```
 
 ## 주의
