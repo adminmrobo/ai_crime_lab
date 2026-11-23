@@ -46,7 +46,7 @@ main{max-width:820px}
 .refs li{font-size:13.5px;line-height:1.6;margin:6px 0;overflow-wrap:anywhere}
 @media(max-width:700px){.glance,.q3{grid-template-columns:minmax(0,1fr)}.newsboard{grid-template-columns:minmax(0,1fr)}.memo img{width:56px;height:56px}}
 </style>
-</head><body>
+<!-- px-fix v1 --><style id="px-fix">img{image-rendering:auto!important}</style><script id="px-fix-js">(function(){var R=window.ResizeObserver;function f(i){var n=i.naturalWidth,w=i.getBoundingClientRect().width;if(!n||!w)return;var s=w*(window.devicePixelRatio||1)/n;i.style.setProperty("image-rendering",s>=1.95?"pixelated":"auto","important")}var ro=R?new R(function(es){es.forEach(function(e){f(e.target)})}):null;function a(i){if(i.__px)return;i.__px=1;i.addEventListener("load",function(){f(i)});if(ro)ro.observe(i);f(i)}function all(r){(r||document).querySelectorAll&&(r||document).querySelectorAll("img").forEach(a)}function go(){all();if(window.MutationObserver)new MutationObserver(function(ms){ms.forEach(function(m){m.addedNodes.forEach(function(n){if(n.nodeType!==1)return;if(n.tagName==="IMG")a(n);else all(n)})})}).observe(document.documentElement,{childList:true,subtree:true});window.addEventListener("resize",function(){document.querySelectorAll("img").forEach(f)})}if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",go);else go()})();</script><!-- /px-fix --></head><body>
 <header class="top"><a class="brand" href="../../index.html">AI 범죄 연구실</a>
 <a href="../index.html">리포트·뉴스 검증 INDEX</a><a href="../../index.html#chapters">책 목차</a><a href="../../references.html">참고문헌</a></header>
 <div class="wrap"><nav class="toc"><b>리포트 검증 · 2026-11-23</b>
